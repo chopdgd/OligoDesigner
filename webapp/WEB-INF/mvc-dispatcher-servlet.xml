@@ -1,0 +1,38 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="edu.chop.dgd"/>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"></bean>
+
+    <bean id="DGDHandlerInterceptor" class="edu.chop.dgd.web.DGDHandlerInterceptor">
+    </bean>
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.InternalResourceView"/>
+    </bean>
+
+
+    <bean id="publicUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="interceptors">
+            <list>
+                <ref bean="DGDHandlerInterceptor" />
+            </list>
+        </property>
+        <property name="mappings">
+            <props>
+
+                <prop key="primer/home.html">PrimerHomeController</prop>
+                <prop key="primer/primerReport.html">PrimerCreateController</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <bean id="PrimerHomeController" class="edu.chop.dgd.primer.PrimerHomeController" />
+    <bean id="PrimerCreateController" class="edu.chop.dgd.primer.PrimerCreateController" />
+</beans>
