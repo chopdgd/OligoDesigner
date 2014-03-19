@@ -1,16 +1,14 @@
 package edu.chop.dgd.primer;
 
 import edu.chop.dgd.process.primerCreate.*;
+import edu.chop.dgd.utils.Primer3Object;
 import edu.chop.dgd.web.HttpRequestFacade;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -20,17 +18,18 @@ import java.util.Map;
  * Created by jayaramanp on 1/29/14.
  */
 public class PrimerCreateController implements Controller {
+
     private String primer3InputDir="/data/primer3Inp/";
-    private String primer3OpDir="data/primer3Op/";
+    private String primer3OpDir="/data/primer3out/";
     private String blatInpDir="/data/blatInp/";
     private String blatOpDir="/data/blatOp/";
+    private String insilicoPcrInputDir="/data/isPcrInp/";
+    private String insilicoPcrOpDir="/data/isPcrOp/";
     private String primerProcessScriptDir="/data/";
+
 
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse httpServletResponse) throws Exception {
-
-
-        UcscDAS ucDas = new UcscDAS();
 
         HttpRequestFacade req = new HttpRequestFacade(request);
         String chr = "chr"+req.getParameter("selectObject");
@@ -51,23 +50,13 @@ public class PrimerCreateController implements Controller {
         List<Variation> vList = prDao.getVariantsInQuery(chr, startPos, stopPos);
 
         Map<UcscGene, UcscGeneExon> geneExonVariantMap = prDao.getGeneExonVariantMap(geneList, vList);
+        AmpliconSeq ampliconObj = new AmpliconSeq().createAmpliconObject(vList.get(0));
+        String inputFileName = writePrimerInputFile(vList, ampliconObj);
+        String response = runProcessBuilder(inputFileName);
 
-        AmpliconSeq ampliconObj = new AmpliconSeq().createAmpliconObject(vList.get(0), geneExonVariantMap);
+        List<Primer3Object> primer3Primers = new Primer3Object().getPrimer3Objects(inputFileName, primer3OpDir, blatInpDir, blatOpDir, insilicoPcrInputDir, insilicoPcrOpDir);
 
-        AmpliconXomAnalyzer xom = new AmpliconXomAnalyzer();
-        String sequence = xom.parseRecord(ampliconObj.getSequence());
-        System.out.println("here is the sequence:"+sequence);
-        ampliconObj.setSequence(sequence);
-
-        Date dt = new Date();
-        File primerInputFile = new File(primer3InputDir+"primerInp"+ new SimpleDateFormat("yyyyMMddhhmm'.txt'").format(new Date()));
-        PrintWriter pw = new PrintWriter(primerInputFile);
-        String relSeq = (vList.get(0).getVstart()-ampliconObj.getBufferUpstream());
-        pw.println("SEQUENCE_ID=inpSeq1\nSEQUENCE_TEMPLATE="+sequence.replaceAll("\n","")+"\n=SEQUENCE_TARGET="+);
-        pw.flush();
-        pw.close();
-
-        String response = runProcessBuilder();
+        String prStats = createFiles(primer3Primers, response, chr, startPos, stopPos, primerProcessScriptDir);
 
         ModelAndView mvObj = new ModelAndView("/WEB-INF/pages/primer/primerReport.jsp");
         mvObj.addObject("geneList", geneList);
@@ -78,15 +67,108 @@ public class PrimerCreateController implements Controller {
         mvObj.addObject("variantsList", vList);
         mvObj.addObject("amplicon", ampliconObj);
         mvObj.addObject("primerResults", response);
+        mvObj.addObject("stats", prStats);
         return mvObj;
 
     }
 
-    public String runProcessBuilder() throws Exception {
+    private String createFiles(List<Primer3Object> primer3Primers, String response, String chr, int startPos, int stopPos, String primerProcessScriptDir) throws Exception {
+
+        String path=primerProcessScriptDir+chr+"_"+startPos+"_"+stopPos;
+        File filePath = new File(path+".detail");
+        File softFile = new File(path+"_soft.xls");
+        File secondaryFile = new File(path+"_secondary.xls");
+
+        PrintWriter detailWriter = new PrintWriter(filePath);
+        PrintWriter softWriter = new PrintWriter(softFile);
+        PrintWriter secondaryFileWriter = new PrintWriter(secondaryFile);
+
+        String softPrimers=""; String secondaryprimers="";
+
+        int insilicoFlag = 0;
+        int leftPrimerBlatFlag = 0;
+        int rightPrimerBlatFlag = 0;
+        int softFileFlag = 0;
+
+        for(Primer3Object pr : primer3Primers){
+            if((pr.getInsilicoPCRObjectList()!=null) && (pr.getInsilicoPCRObjectList().size()==1)){
+                insilicoFlag+=1;
+            }
+            if((pr.getLeftPrimerBlatList()!=null) && (pr.getLeftPrimerBlatList().size()==1)){
+                if(pr.getLeftPrimerBlatList().get(0).getPercentageIdentity()==100.00){
+                    leftPrimerBlatFlag+=1;
+                }
+            }
+            if((pr.getRightPrimerBlatList()!=null) && (pr.getRightPrimerBlatList().size()==1)){
+                if(pr.getRightPrimerBlatList().get(0).getPercentageIdentity()==100.00){
+                    rightPrimerBlatFlag+=1;
+                }
+            }
+
+            if(insilicoFlag==1 && leftPrimerBlatFlag==1 && rightPrimerBlatFlag==1){
+
+               softPrimers+=pr.getLeftPrimerId()+" "+pr.getLeftSeq()+"\t"+pr.getRightPrimerId()+" "+pr.getRightSeq()+"\n";
+               softFileFlag = writeFile(pr, softWriter, chr, startPos, stopPos);
+
+
+            }else{
+                secondaryprimers+=pr.getLeftPrimerId()+" "+pr.getLeftSeq()+"\t"+pr.getRightPrimerId()+" "+pr.getRightSeq()+"\n";
+                softFileFlag = writeFile(pr, secondaryFileWriter, chr, startPos, stopPos);
+
+            }
+        }
+
+
+
+        detailWriter.print(response);
+
+        softWriter.close();
+        secondaryFileWriter.close();
+        detailWriter.close();
+
+
+        if((softPrimers.length()>0) && (softFileFlag ==1)){
+            return softPrimers;
+        }else{
+            return "NA";
+        }
+
+    }
+
+    private int writeFile(Primer3Object pr, PrintWriter fileWriter, String chr, int startPos, int stopPos) {
+
+        fileWriter.print("Primer Name\tHuman Genome Build\tQuery Condition\tIn-Silico PCR\tprimer ID\tstart\tlen\ttm\tgc%\tany\t3'\tseq\tproductSize\tSNPs found\tChrom\tPrimer Start\tPrimer End\tfolder Id\tsnp check ID\n");
+        fileWriter.print(pr.getLeftPrimerId()+"\thg19\t"+chr+":"+startPos+"_"+stopPos+"\tPASS\t"+chr+":"+startPos+"_"+stopPos+"F\t"+pr.getLeftStart()+"\t"+pr.getLeftLen()+"\t"+pr.getLeftTm()+"\t"+pr.getLeftGc()+"\t"+pr.getLeftAny()+"\t"+pr.getLeft3()+"\t"+pr.getLeftSeq()+"\t"+pr.getInsilicoPCRObjectList().get(0).getSize()+"\tN\t"+pr.getInsilicoPCRObjectList().get(0).getChr()+"\t"+pr.getInsilicoPCRObjectList().get(0).getPrimerSeqStart()+"\t"+pr.getInsilicoPCRObjectList().get(0).getPrimerSeqEnd()+"\tNA\tNA\n");
+        fileWriter.print(pr.getRightPrimerId()+"\thg19\t"+chr+":"+startPos+"_"+stopPos+"\tPASS\t"+chr+":"+startPos+"_"+stopPos+"F\t"+pr.getRightStart()+"\t"+pr.getRightLen()+"\t"+pr.getRightTm()+"\t"+pr.getRightGc()+"\t"+pr.getRightAny()+"\t"+pr.getRight3()+"\t"+pr.getRightSeq()+"\t"+pr.getInsilicoPCRObjectList().get(0).getSize()+"\tN\t"+pr.getInsilicoPCRObjectList().get(0).getChr()+"\t"+pr.getInsilicoPCRObjectList().get(0).getPrimerSeqStart()+"\t"+pr.getInsilicoPCRObjectList().get(0).getPrimerSeqEnd()+"\tNA\tNA\n");
+
+        return 1;
+    }
+
+
+
+    private String writePrimerInputFile(List<Variation> vList, AmpliconSeq ampliconObj) throws FileNotFoundException {
+        Date dt = new Date();
+        String fileName="primerInp"+ new SimpleDateFormat("yyyyMMddhhmm'.txt'").format(new Date());
+        File primerInputFile = new File(primer3InputDir+fileName);
+        PrintWriter pw = new PrintWriter(primerInputFile);
+        int bufferUpstreamPos = vList.get(0).getVstart()-ampliconObj.getBufferUpstream();
+        int relPosStart = bufferUpstreamPos-ampliconObj.getAmpliconStart();
+        int relPosLength = ampliconObj.getBufferUpstream()+vList.get(0).getVstop()-vList.get(0).getVstart()+ampliconObj.getBufferDownstream();
+        pw.println("SEQUENCE_ID=inpSeq1\nSEQUENCE_TEMPLATE="+ampliconObj.getMaskedSeq()+"\nSEQUENCE_TARGET="+relPosStart+","+relPosLength+"\n=");
+        System.out.println("SEQUENCE_ID=inpSeq1\nSEQUENCE_TEMPLATE="+ampliconObj.getMaskedSeq()+"\nSEQUENCE_TARGET="+relPosStart+","+relPosLength+"\n=");
+        pw.flush();
+        pw.close();
+
+        return fileName;
+    }
+
+
+
+    public String runProcessBuilder(String inputFileName) throws Exception {
 
         String answer = "output:";
 
-        ProcessBuilder pb = new ProcessBuilder(getPrimerProcessScriptDir()+"PrimerProcess.sh");
+        ProcessBuilder pb = new ProcessBuilder(getPrimerProcessScriptDir()+"PrimerProcess.sh",inputFileName);
         //System.out.println( "environment before addition:"+pb.environment());
         Map<String, String> env = pb.environment();
         env.put("SHELL", "/bin/bash");
@@ -112,7 +194,6 @@ public class PrimerCreateController implements Controller {
             }
             String erranswer = errsb.toString();
             System.out.println(erranswer);
-
 
             BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
             StringBuilder sb = new StringBuilder();
@@ -172,5 +253,21 @@ public class PrimerCreateController implements Controller {
 
     public String getPrimerProcessScriptDir() {
         return primerProcessScriptDir;
+    }
+
+    public String getInsilicoPcrInputDir() {
+        return insilicoPcrInputDir;
+    }
+
+    public void setInsilicoPcrInputDir(String insilicoPcrInputDir) {
+        this.insilicoPcrInputDir = insilicoPcrInputDir;
+    }
+
+    public String getInsilicoPcrOpDir() {
+        return insilicoPcrOpDir;
+    }
+
+    public void setInsilicoPcrOpDir(String insilicoPcrOpDir) {
+        this.insilicoPcrOpDir = insilicoPcrOpDir;
     }
 }

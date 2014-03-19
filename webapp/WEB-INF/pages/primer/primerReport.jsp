@@ -36,7 +36,9 @@
     List<Variation> variationList = (List<Variation>) request.getAttribute("variantsList");
     AmpliconSeq amplicon = (AmpliconSeq) request.getAttribute("amplicon");
     String primerResults = (String) request.getAttribute("primerResults");
+    int varrelPos = variationList.get(0).getVstart()-amplicon.getAmpliconStart()+2;
 
+    String optimalPrimers = (String) request.getAttribute("stats");
 %>
 
 
@@ -44,6 +46,8 @@
 
 <html>
 <body>
+<img src="dgd.png" alt="dgdLogo" width="42" height="42">
+
 	<h1>DGD Primer Designer Report</h1>
 
     <table>
@@ -54,8 +58,8 @@
             <td>Genes In Region:
             <%
                 for(UcscGene g:geneList){
-                    out.print(g.getGeneSymbol());
-                    out.print(",");
+                    out.print(g.getGeneSymbol()+"("+g.getRefSeqGeneName()+")");
+                    out.print(", ");
                 }
             %>
             </td>
@@ -63,10 +67,14 @@
         <tr>
             <td>Exons in range:
             <%
-                for(UcscGene gene : geneExonMap.keySet()){
-                    out.print(geneExonMap.get(gene).getUcscExonId());
-                    out.print("("+gene.getGeneSymbol()+")");
-                    out.print(",");
+                if(geneExonMap.keySet().size()>0){
+                    for(UcscGene gene : geneExonMap.keySet()){
+                        out.print(geneExonMap.get(gene).getUcscExonId());
+                        out.print("("+gene.getGeneSymbol()+")");
+                        out.print(", ");
+                    }
+                }else{
+                    out.print("Possibly Intronic");
                 }
             %>
             </td>
@@ -76,16 +84,67 @@
                 <%
                     for(Variation v : variationList){
                         out.print(v.getVarName());
-                        out.print("("+v.getvObserved()+")");
+                        out.print("-"+v.getvChr()+":"+v.getVstart()+":"+v.getVstop()+":"+v.getvStrand());
+                        out.print("("+v.getvObserved()+")\t");
                     }
                 %>
             </td>
         </tr>
         <tr>
-            <td>Amplicon Sequence:
+            <td>Amplicon Sequence:<%=amplicon.getChr()+":"+amplicon.getAmpliconStart()+".."+amplicon.getAmpliconEnd()%>
                 <pre><%
-                    out.print(amplicon.getSequence().replace("\n","<br />"));
+                    for(int c=1; c<=amplicon.getSequence().length(); c++){
+                        String value = amplicon.getSequence().substring(c - 1, c);
+                        if(c==varrelPos){
+                            out.print("<span style='color:red; font-weight:700;'>" + value + "</span>");
+                        }else{
+                            out.print(value);
+                        }
+                        if(c % 60 == 0){
+                            out.print("\n");
+                        }
+                    }
+                    out.println(" ");
                 %></pre>
+            </td>
+        </tr>
+        <tr>
+            <td>Amplicon Masked Sequence:<%=amplicon.getChr()+":"+amplicon.getAmpliconStart()+".."+amplicon.getAmpliconEnd()%>
+                <pre><%
+                    for(int c=1; c<=amplicon.getMaskedSeq().length(); c++) {
+                        String value = amplicon.getMaskedSeq().substring(c - 1, c);
+
+                        if(variationList.get(0).getVarName().equals("novel")){
+                            if(c==varrelPos){
+
+                                out.print("<span style='color:red;background-color:#02599C; font-weight:700;'>" + value + "</span>");
+
+                            }else if(value.equals("N")){
+
+                                out.print("<span style='color:red; font-weight:700;'>" + value + "</span>");
+
+                            }else{
+                                out.print(value);
+                            }
+                        }else{
+                            if(value.equals("N")){
+                                if(c==varrelPos){
+                                    out.print("<span style='color:red;background-color:#02599C; font-weight:700;'>" + value + "</span>");
+                                }else{
+                                    out.print("<span style='color:red; font-weight:700;'>" + value + "</span>");
+                                }
+                            }else{
+                                out.print(value);
+                            }
+                        }
+
+                        if(c % 60 == 0){
+                            out.print("\n");
+                        }
+                    }
+                    out.println(" ");
+                    %>
+                </pre>
             </td>
         </tr>
         <tr>
@@ -94,10 +153,19 @@
         <tr>
             <td colspan="2"><pre><%=primerResults%></pre></td>
         </tr>
+
+        <tr>
+            <td><br/></td>
+        </tr>
+        <tr>
+            <td>Optimal Primers are:</td>
+        </tr>
+        <tr>
+            <td><%=optimalPrimers.replaceAll("\t","<br/>")%></td>
+        </tr>
     </table>
     <br />
 </body>
 </html>
 
-</script>
 
