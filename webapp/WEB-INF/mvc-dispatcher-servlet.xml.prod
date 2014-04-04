@@ -18,21 +18,33 @@
 
 
     <bean id="publicUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-        <property name="interceptors">
-            <list>
-                <ref bean="DGDHandlerInterceptor" />
-            </list>
-        </property>
-        <property name="mappings">
-            <props>
+            <property name="interceptors">
+                <list>
+                    <ref bean="DGDHandlerInterceptor" />
+                </list>
+            </property>
+            <property name="mappings">
+                <props>
 
-                <prop key="primer/home.html">PrimerHomeController</prop>
-                <prop key="primer/primerReport.html">PrimerCreateController</prop>
-            </props>
-        </property>
-    </bean>
+                    <prop key="primer/home.html">PrimerHomeController</prop>
+                    <prop key="primer/primerReport.html">PrimerCreateController</prop>
+                    <prop key="primer/FileDownload.html">FileDownloadController</prop>
+                </props>
+            </property>
+        </bean>
 
+        <bean id="wwwDir" abstract="true">
+            <property name="dataDir" value="/data/"/>
+            <property name="primer3InputDir" value="primer3Inp/" />
+            <property name="primer3OpDir" value="primer3out/" />
+            <property name="blatInpDir" value="blatInp/" />
+            <property name="blatOpDir" value="blatOp/" />
+            <property name="insilicoPcrInputDir" value="isPcrInp/" />
+            <property name="insilicoPcrOpDir" value="isPcrOp/" />
+            <property name="primerProcessScriptDir" value="/data/" />
+        </bean>
 
-    <bean id="PrimerHomeController" class="edu.chop.dgd.primer.PrimerHomeController" />
-    <bean id="PrimerCreateController" class="edu.chop.dgd.primer.PrimerCreateController" />
+        <bean id="PrimerHomeController" class="edu.chop.dgd.primer.PrimerHomeController" />
+        <bean id="PrimerCreateController" class="edu.chop.dgd.primer.PrimerCreateController" parent="wwwDir"/>
+        <bean id="FileDownloadController" class="edu.chop.dgd.utils.FileDownloadController" parent="wwwDir"/>
 </beans>

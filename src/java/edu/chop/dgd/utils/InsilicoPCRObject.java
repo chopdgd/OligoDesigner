@@ -20,9 +20,9 @@ public class InsilicoPCRObject {
     String isPcrId;
 
 
-    public List<Primer3Object> addInsilicoResultsToPrimers(String inputFileName, String isPcrOpDir, List<Primer3Object> primer3Objects) throws Exception {
+    public List<Primer3Object> addInsilicoResultsToPrimers(String inputFileName, String isPcrOpDir, List<Primer3Object> primer3Objects, String dataDir) throws Exception {
 
-        List<InsilicoPCRObject> isPcrObjects = createInsilicoPrimers(inputFileName, isPcrOpDir);
+        List<InsilicoPCRObject> isPcrObjects = createInsilicoPrimers(inputFileName, isPcrOpDir, dataDir);
 
         for(Primer3Object prObj : primer3Objects){
             List<InsilicoPCRObject> isPcrObjList = new ArrayList<InsilicoPCRObject>();
@@ -40,10 +40,10 @@ public class InsilicoPCRObject {
 
 
 
-    public List<InsilicoPCRObject> createInsilicoPrimers(String inputFileName, String isPcrOpDir) throws Exception {
+    public List<InsilicoPCRObject> createInsilicoPrimers(String inputFileName, String isPcrOpDir, String dataDir) throws Exception {
 
         List<InsilicoPCRObject> isPcrObjectsList = new ArrayList<InsilicoPCRObject>();
-        FileReader f = new FileReader(isPcrOpDir+"/"+inputFileName);
+        FileReader f = new FileReader(dataDir+isPcrOpDir+inputFileName);
         Scanner s = new Scanner(f);
         InsilicoPCRObject isPcrObj = new InsilicoPCRObject();
         String isPcrSeq = "";

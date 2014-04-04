@@ -1,7 +1,9 @@
 package edu.chop.dgd.utils;
 
 import java.io.FileReader;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by jayaramanp on 3/4/14.
@@ -100,9 +102,9 @@ public class BlatPsl{
     }
 
 
-    public List<Primer3Object> addBlatResultsToPrimers(String blatFile, String blatOpDir, List<Primer3Object> primer3Objects) throws Exception {
+    public List<Primer3Object> addBlatResultsToPrimers(String blatFile, String blatOpDir, List<Primer3Object> primer3Objects, String dataDir) throws Exception {
 
-        List<BlatPsl> blatResults = createBlatList(blatFile, blatOpDir);
+        List<BlatPsl> blatResults = createBlatList(blatFile, blatOpDir, dataDir);
 
         for(BlatPsl blatObj : blatResults){
             for(Primer3Object prObj : primer3Objects){
@@ -135,11 +137,11 @@ public class BlatPsl{
         return primer3Objects;
     }
 
-    public List<BlatPsl> createBlatList(String fileName, String blatOpDir) throws Exception{
+    public List<BlatPsl> createBlatList(String fileName, String blatOpDir, String dataDir) throws Exception{
 
         List<BlatPsl> blatResults = new ArrayList<BlatPsl>();
 
-        FileReader f = new FileReader(blatOpDir+"/"+fileName+"/FINAL.psl");
+        FileReader f = new FileReader(dataDir+blatOpDir+fileName+"/FINAL.psl");
         Scanner s = new Scanner(f);
         while(s.hasNextLine()){
             String line = s.nextLine();

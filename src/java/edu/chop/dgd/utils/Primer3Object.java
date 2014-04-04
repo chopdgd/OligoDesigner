@@ -15,8 +15,8 @@ public class Primer3Object {
     String rightPrimerId;
     String leftSeq;
     String rightSeq;
-    String leftLen;
-    String rightLen;
+    int leftLen;
+    int rightLen;
     String leftStart;
     String rightStart;
     String leftTm;
@@ -38,22 +38,25 @@ public class Primer3Object {
 
 
     public Primer3Object createPrimer3Object(String line, String tag, Primer3Object pr) throws Exception{
-        String delims = "[ ]+";
-        String prObj[] = line.split(delims, -1);
-        String start = prObj[2];
-        String len = prObj[3];
-        String tm = prObj[4];
-        String gc = prObj[5];
-        String any = prObj[6];
-        String dash3 = prObj[7];
-        String seq = prObj[8];
+        String delims = "[  ]+";
+        String primerStr[] = line.split("PRIMER", -1);
+        String prObj[] = primerStr[1].split(delims, -1);
+        String start = prObj[1];
+        String len = prObj[2];
+        String tm = prObj[3];
+        String gc = prObj[4];
+        String any = prObj[5];
+        String dash3 = prObj[6];
+        String seq = prObj[7];
+
+        System.out.println(prObj);
 
         if(tag.equals("left")){
             pr.setLeftSeq(seq);
             pr.setLeft3(dash3);
             pr.setLeftAny(any);
             pr.setLeftGc(gc);
-            pr.setLeftLen(len);
+            pr.setLeftLen(Integer.parseInt(len));
             pr.setLeftTm(tm);
             pr.setLeftStart(start);
         }else if(tag.equals("right")){
@@ -61,7 +64,7 @@ public class Primer3Object {
             pr.setRight3(dash3);
             pr.setRightAny(any);
             pr.setRightGc(gc);
-            pr.setRightLen(len);
+            pr.setRightLen(Integer.parseInt(len));
             pr.setRightTm(tm);
             pr.setRightStart(start);
         }
@@ -70,21 +73,21 @@ public class Primer3Object {
     }
 
 
-    public List<Primer3Object> getPrimer3Objects(String inputFileName, String primer3OpDir, String blatInpDir, String blatOpDir, String isPcrInpDir, String isPcrOpDir) throws Exception{
+    public List<Primer3Object> getPrimer3Objects(String inputFileName, String primer3OpDir, String blatInpDir, String blatOpDir, String isPcrOpDir, String dataDir) throws Exception{
 
-        List<Primer3Object> primer3Objects = createPrimerObjsList(inputFileName, primer3OpDir);
-        primer3Objects = addIdsToPrimers(inputFileName, primer3Objects, blatInpDir);
-        primer3Objects = new BlatPsl().addBlatResultsToPrimers(inputFileName, blatOpDir, primer3Objects);
-        primer3Objects = new InsilicoPCRObject().addInsilicoResultsToPrimers(inputFileName, isPcrOpDir, primer3Objects);
+        List<Primer3Object> primer3Objects = createPrimerObjsList(inputFileName, dataDir, primer3OpDir);
+        primer3Objects = addIdsToPrimers(inputFileName, primer3Objects, blatInpDir, dataDir);
+        primer3Objects = new BlatPsl().addBlatResultsToPrimers(inputFileName, blatOpDir, primer3Objects, dataDir);
+        primer3Objects = new InsilicoPCRObject().addInsilicoResultsToPrimers(inputFileName, isPcrOpDir, primer3Objects, dataDir);
+
         return primer3Objects;
     }
 
 
-
-    private List<Primer3Object> createPrimerObjsList(String inputFileName, String primer3OpDir) throws Exception{
+    private List<Primer3Object> createPrimerObjsList(String inputFileName, String folder, String primer3OpDir) throws Exception{
         List<Primer3Object> primer3Objects = new ArrayList<Primer3Object>();
         String fileName=inputFileName;
-        File primerInputFile = new File(primer3OpDir+fileName);
+        File primerInputFile = new File(folder+primer3OpDir+fileName);
         InputStream fileStream = new FileInputStream(primerInputFile);
         BufferedReader reader = new BufferedReader(new InputStreamReader(fileStream));
 
@@ -112,11 +115,11 @@ public class Primer3Object {
 
 
 
-    private List<Primer3Object> addIdsToPrimers(String inputFileName, List<Primer3Object> primer3Objects, String blatInpDir) throws Exception {
+    private List<Primer3Object> addIdsToPrimers(String inputFileName, List<Primer3Object> primer3Objects, String blatInpDir, String dataDir) throws Exception {
 
         List<Primer3Object> newPrimerObjects = new ArrayList<Primer3Object>();
         String fileName=inputFileName;
-        File blatInputFile = new File(blatInpDir+fileName);
+        File blatInputFile = new File(dataDir+blatInpDir+fileName);
         InputStream fileStream = new FileInputStream(blatInputFile);
         BufferedReader reader = new BufferedReader(new InputStreamReader(fileStream));
 
@@ -187,19 +190,19 @@ public class Primer3Object {
         this.rightSeq = rightSeq;
     }
 
-    public String getLeftLen() {
+    public int getLeftLen() {
         return leftLen;
     }
 
-    public void setLeftLen(String leftLen) {
+    public void setLeftLen(int leftLen) {
         this.leftLen = leftLen;
     }
 
-    public String getRightLen() {
+    public int getRightLen() {
         return rightLen;
     }
 
-    public void setRightLen(String rightLen) {
+    public void setRightLen(int rightLen) {
         this.rightLen = rightLen;
     }
 
