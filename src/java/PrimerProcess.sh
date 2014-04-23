@@ -40,12 +40,12 @@ fi
 
 
 BLAT_FOLDER="/data"
-BLAT_DB="/data/blatDb/blat2BitDatabase"
+BLAT_DB="/data/blatDb"
 BLAT_INPUT=$BLAT_FOLDER"/blatInp/"$PRIMER_FILE
 
 IS_PCR_INPUT="/data/isPcrInp/"$PRIMER_FILE
 IS_PCR_OUTPUT="/data/isPcrOp/"$PRIMER_FILE
-IS_PCR_DB="/data/blatDb/blat2BitDatabase"
+IS_PCR_DB="/data/blatDb"
 
 
 if [ -e $BLAT_INPUT ]
