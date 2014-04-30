@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -55,7 +56,7 @@ public class PrimerCreateController implements Controller {
         Map<UcscGene, UcscGeneExon> geneExonVariantMap = prDao.getGeneExonVariantMap(geneList, vList);
         AmpliconSeq ampliconObj = new AmpliconSeq().createAmpliconObject(vList.get(0));
         int varrelPos = vList.get(0).getVstart()-ampliconObj.getAmpliconStart()+2;
-
+        List<Variation> variantsWithinAmpliconObjList = prDao.getVariantsWithinRange(ampliconObj.getChr(), ampliconObj.getAmpliconStart(), ampliconObj.getAmpliconEnd());
         String inputFileName = writePrimerInputFile(vList, ampliconObj);
         String response = runProcessBuilder(inputFileName);
 
@@ -76,7 +77,7 @@ public class PrimerCreateController implements Controller {
 
         }else{
             List<Primer3Object> primer3Primers = new Primer3Object().getPrimer3Objects(inputFileName, primer3OpDir, blatInpDir, blatOpDir, insilicoPcrOpDir, dataDir);
-            String prStats = createFiles(primer3Primers, response, chr, startPos, stopPos, dataDir, geneList, geneExonVariantMap, vList, ampliconObj, varrelPos);
+            String prStats = createFiles(primer3Primers, response, chr, startPos, stopPos, dataDir, geneList, geneExonVariantMap, vList, ampliconObj, varrelPos, variantsWithinAmpliconObjList);
             String outputs[] = prStats.split("FILEName\\:", -1);
             String filePath = outputs[1];
 
@@ -98,7 +99,7 @@ public class PrimerCreateController implements Controller {
 
 
 
-    private String createFiles(List<Primer3Object> primer3Primers, String response, String chr, int startPos, int stopPos, String dataDir, List<UcscGene> geneList, Map<UcscGene, UcscGeneExon> geneExonVariantMap, List<Variation> vList, AmpliconSeq ampliconObj, int varrelPos) throws Exception {
+    private String createFiles(List<Primer3Object> primer3Primers, String response, String chr, int startPos, int stopPos, String dataDir, List<UcscGene> geneList, Map<UcscGene, UcscGeneExon> geneExonVariantMap, List<Variation> vList, AmpliconSeq ampliconObj, int varrelPos, List<Variation> variantsWithinAmpliconObjList) throws Exception {
 
         String path=chr+"_"+startPos+"_"+stopPos;
         File filePath = new File(dataDir+path+".detail.html");
@@ -159,8 +160,8 @@ public class PrimerCreateController implements Controller {
                     int rightPrStart = pr.getInsilicoPCRObjectList().get(0).getPrimerSeqEnd()-pr.getRightLen();
                     int rightPrEnd = pr.getInsilicoPCRObjectList().get(0).getPrimerSeqEnd();
 
-                    List<Variation> leftVariantsList = prDao.getVariantsWithinRange(chr, leftPrStart, leftPrEnd);
-                    List<Variation> rightVariantsList = prDao.getVariantsWithinRange(chr, rightPrStart, rightPrEnd);
+                    List<Variation> leftVariantsList = findInsertionsInPrimers(chr, leftPrStart, leftPrEnd, variantsWithinAmpliconObjList);
+                    List<Variation> rightVariantsList = findInsertionsInPrimers(chr, rightPrStart, rightPrEnd, variantsWithinAmpliconObjList);
 
                     for(Variation v : leftVariantsList){
                         if(v.getvClass().equals("insertion")){
@@ -243,7 +244,19 @@ public class PrimerCreateController implements Controller {
 
     }
 
+    private List<Variation> findInsertionsInPrimers(String chr, int prStart, int prEnd, List<Variation> variantsWithinAmpliconObjList) {
 
+        List<Variation> varList = new ArrayList<Variation>();
+        for(Variation v : variantsWithinAmpliconObjList){
+            if(v.getvClass().equals("insertion")){
+                if(v.getVstop()>=prStart && v.getVstart()<=prEnd){
+                    varList.add(v);
+                }
+            }
+        }
+
+        return varList;
+    }
 
 
     private int writeFile(Primer3Object pr, PrintWriter fileWriter, String chr, int startPos, int stopPos) {

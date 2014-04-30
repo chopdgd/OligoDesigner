@@ -3,15 +3,7 @@
 SCRIPT_LOC="/data/"
 PRIMER3_HOME="/data"
 
-FIND_LATEST_FILE="ls -tr "$PRIMER3_HOME"/primer3Inp/| tail -n 1"
-
-echo $FIND_LATEST_FILE
-
-#PRIMER_FILE=`$FIND_LATEST_FILE`
-
-PRIMER_FILE=`ls -tr $PRIMER3_HOME/primer3Inp/| tail -n 1`
-
-echo $PRIMER_FILE
+PRIMER_FILE=$1
 
 PRIMER_FILE_LOC=`find $PRIMER3_HOME -iname $PRIMER_FILE`
 
@@ -48,12 +40,12 @@ fi
 
 
 BLAT_FOLDER="/data"
-BLAT_DB="/data/blatDb/blat2BitDatabase"
+BLAT_DB="/data/blatDb"
 BLAT_INPUT=$BLAT_FOLDER"/blatInp/"$PRIMER_FILE
 
 IS_PCR_INPUT="/data/isPcrInp/"$PRIMER_FILE
 IS_PCR_OUTPUT="/data/isPcrOp/"$PRIMER_FILE
-IS_PCR_DB="/data/blatDb/blat2BitDatabase"
+IS_PCR_DB="/data/blatDb"
 
 
 if [ -e $BLAT_INPUT ]

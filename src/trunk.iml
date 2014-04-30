@@ -22,6 +22,16 @@
         </fileset>
       </configuration>
     </facet>
+    <facet type="web" name="Web2">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$HOME_DIR$/PrimerDesigner/trunk/.idea/compiler.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$HOME_DIR$/PrimerDesigner/trunk/.idea" relative="/WEB-INF" />
+        </webroots>
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
     <output url="file://$HOME_DIR$/PrimerDesigner/trunk/dist/production" />
