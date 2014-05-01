@@ -60,7 +60,7 @@ public class InsilicoPCRObject {
 
                 String delims = "[ ]+";
                 String isPcrObjLine[] = line.split(delims, -1);
-                String queryDelims = "[>:+ ]+";
+                String queryDelims = "[>:+ -]+";
                 String query[] = isPcrObjLine[0].split(queryDelims, -1);
                 String chr = query[1];
                 String primerStart = query[2];
