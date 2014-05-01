@@ -133,7 +133,7 @@
 
 
                 <tr>
-                    <td><br/>Results:</td>
+                    <td><br/>Download Results:</td>
                 </tr>
 
                 <%
@@ -141,11 +141,11 @@
                 %>
                 <tr>
                     <td>
-                        <a href="/dgdweb/primer/FileDownload.html?file=<%=filepath+"_soft.xls"%>">Your SOFT File is Here!</a>
+                        <a href="/dgdweb/primer/FileDownload.html?file=<%=filepath+"_soft.xls"%>">SOFT Excel File</a>
                         <br/>
-                        <a href="/dgdweb/primer/FileDownload.html?file=<%=filepath+".detail.html"%>">Get Full Report Here!</a>
+                        <a href="/dgdweb/primer/FileDownload.html?file=<%=filepath+".detail.html"%>">Full Report</a>
                         <br/>
-                        <a href="/dgdweb/primer/FileDownload.html?file=<%=filepath+"_secondary.xls"%>">Your Secondary File is Here!</a>
+                        <a href="/dgdweb/primer/FileDownload.html?file=<%=filepath+"_secondary.xls"%>">Secondary Excel File</a>
                     </td>
                 </tr>
                 <tr>
