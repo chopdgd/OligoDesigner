@@ -37,8 +37,6 @@ fi
 
 
 
-
-
 BLAT_FOLDER="/data"
 BLAT_DB="/data/blatDb"
 BLAT_INPUT=$BLAT_FOLDER"/blatInp/"$PRIMER_FILE
@@ -46,6 +44,8 @@ BLAT_INPUT=$BLAT_FOLDER"/blatInp/"$PRIMER_FILE
 IS_PCR_INPUT="/data/isPcrInp/"$PRIMER_FILE
 IS_PCR_OUTPUT="/data/isPcrOp/"$PRIMER_FILE
 IS_PCR_DB="/data/blatDb"
+
+GFPCR_CMD="/usr/local/isPcr/gfPcr"
 
 
 if [ -e $BLAT_INPUT ]
@@ -196,7 +196,7 @@ echo "<h1>Blat Result</h1><hr>"
 
 	echo "<h1>Running insilico PCR</h1><hr>"
 
-	gfPcr localhost 17779 $IS_PCR_DB $IS_PCR_INPUT  $IS_PCR_OUTPUT
+	$GFPCR_CMD localhost 17779 $IS_PCR_DB $IS_PCR_INPUT  $IS_PCR_OUTPUT
 	
 	cat $IS_PCR_OUTPUT | while read line
 	do

@@ -89,7 +89,7 @@
 
             <h3>DGD Primer Designer Report</h3>
 
-            <table>
+            <table id="queryInfo1">
                 <tr>
                     <td>QueryRange:<%=chr%>:<%=start%>-<%=stop%></td>
                 </tr>
@@ -153,7 +153,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <table border=1 bgcolor="#faebd7" width=700 height=200 align=center>
+                        <table id="primerSummaryTable1" border=1 bgcolor="#faebd7" width=700 height=200 align=center>
                             <tr height="30">
                                 <td>Left Primer</td>
                                 <td>Right primer</td>
@@ -229,7 +229,7 @@
                 <%
                     }else{
                 %>
-                <tr>
+                <tr id="noPrimers1">
                     <td>
                         NO PRIMERS FOUND.
                     </td>

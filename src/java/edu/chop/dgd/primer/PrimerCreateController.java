@@ -111,14 +111,15 @@ public class PrimerCreateController implements Controller {
         PrintWriter softWriter = new PrintWriter(softFile);
         PrintWriter secondaryFileWriter = new PrintWriter(secondaryFile);
 
-        softWriter.print("Primer Name\tHuman Genome Build\tQuery Condition\tIn-Silico PCR\tprimer ID\tstart\tlen\ttm\tgc%\tany\t3'\tseq\tproductSize\tSNPs found\tChrom\tPrimer Start\tPrimer End\tfolder Id\tsnp check ID\tBLAT Percentage Identity\n");
-        secondaryFileWriter.print("Primer Name\tHuman Genome Build\tQuery Condition\tIn-Silico PCR\tprimer ID\tstart\tlen\ttm\tgc%\tany\t3'\tseq\tproductSize\tSNPs found\tChrom\tPrimer Start\tPrimer End\tfolder Id\tsnp check ID\tBLAT Percentage Identity\n");
+        softWriter.print("Primer Name\tHuman Genome Build\tQuery Condition\tIn-Silico PCR\tprimer ID\tstart\tlen\ttm\tgc%\tany\t3'\tseq\tproductSize\tSNPs found\tChrom\tAmplicon Start\tAmplicon End\tfolder Id\tsnp check ID\tBLAT Percentage Identity\n");
+        secondaryFileWriter.print("Primer Name\tHuman Genome Build\tQuery Condition\tIn-Silico PCR\tprimer ID\tstart\tlen\ttm\tgc%\tany\t3'\tseq\tproductSize\tSNPs found\tChrom\tAmplicon Start\tAmplicon End\tfolder Id\tsnp check ID\tBLAT Percentage Identity\n");
 
         String primers="";
         int insilicoFlag = 0;
         int leftPrimerBlatFlag = 0;
         int rightPrimerBlatFlag = 0;
         int softFileFlag = 0; int secondaryFileFlag = 0; int finalFlag = 0;
+
 
         for(Primer3Object pr : primer3Primers){
 
@@ -259,40 +260,22 @@ public class PrimerCreateController implements Controller {
     }
 
 
-    private int writeFile(Primer3Object pr, PrintWriter fileWriter, String chr, int startPos, int stopPos) {
+    private int writeFile(Primer3Object pr, PrintWriter fileWriter, String chr, int startPos, int stopPos) throws Exception {
 
 
         fileWriter.print(pr.getLeftPrimerId()+"\thg19\t"+chr+":"+startPos+"_"+stopPos+"\tPASS\t"+chr+":"+startPos+"_"+stopPos+"F\t"+pr.getLeftStart()+"\t"+pr.getLeftLen()+"\t"+pr.getLeftTm()+"\t"+pr.getLeftGc()+"\t"+pr.getLeftAny()+"\t"+pr.getLeft3()+"\t"+pr.getLeftSeq()+"\t");
 
-         if(pr.getInsilicoPCRObjectList()!=null && pr.getInsilicoPCRObjectList().size()>0){
-
-            for(InsilicoPCRObject isPcr : pr.getInsilicoPCRObjectList()){
-                fileWriter.print(isPcr.getSize() + "/");
-            }
-            fileWriter.print("\tN\t");
-            for(InsilicoPCRObject isPcr2 : pr.getInsilicoPCRObjectList()){
-                fileWriter.print(isPcr2.getChr() + "/");
-            }
-            fileWriter.print("\t");
-            for(InsilicoPCRObject isPcr3 : pr.getInsilicoPCRObjectList()){
-                fileWriter.print(isPcr3.getPrimerSeqStart() + "/");
-            }
-            fileWriter.print("\t");
-            for(InsilicoPCRObject isPcr4 : pr.getInsilicoPCRObjectList()){
-                fileWriter.print(isPcr4.getPrimerSeqEnd() + "/");
-            }
-
-        }else{
-                fileWriter.print("NA\tN\tNA\tNA\tNA");
-        }
+        writeInsilicoPCRResultsInFile(fileWriter, pr);
 
         fileWriter.print("\tNA\tNA\t");
 
         if(pr.getLeftPrimerBlatList()!=null){
 
+            String bls="";
             for(BlatPsl bl : pr.getLeftPrimerBlatList()){
-                fileWriter.print(bl.getPercentageIdentity()+"/");
+                bls+=bl.getPercentageIdentity()+"/";
             }
+            fileWriter.print(bls.substring(0, (bls.length()-1)));
 
         }else{
 
@@ -301,45 +284,75 @@ public class PrimerCreateController implements Controller {
         fileWriter.print("\n");
 
 
-        fileWriter.print(pr.getRightPrimerId()+"\thg19\t"+chr+":"+startPos+"_"+stopPos+"\tPASS\t"+chr+":"+startPos+"_"+stopPos+"F\t"+pr.getRightStart()+"\t"+pr.getRightLen()+"\t"+pr.getRightTm()+"\t"+pr.getRightGc()+"\t"+pr.getRightAny()+"\t"+pr.getRight3()+"\t"+pr.getRightSeq()+"\t");
 
-        if(pr.getInsilicoPCRObjectList()!=null && pr.getInsilicoPCRObjectList().size()>0){
 
-            for(InsilicoPCRObject isPcr : pr.getInsilicoPCRObjectList()){
-                fileWriter.print(isPcr.getSize() + "/");
-            }
-            fileWriter.print("\tN\t");
-            for(InsilicoPCRObject isPcr2 : pr.getInsilicoPCRObjectList()){
-                fileWriter.print(isPcr2.getChr() + "/");
-            }
-            fileWriter.print("\t");
-            for(InsilicoPCRObject isPcr3 : pr.getInsilicoPCRObjectList()){
-                fileWriter.print(isPcr3.getPrimerSeqStart() + "/");
-            }
-            fileWriter.print("\t");
-            for(InsilicoPCRObject isPcr4 : pr.getInsilicoPCRObjectList()){
-                fileWriter.print(isPcr4.getPrimerSeqEnd() + "/");
-            }
 
-        }else{
-            fileWriter.print("NA\tN\tNA\tNA\tNA");
-        }
+        fileWriter.print(pr.getRightPrimerId()+"\thg19\t"+chr+":"+startPos+"_"+stopPos+"\tPASS\t"+chr+":"+startPos+"_"+stopPos+"R\t"+pr.getRightStart()+"\t"+pr.getRightLen()+"\t"+pr.getRightTm()+"\t"+pr.getRightGc()+"\t"+pr.getRightAny()+"\t"+pr.getRight3()+"\t"+pr.getRightSeq()+"\t");
+
+        writeInsilicoPCRResultsInFile(fileWriter, pr);
 
         fileWriter.print("\tNA\tNA\t");
 
         if(pr.getRightPrimerBlatList()!=null){
 
+            String bls="";
             for(BlatPsl bl : pr.getRightPrimerBlatList()){
-                fileWriter.print(bl.getPercentageIdentity()+"/");
+                bls+=bl.getPercentageIdentity()+"/";
             }
-
+            fileWriter.print(bls.substring(0, (bls.length()-1)));
 
         }else{
             fileWriter.print("\tNA\tNA\tNA");
         }
         fileWriter.print("\n");
 
+
+
         return 1;
+
+    }
+
+
+
+
+    public void writeInsilicoPCRResultsInFile(PrintWriter fileWriter, Primer3Object pr) throws Exception{
+
+
+
+        if(pr.getInsilicoPCRObjectList()!=null && pr.getInsilicoPCRObjectList().size()>0){
+
+            String isPcrs="";
+            for(InsilicoPCRObject isPcr : pr.getInsilicoPCRObjectList()){
+                isPcrs+=isPcr.getSize().replace("bp","") + "/";
+
+            }
+            fileWriter.print(isPcrs.substring(0, (isPcrs.length()-1)));
+            fileWriter.print("\tN\t");
+
+            String isPcr2s="";
+            for(InsilicoPCRObject isPcr2 : pr.getInsilicoPCRObjectList()){
+                isPcr2s+=isPcr2.getChr().replace("chr","") + "/";
+            }
+            fileWriter.print(isPcr2s.substring(0, (isPcr2s.length()-1)));
+            fileWriter.print("\t");
+
+            String isPcr3s="";
+            for(InsilicoPCRObject isPcr3 : pr.getInsilicoPCRObjectList()){
+                isPcr3s+=isPcr3.getPrimerSeqStart() + "/";
+            }
+            fileWriter.print(isPcr3s.substring(0, (isPcr3s.length()-1)));
+            fileWriter.print("\t");
+
+            String isPcr4s="";
+            for(InsilicoPCRObject isPcr4 : pr.getInsilicoPCRObjectList()){
+                isPcr4s+=isPcr4.getPrimerSeqEnd() + "/";
+            }
+            fileWriter.print(isPcr4s.substring(0, (isPcr4s.length()-1)));
+
+        }else{
+            fileWriter.print("NA\tN\tNA\tNA\tNA");
+        }
+
     }
 
 
