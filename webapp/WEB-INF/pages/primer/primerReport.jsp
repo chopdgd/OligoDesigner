@@ -10,9 +10,9 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Map" %>
 <%
-    String pageTitle = "Division of Genomic Diagnstics";
-    String headContent = "Division of Genomic Diagnstics";
-    String pageDescription = "Division of Genomic Diagnstics";
+    String pageTitle = "Division of Genomics Diagnostics Primer Design Application";
+    String headContent = "Division of Genomics Diagnostics Primer Design Application";
+    String pageDescription = "Division of Genomics Diagnostics Primer Design Application";
     String message = (String) request.getAttribute("message");
     int speciesTypeKey = 1;
     Chromosome chrObj = new Chromosome();
@@ -63,7 +63,7 @@
           <meta charset="utf-8">
           <meta http-equiv="X-UA-Compatible" content="IE=edge">
           <meta name="viewport" content="width=device-width, initial-scale=1">
-          <title>Bootstrap 101 Template</title>
+          <title><%=pageTitle%></title>
 
           <!-- Bootstrap -->
           <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -89,7 +89,7 @@
 
             <h3>DGD Primer Designer Report</h3>
 
-            <table>
+            <table id="queryInfo1">
                 <tr>
                     <td>QueryRange:<%=chr%>:<%=start%>-<%=stop%></td>
                 </tr>
@@ -133,7 +133,7 @@
 
 
                 <tr>
-                    <td><br/>Results:</td>
+                    <td><br/>Download Results:</td>
                 </tr>
 
                 <%
@@ -141,11 +141,11 @@
                 %>
                 <tr>
                     <td>
-                        <a href="/dgdweb/primer/FileDownload.html?file=<%=filepath+"_soft.xls"%>">Your SOFT File is Here!</a>
+                        <a href="/dgdweb/primer/FileDownload.html?file=<%=filepath+"_soft.xls"%>">SOFT Excel File</a>
                         <br/>
-                        <a href="/dgdweb/primer/FileDownload.html?file=<%=filepath+".detail.html"%>">Get Full Report Here!</a>
+                        <a href="/dgdweb/primer/FileDownload.html?file=<%=filepath+".detail.html"%>">Full Report</a>
                         <br/>
-                        <a href="/dgdweb/primer/FileDownload.html?file=<%=filepath+"_secondary.xls"%>">Your Secondary File is Here!</a>
+                        <a href="/dgdweb/primer/FileDownload.html?file=<%=filepath+"_secondary.xls"%>">Secondary Excel File</a>
                     </td>
                 </tr>
                 <tr>
@@ -153,7 +153,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <table border=1 bgcolor="#faebd7" width=700 height=200 align=center>
+                        <table id="primerSummaryTable1" border=1 bgcolor="#faebd7" width=700 height=200 align=center>
                             <tr height="30">
                                 <td>Left Primer</td>
                                 <td>Right primer</td>
@@ -229,7 +229,7 @@
                 <%
                     }else{
                 %>
-                <tr>
+                <tr id="noPrimers1">
                     <td>
                         NO PRIMERS FOUND.
                     </td>

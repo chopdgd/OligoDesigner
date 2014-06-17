@@ -13,9 +13,9 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 <%
-    String pageTitle = "Division of Genomic Diagnstics";
-    String headContent = "Division of Genomic Diagnstics";
-    String pageDescription = "Division of Genomic Diagnstics";
+    String pageTitle = "Division of Genomics Diagnostics Primer Design Application";
+    String headContent = "Division of Genomics Diagnostics Primer Design Application";
+    String pageDescription = "Division of Genomics Diagnostics Primer Design Application";
     String message = (String) request.getAttribute("message");
     int speciesTypeKey = 1;
     Chromosome chrObj = new Chromosome();
@@ -39,7 +39,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title><%=pageTitle%></title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">

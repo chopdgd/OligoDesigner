@@ -1,0 +1,19 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0" is_locked="false">
+    <option name="myName" value="Project Default" />
+    <option name="myLocal" value="false" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="4">
+            <item index="0" class="java.lang.String" itemvalue="codetype" />
+            <item index="1" class="java.lang.String" itemvalue="classid" />
+            <item index="2" class="java.lang.String" itemvalue="archive" />
+            <item index="3" class="java.lang.String" itemvalue="alt" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+  </profile>
+</component>

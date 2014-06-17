@@ -47,8 +47,7 @@
 
     <!-- Compile all of our class files -->
     <target name="build" depends="prepare" description="Compile main source tree java files and build war file">
-        <javac destdir="${build.dir}" target="1.6" debug="true"
-               deprecation="false" optimize="false" failonerror="true">
+        <javac destdir="${build.dir}" target="1.7" debug="true" deprecation="false" optimize="false" failonerror="true">
             <src path="${src.dir}"/>
             <classpath refid="master-classpath"/>
         </javac>
@@ -89,11 +88,9 @@
     </target>
 
     <target name="buildProdNoJavaDoc" depends="prepare" description="Build prod without running javadoc">
-        <javac destdir="${build.dir}" target="1.6" debug="true"
-               deprecation="false" optimize="false" failonerror="true">
+        <javac destdir="${build.dir}" target="1.7" includeantruntime="yes" debug="true" deprecation="false" optimize="true" failonerror="true">
             <src path="${src.dir}"/>
             <classpath refid="master-classpath"/>
-
         </javac>
         <!--        <copy todir="${build.dir}" file="${src.dir}/log4j.properties"/> -->
         <jar destfile="${dist.dir}/${name}.jar">
