@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
@@ -11,12 +12,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
+
 /**
  * Created by jayaramanp on 3/31/14.
  */
 
 
-public class FileDownloadController {
+public class FileDownloadController extends HttpServlet{
 
     /**
      * Size of a byte buffer to read/write file
@@ -48,9 +50,8 @@ public class FileDownloadController {
         String fileDownload = request.getParameter("file");
 
         // get absolute path of the application
+
         ServletContext context = request.getServletContext();
-        String appPath = context.getRealPath("");
-        System.out.println("appPath = " + appPath);
 
         // construct the complete absolute path of the file
         String fullPath = dataDir+fileDownload;
@@ -155,5 +156,7 @@ public class FileDownloadController {
     public void setPrimerProcessScriptDir(String primerProcessScriptDir) {
         FileDownloadController.primerProcessScriptDir = primerProcessScriptDir;
     }
+
+
 }
 

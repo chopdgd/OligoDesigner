@@ -1,0 +1,2296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="dgdweb:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ac191350-69f3-4148-855b-8f2b1bf701ca" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/upload/wjhk.jupload.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/FileUploadController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileValidator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligoHomeController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/SafariDriverTests.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/UploadedFile.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/fileUpload.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/home.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/upload/parseRequest.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/upload/uploadError.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/commons-collections-3.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/commons-dbcp.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/commons-logging-1.0.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/commons-net-2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/commons-pool.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/dgdcore_1.1.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/hamcrest-core-1.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/httpclient-4.2.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/httpcore-4.2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jaxen-1.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jsp-api.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/junit-4.11.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/mysql-connector-java-5.1.28-bin.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/servlet-api.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-aop-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-aspects-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-beans-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-context-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-context-support-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-core-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-expression-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-framework-bom-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-instrument-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-instrument-tomcat-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-jdbc-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-orm-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-oxm-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-test-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-tx-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-web-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-webmvc-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-webmvc-portlet-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-websocket-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/xom-1.2.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/WEB-INF/applicationContext.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/WEB-INF/lib/dgdweb.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/WEB-INF/lib/servlet-api.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/WEB-INF/pages/hello.jsp" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build_dgd.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/resources/images/dgd.png" afterPath="$PROJECT_DIR$/webapp/resources/images/dgd.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/lib/dgdcore_1.1.3.jar" afterPath="$PROJECT_DIR$/webapp/WEB-INF/lib/dgdcore_1.1.3.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/BlatPsl.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/BlatPsl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/BlatPsl.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/BlatPsl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/Chromosome.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/Chromosome.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/Chromosome.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/Chromosome.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/DGDHandlerInterceptor.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/DGDHandlerInterceptor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/DGDHandlerInterceptor.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/DGDHandlerInterceptor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/DisplayMapper.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/DisplayMapper.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/DisplayMapper.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/DisplayMapper.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileDownloadController.java" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileDownloadController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/HttpRequestFacade.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/HttpRequestFacade.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/HttpRequestFacade.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/HttpRequestFacade.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/InsilicoPCRObject.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/InsilicoPCRObject.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/InsilicoPCRObject.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/InsilicoPCRObject.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/InsilicoPCRObject.java" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/InsilicoPCRObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/Primer3Object.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/Primer3Object.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/Primer3Object.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/Primer3Object.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerCreateController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerCreateController.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerCreateController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerCreateController.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerCreateController.java" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerCreateController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerHomeController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerHomeController.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerHomeController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerHomeController.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/PrimerProcess.sh" afterPath="$PROJECT_DIR$/src/java/PrimerProcess.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/allclasses-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/allclasses-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/allclasses-noframe.html" afterPath="$PROJECT_DIR$/docs/dgdweb/allclasses-noframe.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/constant-values.html" afterPath="$PROJECT_DIR$/docs/dgdweb/constant-values.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/deprecated-list.html" afterPath="$PROJECT_DIR$/docs/dgdweb/deprecated-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/help-doc.html" afterPath="$PROJECT_DIR$/docs/dgdweb/help-doc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/pages/primer/home.jsp" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/primer/home.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/index-all.html" afterPath="$PROJECT_DIR$/docs/dgdweb/index-all.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/index.html" afterPath="$PROJECT_DIR$/docs/dgdweb/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml.prod" afterPath="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml.prod" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/overview-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/overview-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/overview-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/overview-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/overview-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/overview-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/package-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/package-list" afterPath="$PROJECT_DIR$/docs/dgdweb/package-list" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/package-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-use.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-use.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/package-use.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/package-use.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-use.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-use.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/pages/primer/primerReport.jsp" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/primer/primerReport.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trunk.iml" afterPath="$PROJECT_DIR$/src/trunk.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/webapp/WEB-INF/web.xml" />
+    </list>
+    <ignored path="trunk.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/trunk$home_jsp.coverage" NAME="home.jsp Coverage Results" MODIFIED="1401384163019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/SafariDriverTests.java" line="47" class="edu.chop.dgd.SafariDriverTests" package="edu.chop.dgd">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/SafariDriverTests.java" line="59" class="edu.chop.dgd.SafariDriverTests" package="edu.chop.dgd">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/SafariDriverTests.java" line="53" class="edu.chop.dgd.SafariDriverTests" package="edu.chop.dgd">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/FileUploadController.java" line="0" class="FileUploadController.java" package="">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest2_mod.jsp" line="155" class="parseRequest2_mod.jsp" package="$PROJECT_DIR$/webapp/upload">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest2_mod.jsp" line="152" class="parseRequest2_mod.jsp" package="$PROJECT_DIR$/webapp/upload">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest2_mod.jsp" line="147" class="parseRequest2_mod.jsp" package="$PROJECT_DIR$/webapp/upload">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest2_mod.jsp" line="68" class="parseRequest2_mod.jsp" package="$PROJECT_DIR$/webapp/upload">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/FileUploadController.java" line="17" class="edu.chop.dgd.oligo.FileUploadController" package="edu.chop.dgd.oligo">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="171" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="65" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="118" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="132" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="163" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="193" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="125" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="147" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="139" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="75" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="182" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/InsilicoPCRObject.java" line="64" class="edu.chop.dgd.utils.InsilicoPCRObject" package="edu.chop.dgd.utils">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/InsilicoPCRObject.java" line="66" class="edu.chop.dgd.utils.InsilicoPCRObject" package="edu.chop.dgd.utils">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/InsilicoPCRObject.java" line="68" class="edu.chop.dgd.utils.InsilicoPCRObject" package="edu.chop.dgd.utils">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="trunk" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="home.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/home.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="46" column="0" selection-start="1275" selection-end="1275" vertical-scroll-proportion="-11.958333" vertical-offset="403" max-vertical-offset="1950">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parseRequest.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="182" column="0" selection-start="7110" selection-end="7110" vertical-scroll-proportion="0.0" vertical-offset="2730" max-vertical-offset="3795">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileUploadController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/FileUploadController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="0" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="465">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InsilicoPCRObject.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/InsilicoPCRObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="0" selection-start="1170" selection-end="1170" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="2745">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build_dgd.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build_dgd.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="13" selection-start="1755" selection-end="1755" vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="2250">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build_mod.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build_mod.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="13" selection-start="1858" selection-end="1858" vertical-scroll-proportion="0.26228142" vertical-offset="405" max-vertical-offset="1680">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HttpRequestFacade.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/web/HttpRequestFacade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="103" column="21" selection-start="2733" selection-end="2733" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1635">
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#647#648#0" expanded="false" />
+                <element signature="e#682#683#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PrimerCreateController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerCreateController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="414" column="106" selection-start="16216" selection-end="16216" vertical-scroll-proportion="0.0" vertical-offset="1500" max-vertical-offset="7095">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileDownloadController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileDownloadController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="40" selection-start="1497" selection-end="1497" vertical-scroll-proportion="0.0" vertical-offset="411" max-vertical-offset="1890">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OligoHomeController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligoHomeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/ucsc.xml" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/web/DGDHandlerInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerXOMDeconstructor.java" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/primer/AmpliconXomAnalyzer.java" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerReport.java" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileDownloadController/java.java" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/BlatPsl.java" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/Primer3Object.java" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/primer/home.jsp" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/InsilicoPCRObject.java" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/SeleniumTests.java" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/primer/primerReport.jsp" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/SafariDriverTests.java" />
+        <option value="$PROJECT_DIR$/src/java/PrimerProcess.sh" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerCreateController.java" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileUpload.java" />
+        <option value="$PROJECT_DIR$/webapp/bulkPositionUpload/UploadFile.jsp" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/uploadFile.jsp" />
+        <option value="$PROJECT_DIR$/src/java/FileUploadHandler.java" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/fileuploader.jsp" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileUploadHandler.java" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/UploadFile.java" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/UploadedFile.java" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/oligoReport.jsp" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml.prod" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerHomeController.java" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileValidator.java" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileUploadController.java" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligoHomeController.java" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
+        <option value="$PROJECT_DIR$/webapp/upload/parseRequest2_mod.jsp" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/home.jsp" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/FileUploadController.java" />
+        <option value="$PROJECT_DIR$/webapp/upload/parseRequest.jsp" />
+        <option value="$PROJECT_DIR$/build2.xml" />
+        <option value="$PROJECT_DIR$/build_new.xml" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/web/HttpRequestFacade.java" />
+        <option value="$PROJECT_DIR$/build.xml" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileDownloadController.java" />
+        <option value="$PROJECT_DIR$/build_mod.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="2560" />
+    <option name="height" value="1321" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Spring Model</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SpringJavaAutowiringInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dgd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dgd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dgd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dgd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="primer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dgd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oligo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="options.lastSelected" value="preferences.sourceCode" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/build_mod.xml" />
+    <property name="FullScreen" value="false" />
+    <property name="SearchEverywhereHistory" value="" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="true" />
+    <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="build" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.chop.dgd.oligo" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webapp/upload" />
+      <recent name="$PROJECT_DIR$/webapp/files" />
+      <recent name="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo" />
+      <recent name="$PROJECT_DIR$/webapp/WEB-INF" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="edu.chop.dgd.oligo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webapp" />
+      <recent name="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo" />
+      <recent name="$PROJECT_DIR$/webapp/WEB-INF/files" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Dgdweb_tomcat">
+    <configuration default="false" name="SafariDriverTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="edu.chop.dgd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="trunk" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="edu.chop.dgd" />
+      <option name="MAIN_CLASS_NAME" value="edu.chop.dgd.SafariDriverTests" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="home.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 7.0.50" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/WEB-INF/pages/oligo/home.jsp" />
+      <deployment>
+        <artifact name="dgdweb:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="home_jsp_trunk" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="61068" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="AntTarget" enabled="false" antfile="file://$PROJECT_DIR$/build.xml" target="buildLocalProdNoJavaDoc" />
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="dgdweb:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.osmorc.OsgiConfigurationType" factoryName="OSGi Bundles" vmParameters="" programParameters="" includeAllBundlesInClassPath="false" workingDir="" useAlternativeJre="false" alternativeJrePath="" frameworkStartLevel="1" defaultStartLevel="5" generateWorkingDir="false">
+      <framework instance="" />
+      <additinalProperties startConsole="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="trunk" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TomeeConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings />
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="trunk" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TomeeConfiguration" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="transportHostId" />
+        </data>
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GriffonRunConfigurationType" factoryName="Griffon">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="true" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="trunk" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="XSLT" factoryName="XSLT">
+      <option name="myOutputFile" />
+      <option name="myOpenOutputFile" value="false" />
+      <option name="myOpenInBrowser" value="false" />
+      <option name="mySmartErrorHandling" value="true" />
+      <option name="myRunnerPort" value="34873" />
+      <option name="myVmArguments" />
+      <option name="myWorkingDirectory" />
+      <option name="myModule" />
+      <option name="myJdk" />
+      <parameters />
+      <OutputType value="CONSOLE" save-to-file="false" />
+      <FileType name="XML" />
+      <JdkChoice value="FROM_MODULE" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="com.intellij.dmserver.run.DMServerRunConfigurationType:id" factoryName="Spring dmServer (Local)" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="MBeanPassword" value="springsource" />
+        <option name="MBeanPort" value="9875" />
+        <option name="MBeanUserName" value="admin" />
+      </server-settings>
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browserFamily" value="FIREFOX" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <module name="trunk" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="CfmlUnitRunConfigurationType" factoryName="MXUnit" method="" path="" scope="Component" webpath="">
+      <method />
+    </configuration>
+    <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" web_path="">
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="trunk" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="transportHostId" />
+        </data>
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <method>
+        <option name="AntTarget" enabled="true" antfile="file://$PROJECT_DIR$/build.xml" target="buildLocalProdNoJavaDoc" />
+      </method>
+    </configuration>
+    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails" singleton="true">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="false" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <setting name="launchBrowser" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="GlassfishConfiguration" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="transportHostId" />
+        </data>
+      </server-settings>
+      <predefined_log_file id="GlassFish" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="trunk" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings />
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method>
+        <option name="AntTarget" enabled="true" antfile="file://$PROJECT_DIR$/build.xml" target="buildLocalProdNoJavaDoc" />
+      </method>
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="trunk" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2meplugin.run.J2MEConfigurationType" factoryName="J2ME">
+      <module name="" />
+      <USER_OPTIONS />
+      <option name="TARGET_DEVICE_NAME" />
+      <option name="COMMAND_LINE_PARAMETERS" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="JAD_NAME" value="" />
+      <option name="IS_CLASSES" value="false" />
+      <option name="IS_OTA" value="false" />
+      <option name="INSTALL" />
+      <option name="REMOVE" />
+      <option name="RUN" />
+      <option name="TRANSIENT" />
+      <option name="FORCE" />
+      <option name="TO_START" />
+      <option name="SELECTION" value="0" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GlassfishConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="DOMAIN" value="" />
+        <option name="PRESERVE" value="false" />
+        <option name="VIRTUAL_SERVER" />
+        <option name="USERNAME" value="admin" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <predefined_log_file id="GlassFish" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" output_log_level="null" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browserFamily" value="FIREFOX" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="RemoteFlashRunConfigurationType" factoryName="Flash Remote Debug">
+      <option name="BCName" value="" />
+      <option name="debugTransport" value="USB" />
+      <option name="moduleName" value="" />
+      <option name="remoteDebugTarget" value="Computer" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="com.intellij.dmserver.run.DMServerRunConfigurationType:id" factoryName="Spring dmServer (Remote)" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <option name="MBeanPassword" value="springsource" />
+        <option name="MBeanPort" value="9875" />
+        <option name="MBeanUserName" value="admin" />
+      </server-settings>
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="trunk" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Dgdweb_tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.50" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="" show_console_on_std_out="true" show_console_on_std_err="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://127.0.0.1:8080/dgdweb/oligo/home.html" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="dgdweb:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/dgdweb" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Default_(Template)_Project_2" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="true" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="true" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="64392" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="AntTarget" enabled="false" antfile="file://$PROJECT_DIR$/build.xml" target="buildLocalProdNoJavaDoc" />
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="dgdweb:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Dgdweb_tomcat" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.SafariDriverTests" />
+      <item index="2" class="java.lang.String" itemvalue="Tomcat Server.home.jsp" />
+    </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Tomcat Server.home.jsp" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SafariDriverTests" />
+      </list>
+    </recent_temporary>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <configuration useDefault="false">$USER_HOME$/.subversion</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ac191350-69f3-4148-855b-8f2b1bf701ca" name="Default" comment="" />
+      <created>1391614203082</created>
+      <updated>1391614203082</updated>
+      <workItem from="1391614206703" duration="3023000" />
+      <workItem from="1391617649629" duration="25614000" />
+      <workItem from="1392232236307" duration="1307000" />
+      <workItem from="1392234954417" duration="5170000" />
+      <workItem from="1392399097997" duration="29559000" />
+      <workItem from="1392925758034" duration="36857000" />
+      <workItem from="1393805307906" duration="23562000" />
+      <workItem from="1394548254406" duration="2331000" />
+      <workItem from="1394639602452" duration="11656000" />
+      <workItem from="1394837631151" duration="8784000" />
+      <workItem from="1395008969072" duration="63936000" />
+      <workItem from="1395324941383" duration="409000" />
+      <workItem from="1395325973616" duration="141187000" />
+      <workItem from="1397854362249" duration="30288000" />
+      <workItem from="1400516855302" duration="66671000" />
+      <workItem from="1401723135749" duration="13201000" />
+      <workItem from="1401809954962" duration="11000" />
+      <workItem from="1401810105844" duration="13898000" />
+      <workItem from="1401904515688" duration="3260000" />
+      <workItem from="1402082121325" duration="79603000" />
+      <workItem from="1403013482182" duration="7785000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="568112000" />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="2560" height="1321" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872254" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15369341" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872254" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32322428" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26746988" sideWeight="0.1965846" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.08260524" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295362" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872254" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13224782" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931727" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32790887" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.450773" sideWeight="0.8034154" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40602115" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980143" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980143" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32503772" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39952344" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+    <buildFile url="file://$PROJECT_DIR$/build_dgd.xml">
+      <expanded value="true" />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/build_mod.xml">
+      <expanded value="true" />
+    </buildFile>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/spring-jdbc-4.0.0.RELEASE.jar!/org/springframework/jdbc/datasource/DataSourceTransactionManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="16" selection-start="649" selection-end="649" vertical-scroll-proportion="0.15" vertical-offset="0" max-vertical-offset="1200" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/xom-1.2.4.jar!/nu/xom/XOMHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="16" selection-start="3354" selection-end="3354" vertical-scroll-proportion="-2.76" vertical-offset="1146" max-vertical-offset="1410" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/xom-1.2.4.jar!/nu/xom/Builder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="27" selection-start="2051" selection-end="2051" vertical-scroll-proportion="-2.4" vertical-offset="570" max-vertical-offset="1275" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/dgdcore_1.1.3.jar!/edu/chop/dgd/xml/XomAnalyzer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="28" selection-start="1237" selection-end="1237" vertical-scroll-proportion="-4.0" vertical-offset="395" max-vertical-offset="615" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/dgdcore_1.1.3.jar!/edu/chop/dgd/process/primerCreate/UcscGene.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="176" selection-end="176" vertical-scroll-proportion="0.19582245" vertical-offset="0" max-vertical-offset="960" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/web/DGDHandlerInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="26" selection-start="896" selection-end="896" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/dgdcore_1.1.3.jar!/edu/chop/dgd/process/primerCreate/PrimerDAO.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="71" selection-start="868" selection-end="868" vertical-scroll-proportion="0.3504673" vertical-offset="0" max-vertical-offset="642" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/spring-webmvc-4.0.0.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="19" selection-start="7460" selection-end="7460" vertical-scroll-proportion="0.56343794" vertical-offset="1192" max-vertical-offset="1950" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/spring-web-4.0.0.RELEASE.jar!/org/springframework/web/bind/annotation/RequestMapping.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="18" selection-start="458" selection-end="458" vertical-scroll-proportion="0.1819407" vertical-offset="0" max-vertical-offset="742" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/Chromosome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="139" selection-end="139" vertical-scroll-proportion="0.136897" vertical-offset="0" max-vertical-offset="767" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/BlatPsl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="15" selection-start="1854" selection-end="1854" vertical-scroll-proportion="0.0" vertical-offset="788" max-vertical-offset="4635" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/dgdcore_1.1.3.jar!/edu/chop/dgd/process/primerCreate/AmpliconSeq.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="28" selection-start="1687" selection-end="1687" vertical-scroll-proportion="0.8509485" vertical-offset="47" max-vertical-offset="810" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/Primer3Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="31" selection-start="1914" selection-end="1914" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3630" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/junit-4.11.jar!/org/junit/runners/model/FrameworkMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="951" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/primer/primerReport.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="20" selection-start="4007" selection-end="4007" vertical-scroll-proportion="0.0" vertical-offset="1035" max-vertical-offset="4770" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/SafariDriverTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="38" selection-start="2298" selection-end="2298" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/PrimerProcess.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="198" column="71" selection-start="4029" selection-end="4029" vertical-scroll-proportion="0.0" vertical-offset="1985" max-vertical-offset="3300" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ucsc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="11" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/selenium-server-standalone-2.41.0.jar!/javax/servlet/http/HttpServletRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="51" selection-start="588" selection-end="588" vertical-scroll-proportion="0.3878437" vertical-offset="2" max-vertical-offset="1050" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/selenium-server-standalone-2.41.0.jar!/javax/servlet/ServletContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="17" selection-start="160" selection-end="160" vertical-scroll-proportion="0.07550336" vertical-offset="0" max-vertical-offset="1192" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/FileDownloadController.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="99" selection-start="2449" selection-end="2449" vertical-scroll-proportion="0.8172674" vertical-offset="0" max-vertical-offset="1815" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/primefaces-3.0.RC2.jar!/META-INF/primefaces-p.taglib.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4534" column="4" selection-start="164492" selection-end="164492" vertical-scroll-proportion="0.33278555" vertical-offset="67605" max-vertical-offset="194280" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="716" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="180" column="0" selection-start="5858" selection-end="5858" vertical-scroll-proportion="0.0" vertical-offset="1048" max-vertical-offset="2265" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml.prod">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="27" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="990" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring-web-4.0.0.RELEASE.jar!/org/springframework/web/bind/annotation/RequestMapping.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="18" selection-start="458" selection-end="458" vertical-scroll-proportion="0.35714287" vertical-offset="10" max-vertical-offset="405" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerHomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="59" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="420" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/fileUpload.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="8" selection-start="79" selection-end="79" vertical-scroll-proportion="0.46875" vertical-offset="0" max-vertical-offset="315" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring-context-4.0.0.RELEASE.jar!/org/springframework/validation/Errors.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="9" selection-start="729" selection-end="729" vertical-scroll-proportion="0.3482309" vertical-offset="203" max-vertical-offset="1065" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/UploadedFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="143" selection-end="143" vertical-scroll-proportion="0.47004607" vertical-offset="3" max-vertical-offset="375" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="73" selection-start="1353" selection-end="1353" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="6315">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/primer/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="0" selection-start="2888" selection-end="2888" vertical-scroll-proportion="0.0" vertical-offset="201" max-vertical-offset="3060" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/upload/uploadError.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="738" />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="973" column="0" selection-start="15060" selection-end="15060" vertical-scroll-proportion="2.4808185" vertical-offset="13625" max-vertical-offset="57195" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dropbox/code/rgdweb/trunk/web-app/WEB-INF/jsp/curation/pathway/pathwayCreate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="663" column="53" selection-start="26583" selection-end="26583" vertical-scroll-proportion="-7.25" vertical-offset="9771" max-vertical-offset="14055" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/upload/parseRequest2_mod.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="212" column="0" selection-start="9114" selection-end="9114" vertical-scroll-proportion="-6.375" vertical-offset="3027" max-vertical-offset="4575">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="182" column="0" selection-start="7110" selection-end="7110" vertical-scroll-proportion="0.0" vertical-offset="2730" max-vertical-offset="3795">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="0" selection-start="1275" selection-end="1275" vertical-scroll-proportion="-11.958333" vertical-offset="403" max-vertical-offset="1950">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/InsilicoPCRObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="1170" selection-end="1170" vertical-scroll-proportion="0.0" vertical-offset="487" max-vertical-offset="2160">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="20" selection-start="668" selection-end="668" vertical-scroll-proportion="0.24979185" vertical-offset="0" max-vertical-offset="1201">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/FileUploadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Applications/Tomcat7/lib/servlet-api.jar!/javax/servlet/ServletRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="33" selection-start="1696" selection-end="1696" vertical-scroll-proportion="0.6704689" vertical-offset="476" max-vertical-offset="1290" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="11" selection-start="292" selection-end="292" vertical-scroll-proportion="0.22584693" vertical-offset="0" max-vertical-offset="797">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Applications/Tomcat7/lib/servlet-api.jar!/javax/servlet/ServletContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="17" selection-start="160" selection-end="160" vertical-scroll-proportion="0.11392405" vertical-offset="0" max-vertical-offset="1935">
+          <folding>
+            <element signature="e#0#4292#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerCreateController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="414" column="106" selection-start="16216" selection-end="16216" vertical-scroll-proportion="0.0" vertical-offset="4149" max-vertical-offset="7095">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligoHomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/web/HttpRequestFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="21" selection-start="2733" selection-end="2733" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1635">
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#647#648#0" expanded="false" />
+            <element signature="e#682#683#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build_dgd.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="13" selection-start="1755" selection-end="1755" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="2250">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileDownloadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="40" selection-start="1497" selection-end="1497" vertical-scroll-proportion="0.0" vertical-offset="411" max-vertical-offset="1890">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build_mod.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="13" selection-start="1858" selection-end="1858" vertical-scroll-proportion="0.26228142" vertical-offset="405" max-vertical-offset="1680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor>
+            <show-content>
+              <type id="javaee-facet-resources" />
+              <type id="library" />
+              <type id="artifact" />
+              <type id="jpa-descriptors" />
+            </show-content>
+          </artifact-editor>
+          <last-edited>dgdweb:war exploded</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web2 (trunk)|Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Python 2.7.7 (/Library/Frameworks/Python.framework/Versions/2.7/bin/python) interpreter library</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring|trunk</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>lib1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+
