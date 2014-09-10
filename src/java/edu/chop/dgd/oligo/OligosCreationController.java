@@ -46,10 +46,10 @@ public class OligosCreationController implements Controller{
         for(OligoObject o : objects){
             List<OligoObjectSubsections> osSubsList = o.generateSubsections();  //set subsection ID in the next section..
             String fullReportFileName = generateReport(osSubsList, projectId);
-            String[] reportAndName = fullReportFileName.split("_", -1);
+            String[] reportAndName = fullReportFileName.split("&", -1);
             reportFile = reportAndName[0];
             String fileName = reportAndName[1];
-            List<OligoObjectSubsections> oligosSubsectionList = oss.retrieveResultsFromAnalyses(fileName, osSubsList, dataDir, oligoOutputDir);
+            List<OligoObjectSubsections> oligosSubsectionList = oss.retrieveResultsFromAnalyses(fileName, osSubsList, dataDir, oligoOutputDir, blatInpDir);
             o.setOligoObjectSubsections(oligosSubsectionList);
 
         }
@@ -86,7 +86,7 @@ public class OligosCreationController implements Controller{
         System.out.println(resultPrimer3Blat);
 
 
-        return resultPrimer3Blat+"_"+fileN;
+        return resultPrimer3Blat+"&"+fileN;
 
     }
 

@@ -13,24 +13,34 @@ import java.util.List;
 public class Primer3Object {
     String leftPrimerId;
     String rightPrimerId;
+    String internalPrimerId;
     String leftSeq;
     String rightSeq;
+    String internalSeq;
     int leftLen;
     int rightLen;
+    int internalLen;
     String leftStart;
     String rightStart;
+    String internalStart;
     String leftTm;
     String rightTm;
+    String internalTm;
     String leftGc;
     String rightGc;
+    String internalGc;
     String leftAny;
     String rightAny;
+    String internalAny;
     String left3;
     String right3;
+    String internal3;
     List<BlatPsl> leftPrimerBlatList;
     List<BlatPsl> rightPrimerBlatList;
+    List<BlatPsl> internalPrimerBlatList;
     List<InsilicoPCRObject> insilicoPCRObjectList;
     List<Variation> insertionOverlaps;
+
 
     public Primer3Object(){
         super();
@@ -67,6 +77,15 @@ public class Primer3Object {
             pr.setRightLen(Integer.parseInt(len));
             pr.setRightTm(tm);
             pr.setRightStart(start);
+        }else if(tag.equals("internal")){
+            pr.setInternalSeq(seq);
+            pr.setInternal3(dash3);
+            pr.setInternalAny(any);
+            pr.setInternalGc(gc);
+            pr.setInternalLen(Integer.parseInt(len));
+            pr.setInternalTm(tm);
+            pr.setInternalStart(start);
+
         }
 
         return pr;
@@ -115,7 +134,7 @@ public class Primer3Object {
 
 
 
-    private List<Primer3Object> addIdsToPrimers(String inputFileName, List<Primer3Object> primer3Objects, String blatInpDir, String dataDir) throws Exception {
+    public List<Primer3Object> addIdsToPrimers(String inputFileName, List<Primer3Object> primer3Objects, String blatInpDir, String dataDir) throws Exception {
 
         List<Primer3Object> newPrimerObjects = new ArrayList<Primer3Object>();
         String fileName=inputFileName;
@@ -170,11 +189,11 @@ public class Primer3Object {
 
         while((line = reader.readLine())!=null){
             if(line.contains("INTERNAL_OLIGO")){
-                prObj = new Primer3Object().createPrimer3Object(line, "right", prObj);
+                prObj = new Primer3Object().createPrimer3Object(line, "internal", prObj);
                 //prObj = createPrimer3Object(line, "right", prObj);
             }
 
-            if(prObj.getRightSeq()!=null && prObj.getLeftSeq().length()>0 && prObj.getRightSeq().length()>0){
+            if(prObj.getInternalSeq()!=null && prObj.getInternalSeq().length()>0){
                 primer3Objects.add(prObj);
                 //after adding primer Obj to array, create new instance of object for next primer.
                 prObj = new Primer3Object();
@@ -184,6 +203,48 @@ public class Primer3Object {
         return primer3Objects;
     }
 
+
+    public List<Primer3Object> addIdsToOligos(String inputFileName, List<Primer3Object> oligoObjects, String blatInpDir, String dataDir) throws Exception {
+
+        List<Primer3Object> newPrimerObjects = new ArrayList<Primer3Object>();
+        String fileName=inputFileName;
+        File blatInputFile = new File(dataDir+blatInpDir+fileName);
+        InputStream fileStream = new FileInputStream(blatInputFile);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(fileStream));
+
+        String line; String primerId="NA"; String counter = "0";
+        int i=1;
+        while((line = reader.readLine())!=null){
+            if(line.startsWith(">")){
+                primerId=line.replaceAll(">","");
+                counter = primerId.split("_", -1)[1];
+            }else{
+                String seq = line;
+                for(; i<=oligoObjects.size();){
+                    Primer3Object prObj = oligoObjects.get(i-1);
+
+                    if(counter.equals("L"+i)){
+                        prObj.setLeftPrimerId(primerId);
+                        primerId="NA";
+                        break;
+
+                    }else if(counter.equals("R"+i)){
+                        prObj.setRightPrimerId(primerId);
+                        primerId="NA";
+                        if((!prObj.getLeftPrimerId().equals("NA")) && (!prObj.getRightPrimerId().equals("NA"))){
+                            newPrimerObjects.add(prObj);
+                        }
+                        i+=1;
+                        break;
+
+                    }
+
+                }
+            }
+        }
+
+        return newPrimerObjects;
+    }
 
     public String getLeftPrimerId() {
         return leftPrimerId;
@@ -344,4 +405,77 @@ public class Primer3Object {
     public void setInsertionOverlaps(List<Variation> insertionOverlaps) {
         this.insertionOverlaps = insertionOverlaps;
     }
+
+    public String getInternalPrimerId() {
+        return internalPrimerId;
+    }
+
+    public void setInternalPrimerId(String internalPrimerId) {
+        this.internalPrimerId = internalPrimerId;
+    }
+
+    public String getInternalSeq() {
+        return internalSeq;
+    }
+
+    public void setInternalSeq(String internalSeq) {
+        this.internalSeq = internalSeq;
+    }
+
+    public int getInternalLen() {
+        return internalLen;
+    }
+
+    public void setInternalLen(int internalLen) {
+        this.internalLen = internalLen;
+    }
+
+    public String getInternalStart() {
+        return internalStart;
+    }
+
+    public void setInternalStart(String internalStart) {
+        this.internalStart = internalStart;
+    }
+
+    public String getInternalTm() {
+        return internalTm;
+    }
+
+    public void setInternalTm(String internalTm) {
+        this.internalTm = internalTm;
+    }
+
+    public String getInternalGc() {
+        return internalGc;
+    }
+
+    public void setInternalGc(String internalGc) {
+        this.internalGc = internalGc;
+    }
+
+    public String getInternalAny() {
+        return internalAny;
+    }
+
+    public void setInternalAny(String internalAny) {
+        this.internalAny = internalAny;
+    }
+
+    public String getInternal3() {
+        return internal3;
+    }
+
+    public void setInternal3(String internal3) {
+        this.internal3 = internal3;
+    }
+
+    public List<BlatPsl> getInternalPrimerBlatList() {
+        return internalPrimerBlatList;
+    }
+
+    public void setInternalPrimerBlatList(List<BlatPsl> internalPrimerBlatList) {
+        this.internalPrimerBlatList = internalPrimerBlatList;
+    }
+
 }

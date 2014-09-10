@@ -18,11 +18,11 @@ public class OligoObjectSubsections {
     List<MfoldHairpin> mfoldHairpinResults;
 
 
-    public List<OligoObjectSubsections> retrieveResultsFromAnalyses(String fileName, List<OligoObjectSubsections> osSubsList, String dataDir, String oligoOutputDir)throws Exception {
+    public List<OligoObjectSubsections> retrieveResultsFromAnalyses(String fileName, List<OligoObjectSubsections> osSubsList, String dataDir, String oligoOutputDir, String blatOligoInpDir)throws Exception {
 
         Primer3Object p3Obj = new Primer3Object();
         List<Primer3Object> oligoObjectsFromPrimer3 = p3Obj.createOligoObjsList(fileName, dataDir, oligoOutputDir);
-        //primer3Objects = addIdsToPrimers(inputFileName, primer3Objects, blatInpDir, dataDir);
+        oligoObjectsFromPrimer3 = p3Obj.addIdsToPrimers(fileName, oligoObjectsFromPrimer3, blatOligoInpDir, dataDir);
         //primer3Objects = new BlatPsl().addBlatResultsToPrimers(inputFileName, blatOpDir, primer3Objects, dataDir);
 
 
