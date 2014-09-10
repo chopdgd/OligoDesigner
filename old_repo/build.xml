@@ -1,0 +1,147 @@
+<project name="dgdweb" default="build" basedir=".">
+
+    <property name="src.dir" value="src/java"/>
+    <property name="build.dir" value="classes"/>
+    <property name="lib.dir" value="lib"/>
+    <property name="doc.dir" value="doc"/>
+    <property name="logs.dir" value="logs"/>
+    <property name="name" value="dgdweb"/>
+    <property name="war.src" value="webapp" />
+    <property name="web.lib.dir" value="${war.src}/WEB-INF/lib" />
+    <property name="dist.dir" value="dist" />
+    <property name="primer3.dir" value="/data/" />
+
+    <path id="master-classpath">
+        <fileset dir="${lib.dir}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <!-- Remove old build files -->
+    <target name="clean" description="Clean output directories">
+        <delete dir="${build.dir}"/>
+        <delete file="${lib.dir}/${name}.jar" failonerror="false"/>
+        <delete file="${web.lib.dir}/${name}.jar" failonerror="false"/>
+        <delete file="dist/${name}.war" failonerror="false"/>
+    </target>
+
+
+    <!--Prepare for build -->
+    <target name="prepare" description="Prepare for build">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${doc.dir}"/>
+        <mkdir dir="${lib.dir}"/>
+        <mkdir dir="${logs.dir}"/>
+        <mkdir dir="${web.lib.dir}"/>
+        <mkdir dir="${dist.dir}"/>
+
+        <!--<delete file="${war.src}/WEB-INF/applicationContext.xml" failonerror="false"/>-->
+        <delete file="${war.src}/WEB-INF/mvc-dispatcher-servlet.xml" failonerror="false"/>
+
+        <copy todir="${web.lib.dir}" description="">
+            <files includes="${lib.dir}/*.jar"/>
+        </copy>
+        <copy todir="${war.src}/WEB-INF" description="" file="${war.src}/WEB-INF/web.xml">
+        </copy>
+    </target>
+
+    <!-- Compile all of our class files -->
+    <target name="build" depends="prepare" description="Compile main source tree java files and build war file">
+        <javac destdir="${build.dir}" target="1.6" debug="true"
+               deprecation="false" optimize="false" failonerror="true">
+            <src path="${src.dir}"/>
+            <classpath refid="master-classpath"/>
+        </javac>
+        <!--        <copy todir="${build.dir}" file="${src.dir}/log4j.properties"/> -->
+        <jar destfile="${dist.dir}/${name}.jar">
+            <fileset dir="${build.dir}"/>
+        </jar>
+        <jar destfile="${web.lib.dir}/${name}.jar">
+            <fileset dir="${build.dir}"/>
+        </jar>
+
+        <!--<copy file="${war.src}/WEB-INF/applicationContext.xml.prod" tofile="${war.src}/WEB-INF/applicationContext.xml"/>-->
+        <copy file="${war.src}/WEB-INF/mvc-dispatcher-servlet.xml.prod" tofile="${war.src}/WEB-INF/mvc-dispatcher-servlet.xml"/>
+        <copy file="${src.dir}/PrimerProcess.sh" tofile="${dist.dir}/PrimerProcess.sh"/>
+        <copy file="${src.dir}/PrimerProcess.sh" tofile="${primer3.dir}/PrimerProcess.sh"/>
+        <fixcrlf srcdir="${dist.dir}" includes="**/*.sh" eol="crlf" />
+
+
+        <war destfile="${dist.dir}/${name}.war" webxml="${war.src}/WEB-INF/web.xml">
+            <fileset dir="${war.src}">
+
+            </fileset>
+        </war>
+
+        <mkdir dir="docs"/>
+        <javadoc
+                destdir="docs/${name}"
+                author="true"
+                version="true"
+                use="true"
+                windowtitle="${name}">
+            <classpath refid="master-classpath"/>
+            <fileset dir="src" defaultexcludes="yes">
+                <!--<include name="com/dummy/test/**"/>
+                <exclude name="com/dummy/test/doc-files/**"/>-->
+            </fileset>
+        </javadoc>
+    </target>
+
+    <target name="buildProdNoJavaDoc" depends="prepare" description="Build prod without running javadoc">
+        <javac destdir="${build.dir}" target="1.6" debug="true"
+               deprecation="false" optimize="false" failonerror="true">
+            <src path="${src.dir}"/>
+            <classpath refid="master-classpath"/>
+
+        </javac>
+        <!--        <copy todir="${build.dir}" file="${src.dir}/log4j.properties"/> -->
+        <jar destfile="${dist.dir}/${name}.jar">
+            <fileset dir="${build.dir}"/>
+        </jar>
+        <jar destfile="${web.lib.dir}/${name}.jar">
+            <fileset dir="${build.dir}"/>
+        </jar>
+
+        <!--<copy file="${war.src}/WEB-INF/applicationContext.xml.curation" tofile="${war.src}/WEB-INF/applicationContext.xml"/>-->
+        <copy file="${war.src}/WEB-INF/mvc-dispatcher-servlet.xml.prod" tofile="${war.src}/WEB-INF/mvc-dispatcher-servlet.xml"/>
+        <copy file="${src.dir}/PrimerProcess.sh" tofile="${dist.dir}/PrimerProcess.sh"/>
+        <copy file="${src.dir}/PrimerProcess.sh" tofile="${primer3.dir}/PrimerProcess.sh"/>
+        <fixcrlf srcdir="${dist.dir}" includes="**/*.sh" eol="crlf" />
+
+
+        <war destfile="${dist.dir}/${name}.war" webxml="${war.src}/WEB-INF/web.xml">
+            <fileset dir="${war.src}" >
+
+            </fileset>
+        </war>
+    </target>
+
+    <!-- Compile all of our class files -->
+    <target name="buildProd" depends="buildProdNoJavaDoc,buildJavaDoc" description="Compile main source tree java files and build war file">
+    </target>
+
+    <target name="buildLocalProdNoJavaDoc" depends="buildProdNoJavaDoc" description="Build dgd on local tomcat without running javadoc">
+        <copy todir="/Applications/Tomcat7/webapps" file="${dist.dir}/${name}.war"/>
+    </target>
+
+    <!-- Compile all of our class files -->
+    <target name="buildJavaDoc" depends="prepare" description="Build JavaDoc files">
+        <mkdir dir="docs"/>
+        <javadoc
+                destdir="docs/${name}"
+                author="true"
+                version="true"
+                use="true"
+                windowtitle="${name}">
+            <classpath refid="master-classpath"/>
+            <fileset dir="src" defaultexcludes="yes">
+                <!--<include name="com/dummy/test/**"/>
+                <exclude name="com/dummy/test/doc-files/**"/>-->
+            </fileset>
+        </javadoc>
+
+    </target>
+
+
+</project>

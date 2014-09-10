@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac191350-69f3-4148-855b-8f2b1bf701ca" name="Default" comment="">
+<<<<<<< HEAD
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/MfoldHairpin.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObject.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObjectSubsections.java" />
@@ -22,6 +23,63 @@
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/UploadedFile.java" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/UploadedFile.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/dgdcore_1.1.3.jar" afterPath="$PROJECT_DIR$/lib/dgdcore_1.1.3.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/lib/dgdweb.jar" afterPath="$PROJECT_DIR$/webapp/WEB-INF/lib/dgdweb.jar" />
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/upload/wjhk.jupload.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/FileUploadController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileValidator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligoHomeController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/SafariDriverTests.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/UploadedFile.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/fileUpload.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/home.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/upload/parseRequest.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/upload/uploadError.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/commons-collections-3.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/commons-dbcp.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/commons-logging-1.0.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/commons-net-2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/commons-pool.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/dgdcore_1.1.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/hamcrest-core-1.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/httpclient-4.2.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/httpcore-4.2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jaxen-1.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jsp-api.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/junit-4.11.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/mysql-connector-java-5.1.28-bin.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/servlet-api.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-aop-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-aspects-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-beans-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-context-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-context-support-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-core-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-expression-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-framework-bom-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-instrument-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-instrument-tomcat-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-jdbc-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-orm-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-oxm-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-test-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-tx-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-web-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-webmvc-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-webmvc-portlet-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/spring-websocket-4.0.0.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/xom-1.2.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/WEB-INF/applicationContext.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/WEB-INF/lib/dgdweb.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/WEB-INF/lib/servlet-api.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp/WEB-INF/pages/hello.jsp" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build_dgd.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/resources/images/dgd.png" afterPath="$PROJECT_DIR$/webapp/resources/images/dgd.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/lib/dgdcore_1.1.3.jar" afterPath="$PROJECT_DIR$/webapp/WEB-INF/lib/dgdcore_1.1.3.jar" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/BlatPsl.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/BlatPsl.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/BlatPsl.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/BlatPsl.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/Chromosome.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/Chromosome.html" />
@@ -30,22 +88,30 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/DGDHandlerInterceptor.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/DGDHandlerInterceptor.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/DisplayMapper.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/DisplayMapper.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/DisplayMapper.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/DisplayMapper.html" />
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/FileDownloadController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/FileDownloadController.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/FileDownloadController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/FileDownloadController.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/FileUploadController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/FileUploadController.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/class-use/FileUploadController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/class-use/FileUploadController.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/FileValidator.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/FileValidator.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/FileValidator.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/FileValidator.html" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileDownloadController.java" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileDownloadController.java" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/HttpRequestFacade.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/HttpRequestFacade.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/HttpRequestFacade.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/HttpRequestFacade.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/InsilicoPCRObject.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/InsilicoPCRObject.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/InsilicoPCRObject.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/InsilicoPCRObject.html" />
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/OligoHomeController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/OligoHomeController.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/class-use/OligoHomeController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/class-use/OligoHomeController.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligoHomeController.java" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligoHomeController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/OligosCreationController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/OligosCreationController.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/class-use/OligosCreationController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/class-use/OligosCreationController.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/InsilicoPCRObject.java" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/InsilicoPCRObject.java" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/Primer3Object.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/Primer3Object.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/Primer3Object.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/Primer3Object.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerCreateController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerCreateController.html" />
@@ -53,12 +119,16 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerCreateController.java" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerCreateController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerHomeController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerHomeController.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerHomeController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerHomeController.html" />
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerReport.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerReport.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerReport.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerReport.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/SafariDriverTests.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/SafariDriverTests.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/class-use/SafariDriverTests.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/class-use/SafariDriverTests.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/UploadedFile.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/UploadedFile.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/UploadedFile.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/UploadedFile.html" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/PrimerProcess.sh" afterPath="$PROJECT_DIR$/src/java/PrimerProcess.sh" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/allclasses-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/allclasses-frame.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/allclasses-noframe.html" afterPath="$PROJECT_DIR$/docs/dgdweb/allclasses-noframe.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/constant-values.html" afterPath="$PROJECT_DIR$/docs/dgdweb/constant-values.html" />
@@ -68,16 +138,23 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/index-all.html" afterPath="$PROJECT_DIR$/docs/dgdweb/index-all.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/index.html" afterPath="$PROJECT_DIR$/docs/dgdweb/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml.prod" afterPath="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml.prod" />
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/overview-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/overview-frame.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/overview-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/overview-summary.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/overview-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/overview-tree.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/package-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/package-frame.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/package-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/package-frame.html" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/overview-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/overview-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/overview-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/overview-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/overview-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/overview-tree.html" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-frame.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/package-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/package-frame.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-frame.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/package-list" afterPath="$PROJECT_DIR$/docs/dgdweb/package-list" />
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/package-summary.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/package-summary.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-summary.html" />
@@ -96,6 +173,18 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/upload/parseRequest.jsp" afterPath="$PROJECT_DIR$/webapp/upload/parseRequest.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/pages/primer/primerReport.jsp" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/primer/primerReport.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/serialized-form.html" afterPath="$PROJECT_DIR$/docs/dgdweb/serialized-form.html" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/package-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-use.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-use.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/package-use.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/package-use.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-use.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-use.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/pages/primer/primerReport.jsp" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/primer/primerReport.jsp" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trunk.iml" afterPath="$PROJECT_DIR$/src/trunk.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/webapp/WEB-INF/web.xml" />
     </list>
@@ -201,7 +290,11 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+<<<<<<< HEAD
       <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" line="0" class="FileUploadController.java" package="">
+=======
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/FileUploadController.java" line="0" class="FileUploadController.java" package="">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -276,7 +369,11 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+<<<<<<< HEAD
       <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" line="35" class="edu.chop.dgd.oligo.FileUploadController" package="edu.chop.dgd.oligo">
+=======
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/FileUploadController.java" line="17" class="edu.chop.dgd.oligo.FileUploadController" package="edu.chop.dgd.oligo">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -291,7 +388,11 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+<<<<<<< HEAD
       <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/InsilicoPCRObject.java" line="63" class="edu.chop.dgd.dgdObjects.InsilicoPCRObject" package="edu.chop.dgd.dgdObjects">
+=======
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="171" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -306,7 +407,11 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+<<<<<<< HEAD
       <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/InsilicoPCRObject.java" line="65" class="edu.chop.dgd.dgdObjects.InsilicoPCRObject" package="edu.chop.dgd.dgdObjects">
+=======
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="65" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -321,7 +426,11 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+<<<<<<< HEAD
       <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/InsilicoPCRObject.java" line="67" class="edu.chop.dgd.dgdObjects.InsilicoPCRObject" package="edu.chop.dgd.dgdObjects">
+=======
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="118" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -336,7 +445,11 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+<<<<<<< HEAD
       <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" line="40" class="edu.chop.dgd.oligo.FileUploadController" package="edu.chop.dgd.oligo">
+=======
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="132" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -351,7 +464,11 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+<<<<<<< HEAD
       <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" line="95" class="edu.chop.dgd.oligo.FileUploadController" package="edu.chop.dgd.oligo">
+=======
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="163" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -366,7 +483,11 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+<<<<<<< HEAD
       <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObject.java" line="59" class="edu.chop.dgd.dgdObjects.OligoObject" package="edu.chop.dgd.dgdObjects">
+=======
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="193" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -381,7 +502,11 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+<<<<<<< HEAD
       <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" line="119" class="edu.chop.dgd.oligo.FileUploadController" package="edu.chop.dgd.oligo">
+=======
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="125" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -396,7 +521,11 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+<<<<<<< HEAD
       <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" line="45" class="edu.chop.dgd.oligo.FileUploadController" package="edu.chop.dgd.oligo">
+=======
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="147" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -411,7 +540,11 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+<<<<<<< HEAD
       <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" line="46" class="edu.chop.dgd.oligo.FileUploadController" package="edu.chop.dgd.oligo">
+=======
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="139" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -426,7 +559,11 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+<<<<<<< HEAD
       <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" line="191" class="edu.chop.dgd.oligo.FileUploadController" package="edu.chop.dgd.oligo">
+=======
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="75" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -441,7 +578,56 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+<<<<<<< HEAD
       <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" line="86" class="edu.chop.dgd.oligo.FileUploadController" package="edu.chop.dgd.oligo">
+=======
+      <breakpoint url="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp" line="182" class="parseRequest.jsp" package="$PROJECT_DIR$/webapp/upload">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/InsilicoPCRObject.java" line="64" class="edu.chop.dgd.utils.InsilicoPCRObject" package="edu.chop.dgd.utils">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/InsilicoPCRObject.java" line="66" class="edu.chop.dgd.utils.InsilicoPCRObject" package="edu.chop.dgd.utils">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/InsilicoPCRObject.java" line="68" class="edu.chop.dgd.utils.InsilicoPCRObject" package="edu.chop.dgd.utils">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -466,6 +652,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
       <file leaf-file-name="OligosCreationController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -473,28 +660,50 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+      <file leaf-file-name="home.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/home.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="46" column="0" selection-start="1275" selection-end="1275" vertical-scroll-proportion="-11.958333" vertical-offset="403" max-vertical-offset="1950">
+              <folding />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="OligoObject.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObject.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="20" column="40" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1260">
+=======
+      <file leaf-file-name="parseRequest.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="182" column="0" selection-start="7110" selection-end="7110" vertical-scroll-proportion="0.0" vertical-offset="2730" max-vertical-offset="3795">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="Primer3Object.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/Primer3Object.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="181" column="9" selection-start="6753" selection-end="6753" vertical-scroll-proportion="0.0" vertical-offset="2210" max-vertical-offset="4035">
+=======
+      <file leaf-file-name="FileUploadController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/FileUploadController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="0" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="465">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="OligoObjectSubsections.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObjectSubsections.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -509,59 +718,113 @@
                 <element signature="e#2727#2728#0" expanded="true" />
                 <element signature="e#2789#2790#0" expanded="true" />
               </folding>
+=======
+      <file leaf-file-name="InsilicoPCRObject.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/InsilicoPCRObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="0" selection-start="1170" selection-end="1170" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="2745">
+              <folding />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="MfoldHairpin.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/MfoldHairpin.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="5" column="27" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+=======
+      <file leaf-file-name="build_dgd.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build_dgd.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="13" selection-start="1755" selection-end="1755" vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="2250">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="mvc-dispatcher-servlet.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state line="42" column="55" selection-start="2057" selection-end="2057" vertical-scroll-proportion="-25.2" vertical-offset="0" max-vertical-offset="1155">
+=======
+      <file leaf-file-name="build_mod.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build_mod.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="13" selection-start="1858" selection-end="1858" vertical-scroll-proportion="0.26228142" vertical-offset="405" max-vertical-offset="1680">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="fileUpload.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/fileUpload.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state line="8" column="8" selection-start="79" selection-end="79" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="315">
               <folding />
+=======
+      <file leaf-file-name="HttpRequestFacade.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/web/HttpRequestFacade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="103" column="21" selection-start="2733" selection-end="2733" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1635">
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#647#648#0" expanded="false" />
+                <element signature="e#682#683#0" expanded="false" />
+              </folding>
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="mvc-dispatcher-servlet.xml.prod" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml.prod">
           <provider selected="true" editor-type-id="text-editor">
             <state line="53" column="29" selection-start="2551" selection-end="2551" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1110">
+=======
+      <file leaf-file-name="PrimerCreateController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerCreateController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="414" column="106" selection-start="16216" selection-end="16216" vertical-scroll-proportion="0.0" vertical-offset="1500" max-vertical-offset="7095">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="OligoHomeController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligoHomeController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="27" column="48" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+=======
+      <file leaf-file-name="FileDownloadController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileDownloadController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="40" selection-start="1497" selection-end="1497" vertical-scroll-proportion="0.0" vertical-offset="411" max-vertical-offset="1890">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="HttpRequestFacade.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/web/HttpRequestFacade.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="103" column="21" selection-start="2733" selection-end="2733" vertical-scroll-proportion="0.0" vertical-offset="464" max-vertical-offset="1665">
+=======
+      <file leaf-file-name="OligoHomeController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligoHomeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -582,20 +845,35 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/ucsc.xml" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/web/DGDHandlerInterceptor.java" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerXOMDeconstructor.java" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/primer/AmpliconXomAnalyzer.java" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerReport.java" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileDownloadController/java.java" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/BlatPsl.java" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/Primer3Object.java" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
         <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/primer/home.jsp" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/InsilicoPCRObject.java" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/SeleniumTests.java" />
         <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/primer/primerReport.jsp" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/SafariDriverTests.java" />
         <option value="$PROJECT_DIR$/src/java/PrimerProcess.sh" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileUpload.java" />
         <option value="$PROJECT_DIR$/webapp/bulkPositionUpload/UploadFile.jsp" />
+=======
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerCreateController.java" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileUpload.java" />
+        <option value="$PROJECT_DIR$/webapp/bulkPositionUpload/UploadFile.jsp" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
         <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/uploadFile.jsp" />
         <option value="$PROJECT_DIR$/src/java/FileUploadHandler.java" />
         <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/fileuploader.jsp" />
@@ -603,6 +881,7 @@
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/UploadFile.java" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/UploadedFile.java" />
         <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/oligoReport.jsp" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerHomeController.java" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileUploadController.java" />
         <option value="$PROJECT_DIR$/webapp/WEB-INF/web.xml" />
@@ -633,6 +912,26 @@
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObjectSubsections.java" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/Primer3Object.java" />
+=======
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml.prod" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerHomeController.java" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileValidator.java" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileUploadController.java" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligoHomeController.java" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
+        <option value="$PROJECT_DIR$/webapp/upload/parseRequest2_mod.jsp" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/home.jsp" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/FileUploadController.java" />
+        <option value="$PROJECT_DIR$/webapp/upload/parseRequest.jsp" />
+        <option value="$PROJECT_DIR$/build2.xml" />
+        <option value="$PROJECT_DIR$/build_new.xml" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/web/HttpRequestFacade.java" />
+        <option value="$PROJECT_DIR$/build.xml" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileDownloadController.java" />
+        <option value="$PROJECT_DIR$/build_mod.xml" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
       </list>
     </option>
   </component>
@@ -644,7 +943,11 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
     <option name="y" value="22" />
+=======
+    <option name="y" value="23" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
     <option name="width" value="2560" />
     <option name="height" value="1321" />
   </component>
@@ -694,6 +997,10 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -725,6 +1032,7 @@
               <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+<<<<<<< HEAD
             <PATH_ELEMENT>
               <option name="myItemId" value="WEB-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -791,6 +1099,8 @@
               <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+=======
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -894,7 +1204,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="primer" />
+=======
+              <option name="myItemId" value="utils" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -920,6 +1234,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="oligo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -947,6 +1262,9 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dgdUtils" />
+=======
+              <option name="myItemId" value="primer" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -972,13 +1290,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="dgdObjects" />
+=======
+              <option name="myItemId" value="oligo" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -998,7 +1323,11 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/webapp/WEB-INF/lib/commons-fileupload-1.3.jar!/" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/build_mod.xml" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
     <property name="FullScreen" value="false" />
     <property name="SearchEverywhereHistory" value="" />
     <property name="dynamic.classpath" value="false" />
@@ -1012,11 +1341,14 @@
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="build" />
   </component>
+<<<<<<< HEAD
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings />
     </option>
   </component>
+=======
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="edu.chop.dgd.oligo" />
@@ -1027,6 +1359,7 @@
       <recent name="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo" />
       <recent name="$PROJECT_DIR$/webapp/WEB-INF" />
     </key>
+<<<<<<< HEAD
     <key name="CreateClassDialog.RecentsKey">
       <recent name="edu.chop.dgd.dgdObjects" />
     </key>
@@ -1036,6 +1369,12 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+=======
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="edu.chop.dgd.oligo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
       <recent name="$PROJECT_DIR$/webapp" />
       <recent name="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo" />
       <recent name="$PROJECT_DIR$/webapp/WEB-INF/files" />
@@ -1157,6 +1496,7 @@
       <additinalProperties startConsole="true" />
       <method />
     </configuration>
+<<<<<<< HEAD
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -1177,6 +1517,8 @@
       <option name="OPTIONS" value="" />
       <method />
     </configuration>
+=======
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -1199,6 +1541,29 @@
       </MavenSettings>
       <method />
     </configuration>
+<<<<<<< HEAD
+=======
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="trunk" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
     <configuration default="true" type="TomeeConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings />
@@ -1235,6 +1600,30 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
+<<<<<<< HEAD
+=======
+    <configuration default="true" type="TomeeConfiguration" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="transportHostId" />
+        </data>
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GriffonRunConfigurationType" factoryName="Griffon">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="true" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
     <configuration default="true" type="tests" factoryName="Nosetests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -1257,6 +1646,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
+<<<<<<< HEAD
     <configuration default="true" type="GriffonRunConfigurationType" factoryName="Griffon">
       <module name="" />
       <setting name="vmparams" value="" />
@@ -1278,6 +1668,8 @@
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
       <method />
     </configuration>
+=======
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -1286,6 +1678,7 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+<<<<<<< HEAD
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -1299,6 +1692,8 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
+=======
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
     <configuration default="true" type="XSLT" factoryName="XSLT">
       <option name="myOutputFile" />
       <option name="myOpenOutputFile" value="false" />
@@ -1315,6 +1710,22 @@
       <JdkChoice value="FROM_MODULE" />
       <method />
     </configuration>
+<<<<<<< HEAD
+=======
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
     <configuration default="true" type="com.intellij.dmserver.run.DMServerRunConfigurationType:id" factoryName="Spring dmServer (Local)" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings>
@@ -1493,6 +1904,18 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
+<<<<<<< HEAD
+=======
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method />
+    </configuration>
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -1509,6 +1932,7 @@
       <setting name="launchBrowser" value="false" />
       <method />
     </configuration>
+<<<<<<< HEAD
     <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
       <module name="" />
       <setting name="path" value="" />
@@ -1518,6 +1942,8 @@
       <setting name="debug" value="false" />
       <method />
     </configuration>
+=======
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
@@ -1649,6 +2075,22 @@
       <option name="SELECTION" value="0" />
       <method />
     </configuration>
+<<<<<<< HEAD
+=======
+    <configuration default="true" type="GlassfishConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="DOMAIN" value="" />
+        <option name="PRESERVE" value="false" />
+        <option name="VIRTUAL_SERVER" />
+        <option name="USERNAME" value="admin" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <predefined_log_file id="GlassFish" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="externalProjectPath" />
@@ -1664,6 +2106,7 @@
       </ExternalSystemSettings>
       <method />
     </configuration>
+<<<<<<< HEAD
     <configuration default="true" type="GlassfishConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings>
@@ -1677,6 +2120,8 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
+=======
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
     <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" output_log_level="null" package_name="" scope="Class">
       <option name="BCName" value="" />
       <option name="launcherParameters">
@@ -1699,6 +2144,19 @@
       <option name="usbDebugPort" value="7936" />
       <method />
     </configuration>
+<<<<<<< HEAD
+=======
+    <configuration default="true" type="com.intellij.dmserver.run.DMServerRunConfigurationType:id" factoryName="Spring dmServer (Remote)" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <option name="MBeanPassword" value="springsource" />
+        <option name="MBeanPort" value="9875" />
+        <option name="MBeanUserName" value="admin" />
+      </server-settings>
+      <method />
+    </configuration>
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -1719,6 +2177,7 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
+<<<<<<< HEAD
     <configuration default="true" type="com.intellij.dmserver.run.DMServerRunConfigurationType:id" factoryName="Spring dmServer (Remote)" ALTERNATIVE_JRE_ENABLED="false">
       <option name="LOCAL" value="false" />
       <deployment />
@@ -1729,6 +2188,8 @@
       </server-settings>
       <method />
     </configuration>
+=======
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
     <configuration default="false" name="Dgdweb_tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.50" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="" show_console_on_std_out="true" show_console_on_std_err="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://127.0.0.1:8080/dgdweb/oligo/home.html" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -1868,6 +2329,7 @@
       <workItem from="1401810105844" duration="13898000" />
       <workItem from="1401904515688" duration="3260000" />
       <workItem from="1402082121325" duration="79603000" />
+<<<<<<< HEAD
       <workItem from="1403013482182" duration="8531000" />
       <workItem from="1403025593390" duration="32070000" />
       <workItem from="1404742671221" duration="55252000" />
@@ -1880,11 +2342,18 @@
       <workItem from="1407854738161" duration="11142000" />
       <workItem from="1408983486971" duration="5522000" />
       <workItem from="1409852608897" duration="13410000" />
+=======
+      <workItem from="1403013482182" duration="7785000" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="711602000" />
+=======
+    <option name="totallyTimeSpent" value="568112000" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1907,6 +2376,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="0" y="22" width="2560" height="1321" extended-state="6" />
     <editor active="true" />
     <layout>
@@ -1950,11 +2420,25 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32322428" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26746988" sideWeight="0.1965846" order="10" side_tool="true" content_ui="tabs" />
+=======
+    <frame x="0" y="23" width="2560" height="1321" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872254" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15369341" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872254" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32322428" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26746988" sideWeight="0.1965846" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.08260524" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295362" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872254" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13224782" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931727" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1967,12 +2451,31 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.450773" sideWeight="0.8034154" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40520748" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13224782" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931727" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32790887" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.450773" sideWeight="0.8034154" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40602115" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980143" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980143" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39952344" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
+=======
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32503772" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39952344" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1995,6 +2498,7 @@
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
+<<<<<<< HEAD
     <buildFile url="file://$PROJECT_DIR$/build.xml">
       <targetFilters>
         <filter targetName="clean" isVisible="true" />
@@ -2005,10 +2509,17 @@
         <filter targetName="buildLocalProdNoJavaDoc" isVisible="true" />
         <filter targetName="buildJavaDoc" isVisible="true" />
       </targetFilters>
+=======
+    <buildFile url="file://$PROJECT_DIR$/build_dgd.xml">
+      <expanded value="true" />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/build_mod.xml">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
       <expanded value="true" />
     </buildFile>
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/spring-webmvc-4.0.0.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="108" column="19" selection-start="7460" selection-end="7460" vertical-scroll-proportion="0.56343794" vertical-offset="1192" max-vertical-offset="1950" />
@@ -2170,10 +2681,170 @@
     <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1201">
+=======
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/spring-jdbc-4.0.0.RELEASE.jar!/org/springframework/jdbc/datasource/DataSourceTransactionManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="16" selection-start="649" selection-end="649" vertical-scroll-proportion="0.15" vertical-offset="0" max-vertical-offset="1200" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/xom-1.2.4.jar!/nu/xom/XOMHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="16" selection-start="3354" selection-end="3354" vertical-scroll-proportion="-2.76" vertical-offset="1146" max-vertical-offset="1410" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/xom-1.2.4.jar!/nu/xom/Builder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="27" selection-start="2051" selection-end="2051" vertical-scroll-proportion="-2.4" vertical-offset="570" max-vertical-offset="1275" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/dgdcore_1.1.3.jar!/edu/chop/dgd/xml/XomAnalyzer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="28" selection-start="1237" selection-end="1237" vertical-scroll-proportion="-4.0" vertical-offset="395" max-vertical-offset="615" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/dgdcore_1.1.3.jar!/edu/chop/dgd/process/primerCreate/UcscGene.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="176" selection-end="176" vertical-scroll-proportion="0.19582245" vertical-offset="0" max-vertical-offset="960" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/web/DGDHandlerInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="26" selection-start="896" selection-end="896" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/dgdcore_1.1.3.jar!/edu/chop/dgd/process/primerCreate/PrimerDAO.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="71" selection-start="868" selection-end="868" vertical-scroll-proportion="0.3504673" vertical-offset="0" max-vertical-offset="642" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/spring-webmvc-4.0.0.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="19" selection-start="7460" selection-end="7460" vertical-scroll-proportion="0.56343794" vertical-offset="1192" max-vertical-offset="1950" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/spring-web-4.0.0.RELEASE.jar!/org/springframework/web/bind/annotation/RequestMapping.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="18" selection-start="458" selection-end="458" vertical-scroll-proportion="0.1819407" vertical-offset="0" max-vertical-offset="742" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/Chromosome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="139" selection-end="139" vertical-scroll-proportion="0.136897" vertical-offset="0" max-vertical-offset="767" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/BlatPsl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="15" selection-start="1854" selection-end="1854" vertical-scroll-proportion="0.0" vertical-offset="788" max-vertical-offset="4635" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/dgdcore_1.1.3.jar!/edu/chop/dgd/process/primerCreate/AmpliconSeq.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="28" selection-start="1687" selection-end="1687" vertical-scroll-proportion="0.8509485" vertical-offset="47" max-vertical-offset="810" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/Primer3Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="31" selection-start="1914" selection-end="1914" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3630" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/junit-4.11.jar!/org/junit/runners/model/FrameworkMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="951" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/primer/primerReport.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="20" selection-start="4007" selection-end="4007" vertical-scroll-proportion="0.0" vertical-offset="1035" max-vertical-offset="4770" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/SafariDriverTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="38" selection-start="2298" selection-end="2298" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/PrimerProcess.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="198" column="71" selection-start="4029" selection-end="4029" vertical-scroll-proportion="0.0" vertical-offset="1985" max-vertical-offset="3300" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ucsc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="11" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/selenium-server-standalone-2.41.0.jar!/javax/servlet/http/HttpServletRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="51" selection-start="588" selection-end="588" vertical-scroll-proportion="0.3878437" vertical-offset="2" max-vertical-offset="1050" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/selenium-server-standalone-2.41.0.jar!/javax/servlet/ServletContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="17" selection-start="160" selection-end="160" vertical-scroll-proportion="0.07550336" vertical-offset="0" max-vertical-offset="1192" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/FileDownloadController.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="99" selection-start="2449" selection-end="2449" vertical-scroll-proportion="0.8172674" vertical-offset="0" max-vertical-offset="1815" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/primefaces-3.0.RC2.jar!/META-INF/primefaces-p.taglib.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4534" column="4" selection-start="164492" selection-end="164492" vertical-scroll-proportion="0.33278555" vertical-offset="67605" max-vertical-offset="194280" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="716" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="180" column="0" selection-start="5858" selection-end="5858" vertical-scroll-proportion="0.0" vertical-offset="1048" max-vertical-offset="2265" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml.prod">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="27" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="990" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring-web-4.0.0.RELEASE.jar!/org/springframework/web/bind/annotation/RequestMapping.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="18" selection-start="458" selection-end="458" vertical-scroll-proportion="0.35714287" vertical-offset="10" max-vertical-offset="405" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerHomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="59" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="420" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/fileUpload.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="8" selection-start="79" selection-end="79" vertical-scroll-proportion="0.46875" vertical-offset="0" max-vertical-offset="315" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring-context-4.0.0.RELEASE.jar!/org/springframework/validation/Errors.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="9" selection-start="729" selection-end="729" vertical-scroll-proportion="0.3482309" vertical-offset="203" max-vertical-offset="1065" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/UploadedFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="143" selection-end="143" vertical-scroll-proportion="0.47004607" vertical-offset="3" max-vertical-offset="375" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="73" selection-start="1353" selection-end="1353" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="6315">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/utils/class-use/FileValidator.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="65" column="90" selection-start="2395" selection-end="2395" vertical-scroll-proportion="0.28632116" vertical-offset="638" max-vertical-offset="1815" />
@@ -2201,45 +2872,101 @@
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/Chromosome.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+=======
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/primer/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="0" selection-start="2888" selection-end="2888" vertical-scroll-proportion="0.0" vertical-offset="201" max-vertical-offset="3060" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/upload/uploadError.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="738" />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="973" column="0" selection-start="15060" selection-end="15060" vertical-scroll-proportion="2.4808185" vertical-offset="13625" max-vertical-offset="57195" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dropbox/code/rgdweb/trunk/web-app/WEB-INF/jsp/curation/pathway/pathwayCreate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="663" column="53" selection-start="26583" selection-end="26583" vertical-scroll-proportion="-7.25" vertical-offset="9771" max-vertical-offset="14055" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/upload/parseRequest2_mod.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="212" column="0" selection-start="9114" selection-end="9114" vertical-scroll-proportion="-6.375" vertical-offset="3027" max-vertical-offset="4575">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/InsilicoPCRObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="0" selection-start="1175" selection-end="1175" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2160">
+=======
+    <entry file="file://$PROJECT_DIR$/webapp/upload/parseRequest.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="182" column="0" selection-start="7110" selection-end="7110" vertical-scroll-proportion="0.0" vertical-offset="2730" max-vertical-offset="3795">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdUtils/FileDownloadController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="65" column="9" selection-start="1999" selection-end="1999" vertical-scroll-proportion="0.0" vertical-offset="179" max-vertical-offset="1890">
+=======
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="0" selection-start="1275" selection-end="1275" vertical-scroll-proportion="-11.958333" vertical-offset="403" max-vertical-offset="1950">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerCreateController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="382" column="47" selection-start="14697" selection-end="14697" vertical-scroll-proportion="0.0" vertical-offset="3083" max-vertical-offset="7095">
+=======
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/InsilicoPCRObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="1170" selection-end="1170" vertical-scroll-proportion="0.0" vertical-offset="487" max-vertical-offset="2160">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/docs/dgdweb/index-all.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="552" column="84" selection-start="60367" selection-end="60367" vertical-scroll-proportion="0.0" vertical-offset="8176" max-vertical-offset="12735">
+=======
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="20" selection-start="668" selection-end="668" vertical-scroll-proportion="0.24979185" vertical-offset="0" max-vertical-offset="1201">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerReport.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="13" selection-start="375" selection-end="375" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2265">
+=======
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/FileUploadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml.prod">
       <provider selected="true" editor-type-id="text-editor">
         <state line="53" column="29" selection-start="2551" selection-end="2551" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1110">
@@ -2250,26 +2977,51 @@
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligoHomeController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="48" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+=======
+    <entry file="jar:///Applications/Tomcat7/lib/servlet-api.jar!/javax/servlet/ServletRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="33" selection-start="1696" selection-end="1696" vertical-scroll-proportion="0.6704689" vertical-offset="476" max-vertical-offset="1290" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="11" selection-start="292" selection-end="292" vertical-scroll-proportion="0.22584693" vertical-offset="0" max-vertical-offset="797">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/web/HttpRequestFacade.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="103" column="21" selection-start="2733" selection-end="2733" vertical-scroll-proportion="0.0" vertical-offset="464" max-vertical-offset="1665">
           <folding>
             <element signature="imports" expanded="true" />
+=======
+    <entry file="jar:///Applications/Tomcat7/lib/servlet-api.jar!/javax/servlet/ServletContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="17" selection-start="160" selection-end="160" vertical-scroll-proportion="0.11392405" vertical-offset="0" max-vertical-offset="1935">
+          <folding>
+            <element signature="e#0#4292#0" expanded="true" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/fileUpload.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="8" selection-start="79" selection-end="79" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="315">
+=======
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerCreateController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="414" column="106" selection-start="16216" selection-end="16216" vertical-scroll-proportion="0.0" vertical-offset="4149" max-vertical-offset="7095">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="55" selection-start="2057" selection-end="2057" vertical-scroll-proportion="-25.2" vertical-offset="0" max-vertical-offset="1155">
@@ -2287,17 +3039,49 @@
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="40" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1260">
+=======
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligoHomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/web/HttpRequestFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="21" selection-start="2733" selection-end="2733" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1635">
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#647#648#0" expanded="false" />
+            <element signature="e#682#683#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build_dgd.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="13" selection-start="1755" selection-end="1755" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="2250">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/Primer3Object.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="181" column="9" selection-start="6753" selection-end="6753" vertical-scroll-proportion="0.0" vertical-offset="2210" max-vertical-offset="4035">
+=======
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/utils/FileDownloadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="40" selection-start="1497" selection-end="1497" vertical-scroll-proportion="0.0" vertical-offset="411" max-vertical-offset="1890">
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="50" column="76" selection-start="1978" selection-end="1978" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="3525">
@@ -2320,6 +3104,12 @@
             <element signature="e#2727#2728#0" expanded="true" />
             <element signature="e#2789#2790#0" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/build_mod.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="13" selection-start="1858" selection-end="1858" vertical-scroll-proportion="0.26228142" vertical-offset="405" max-vertical-offset="1680">
+          <folding />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
         </state>
       </provider>
     </entry>
@@ -2330,9 +3120,15 @@
         <settings>
           <artifact-editor>
             <show-content>
+<<<<<<< HEAD
               <type id="artifact" />
               <type id="javaee-facet-resources" />
               <type id="library" />
+=======
+              <type id="javaee-facet-resources" />
+              <type id="library" />
+              <type id="artifact" />
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
               <type id="jpa-descriptors" />
             </show-content>
           </artifact-editor>

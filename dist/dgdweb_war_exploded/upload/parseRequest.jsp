@@ -180,7 +180,11 @@
 
                 f.mkdirs();
 
+<<<<<<< HEAD
                 fout = new File(f + "/" + (new File(uploadedFilename)).getName());
+=======
+                fout = new File(f + (new File(uploadedFilename)).getName());
+>>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
 
                 out.println("[parseRequest.jsp] File Out: " + fout.toString());
 		        // write the file

@@ -1,0 +1,32 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+         <property name="basename" value="views"/>
+    </bean>
+
+
+   <bean id="UcscDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName" value="java:comp/env/jdbc/ucsc"/>
+    </bean>
+
+
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="UcscDataSource"/>
+    </bean>
+
+    <bean id="processBuilderDir" class="edu.chop.dgd.primer.PrimerCreateController">
+        <property name="primerProcessScriptDir" value="/data/"/>
+        <property name="primer3InputDir" value="/data/primer3inp/"/>
+        <property name="primer3OpDir" value="/data/primer3op/"/>
+        <property name="blatInpDir" value="/data/blatInp/"/>
+        <property name="blatOpDir" value="/data/blatOp/"/>
+    </bean>
+</beans>
+
+
+
+
+
