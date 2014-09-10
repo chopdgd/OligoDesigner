@@ -1,9 +1,9 @@
 package edu.chop.dgd.primer;
 
 import edu.chop.dgd.process.primerCreate.*;
-import edu.chop.dgd.utils.BlatPsl;
-import edu.chop.dgd.utils.InsilicoPCRObject;
-import edu.chop.dgd.utils.Primer3Object;
+import edu.chop.dgd.dgdObjects.BlatPsl;
+import edu.chop.dgd.dgdObjects.InsilicoPCRObject;
+import edu.chop.dgd.dgdObjects.Primer3Object;
 import edu.chop.dgd.web.HttpRequestFacade;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
@@ -446,12 +446,12 @@ public class PrimerCreateController implements Controller {
     }
 
 
-    public static String getDataDir() {
+    public String getDataDir() {
         return dataDir;
     }
 
     public void setDataDir(String dataDir) {
-        this.dataDir = dataDir;
+        PrimerCreateController.dataDir = dataDir;
     }
 
     public String getPrimer3InputDir() {

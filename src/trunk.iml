@@ -22,6 +22,16 @@
         </fileset>
       </configuration>
     </facet>
+    <facet type="web" name="Web2">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$HOME_DIR$/PrimerDesigner/trunk/.idea/compiler.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$HOME_DIR$/PrimerDesigner/trunk/.idea" relative="/WEB-INF" />
+        </webroots>
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
     <output url="file://$HOME_DIR$/PrimerDesigner/trunk/dist/production" />
@@ -32,9 +42,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="lib" level="project" />
-    <orderEntry type="library" exported="" name="lib1" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 7.0.50" level="application_server_libraries" />
+    <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="lib1" level="project" />
   </component>
 </module>
 

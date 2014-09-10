@@ -7,9 +7,10 @@
 
     <context:component-scan base-package="edu.chop.dgd"/>
 
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"></bean>
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    </bean>
 
-    <bean id="DGDHandlerInterceptor" class="edu.chop.dgd.web.DGDHandlerInterceptor">
+    <bean id="dGDHandlerInterceptor" class="edu.chop.dgd.web.DGDHandlerInterceptor">
     </bean>
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
@@ -18,33 +19,54 @@
 
 
     <bean id="publicUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-            <property name="interceptors">
-                <list>
-                    <ref bean="DGDHandlerInterceptor" />
-                </list>
-            </property>
-            <property name="mappings">
-                <props>
+                <property name="interceptors">
+                    <list>
+                        <ref bean="dGDHandlerInterceptor" />
+                    </list>
+                </property>
+                <property name="mappings">
+                    <props>
 
-                    <prop key="primer/home.html">PrimerHomeController</prop>
-                    <prop key="primer/primerReport.html">PrimerCreateController</prop>
-                    <prop key="primer/FileDownload.html">FileDownloadController</prop>
-                </props>
-            </property>
-        </bean>
+                        <prop key="primer/home.html">PrimerHomeController</prop>
+                        <prop key="primer/primerReport.html">PrimerCreateController</prop>
+                        <prop key="primer/FileDownload.html">FileDownloadController</prop>
+                        <prop key="oligo/home.html">OligoHomeController</prop>
+                        <prop key="oligo/fileUpload.html">OligosCreationController</prop>
+                    </props>
+                </property>
+    </bean>
 
-        <bean id="wwwDir" abstract="true">
-            <property name="dataDir" value="/data/"/>
-            <property name="primer3InputDir" value="primer3Inp/" />
-            <property name="primer3OpDir" value="primer3out/" />
-            <property name="blatInpDir" value="blatInp/" />
-            <property name="blatOpDir" value="blatOp/" />
-            <property name="insilicoPcrInputDir" value="isPcrInp/" />
-            <property name="insilicoPcrOpDir" value="isPcrOp/" />
-            <property name="primerProcessScriptDir" value="/data/" />
-        </bean>
+    <bean id="wwwDir" abstract="true">
+        <property name="dataDir" value="/data/"/>
+        <property name="primer3InputDir" value="primer3Inp/" />
+        <property name="primer3OpDir" value="primer3out/" />
+        <property name="blatInpDir" value="blatInp/" />
+        <property name="blatOpDir" value="blatOp/" />
+        <property name="insilicoPcrInputDir" value="isPcrInp/" />
+        <property name="insilicoPcrOpDir" value="isPcrOp/" />
+        <property name="primerProcessScriptDir" value="/data/" />
 
-        <bean id="PrimerHomeController" class="edu.chop.dgd.primer.PrimerHomeController" />
-        <bean id="PrimerCreateController" class="edu.chop.dgd.primer.PrimerCreateController" parent="wwwDir"/>
-        <bean id="FileDownloadController" class="edu.chop.dgd.utils.FileDownloadController" parent="wwwDir"/>
+    </bean>
+
+
+    <bean id="oligoDir" abstract="true">
+        <property name="dataDir" value="/data/"/>
+        <property name="blatInpDir" value="blatOligoInp/" />
+        <property name="blatOpDir" value="blatOligoOp/" />
+        <property name="oligoProcessScriptDir" value="/data/" />
+        <property name="oligoInputDir" value="/oligoInp/"/>
+        <property name="oligoOutputDir" value="oligoOut/" />
+        <property name="mfoldInpDir" value="mfoldInp/" />
+        <property name="mfoldOpDir" value="mofoldOut/" />
+
+    </bean>
+
+    <bean id="PrimerHomeController" class="edu.chop.dgd.primer.PrimerHomeController" />
+    <bean id="PrimerCreateController" class="edu.chop.dgd.primer.PrimerCreateController" parent="wwwDir" />
+    <bean id="FileDownloadController" class="edu.chop.dgd.dgdUtils.FileDownloadController" parent="wwwDir" />
+    <bean id="OligoHomeController" class="edu.chop.dgd.oligo.OligoHomeController" />
+    <bean id="OligosCreationController" class="edu.chop.dgd.oligo.OligosCreationController" parent="oligoDir" />
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
 </beans>

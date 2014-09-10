@@ -23,7 +23,7 @@ public class OligoHomeController implements Controller{
         String uploadFilePath = "/data/downloads";
 
         HttpRequestFacade req = new HttpRequestFacade(request);
-        status.add("oligo Design homepage?");
+        //status.add("oligo Design homepage?");
         ModelAndView mv = new ModelAndView("/WEB-INF/pages/oligo/home.jsp", "message", "Design oligos for given positions.");
         mv.addObject("uploads", uploadFilePath);
 

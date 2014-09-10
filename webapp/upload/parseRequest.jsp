@@ -180,7 +180,7 @@
 
                 f.mkdirs();
 
-                fout = new File(f + (new File(uploadedFilename)).getName());
+                fout = new File(f + "/" + (new File(uploadedFilename)).getName());
 
                 out.println("[parseRequest.jsp] File Out: " + fout.toString());
 		        // write the file

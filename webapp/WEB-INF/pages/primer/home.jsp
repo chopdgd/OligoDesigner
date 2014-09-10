@@ -1,5 +1,5 @@
 
-<%@ page import="edu.chop.dgd.utils.Chromosome" %>
+<%@ page import="edu.chop.dgd.dgdObjects.Chromosome" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="edu.chop.dgd.web.DisplayMapper" %>
 <%@ page import="edu.chop.dgd.web.HttpRequestFacade" %>
