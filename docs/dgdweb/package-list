@@ -1,9 +1,6 @@
 edu.chop.dgd
-<<<<<<< HEAD
 edu.chop.dgd.dgdObjects
 edu.chop.dgd.dgdUtils
-=======
->>>>>>> 9f9004643b5f328a04c5f4a8ee73dc1c0003e9d6
 edu.chop.dgd.oligo
 edu.chop.dgd.primer
 edu.chop.dgd.web

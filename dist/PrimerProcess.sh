@@ -170,9 +170,10 @@ echo "<h1>Blat Result</h1><hr>"
 	##	Blatting for each chromosome:
 #	for n in {1..22} X Y
 #	do
-	echo "runnig BLAT for query against chr$n"
+#	echo "runnig BLAT for query against chr$n"
 #	blat -t=dna -q=dna -out=pslx -fine -stepSize=5 -minScore=15 -repMatch=1000000 $BLAT_DB"/hg19.2bit" $BLAT_INPUT $BLAT_OUTPUT_FOLDER"/psl/output.psl" > /dev/null
 # 	done
+
 	gfClient localhost 17779 -t=dna -q=dna -out=pslx -minScore=15 $BLAT_DB $BLAT_INPUT $BLAT_OUTPUT_FOLDER"/psl/output.psl" > /dev/null
 
 	##	sorting and merging the psl files(blat output for each chromosome)
