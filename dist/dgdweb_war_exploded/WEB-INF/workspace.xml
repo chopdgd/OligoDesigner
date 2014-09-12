@@ -6,155 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac191350-69f3-4148-855b-8f2b1bf701ca" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/README" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/build.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/dist/PrimerProcess.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/dist/dgdweb.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/dist/dgdweb.war" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/allclasses-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/allclasses-noframe.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/constant-values.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/deprecated-list.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/primer/PrimerCreateController.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/primer/PrimerHomeController.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerCreateController.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerHomeController.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/primer/package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/primer/package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/primer/package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/primer/package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/utils/BlatPsl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/utils/Chromosome.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/utils/InsilicoPCRObject.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/utils/Primer3Object.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/utils/class-use/BlatPsl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/utils/class-use/Chromosome.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/utils/class-use/InsilicoPCRObject.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/utils/class-use/Primer3Object.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/utils/package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/utils/package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/utils/package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/utils/package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/web/DGDHandlerInterceptor.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/web/DisplayMapper.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/web/HttpRequestFacade.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/web/class-use/DGDHandlerInterceptor.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/web/class-use/DisplayMapper.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/web/class-use/HttpRequestFacade.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/web/package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/web/package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/web/package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/edu/chop/dgd/web/package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/help-doc.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/index-all.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/overview-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/overview-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/overview-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/package-list" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/resources/background.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/resources/tab.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/resources/titlebar.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/resources/titlebar_end.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/docs/dgdweb/stylesheet.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/commons-collections-3.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/commons-dbcp.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/commons-logging-1.0.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/commons-net-2.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/commons-pool.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/dgdcore_1.1.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/hamcrest-core-1.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/httpclient-4.2.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/httpcore-4.2.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/jaxen-1.1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/jsp-api.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/junit-4.11.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/mysql-connector-java-5.1.28-bin.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/servlet-api.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/spring-aop-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/spring-aspects-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/spring-beans-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/spring-context-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/spring-context-support-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/spring-core-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/spring-expression-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/spring-framework-bom-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/spring-instrument-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/spring-instrument-tomcat-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/spring-jdbc-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/spring-orm-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/spring-oxm-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/spring-test-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/spring-tx-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/spring-web-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/spring-webmvc-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/spring-webmvc-portlet-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/spring-websocket-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/lib/xom-1.2.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/src/java/PrimerProcess.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/src/java/edu/chop/dgd/primer/PrimerCreateController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/src/java/edu/chop/dgd/primer/PrimerHomeController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/src/java/edu/chop/dgd/primer/PrimerReport.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/src/java/edu/chop/dgd/utils/BlatPsl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/src/java/edu/chop/dgd/utils/Chromosome.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/src/java/edu/chop/dgd/utils/FileDownloadController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/src/java/edu/chop/dgd/utils/InsilicoPCRObject.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/src/java/edu/chop/dgd/utils/Primer3Object.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/src/java/edu/chop/dgd/web/DGDHandlerInterceptor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/src/java/edu/chop/dgd/web/DisplayMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/src/java/edu/chop/dgd/web/HttpRequestFacade.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/src/java/primer3_settings.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/src/trunk.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/ucsc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/applicationContext.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/commons-collections-3.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/commons-dbcp.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/commons-logging-1.0.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/commons-net-2.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/commons-pool.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/dgdcore_1.1.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/dgdweb.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/hamcrest-core-1.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/httpclient-4.2.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/httpcore-4.2.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/jaxen-1.1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/jsp-api.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/junit-4.11.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/mysql-connector-java-5.1.28-bin.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/servlet-api.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/spring-aop-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/spring-aspects-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/spring-beans-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/spring-context-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/spring-context-support-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/spring-core-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/spring-expression-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/spring-framework-bom-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/spring-instrument-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/spring-instrument-tomcat-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/spring-jdbc-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/spring-orm-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/spring-oxm-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/spring-test-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/spring-tx-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/spring-web-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/spring-webmvc-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/spring-webmvc-portlet-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/spring-websocket-4.0.0.RELEASE.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/lib/xom-1.2.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/log4j.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/mvc-dispatcher-servlet.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/mvc-dispatcher-servlet.xml.prod" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/pages/hello.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/pages/primer/home.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/pages/primer/primerReport.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/WEB-INF/web.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/old_repo/webapp/resources/images/dgd.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/PrimerProcess.sh" afterPath="$PROJECT_DIR$/src/java/PrimerProcess.sh" />
-    </list>
+    <list default="true" id="ac191350-69f3-4148-855b-8f2b1bf701ca" name="Default" comment="" />
     <ignored path="trunk.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -362,21 +214,6 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/InsilicoPCRObject.java" line="65" class="edu.chop.dgd.dgdObjects.InsilicoPCRObject" package="edu.chop.dgd.dgdObjects">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
       <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" line="42" class="edu.chop.dgd.oligo.OligosCreationController" package="edu.chop.dgd.oligo">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
@@ -393,21 +230,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
       <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" line="163" class="edu.chop.dgd.oligo.OligosCreationController" package="edu.chop.dgd.oligo">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObject.java" line="59" class="edu.chop.dgd.dgdObjects.OligoObject" package="edu.chop.dgd.dgdObjects">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -497,6 +319,186 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObject.java" line="61" class="edu.chop.dgd.dgdObjects.OligoObject" package="edu.chop.dgd.dgdObjects">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" line="177" class="edu.chop.dgd.oligo.OligosCreationController" package="edu.chop.dgd.oligo">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObjectSubsections.java" line="23" class="edu.chop.dgd.dgdObjects.OligoObjectSubsections" package="edu.chop.dgd.dgdObjects">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" line="50" class="edu.chop.dgd.oligo.OligosCreationController" package="edu.chop.dgd.oligo">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" line="51" class="edu.chop.dgd.oligo.OligosCreationController" package="edu.chop.dgd.oligo">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" line="48" class="edu.chop.dgd.oligo.OligosCreationController" package="edu.chop.dgd.oligo">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" line="88" class="edu.chop.dgd.oligo.OligosCreationController" package="edu.chop.dgd.oligo">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/Primer3Object.java" line="184" class="edu.chop.dgd.dgdObjects.Primer3Object" package="edu.chop.dgd.dgdObjects">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/Primer3Object.java" line="190" class="edu.chop.dgd.dgdObjects.Primer3Object" package="edu.chop.dgd.dgdObjects">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/Primer3Object.java" line="196" class="edu.chop.dgd.dgdObjects.Primer3Object" package="edu.chop.dgd.dgdObjects">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/Primer3Object.java" line="217" class="edu.chop.dgd.dgdObjects.Primer3Object" package="edu.chop.dgd.dgdObjects">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/InsilicoPCRObject.java" line="66" class="edu.chop.dgd.dgdObjects.InsilicoPCRObject" package="edu.chop.dgd.dgdObjects">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
@@ -507,10 +509,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="InsilicoPCRObject.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/InsilicoPCRObject.java">
+      <file leaf-file-name="OligosCreationController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="0" selection-start="2230" selection-end="2230" vertical-scroll-proportion="0.0" vertical-offset="822" max-vertical-offset="2160">
+            <state line="51" column="79" selection-start="2098" selection-end="2098" vertical-scroll-proportion="0.0" vertical-offset="526" max-vertical-offset="4080">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3767#3780#0" expanded="true" />
+                <element signature="e#4563#4574#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Primer3Object.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/Primer3Object.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="193" column="13" selection-start="6981" selection-end="6981" vertical-scroll-proportion="0.0" vertical-offset="3947" max-vertical-offset="5505">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OligoObjectSubsections.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObjectSubsections.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="106" selection-start="895" selection-end="895" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="1155">
               <folding />
             </state>
           </provider>
@@ -520,6 +544,18 @@
         <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/Chromosome.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="8" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" vertical-offset="21" max-vertical-offset="600">
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#381#389#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InsilicoPCRObject.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/InsilicoPCRObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="69" column="11" selection-start="2443" selection-end="2443" vertical-scroll-proportion="0.0" vertical-offset="840" max-vertical-offset="2160">
               <folding />
             </state>
           </provider>
@@ -537,7 +573,7 @@
       <file leaf-file-name="PrimerCreateController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerCreateController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="398" column="0" selection-start="15390" selection-end="15390" vertical-scroll-proportion="9.020373" vertical-offset="432" max-vertical-offset="7095">
+            <state line="421" column="17" selection-start="16547" selection-end="16547" vertical-scroll-proportion="1.1375661" vertical-offset="5445" max-vertical-offset="7095">
               <folding />
             </state>
           </provider>
@@ -546,8 +582,27 @@
       <file leaf-file-name="OligoObject.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="40" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1260">
-              <folding />
+            <state line="61" column="0" selection-start="2097" selection-end="2097" vertical-scroll-proportion="0.0" vertical-offset="542" max-vertical-offset="1260">
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#568#592#0" expanded="false" />
+                <element signature="e#2154#2155#0" expanded="false" />
+                <element signature="e#2180#2181#0" expanded="false" />
+                <element signature="e#2218#2219#0" expanded="false" />
+                <element signature="e#2248#2249#0" expanded="false" />
+                <element signature="e#2277#2278#0" expanded="false" />
+                <element signature="e#2305#2306#0" expanded="false" />
+                <element signature="e#2344#2345#0" expanded="false" />
+                <element signature="e#2378#2379#0" expanded="false" />
+                <element signature="e#2406#2407#0" expanded="false" />
+                <element signature="e#2433#2434#0" expanded="false" />
+                <element signature="e#2470#2471#0" expanded="false" />
+                <element signature="e#2502#2503#0" expanded="false" />
+                <element signature="e#2573#2574#0" expanded="false" />
+                <element signature="e#2618#2619#0" expanded="false" />
+                <element signature="e#2716#2717#0" expanded="false" />
+                <element signature="e#2784#2785#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -617,14 +672,14 @@
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/InsilicoPCRObject.java" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/FileUploadController.java" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/MfoldHairpins.java" />
-        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObjectSubsections.java" />
-        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/Primer3Object.java" />
         <option value="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml.prod" />
         <option value="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerCreateController.java" />
         <option value="$PROJECT_DIR$/webapp/upload/parseRequest.jsp" />
-        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligoHomeController.java" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObjectSubsections.java" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/Primer3Object.java" />
       </list>
     </option>
   </component>
@@ -638,7 +693,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1280" />
-    <option name="height" value="722" />
+    <option name="height" value="723" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -735,76 +790,6 @@
               <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="primer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="oligo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="upload" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -857,6 +842,110 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dgd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dgd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="primer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dgd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oligo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dgd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dgdUtils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dgd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dgdObjects" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1763,12 +1852,12 @@
       <workItem from="1407513983557" duration="6982000" />
       <workItem from="1407854738161" duration="11142000" />
       <workItem from="1408983486971" duration="5522000" />
-      <workItem from="1409852608897" duration="18364000" />
+      <workItem from="1409852608897" duration="30510000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="716556000" />
+    <option name="totallyTimeSpent" value="728702000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1791,12 +1880,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="722" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="22" width="1280" height="723" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280543" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15347335" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16801292" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872254" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32322428" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1812,9 +1901,9 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32790887" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32222223" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34603176" sideWeight="0.8034154" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46909666" sideWeight="0.8034154" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20476191" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280507" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980143" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980143" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1893,11 +1982,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ucsc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="11" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270" />
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/selenium-server-standalone-2.41.0.jar!/javax/servlet/http/HttpServletRequest.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="51" selection-start="588" selection-end="588" vertical-scroll-proportion="0.3878437" vertical-offset="2" max-vertical-offset="1050" />
@@ -2069,13 +2153,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="75" selection-start="3011" selection-end="3011" vertical-scroll-proportion="-15.04" vertical-offset="584" max-vertical-offset="1155">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerReport.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="13" selection-start="375" selection-end="375" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2265">
@@ -2087,19 +2164,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="59" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="289" column="23" selection-start="10079" selection-end="10079" vertical-scroll-proportion="0.0" vertical-offset="862" max-vertical-offset="4110">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3755#3768#0" expanded="true" />
-            <element signature="e#4551#4562#0" expanded="true" />
-            <element signature="e#8663#8664#0" expanded="true" />
-            <element signature="e#8696#8697#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2124,27 +2188,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObjectSubsections.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="70" selection-start="719" selection-end="719" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1155">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/Primer3Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="160" column="31" selection-start="5645" selection-end="5645" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4035">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="40" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1260">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/MfoldHairpin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="27" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
@@ -2152,17 +2195,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/InsilicoPCRObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="0" selection-start="2230" selection-end="2230" vertical-scroll-proportion="0.0" vertical-offset="822" max-vertical-offset="2160">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/Chromosome.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
-          <folding />
+        <state line="8" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" vertical-offset="21" max-vertical-offset="600">
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#381#389#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2215,9 +2254,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="0" selection-start="2097" selection-end="2097" vertical-scroll-proportion="0.0" vertical-offset="542" max-vertical-offset="1260">
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#568#592#0" expanded="false" />
+            <element signature="e#2154#2155#0" expanded="false" />
+            <element signature="e#2180#2181#0" expanded="false" />
+            <element signature="e#2218#2219#0" expanded="false" />
+            <element signature="e#2248#2249#0" expanded="false" />
+            <element signature="e#2277#2278#0" expanded="false" />
+            <element signature="e#2305#2306#0" expanded="false" />
+            <element signature="e#2344#2345#0" expanded="false" />
+            <element signature="e#2378#2379#0" expanded="false" />
+            <element signature="e#2406#2407#0" expanded="false" />
+            <element signature="e#2433#2434#0" expanded="false" />
+            <element signature="e#2470#2471#0" expanded="false" />
+            <element signature="e#2502#2503#0" expanded="false" />
+            <element signature="e#2573#2574#0" expanded="false" />
+            <element signature="e#2618#2619#0" expanded="false" />
+            <element signature="e#2716#2717#0" expanded="false" />
+            <element signature="e#2784#2785#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="79" selection-start="2098" selection-end="2098" vertical-scroll-proportion="0.0" vertical-offset="526" max-vertical-offset="4080">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3767#3780#0" expanded="true" />
+            <element signature="e#4563#4574#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObjectSubsections.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="106" selection-start="895" selection-end="895" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="1155">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/PrimerProcess.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="27" selection-start="2218" selection-end="2218" vertical-scroll-proportion="2.7367687" vertical-offset="0" max-vertical-offset="3315">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/Primer3Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="193" column="13" selection-start="6981" selection-end="6981" vertical-scroll-proportion="0.0" vertical-offset="3947" max-vertical-offset="5505">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/InsilicoPCRObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="11" selection-start="2443" selection-end="2443" vertical-scroll-proportion="0.0" vertical-offset="840" max-vertical-offset="2160">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerCreateController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="398" column="0" selection-start="15390" selection-end="15390" vertical-scroll-proportion="9.020373" vertical-offset="432" max-vertical-offset="7095">
+        <state line="421" column="17" selection-start="16547" selection-end="16547" vertical-scroll-proportion="1.1375661" vertical-offset="5445" max-vertical-offset="7095">
           <folding />
         </state>
       </provider>

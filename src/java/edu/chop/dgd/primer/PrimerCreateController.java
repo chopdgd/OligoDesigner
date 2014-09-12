@@ -380,7 +380,7 @@ public class PrimerCreateController implements Controller {
         String answer;
         String errAnswer="NA";
 
-        ProcessBuilder pb = new ProcessBuilder(getPrimerProcessScriptDir()+"PrimerProcess.sh",inputFileName);
+        ProcessBuilder pb = new ProcessBuilder("./PrimerProcess.sh",inputFileName);
         //System.out.println( "environment before addition:"+pb.environment());
         Map<String, String> env = pb.environment();
         env.put("SHELL", "/bin/bash");
@@ -389,7 +389,7 @@ public class PrimerCreateController implements Controller {
         path += ":/usr/local/blat";
         env.put("PATH", path);
 
-        pb.directory(new File(primerProcessScriptDir));
+        pb.directory(new File(getPrimerProcessScriptDir()));
         pb.redirectErrorStream(true);
         System.out.println(pb.directory());
         System.out.println(pb.command());
