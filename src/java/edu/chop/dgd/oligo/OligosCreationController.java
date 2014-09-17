@@ -2,7 +2,6 @@ package edu.chop.dgd.oligo;
 
 import edu.chop.dgd.dgdObjects.OligoObject;
 import edu.chop.dgd.dgdObjects.OligoObjectSubsections;
-import edu.chop.dgd.process.primerCreate.AmpliconSeq;
 import edu.chop.dgd.process.primerCreate.Variation;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
@@ -49,7 +48,7 @@ public class OligosCreationController implements Controller{
             String[] reportAndName = fullReportFileName.split("&", -1);
             reportFile = reportAndName[0];
             String fileName = reportAndName[1];
-            List<OligoObjectSubsections> oligosSubsectionList = oss.retrieveResultsFromAnalyses(fileName, osSubsList, dataDir, oligoOutputDir, blatInpDir);
+            List<OligoObjectSubsections> oligosSubsectionList = oss.retrieveResultsFromAnalyses(fileName, osSubsList, dataDir, oligoOutputDir, blatInpDir, blatOpDir);
             o.setOligoObjectSubsections(oligosSubsectionList);
 
         }
@@ -133,23 +132,6 @@ public class OligosCreationController implements Controller{
         }
 
         return varList;
-    }
-
-
-    private String writePrimerInputFile(List<Variation> vList, AmpliconSeq ampliconObj) throws FileNotFoundException {
-        Date dt = new Date();
-        String fileName="primerInp"+ new SimpleDateFormat("yyyyMMddhhmm'.txt'").format(new Date());
-        File primerInputFile = new File(dataDir+oligoInputDir+fileName);
-        PrintWriter pw = new PrintWriter(primerInputFile);
-        int bufferUpstreamPos = vList.get(0).getVstart()-ampliconObj.getBufferUpstream();
-        int relPosStart = bufferUpstreamPos-ampliconObj.getAmpliconStart();
-        int relPosLength = ampliconObj.getBufferUpstream()+vList.get(0).getVstop()-vList.get(0).getVstart()+ampliconObj.getBufferDownstream();
-        pw.println("SEQUENCE_ID=inpSeq1\nSEQUENCE_TEMPLATE="+ampliconObj.getMaskedSeq()+"\nSEQUENCE_TARGET="+relPosStart+","+relPosLength+"\n=");
-        System.out.println("SEQUENCE_ID=inpSeq1\nSEQUENCE_TEMPLATE="+ampliconObj.getMaskedSeq()+"\nSEQUENCE_TARGET="+relPosStart+","+relPosLength+"\n=");
-        pw.flush();
-        pw.close();
-
-        return fileName;
     }
 
 

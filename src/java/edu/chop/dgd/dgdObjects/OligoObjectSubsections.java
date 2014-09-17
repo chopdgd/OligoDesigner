@@ -18,13 +18,16 @@ public class OligoObjectSubsections {
     List<MfoldHairpin> mfoldHairpinResults;
 
 
-    public List<OligoObjectSubsections> retrieveResultsFromAnalyses(String fileName, List<OligoObjectSubsections> osSubsList, String dataDir, String oligoOutputDir, String blatOligoInpDir)throws Exception {
+    public List<OligoObjectSubsections> retrieveResultsFromAnalyses(String fileName, List<OligoObjectSubsections> osSubsList, String dataDir, String oligoOutputDir, String blatOligoInpDir, String blatOligoOpDir)throws Exception {
 
-        Primer3Object p3Obj = new Primer3Object();
-        List<Primer3Object> oligoObjectsFromPrimer3 = p3Obj.createOligoObjsList(fileName, dataDir, oligoOutputDir);
-        oligoObjectsFromPrimer3 = p3Obj.addIdsToPrimers(fileName, oligoObjectsFromPrimer3, blatOligoInpDir, dataDir);
-        //primer3Objects = new BlatPsl().addBlatResultsToPrimers(inputFileName, blatOpDir, primer3Objects, dataDir);
+        List<BlatPsl> blatResults = new BlatPsl().createOligoBlatList(fileName, blatOligoOpDir, dataDir);
 
+        for(OligoObjectSubsections oss : osSubsList){
+            Primer3Object p3Obj = new Primer3Object();
+            List<Primer3Object> oligoObjectsFromPrimer3 = p3Obj.createOligoObjsList(fileName, dataDir, oligoOutputDir, oss);
+            oligoObjectsFromPrimer3 = p3Obj.addIdsToOligos(fileName, oligoObjectsFromPrimer3, blatOligoInpDir, dataDir, oss);
+            oligoObjectsFromPrimer3 = new BlatPsl().addBlatResultsToOligos(blatResults, oligoObjectsFromPrimer3, dataDir, oss);
+        }
 
         return null;
 

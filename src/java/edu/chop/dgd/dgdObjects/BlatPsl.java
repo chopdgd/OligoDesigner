@@ -137,6 +137,34 @@ public class BlatPsl{
         return primer3Objects;
     }
 
+
+    public List<Primer3Object> addBlatResultsToOligos(List<BlatPsl> blatResults, List<Primer3Object> oligoObjectsFromPrimer3,
+                                                      String dataDir, OligoObjectSubsections oss) throws Exception {
+
+        for(BlatPsl blatObj : blatResults){
+
+            for(Primer3Object prObj : oligoObjectsFromPrimer3){
+                if(blatObj.getqName().equals(prObj.getInternalPrimerId())){
+                    if(prObj.getInternalPrimerBlatList()==null){
+                        List<BlatPsl> rightBlatList = new ArrayList<BlatPsl>();
+                        rightBlatList.add(blatObj);
+                        prObj.setRightPrimerBlatList(rightBlatList);
+                    }else{
+                        List<BlatPsl> rightBlatList = prObj.getRightPrimerBlatList();
+                        rightBlatList.add(blatObj);
+                        prObj.setRightPrimerBlatList(rightBlatList);
+                    }
+                    break;
+                }
+            }
+        }
+
+        return oligoObjectsFromPrimer3;
+
+    }
+
+
+
     public List<BlatPsl> createBlatList(String fileName, String blatOpDir, String dataDir) throws Exception{
 
         List<BlatPsl> blatResults = new ArrayList<BlatPsl>();
@@ -209,6 +237,82 @@ public class BlatPsl{
 
         return blatResults;
     }
+
+
+    public List<BlatPsl> createOligoBlatList(String fileName, String blatOpDir, String dataDir) throws Exception{
+
+        List<BlatPsl> blatResults = new ArrayList<BlatPsl>();
+
+        FileReader f = new FileReader(dataDir+blatOpDir+fileName+"/FINAL.psl");
+        Scanner s = new Scanner(f);
+        while(s.hasNextLine()){
+            String line = s.nextLine();
+            if((!(line.contains("psLayout version 3")))&&(!(line.contains("match")))&&(!(line.contains("----------")))){
+                String[] lineArr = line.split("\t", -1);
+                if(!lineArr[0].equals("")){
+                    String match = lineArr[0];
+                    String misMatch = lineArr[1];
+                    String repMatch = lineArr[2];
+                    String nCount = lineArr[3];
+                    String qGapCount = lineArr[4];
+                    String qGapBases = lineArr[5];
+                    String tGapCount = lineArr[6];
+                    String tGapBases = lineArr[7];
+                    String[] strand = lineArr[8].split(",", -1);
+                    String qName = lineArr[9];
+                    String qSize = lineArr[10];
+                    String qStart = lineArr[11];
+                    String qEnd = lineArr[12];
+                    String tName = lineArr[13];
+                    String tSize = lineArr[14];
+                    String tStart = lineArr[15];
+                    String tEnd = lineArr[16];
+                    String blockCount = lineArr[17];
+                    String[] blockSizes = lineArr[18].split(",", -1);
+                    String[] qStartsArr = lineArr[19].split(",", -1);
+                    String[] tStartsArr = lineArr[20].split(",", -1);
+                    String[] querySeqArr = lineArr[21].split(",", -1);
+
+                    BlatPsl newPslObject = new BlatPsl();
+                    newPslObject.setMatch(Integer.parseInt(match));
+                    newPslObject.setMisMatch(Integer.parseInt(misMatch));
+                    newPslObject.setRepMatch(Integer.parseInt(repMatch));
+                    newPslObject.setnCount(Integer.parseInt(nCount));
+                    newPslObject.setqNumInsert(Integer.parseInt(qGapCount));
+                    newPslObject.setqBaseInsert(Integer.parseInt(qGapBases));
+                    newPslObject.settNumInsert(Integer.parseInt(tGapCount));
+                    newPslObject.settBaseInsert(Integer.parseInt(tGapBases));
+                    newPslObject.setStrand(strand);
+                    newPslObject.setqName(qName);
+                    newPslObject.setqSize(Integer.parseInt(qSize));
+                    newPslObject.setqStart(Integer.parseInt(qStart));
+                    newPslObject.setqEnd(Integer.parseInt(qEnd));
+                    newPslObject.settName(tName);
+                    newPslObject.settSize(Integer.parseInt(tSize));
+                    newPslObject.settStart(Integer.parseInt(tStart));
+                    newPslObject.settEnd(Integer.parseInt(tEnd));
+                    newPslObject.setBlockCount(Integer.parseInt(blockCount));
+                    newPslObject.setBlockSizes(blockSizes);
+                    newPslObject.setqStartsArr(qStartsArr);
+                    newPslObject.settStartsArr(tStartsArr);
+
+                    int score = newPslObject.calculateScore(newPslObject);
+                    newPslObject.setScore(score);
+
+                    double percentageIdentity = 100.00-newPslObject.pslCalcMilliBad(newPslObject, true);
+                    System.out.println("done with row#1\t"+qName+"\t and score is:\t"+score+"\tin chromosome:\t"+newPslObject.gettName()+"\t and percentage identity is:\t"+ percentageIdentity);
+                    newPslObject.setPercentageIdentity(percentageIdentity);
+
+                    blatResults.add(newPslObject);
+
+                }
+            }
+        }
+
+        return blatResults;
+    }
+
+
 
     public double getPercentageIdentity() {
         return percentageIdentity;
@@ -393,6 +497,7 @@ public class BlatPsl{
     public void setScore(int score) {
         this.score = score;
     }
+
 
 
 }

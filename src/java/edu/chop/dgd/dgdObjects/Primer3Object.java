@@ -92,7 +92,8 @@ public class Primer3Object {
     }
 
 
-    public List<Primer3Object> getPrimer3Objects(String inputFileName, String primer3OpDir, String blatInpDir, String blatOpDir, String isPcrOpDir, String dataDir) throws Exception{
+    public List<Primer3Object> getPrimer3Objects(String inputFileName, String primer3OpDir, String blatInpDir, String blatOpDir,
+                                                 String isPcrOpDir, String dataDir) throws Exception{
 
         List<Primer3Object> primer3Objects = createPrimerObjsList(inputFileName, dataDir, primer3OpDir);
         primer3Objects = addIdsToPrimers(inputFileName, primer3Objects, blatInpDir, dataDir);
@@ -134,7 +135,8 @@ public class Primer3Object {
 
 
 
-    public List<Primer3Object> addIdsToPrimers(String inputFileName, List<Primer3Object> primer3Objects, String blatInpDir, String dataDir) throws Exception {
+    public List<Primer3Object> addIdsToPrimers(String inputFileName, List<Primer3Object> primer3Objects, String blatInpDir,
+                                               String dataDir) throws Exception {
 
         List<Primer3Object> newPrimerObjects = new ArrayList<Primer3Object>();
         String fileName=inputFileName;
@@ -177,7 +179,7 @@ public class Primer3Object {
     }
 
 
-    public List<Primer3Object> createOligoObjsList(String inputFileName, String folder, String oligoOutputDir) throws Exception{
+    public List<Primer3Object> createOligoObjsList(String inputFileName, String folder, String oligoOutputDir, OligoObjectSubsections oss) throws Exception{
         List<Primer3Object> primer3Objects = new ArrayList<Primer3Object>();
         String fileName=inputFileName;
         File primerInputFile = new File(folder+oligoOutputDir+fileName);
@@ -204,9 +206,10 @@ public class Primer3Object {
     }
 
 
-    public List<Primer3Object> addIdsToOligos(String inputFileName, List<Primer3Object> oligoObjects, String blatInpDir, String dataDir) throws Exception {
+    public List<Primer3Object> addIdsToOligos(String inputFileName, List<Primer3Object> oligoObjects, String blatInpDir,
+                                              String dataDir, OligoObjectSubsections oss) throws Exception {
 
-        List<Primer3Object> newPrimerObjects = new ArrayList<Primer3Object>();
+        List<Primer3Object> newOligoObjects = new ArrayList<Primer3Object>();
         String fileName=inputFileName;
         File blatInputFile = new File(dataDir+blatInpDir+fileName);
         InputStream fileStream = new FileInputStream(blatInputFile);
@@ -221,18 +224,14 @@ public class Primer3Object {
             }else{
                 String seq = line;
                 for(; i<=oligoObjects.size();){
+
                     Primer3Object prObj = oligoObjects.get(i-1);
+                    if(counter.equals("O"+i)){
 
-                    if(counter.equals("L"+i)){
-                        prObj.setLeftPrimerId(primerId);
+                        prObj.setInternalPrimerId(primerId);
                         primerId="NA";
-                        break;
-
-                    }else if(counter.equals("R"+i)){
-                        prObj.setRightPrimerId(primerId);
-                        primerId="NA";
-                        if((!prObj.getLeftPrimerId().equals("NA")) && (!prObj.getRightPrimerId().equals("NA"))){
-                            newPrimerObjects.add(prObj);
+                        if(!prObj.getInternalPrimerId().equals("NA")){
+                            newOligoObjects.add(prObj);
                         }
                         i+=1;
                         break;
@@ -243,8 +242,10 @@ public class Primer3Object {
             }
         }
 
-        return newPrimerObjects;
+        return newOligoObjects;
     }
+
+
 
     public String getLeftPrimerId() {
         return leftPrimerId;

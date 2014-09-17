@@ -37,9 +37,9 @@ public class PrimerCreateController implements Controller {
 
         HttpRequestFacade req = new HttpRequestFacade(request);
         String chr = "chr"+req.getParameter("selectObject");
-        if(chr.equals("23")){
+        if(chr.equals("chr23")){
             chr="chrX";
-        }else if(chr.equals("24")){
+        }else if(chr.equals("chr24")){
             chr="chrY";
         }
 
