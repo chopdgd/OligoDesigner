@@ -9,7 +9,7 @@
     <property name="war.src" value="webapp" />
     <property name="web.lib.dir" value="${war.src}/WEB-INF/lib" />
     <property name="dist.dir" value="dist" />
-    <property name="primer3.dir" value="/data/" />
+    <property name="primer.dir" value="/data/" />
 
     <path id="master-classpath">
         <fileset dir="${lib.dir}">
@@ -61,8 +61,15 @@
 
         <!--<copy file="${war.src}/WEB-INF/applicationContext.xml.prod" tofile="${war.src}/WEB-INF/applicationContext.xml"/>-->
         <copy file="${war.src}/WEB-INF/mvc-dispatcher-servlet.xml.prod" tofile="${war.src}/WEB-INF/mvc-dispatcher-servlet.xml"/>
+        <copy file="${src.dir}/PrimerProcess.sh" tofile="${primer.dir}/PrimerProcess.sh"/>
         <copy file="${src.dir}/PrimerProcess.sh" tofile="${dist.dir}/PrimerProcess.sh"/>
-        <copy file="${src.dir}/PrimerProcess.sh" tofile="${primer3.dir}/PrimerProcess.sh"/>
+        <copy file="${src.dir}/HeteroDimerAnalyzeProcess.sh" tofile="${primer.dir}/HeteroDimerAnalyzeProcess.sh"/>
+        <copy file="${src.dir}/HeteroDimerAnalyzeProcess.sh" tofile="${dist.dir}/HeteroDimerAnalyzeProcess.sh"/>
+        <copy file="${src.dir}/OligoProcess.sh" tofile="${primer.dir}/OligoProcess.sh"/>
+        <copy file="${src.dir}/OligoProcess.sh" tofile="${dist.dir}/OligoProcess.sh"/>
+        <copy file="${src.dir}/RetrieveSequence.sh" tofile="${primer.dir}/RetrieveSequence.sh"/>
+        <copy file="${src.dir}/RetrieveSequence.sh" tofile="${dist.dir}/RetrieveSequence.sh"/>
+
         <fixcrlf srcdir="${dist.dir}" includes="**/*.sh" eol="crlf" />
 
 
@@ -102,8 +109,23 @@
 
         <!--<copy file="${war.src}/WEB-INF/applicationContext.xml.curation" tofile="${war.src}/WEB-INF/applicationContext.xml"/>-->
         <copy file="${war.src}/WEB-INF/mvc-dispatcher-servlet.xml.prod" tofile="${war.src}/WEB-INF/mvc-dispatcher-servlet.xml"/>
+
+        <copy file="${src.dir}/PrimerProcess.sh" tofile="${primer.dir}/PrimerProcess.sh"/>
         <copy file="${src.dir}/PrimerProcess.sh" tofile="${dist.dir}/PrimerProcess.sh"/>
-        <copy file="${src.dir}/PrimerProcess.sh" tofile="${primer3.dir}/PrimerProcess.sh"/>
+        <copy file="${src.dir}/primer3_settings.txt" tofile="${primer.dir}/primer3_settings.txt"/>
+        <copy file="${src.dir}/primer3_settings.txt" tofile="${dist.dir}/primer3_settings.txt"/>
+
+        <copy file="${src.dir}/HeteroDimerAnalyzeProcess.sh" tofile="${primer.dir}/HeteroDimerAnalyzeProcess.sh"/>
+        <copy file="${src.dir}/HeteroDimerAnalyzeProcess.sh" tofile="${dist.dir}/HeteroDimerAnalyzeProcess.sh"/>
+
+        <copy file="${src.dir}/OligoProcess.sh" tofile="${primer.dir}/OligoProcess.sh"/>
+        <copy file="${src.dir}/OligoProcess.sh" tofile="${dist.dir}/OligoProcess.sh"/>
+        <copy file="${src.dir}/oligo_settings.txt" tofile="${primer.dir}/oligo_settings.txt"/>
+        <copy file="${src.dir}/oligo_settings.txt" tofile="${dist.dir}/oligo_settings.txt"/>
+
+        <copy file="${src.dir}/RetrieveSequence.sh" tofile="${primer.dir}/RetrieveSequence.sh"/>
+        <copy file="${src.dir}/RetrieveSequence.sh" tofile="${dist.dir}/RetrieveSequence.sh"/>
+
         <fixcrlf srcdir="${dist.dir}" includes="**/*.sh" eol="crlf" />
 
 

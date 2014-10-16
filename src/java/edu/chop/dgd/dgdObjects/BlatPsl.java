@@ -138,21 +138,20 @@ public class BlatPsl{
     }
 
 
-    public List<Primer3Object> addBlatResultsToOligos(List<BlatPsl> blatResults, List<Primer3Object> oligoObjectsFromPrimer3,
-                                                      String dataDir, OligoObjectSubsections oss) throws Exception {
+    public List<OligoObject> addBlatResultsToOligos(List<BlatPsl> blatResults, List<OligoObject> oligoObjectsFromPrimer3, List<SequenceObjectSubsections> osSubsList) throws Exception {
 
         for(BlatPsl blatObj : blatResults){
 
-            for(Primer3Object prObj : oligoObjectsFromPrimer3){
-                if(blatObj.getqName().equals(prObj.getInternalPrimerId())){
+            for(OligoObject prObj : oligoObjectsFromPrimer3){
+                if(blatObj.getqName().equals(prObj.getInternalPrimerId()) && blatObj.gettName().equals(osSubsList.get(0).getSubSectionChr())){
                     if(prObj.getInternalPrimerBlatList()==null){
-                        List<BlatPsl> rightBlatList = new ArrayList<BlatPsl>();
-                        rightBlatList.add(blatObj);
-                        prObj.setRightPrimerBlatList(rightBlatList);
+                        List<BlatPsl> internalBlatList = new ArrayList<BlatPsl>();
+                        internalBlatList.add(blatObj);
+                        prObj.setInternalPrimerBlatList(internalBlatList);
                     }else{
-                        List<BlatPsl> rightBlatList = prObj.getRightPrimerBlatList();
-                        rightBlatList.add(blatObj);
-                        prObj.setRightPrimerBlatList(rightBlatList);
+                        List<BlatPsl> internalBlatList = prObj.getInternalPrimerBlatList();
+                        internalBlatList.add(blatObj);
+                        prObj.setInternalPrimerBlatList(internalBlatList);
                     }
                     break;
                 }

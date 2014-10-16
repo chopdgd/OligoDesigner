@@ -32,6 +32,7 @@
                         <prop key="primer/FileDownload.html">FileDownloadController</prop>
                         <prop key="oligo/home.html">OligoHomeController</prop>
                         <prop key="oligo/fileUpload.html">OligosCreationController</prop>
+                        <prop key="oligo/FileDownload.html">FileDownloadController</prop>
                     </props>
                 </property>
     </bean>
@@ -57,8 +58,11 @@
         <property name="oligoInputDir" value="/oligoInp/"/>
         <property name="oligoOutputDir" value="oligoOut/" />
         <property name="mfoldInpDir" value="mfoldInp/" />
-        <property name="mfoldOpDir" value="mofoldOut/" />
-
+        <property name="mfoldOpDir" value="mfoldOut/" />
+        <property name="homodimerOpDir" value="homodimerOut/"/>
+        <property name="heterodimerInpDir" value="heterodimerInp/"/>
+        <property name="heterodimerOpDir" value="heterodimerOp/"/>
+        <property name="finalOligos" value="FinalOligosReport/"/>
     </bean>
 
     <bean id="PrimerHomeController" class="edu.chop.dgd.primer.PrimerHomeController" />

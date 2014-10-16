@@ -49,7 +49,7 @@ public class Primer3Object {
 
     public Primer3Object createPrimer3Object(String line, String tag, Primer3Object pr) throws Exception{
         String delims = "[  ]+";
-        String primerStr[] = line.split("PRIMER", -1);
+        String primerStr[] = line.split("INTERNAL", -1);
         String prObj[] = primerStr[1].split(delims, -1);
         String start = prObj[1];
         String len = prObj[2];
@@ -179,71 +179,7 @@ public class Primer3Object {
     }
 
 
-    public List<Primer3Object> createOligoObjsList(String inputFileName, String folder, String oligoOutputDir, OligoObjectSubsections oss) throws Exception{
-        List<Primer3Object> primer3Objects = new ArrayList<Primer3Object>();
-        String fileName=inputFileName;
-        File primerInputFile = new File(folder+oligoOutputDir+fileName);
-        InputStream fileStream = new FileInputStream(primerInputFile);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(fileStream));
 
-        String line;
-        Primer3Object prObj = new Primer3Object();
-
-        while((line = reader.readLine())!=null){
-            if(line.contains("INTERNAL_OLIGO")){
-                prObj = new Primer3Object().createPrimer3Object(line, "internal", prObj);
-                //prObj = createPrimer3Object(line, "right", prObj);
-            }
-
-            if(prObj.getInternalSeq()!=null && prObj.getInternalSeq().length()>0){
-                primer3Objects.add(prObj);
-                //after adding primer Obj to array, create new instance of object for next primer.
-                prObj = new Primer3Object();
-            }
-        }
-
-        return primer3Objects;
-    }
-
-
-    public List<Primer3Object> addIdsToOligos(String inputFileName, List<Primer3Object> oligoObjects, String blatInpDir,
-                                              String dataDir, OligoObjectSubsections oss) throws Exception {
-
-        List<Primer3Object> newOligoObjects = new ArrayList<Primer3Object>();
-        String fileName=inputFileName;
-        File blatInputFile = new File(dataDir+blatInpDir+fileName);
-        InputStream fileStream = new FileInputStream(blatInputFile);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(fileStream));
-
-        String line; String primerId="NA"; String counter = "0";
-        int i=1;
-        while((line = reader.readLine())!=null){
-            if(line.startsWith(">")){
-                primerId=line.replaceAll(">","");
-                counter = primerId.split("_", -1)[1];
-            }else{
-                String seq = line;
-                for(; i<=oligoObjects.size();){
-
-                    Primer3Object prObj = oligoObjects.get(i-1);
-                    if(counter.equals("O"+i)){
-
-                        prObj.setInternalPrimerId(primerId);
-                        primerId="NA";
-                        if(!prObj.getInternalPrimerId().equals("NA")){
-                            newOligoObjects.add(prObj);
-                        }
-                        i+=1;
-                        break;
-
-                    }
-
-                }
-            }
-        }
-
-        return newOligoObjects;
-    }
 
 
 

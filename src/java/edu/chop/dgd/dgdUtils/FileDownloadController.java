@@ -38,6 +38,7 @@ public class FileDownloadController extends HttpServlet{
     private static String insilicoPcrInputDir;
     private static String insilicoPcrOpDir;
     private static String primerProcessScriptDir;
+    private static String finalOligos;
 
 
     /**
@@ -48,6 +49,7 @@ public class FileDownloadController extends HttpServlet{
                            HttpServletResponse response) throws IOException {
 
         String fileDownload = request.getParameter("file");
+        String object = request.getParameter("object");
 
         // get absolute path of the application
 
@@ -55,6 +57,11 @@ public class FileDownloadController extends HttpServlet{
 
         // construct the complete absolute path of the file
         String fullPath = dataDir+fileDownload;
+        if(object!=null && object.equals("oligo")){
+            fullPath = fileDownload;
+        }else{
+            fullPath = dataDir+fileDownload;
+        }
         File downloadFile = new File(fullPath);
         FileInputStream inputStream = new FileInputStream(downloadFile);
 
@@ -87,8 +94,9 @@ public class FileDownloadController extends HttpServlet{
             outStream.write(buffer, 0, bytesRead);
         }
 
-        inputStream.close();
+
         outStream.close();
+        inputStream.close();
 
     }
 
@@ -157,6 +165,13 @@ public class FileDownloadController extends HttpServlet{
         FileDownloadController.primerProcessScriptDir = primerProcessScriptDir;
     }
 
+    public static String getFinalOligos() {
+        return finalOligos;
+    }
+
+    public void setFinalOligos(String finalOligos) {
+        FileDownloadController.finalOligos = finalOligos;
+    }
 
 }
 
