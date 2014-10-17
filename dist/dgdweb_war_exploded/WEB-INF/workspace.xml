@@ -6,7 +6,83 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac191350-69f3-4148-855b-8f2b1bf701ca" name="Default" comment="" />
+    <list default="true" id="ac191350-69f3-4148-855b-8f2b1bf701ca" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/BlatPsl.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/BlatPsl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/BlatPsl.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/BlatPsl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/Chromosome.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/Chromosome.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/Chromosome.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/Chromosome.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/DGDHandlerInterceptor.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/DGDHandlerInterceptor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/DGDHandlerInterceptor.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/DGDHandlerInterceptor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/DisplayMapper.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/DisplayMapper.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/DisplayMapper.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/DisplayMapper.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/FileDownloadController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/FileDownloadController.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/class-use/FileDownloadController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/class-use/FileDownloadController.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/HttpRequestFacade.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/HttpRequestFacade.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/HttpRequestFacade.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/HttpRequestFacade.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/InsilicoPCRObject.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/InsilicoPCRObject.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/InsilicoPCRObject.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/InsilicoPCRObject.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/MfoldDimer.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/MfoldDimer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/MfoldDimer.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/MfoldDimer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/MfoldHairpin.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/MfoldHairpin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/MfoldHairpin.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/MfoldHairpin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/OligoHomeController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/OligoHomeController.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/class-use/OligoHomeController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/class-use/OligoHomeController.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/OligoObject.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/OligoObject.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/OligoObject.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/OligoObject.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/OligosCreationController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/OligosCreationController.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/class-use/OligosCreationController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/class-use/OligosCreationController.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/Primer3Object.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/Primer3Object.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/Primer3Object.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/Primer3Object.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerCreateController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerCreateController.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerCreateController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerCreateController.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerHomeController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerHomeController.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerHomeController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerHomeController.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerReport.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerReport.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerReport.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerReport.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/SafariDriverTests.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/SafariDriverTests.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/class-use/SafariDriverTests.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/class-use/SafariDriverTests.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/SequenceObject.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/SequenceObject.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/SequenceObject.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/SequenceObject.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/SequenceObjectSubsections.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/SequenceObjectSubsections.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/SequenceObjectSubsections.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/SequenceObjectSubsections.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/UploadedFile.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/UploadedFile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/UploadedFile.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/UploadedFile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/allclasses-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/allclasses-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/allclasses-noframe.html" afterPath="$PROJECT_DIR$/docs/dgdweb/allclasses-noframe.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/constant-values.html" afterPath="$PROJECT_DIR$/docs/dgdweb/constant-values.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/deprecated-list.html" afterPath="$PROJECT_DIR$/docs/dgdweb/deprecated-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/help-doc.html" afterPath="$PROJECT_DIR$/docs/dgdweb/help-doc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/index-all.html" afterPath="$PROJECT_DIR$/docs/dgdweb/index-all.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/index.html" afterPath="$PROJECT_DIR$/docs/dgdweb/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/overview-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/overview-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/overview-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/overview-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/overview-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/overview-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/package-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/package-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/package-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/package-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/package-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/package-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/package-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/package-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/package-use.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/package-use.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/package-use.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/package-use.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/package-use.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/package-use.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/package-use.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/package-use.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-use.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-use.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-use.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-use.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/serialized-form.html" afterPath="$PROJECT_DIR$/docs/dgdweb/serialized-form.html" />
+    </list>
     <ignored path="trunk.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -76,7 +152,7 @@
       <file leaf-file-name="OligosCreationController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="149" column="12" selection-start="7272" selection-end="7272" vertical-scroll-proportion="8.010753" vertical-offset="0" max-vertical-offset="6045">
+            <state line="149" column="12" selection-start="7272" selection-end="7272" vertical-scroll-proportion="12.146739" vertical-offset="0" max-vertical-offset="6045">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#8744#8760#0" expanded="true" />
@@ -1407,12 +1483,12 @@
       <workItem from="1408983486971" duration="5522000" />
       <workItem from="1409852608897" duration="69357000" />
       <workItem from="1411395379710" duration="109613000" />
-      <workItem from="1412690309296" duration="93417000" />
+      <workItem from="1412690309296" duration="94318000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="970579000" />
+    <option name="totallyTimeSpent" value="971480000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1444,7 +1520,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32790887" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.134895" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.134895" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872254" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32322428" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51277953" sideWeight="0.8034154" order="3" side_tool="false" content_ui="tabs" />
@@ -1453,7 +1529,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.08260524" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295362" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3226837" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32108626" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980143" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280543" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1461,7 +1537,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24232633" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41533548" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.60383385" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1928,7 +2004,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="12" selection-start="7272" selection-end="7272" vertical-scroll-proportion="8.010753" vertical-offset="0" max-vertical-offset="6045">
+        <state line="149" column="12" selection-start="7272" selection-end="7272" vertical-scroll-proportion="12.146739" vertical-offset="0" max-vertical-offset="6045">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#8744#8760#0" expanded="true" />
