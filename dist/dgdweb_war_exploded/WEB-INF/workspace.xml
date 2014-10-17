@@ -6,93 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac191350-69f3-4148-855b-8f2b1bf701ca" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/MfoldDimer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/SequenceObject.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/SequenceObjectSubsections.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObjectSubsections.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/dgdcore_1.1.3.jar" afterPath="$PROJECT_DIR$/lib/dgdcore_1.1.3.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/lib/dgdcore_1.1.3.jar" afterPath="$PROJECT_DIR$/webapp/WEB-INF/lib/dgdcore_1.1.3.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/lib/dgdweb.jar" afterPath="$PROJECT_DIR$/webapp/WEB-INF/lib/dgdweb.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/BlatPsl.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/BlatPsl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/BlatPsl.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/BlatPsl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/BlatPsl.java" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/BlatPsl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/Chromosome.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/Chromosome.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/Chromosome.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/Chromosome.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/DGDHandlerInterceptor.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/DGDHandlerInterceptor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/DGDHandlerInterceptor.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/DGDHandlerInterceptor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/DisplayMapper.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/DisplayMapper.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/DisplayMapper.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/DisplayMapper.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/FileDownloadController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/FileDownloadController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/class-use/FileDownloadController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/class-use/FileDownloadController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdUtils/FileDownloadController.java" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdUtils/FileDownloadController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/HttpRequestFacade.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/HttpRequestFacade.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/HttpRequestFacade.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/class-use/HttpRequestFacade.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/InsilicoPCRObject.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/InsilicoPCRObject.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/InsilicoPCRObject.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/InsilicoPCRObject.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/MfoldHairpin.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/MfoldHairpin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/MfoldHairpin.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/MfoldHairpin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/MfoldHairpin.java" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/MfoldHairpin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/OligoHomeController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/OligoHomeController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/class-use/OligoHomeController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/class-use/OligoHomeController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/OligoObject.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/OligoObject.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/OligoObject.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/OligoObject.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObject.java" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/OligosCreationController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/OligosCreationController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/class-use/OligosCreationController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/class-use/OligosCreationController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/Primer3Object.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/Primer3Object.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/Primer3Object.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/Primer3Object.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/Primer3Object.java" afterPath="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/Primer3Object.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerCreateController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerCreateController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerCreateController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerCreateController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerHomeController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerHomeController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerHomeController.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerHomeController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerReport.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/PrimerReport.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerReport.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/class-use/PrimerReport.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/SafariDriverTests.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/SafariDriverTests.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/class-use/SafariDriverTests.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/class-use/SafariDriverTests.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/UploadedFile.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/UploadedFile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/UploadedFile.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/class-use/UploadedFile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/allclasses-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/allclasses-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/allclasses-noframe.html" afterPath="$PROJECT_DIR$/docs/dgdweb/allclasses-noframe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/constant-values.html" afterPath="$PROJECT_DIR$/docs/dgdweb/constant-values.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/deprecated-list.html" afterPath="$PROJECT_DIR$/docs/dgdweb/deprecated-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/fileUpload.jsp" afterPath="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/fileUpload.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/help-doc.html" afterPath="$PROJECT_DIR$/docs/dgdweb/help-doc.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/index-all.html" afterPath="$PROJECT_DIR$/docs/dgdweb/index-all.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/index.html" afterPath="$PROJECT_DIR$/docs/dgdweb/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml.prod" afterPath="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml.prod" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/overview-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/overview-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/overview-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/overview-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/overview-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/overview-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/package-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/package-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/package-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/package-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-frame.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-summary.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/package-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/package-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/package-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/package-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-tree.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/package-use.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/package-use.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/package-use.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdObjects/package-use.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/package-use.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/dgdUtils/package-use.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/package-use.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/oligo/package-use.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-use.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/primer/package-use.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-use.html" afterPath="$PROJECT_DIR$/docs/dgdweb/edu/chop/dgd/web/package-use.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/dgdweb/serialized-form.html" afterPath="$PROJECT_DIR$/docs/dgdweb/serialized-form.html" />
-    </list>
+    <list default="true" id="ac191350-69f3-4148-855b-8f2b1bf701ca" name="Default" comment="" />
     <ignored path="trunk.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -149,23 +63,7 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/SequenceObject.java" line="96" class="edu.chop.dgd.dgdObjects.SequenceObject" package="edu.chop.dgd.dgdObjects">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -175,70 +73,79 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="OligosCreationController.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="OligosCreationController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="0" selection-start="2181" selection-end="2181" vertical-scroll-proportion="0.0" vertical-offset="756" max-vertical-offset="6015">
+            <state line="149" column="12" selection-start="7272" selection-end="7272" vertical-scroll-proportion="8.010753" vertical-offset="0" max-vertical-offset="6045">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8544#8560#0" expanded="true" />
-                <element signature="e#11911#11912#0" expanded="true" />
-                <element signature="e#11944#11945#0" expanded="true" />
-                <element signature="e#11996#11997#0" expanded="true" />
-                <element signature="e#12060#12061#0" expanded="true" />
-                <element signature="e#12096#12097#0" expanded="true" />
-                <element signature="e#12128#12129#0" expanded="true" />
-                <element signature="e#12178#12179#0" expanded="true" />
-                <element signature="e#12240#12241#0" expanded="true" />
-                <element signature="e#12295#12296#0" expanded="true" />
-                <element signature="e#12339#12340#0" expanded="true" />
-                <element signature="e#12413#12414#0" expanded="true" />
-                <element signature="e#12499#12500#0" expanded="true" />
-                <element signature="e#12540#12541#0" expanded="true" />
-                <element signature="e#12570#12571#0" expanded="true" />
-                <element signature="e#12616#12617#0" expanded="true" />
-                <element signature="e#12674#12675#0" expanded="true" />
-                <element signature="e#12721#12722#0" expanded="true" />
-                <element signature="e#12757#12758#0" expanded="true" />
-                <element signature="e#12815#12816#0" expanded="true" />
-                <element signature="e#12885#12886#0" expanded="true" />
-                <element signature="e#12933#12934#0" expanded="true" />
-                <element signature="e#12970#12971#0" expanded="true" />
-                <element signature="e#13030#13031#0" expanded="true" />
-                <element signature="e#13102#13103#0" expanded="true" />
-                <element signature="e#13147#13148#0" expanded="true" />
-                <element signature="e#13181#13182#0" expanded="true" />
-                <element signature="e#13235#13236#0" expanded="true" />
-                <element signature="e#13301#13302#0" expanded="true" />
-                <element signature="e#13345#13346#0" expanded="true" />
-                <element signature="e#13378#13379#0" expanded="true" />
-                <element signature="e#13430#13431#0" expanded="true" />
-                <element signature="e#13494#13495#0" expanded="true" />
-                <element signature="e#13542#13543#0" expanded="true" />
-                <element signature="e#13579#13580#0" expanded="true" />
-                <element signature="e#13639#13640#0" expanded="true" />
-                <element signature="e#13711#13712#0" expanded="true" />
-                <element signature="e#13762#13763#0" expanded="true" />
-                <element signature="e#13802#13803#0" expanded="true" />
-                <element signature="e#13868#13869#0" expanded="true" />
-                <element signature="e#13946#13947#0" expanded="true" />
-                <element signature="e#13996#13997#0" expanded="true" />
-                <element signature="e#14035#14036#0" expanded="true" />
-                <element signature="e#14099#14100#0" expanded="true" />
-                <element signature="e#14175#14176#0" expanded="true" />
-                <element signature="e#14220#14221#0" expanded="true" />
-                <element signature="e#14254#14255#0" expanded="true" />
-                <element signature="e#14308#14309#0" expanded="true" />
-                <element signature="e#14374#14375#0" expanded="true" />
+                <element signature="e#8744#8760#0" expanded="true" />
+                <element signature="e#12111#12112#0" expanded="true" />
+                <element signature="e#12144#12145#0" expanded="true" />
+                <element signature="e#12196#12197#0" expanded="true" />
+                <element signature="e#12260#12261#0" expanded="true" />
+                <element signature="e#12296#12297#0" expanded="true" />
+                <element signature="e#12328#12329#0" expanded="true" />
+                <element signature="e#12378#12379#0" expanded="true" />
+                <element signature="e#12440#12441#0" expanded="true" />
+                <element signature="e#12495#12496#0" expanded="true" />
+                <element signature="e#12539#12540#0" expanded="true" />
+                <element signature="e#12613#12614#0" expanded="true" />
+                <element signature="e#12699#12700#0" expanded="true" />
+                <element signature="e#12740#12741#0" expanded="true" />
+                <element signature="e#12770#12771#0" expanded="true" />
+                <element signature="e#12816#12817#0" expanded="true" />
+                <element signature="e#12874#12875#0" expanded="true" />
+                <element signature="e#12921#12922#0" expanded="true" />
+                <element signature="e#12957#12958#0" expanded="true" />
+                <element signature="e#13015#13016#0" expanded="true" />
+                <element signature="e#13085#13086#0" expanded="true" />
+                <element signature="e#13133#13134#0" expanded="true" />
+                <element signature="e#13170#13171#0" expanded="true" />
+                <element signature="e#13230#13231#0" expanded="true" />
+                <element signature="e#13302#13303#0" expanded="true" />
+                <element signature="e#13347#13348#0" expanded="true" />
+                <element signature="e#13381#13382#0" expanded="true" />
+                <element signature="e#13435#13436#0" expanded="true" />
+                <element signature="e#13501#13502#0" expanded="true" />
+                <element signature="e#13545#13546#0" expanded="true" />
+                <element signature="e#13578#13579#0" expanded="true" />
+                <element signature="e#13630#13631#0" expanded="true" />
+                <element signature="e#13694#13695#0" expanded="true" />
+                <element signature="e#13742#13743#0" expanded="true" />
+                <element signature="e#13779#13780#0" expanded="true" />
+                <element signature="e#13839#13840#0" expanded="true" />
+                <element signature="e#13911#13912#0" expanded="true" />
+                <element signature="e#13962#13963#0" expanded="true" />
+                <element signature="e#14002#14003#0" expanded="true" />
+                <element signature="e#14068#14069#0" expanded="true" />
+                <element signature="e#14146#14147#0" expanded="true" />
+                <element signature="e#14196#14197#0" expanded="true" />
+                <element signature="e#14235#14236#0" expanded="true" />
+                <element signature="e#14299#14300#0" expanded="true" />
+                <element signature="e#14375#14376#0" expanded="true" />
+                <element signature="e#14420#14421#0" expanded="true" />
+                <element signature="e#14454#14455#0" expanded="true" />
+                <element signature="e#14508#14509#0" expanded="true" />
+                <element signature="e#14574#14575#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrimerCreateController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerCreateController.java">
+      <file leaf-file-name="web.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="352" column="49" selection-start="13434" selection-end="13434" vertical-scroll-proportion="-147.6923" vertical-offset="1215" max-vertical-offset="7095">
+            <state line="39" column="43" selection-start="1198" selection-end="1198" vertical-scroll-proportion="0.0" vertical-offset="460" max-vertical-offset="825">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fileUpload.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/fileUpload.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="64" column="8" selection-start="1991" selection-end="1991" vertical-scroll-proportion="-18.75" vertical-offset="510" max-vertical-offset="1320">
               <folding />
             </state>
           </provider>
@@ -293,58 +200,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrimerReport.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/primer/PrimerReport.java">
+      <file leaf-file-name="mvc-dispatcher-servlet.xml.prod" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml.prod">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="8" selection-start="4439" selection-end="4439" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2265">
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#4652#4653#0" expanded="false" />
-                <element signature="e#4687#4688#0" expanded="false" />
-                <element signature="e#4748#4749#0" expanded="false" />
-                <element signature="e#4796#4797#0" expanded="false" />
-                <element signature="e#4831#4832#0" expanded="false" />
-                <element signature="e#4862#4863#0" expanded="false" />
-                <element signature="e#4910#4911#0" expanded="false" />
-                <element signature="e#4950#4951#0" expanded="false" />
-                <element signature="e#4993#4994#0" expanded="false" />
-                <element signature="e#5024#5025#0" expanded="false" />
-                <element signature="e#5080#5081#0" expanded="false" />
-                <element signature="e#5120#5121#0" expanded="false" />
-                <element signature="e#5169#5170#0" expanded="false" />
-                <element signature="e#5205#5206#0" expanded="false" />
-                <element signature="e#5272#5273#0" expanded="false" />
-                <element signature="e#5322#5323#0" expanded="false" />
-                <element signature="e#5381#5382#0" expanded="false" />
-                <element signature="e#5415#5416#0" expanded="false" />
-                <element signature="e#5490#5491#0" expanded="false" />
-                <element signature="e#5536#5537#0" expanded="false" />
-                <element signature="e#5576#5577#0" expanded="false" />
-                <element signature="e#5607#5608#0" expanded="false" />
-                <element signature="e#5660#5661#0" expanded="false" />
-                <element signature="e#5700#5701#0" expanded="false" />
-                <element signature="e#5733#5734#0" expanded="false" />
-                <element signature="e#5765#5766#0" expanded="false" />
-                <element signature="e#5812#5813#0" expanded="false" />
-                <element signature="e#5854#5855#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fileUpload.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/fileUpload.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="16" selection-start="1664" selection-end="1664" vertical-scroll-proportion="-19.375" vertical-offset="330" max-vertical-offset="1320">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MfoldHairpin.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/MfoldHairpin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="0" selection-start="1331" selection-end="1331" vertical-scroll-proportion="0.0" vertical-offset="392" max-vertical-offset="690">
+            <state line="36" column="27" selection-start="1864" selection-end="1864" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1215">
               <folding />
             </state>
           </provider>
@@ -353,24 +212,24 @@
       <file leaf-file-name="MfoldDimer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/MfoldDimer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="388" column="0" selection-start="15596" selection-end="15596" vertical-scroll-proportion="0.0" vertical-offset="5706" max-vertical-offset="6585">
+            <state line="394" column="36" selection-start="15935" selection-end="15935" vertical-scroll-proportion="0.0" vertical-offset="5095" max-vertical-offset="6720">
               <folding>
                 <element signature="e#10978#10991#0" expanded="true" />
                 <element signature="e#12134#12147#0" expanded="true" />
                 <element signature="e#12686#12699#0" expanded="true" />
-                <element signature="e#14995#15022#0" expanded="true" />
-                <element signature="e#16003#16004#0" expanded="true" />
-                <element signature="e#16034#16035#0" expanded="true" />
-                <element signature="e#16082#16083#0" expanded="true" />
-                <element signature="e#16122#16123#0" expanded="true" />
-                <element signature="e#16157#16158#0" expanded="true" />
-                <element signature="e#16188#16189#0" expanded="true" />
-                <element signature="e#16236#16237#0" expanded="true" />
-                <element signature="e#16276#16277#0" expanded="true" />
-                <element signature="e#16313#16314#0" expanded="true" />
-                <element signature="e#16347#16348#0" expanded="true" />
-                <element signature="e#16400#16401#0" expanded="true" />
-                <element signature="e#16446#16447#0" expanded="true" />
+                <element signature="e#15272#15299#0" expanded="true" />
+                <element signature="e#16374#16375#0" expanded="true" />
+                <element signature="e#16405#16406#0" expanded="true" />
+                <element signature="e#16453#16454#0" expanded="true" />
+                <element signature="e#16493#16494#0" expanded="true" />
+                <element signature="e#16528#16529#0" expanded="true" />
+                <element signature="e#16559#16560#0" expanded="true" />
+                <element signature="e#16607#16608#0" expanded="true" />
+                <element signature="e#16647#16648#0" expanded="true" />
+                <element signature="e#16684#16685#0" expanded="true" />
+                <element signature="e#16718#16719#0" expanded="true" />
+                <element signature="e#16771#16772#0" expanded="true" />
+                <element signature="e#16817#16818#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -379,16 +238,16 @@
       <file leaf-file-name="mvc-dispatcher-servlet.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="20" selection-start="2796" selection-end="2796" vertical-scroll-proportion="-3.6" vertical-offset="795" max-vertical-offset="1200">
+            <state line="34" column="40" selection-start="1758" selection-end="1758" vertical-scroll-proportion="-9.2" vertical-offset="280" max-vertical-offset="1215">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SequenceObject.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SequenceObject.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/SequenceObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="72" selection-start="3372" selection-end="3372" vertical-scroll-proportion="1.1002785" vertical-offset="850" max-vertical-offset="3930">
+            <state line="101" column="0" selection-start="3578" selection-end="3578" vertical-scroll-proportion="0.0" vertical-offset="1312" max-vertical-offset="3930">
               <folding>
                 <element signature="e#2106#2133#0" expanded="true" />
               </folding>
@@ -399,7 +258,16 @@
       <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="36" selection-start="4089" selection-end="4089" vertical-scroll-proportion="0.0" vertical-offset="1290" max-vertical-offset="2250">
+            <state line="144" column="13" selection-start="6977" selection-end="6977" vertical-scroll-proportion="0.0" vertical-offset="1965" max-vertical-offset="2580">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ucsc.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ucsc.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
               <folding />
             </state>
           </provider>
@@ -444,7 +312,6 @@
         <option value="$PROJECT_DIR$/build_mod.xml" />
         <option value="$PROJECT_DIR$/src/module_trunk.xml" />
         <option value="$PROJECT_DIR$/module_trunk.xml" />
-        <option value="$PROJECT_DIR$/build.xml" />
         <option value="$PROJECT_DIR$/webapp/WEB-INF/applicationContext.xml" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/oligoObject.java" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/utils/OligoObject.java" />
@@ -464,13 +331,14 @@
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/SequenceObjectSubsections.java" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/BlatPsl.java" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObject.java" />
-        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/MfoldDimer.java" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml.prod" />
-        <option value="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdUtils/FileDownloadController.java" />
         <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/fileUpload.jsp" />
-        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/SequenceObject.java" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
+        <option value="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml.prod" />
+        <option value="$PROJECT_DIR$/build.xml" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/MfoldDimer.java" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" />
       </list>
     </option>
   </component>
@@ -635,190 +503,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dgd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dgd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dgd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="primer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dgd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="oligo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dgd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dgdUtils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trunk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dgd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dgdObjects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -840,7 +524,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/webapp/WEB-INF/lib/dgdcore_1.1.3.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/webapp/WEB-INF/lib/xom-1.2.4.jar!/" />
     <property name="FullScreen" value="false" />
     <property name="SearchEverywhereHistory" value="" />
     <property name="dynamic.classpath" value="false" />
@@ -1573,6 +1257,7 @@
     </configuration>
     <configuration default="false" name="Dgdweb_tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.50" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="" show_console_on_std_out="true" show_console_on_std_err="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://127.0.0.1:8080/dgdweb/oligo/home.html" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="dgdweb:war exploded">
           <settings>
@@ -1722,12 +1407,12 @@
       <workItem from="1408983486971" duration="5522000" />
       <workItem from="1409852608897" duration="69357000" />
       <workItem from="1411395379710" duration="109613000" />
-      <workItem from="1412690309296" duration="84976000" />
+      <workItem from="1412690309296" duration="93417000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="962138000" />
+    <option name="totallyTimeSpent" value="970579000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1750,7 +1435,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="718" extended-state="6" />
+    <frame x="0" y="22" width="1280" height="718" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1759,24 +1444,24 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32790887" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.134895" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.134895" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872254" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32322428" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3658147" sideWeight="0.8034154" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51277953" sideWeight="0.8034154" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26746988" sideWeight="0.1965846" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.08260524" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295362" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32428116" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3226837" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980143" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280543" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20355412" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931727" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24232633" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41533548" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1858,13 +1543,6 @@
     <entry file="file://$USER_HOME$/Dropbox/code/rgdweb/trunk/web-app/WEB-INF/jsp/curation/pathway/pathwayCreate.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="663" column="53" selection-start="26583" selection-end="26583" vertical-scroll-proportion="-7.25" vertical-offset="9771" max-vertical-offset="14055" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="20" selection-start="668" selection-end="668" vertical-scroll-proportion="0.24979185" vertical-offset="0" max-vertical-offset="1201">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="jar:///Applications/Tomcat7/lib/servlet-api.jar!/javax/servlet/ServletRequest.class">
@@ -2028,13 +1706,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml.prod">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="65" selection-start="3098" selection-end="3098" vertical-scroll-proportion="0.0" vertical-offset="874" max-vertical-offset="1200">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="128" column="63" selection-start="4338" selection-end="4372" vertical-scroll-proportion="-6.8461537" vertical-offset="1727" max-vertical-offset="2505">
@@ -2061,30 +1732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/MfoldDimer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="388" column="0" selection-start="15596" selection-end="15596" vertical-scroll-proportion="0.0" vertical-offset="5706" max-vertical-offset="6585">
-          <folding>
-            <element signature="e#10978#10991#0" expanded="true" />
-            <element signature="e#12134#12147#0" expanded="true" />
-            <element signature="e#12686#12699#0" expanded="true" />
-            <element signature="e#14995#15022#0" expanded="true" />
-            <element signature="e#16003#16004#0" expanded="true" />
-            <element signature="e#16034#16035#0" expanded="true" />
-            <element signature="e#16082#16083#0" expanded="true" />
-            <element signature="e#16122#16123#0" expanded="true" />
-            <element signature="e#16157#16158#0" expanded="true" />
-            <element signature="e#16188#16189#0" expanded="true" />
-            <element signature="e#16236#16237#0" expanded="true" />
-            <element signature="e#16276#16277#0" expanded="true" />
-            <element signature="e#16313#16314#0" expanded="true" />
-            <element signature="e#16347#16348#0" expanded="true" />
-            <element signature="e#16400#16401#0" expanded="true" />
-            <element signature="e#16446#16447#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/selenium-server-standalone-2.41.0.jar!/org/apache/commons/io/FileUtils.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="121" column="35" selection-start="7906" selection-end="7906" vertical-scroll-proportion="0.35855263" vertical-offset="1691" max-vertical-offset="3225">
@@ -2099,23 +1746,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="20" selection-start="2796" selection-end="2796" vertical-scroll-proportion="-3.6" vertical-offset="795" max-vertical-offset="1200">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/src.zip!/java/net/PlainSocketImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="63" column="16" selection-start="1032" selection-end="1095" vertical-scroll-proportion="0.33333334" vertical-offset="504" max-vertical-offset="945">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/fileUpload.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="16" selection-start="1664" selection-end="1664" vertical-scroll-proportion="-19.375" vertical-offset="330" max-vertical-offset="1320">
           <folding />
         </state>
       </provider>
@@ -2218,76 +1851,135 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java">
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/SequenceObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="0" selection-start="2181" selection-end="2181" vertical-scroll-proportion="0.0" vertical-offset="702" max-vertical-offset="6015">
+        <state line="101" column="0" selection-start="3578" selection-end="3578" vertical-scroll-proportion="0.0" vertical-offset="1312" max-vertical-offset="3930">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8544#8560#0" expanded="true" />
-            <element signature="e#11911#11912#0" expanded="true" />
-            <element signature="e#11944#11945#0" expanded="true" />
-            <element signature="e#11996#11997#0" expanded="true" />
-            <element signature="e#12060#12061#0" expanded="true" />
-            <element signature="e#12096#12097#0" expanded="true" />
-            <element signature="e#12128#12129#0" expanded="true" />
-            <element signature="e#12178#12179#0" expanded="true" />
-            <element signature="e#12240#12241#0" expanded="true" />
-            <element signature="e#12295#12296#0" expanded="true" />
-            <element signature="e#12339#12340#0" expanded="true" />
-            <element signature="e#12413#12414#0" expanded="true" />
-            <element signature="e#12499#12500#0" expanded="true" />
-            <element signature="e#12540#12541#0" expanded="true" />
-            <element signature="e#12570#12571#0" expanded="true" />
-            <element signature="e#12616#12617#0" expanded="true" />
-            <element signature="e#12674#12675#0" expanded="true" />
-            <element signature="e#12721#12722#0" expanded="true" />
-            <element signature="e#12757#12758#0" expanded="true" />
-            <element signature="e#12815#12816#0" expanded="true" />
-            <element signature="e#12885#12886#0" expanded="true" />
-            <element signature="e#12933#12934#0" expanded="true" />
-            <element signature="e#12970#12971#0" expanded="true" />
-            <element signature="e#13030#13031#0" expanded="true" />
-            <element signature="e#13102#13103#0" expanded="true" />
-            <element signature="e#13147#13148#0" expanded="true" />
-            <element signature="e#13181#13182#0" expanded="true" />
-            <element signature="e#13235#13236#0" expanded="true" />
-            <element signature="e#13301#13302#0" expanded="true" />
-            <element signature="e#13345#13346#0" expanded="true" />
-            <element signature="e#13378#13379#0" expanded="true" />
-            <element signature="e#13430#13431#0" expanded="true" />
-            <element signature="e#13494#13495#0" expanded="true" />
-            <element signature="e#13542#13543#0" expanded="true" />
-            <element signature="e#13579#13580#0" expanded="true" />
-            <element signature="e#13639#13640#0" expanded="true" />
-            <element signature="e#13711#13712#0" expanded="true" />
-            <element signature="e#13762#13763#0" expanded="true" />
-            <element signature="e#13802#13803#0" expanded="true" />
-            <element signature="e#13868#13869#0" expanded="true" />
-            <element signature="e#13946#13947#0" expanded="true" />
-            <element signature="e#13996#13997#0" expanded="true" />
-            <element signature="e#14035#14036#0" expanded="true" />
-            <element signature="e#14099#14100#0" expanded="true" />
-            <element signature="e#14175#14176#0" expanded="true" />
-            <element signature="e#14220#14221#0" expanded="true" />
-            <element signature="e#14254#14255#0" expanded="true" />
-            <element signature="e#14308#14309#0" expanded="true" />
-            <element signature="e#14374#14375#0" expanded="true" />
+            <element signature="e#2106#2133#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="40" selection-start="1758" selection-end="1758" vertical-scroll-proportion="-9.2" vertical-offset="280" max-vertical-offset="1215">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml.prod">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="27" selection-start="1864" selection-end="1864" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1215">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="36" selection-start="4089" selection-end="4089" vertical-scroll-proportion="0.0" vertical-offset="1290" max-vertical-offset="2250">
+        <state line="144" column="13" selection-start="6977" selection-end="6977" vertical-scroll-proportion="0.0" vertical-offset="1965" max-vertical-offset="2580">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/SequenceObject.java">
+    <entry file="file://$PROJECT_DIR$/ucsc.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="72" selection-start="3372" selection-end="3372" vertical-scroll-proportion="1.1002785" vertical-offset="850" max-vertical-offset="3930">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="539">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/fileUpload.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="8" selection-start="1991" selection-end="1991" vertical-scroll-proportion="-18.75" vertical-offset="510" max-vertical-offset="1320">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/MfoldDimer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="394" column="36" selection-start="15935" selection-end="15935" vertical-scroll-proportion="0.0" vertical-offset="5095" max-vertical-offset="6720">
           <folding>
-            <element signature="e#2106#2133#0" expanded="true" />
+            <element signature="e#10978#10991#0" expanded="true" />
+            <element signature="e#12134#12147#0" expanded="true" />
+            <element signature="e#12686#12699#0" expanded="true" />
+            <element signature="e#15272#15299#0" expanded="true" />
+            <element signature="e#16374#16375#0" expanded="true" />
+            <element signature="e#16405#16406#0" expanded="true" />
+            <element signature="e#16453#16454#0" expanded="true" />
+            <element signature="e#16493#16494#0" expanded="true" />
+            <element signature="e#16528#16529#0" expanded="true" />
+            <element signature="e#16559#16560#0" expanded="true" />
+            <element signature="e#16607#16608#0" expanded="true" />
+            <element signature="e#16647#16648#0" expanded="true" />
+            <element signature="e#16684#16685#0" expanded="true" />
+            <element signature="e#16718#16719#0" expanded="true" />
+            <element signature="e#16771#16772#0" expanded="true" />
+            <element signature="e#16817#16818#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="43" selection-start="1198" selection-end="1198" vertical-scroll-proportion="0.0" vertical-offset="460" max-vertical-offset="825">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="149" column="12" selection-start="7272" selection-end="7272" vertical-scroll-proportion="8.010753" vertical-offset="0" max-vertical-offset="6045">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8744#8760#0" expanded="true" />
+            <element signature="e#12111#12112#0" expanded="true" />
+            <element signature="e#12144#12145#0" expanded="true" />
+            <element signature="e#12196#12197#0" expanded="true" />
+            <element signature="e#12260#12261#0" expanded="true" />
+            <element signature="e#12296#12297#0" expanded="true" />
+            <element signature="e#12328#12329#0" expanded="true" />
+            <element signature="e#12378#12379#0" expanded="true" />
+            <element signature="e#12440#12441#0" expanded="true" />
+            <element signature="e#12495#12496#0" expanded="true" />
+            <element signature="e#12539#12540#0" expanded="true" />
+            <element signature="e#12613#12614#0" expanded="true" />
+            <element signature="e#12699#12700#0" expanded="true" />
+            <element signature="e#12740#12741#0" expanded="true" />
+            <element signature="e#12770#12771#0" expanded="true" />
+            <element signature="e#12816#12817#0" expanded="true" />
+            <element signature="e#12874#12875#0" expanded="true" />
+            <element signature="e#12921#12922#0" expanded="true" />
+            <element signature="e#12957#12958#0" expanded="true" />
+            <element signature="e#13015#13016#0" expanded="true" />
+            <element signature="e#13085#13086#0" expanded="true" />
+            <element signature="e#13133#13134#0" expanded="true" />
+            <element signature="e#13170#13171#0" expanded="true" />
+            <element signature="e#13230#13231#0" expanded="true" />
+            <element signature="e#13302#13303#0" expanded="true" />
+            <element signature="e#13347#13348#0" expanded="true" />
+            <element signature="e#13381#13382#0" expanded="true" />
+            <element signature="e#13435#13436#0" expanded="true" />
+            <element signature="e#13501#13502#0" expanded="true" />
+            <element signature="e#13545#13546#0" expanded="true" />
+            <element signature="e#13578#13579#0" expanded="true" />
+            <element signature="e#13630#13631#0" expanded="true" />
+            <element signature="e#13694#13695#0" expanded="true" />
+            <element signature="e#13742#13743#0" expanded="true" />
+            <element signature="e#13779#13780#0" expanded="true" />
+            <element signature="e#13839#13840#0" expanded="true" />
+            <element signature="e#13911#13912#0" expanded="true" />
+            <element signature="e#13962#13963#0" expanded="true" />
+            <element signature="e#14002#14003#0" expanded="true" />
+            <element signature="e#14068#14069#0" expanded="true" />
+            <element signature="e#14146#14147#0" expanded="true" />
+            <element signature="e#14196#14197#0" expanded="true" />
+            <element signature="e#14235#14236#0" expanded="true" />
+            <element signature="e#14299#14300#0" expanded="true" />
+            <element signature="e#14375#14376#0" expanded="true" />
+            <element signature="e#14420#14421#0" expanded="true" />
+            <element signature="e#14454#14455#0" expanded="true" />
+            <element signature="e#14508#14509#0" expanded="true" />
+            <element signature="e#14574#14575#0" expanded="true" />
           </folding>
         </state>
       </provider>
