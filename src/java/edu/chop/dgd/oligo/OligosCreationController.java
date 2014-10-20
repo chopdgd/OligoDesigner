@@ -136,7 +136,7 @@ public class OligosCreationController implements Controller{
             pwSecond.println("\"Primer Set\tPrimer Id\tPrimerChr\tPrimer Start\tPrimer End\tSequence\tSequence Rev. Complement\tGC\tTm\tSize\tSelf Dimer\tHairpin Tm\tHairpin dG\tBlat");
             for(String set : optimalOligosTree.keySet()){
 
-                pwSecond.println(set + "\n");
+                pwSecond.println("\n"+set);
                 String key = set.split("_")[0];
                 for(OligoObject o : optimalOligos.get(key)){
 

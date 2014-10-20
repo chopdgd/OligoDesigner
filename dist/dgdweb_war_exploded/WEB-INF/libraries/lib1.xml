@@ -39,6 +39,7 @@
       <root url="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/spring-websocket-4.0.0.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/wjhk.jupload.jar!/" />
       <root url="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/xom-1.2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/jstl-1.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

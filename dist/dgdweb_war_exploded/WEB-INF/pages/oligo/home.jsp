@@ -12,7 +12,7 @@
 --%>
 
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core" %>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%--
 <script type="text/javascript" src="jquery-1.2.6.min.js">
