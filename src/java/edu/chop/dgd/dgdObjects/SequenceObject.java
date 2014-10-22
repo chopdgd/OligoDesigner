@@ -3,6 +3,7 @@ package edu.chop.dgd.dgdObjects;
 import edu.chop.dgd.process.primerCreate.AmpliconSeq;
 import edu.chop.dgd.process.primerCreate.AmpliconXomAnalyzer;
 import edu.chop.dgd.process.primerCreate.PrimerDAO;
+import edu.chop.dgd.process.primerCreate.Variation;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -65,6 +66,9 @@ public class SequenceObject{
     private List<SequenceObjectSubsections> createSequenceObjSubsections(String sequenceInfo) throws Exception {
 
         List<SequenceObjectSubsections> seqObjSubs = new ArrayList<SequenceObjectSubsections>();
+        PrimerDAO prDao = new PrimerDAO();
+        List<Variation> variantsInSequenceObject = prDao.getVariantsWithinRange(this.getChr(),
+                this.getStart(), this.getStop());
 
         String[] seqArray = sequenceInfo.split(">", -1);
         for(String fastaSeq : seqArray){
@@ -89,7 +93,7 @@ public class SequenceObject{
                 amplObj.setBufferDownstream(0);
                 amplObj.setSequence(seq);
 
-                String maskedSeq = amplObj.maskAmpliconSequenceForOligo(amplObj);
+                String maskedSeq = amplObj.maskAmpliconSequenceForOligo(amplObj, variantsInSequenceObject);
                 //String maskedlowercase = maskedSeq.replaceAll("N", "n");
 
                 sosb.setSubSectionSequence(maskedSeq);
@@ -174,7 +178,6 @@ public class SequenceObject{
         List<SequenceObjectSubsections> subs = new ArrayList<SequenceObjectSubsections>();
         int counter=0;
         PrimerDAO prDao = new PrimerDAO();
-
 
         for(int i=this.getStart(); i<=this.getStop(); ){
 
