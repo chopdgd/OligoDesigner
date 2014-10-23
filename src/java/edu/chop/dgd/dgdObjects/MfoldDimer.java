@@ -38,6 +38,8 @@ public class MfoldDimer {
 
         }
 
+        //delete mfold homodimer file when done;
+        mfoldFile.delete();
 
         return oligoObjectsFromPrimer3;
     }
@@ -59,11 +61,20 @@ public class MfoldDimer {
         for(OligoObject oligoObj : oligoObjectsMap.keySet()){
 
             HashMap<String, Float> hetScoreOligomap = oligoObj.getHeterodimerValues();
-            HashMap<String, Float> hetScoreOligomap_new = hetScoreOligomap;
+
+            //trying to optimize code 23rd Oct 254pm.
+            //HashMap<String, Float> hetScoreOligomap_new = hetScoreOligomap;
+            HashMap<String, Float> hetScoreOligomap_new = new HashMap<String, Float>();
 
             for(String oligoId : hetScoreOligomap.keySet()){
-                if(hetScoreOligomap.get(oligoId)<-15.00){
+
+                //trying to optimize code. 23rd oct 254pm
+                /*if(hetScoreOligomap.get(oligoId)<-15.00){
                     hetScoreOligomap_new.remove(oligoId);
+                }*/
+
+                if(hetScoreOligomap.get(oligoId)>=-15.00){
+                    hetScoreOligomap_new.put(oligoId, hetScoreOligomap.get(oligoId));
                 }
             }
 
