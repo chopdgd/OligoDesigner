@@ -26,5 +26,9 @@ do
 	fi
 done
 
+echo "removing large .ct file"
+
+rm $HET_OUTPUT_PREF".ct"
+
 echo "Your het scores are generated!<hr>" 
 
