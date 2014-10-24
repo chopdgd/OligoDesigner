@@ -63,23 +63,7 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/MfoldDimer.java" line="397" class="edu.chop.dgd.dgdObjects.MfoldDimer" package="edu.chop.dgd.dgdObjects">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -92,7 +76,25 @@
       <file leaf-file-name="OligosCreationController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="88" selection-start="3229" selection-end="3229" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="5145">
+            <state line="44" column="58" selection-start="1701" selection-end="1701" vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="6045">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SequenceObjectSubsections.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/SequenceObjectSubsections.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="77" selection-start="916" selection-end="916" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1890">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OligoObject.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="47" column="29" selection-start="1145" selection-end="1145" vertical-scroll-proportion="0.0" vertical-offset="705" max-vertical-offset="2700">
               <folding />
             </state>
           </provider>
@@ -101,7 +103,7 @@
       <file leaf-file-name="MfoldDimer.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/MfoldDimer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="376" column="45" selection-start="15101" selection-end="15101" vertical-scroll-proportion="0.09375" vertical-offset="5589" max-vertical-offset="6540">
+            <state line="408" column="0" selection-start="16416" selection-end="16416" vertical-scroll-proportion="-0.019434629" vertical-offset="6116" max-vertical-offset="6705">
               <folding />
             </state>
           </provider>
@@ -137,7 +139,7 @@
       <file leaf-file-name="parseRequest2_mod.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapp/upload/parseRequest2_mod.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="32" selection-start="2173" selection-end="2173" vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="4575">
+            <state line="62" column="32" selection-start="2173" selection-end="2173" vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="4575">
               <folding />
             </state>
           </provider>
@@ -146,7 +148,7 @@
       <file leaf-file-name="SequenceObject.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/SequenceObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="205" column="41" selection-start="7568" selection-end="7568" vertical-scroll-proportion="0.0" vertical-offset="2685" max-vertical-offset="3960">
+            <state line="205" column="41" selection-start="7568" selection-end="7568" vertical-scroll-proportion="0.0" vertical-offset="3075" max-vertical-offset="4755">
               <folding />
             </state>
           </provider>
@@ -212,12 +214,12 @@
         <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/fileUpload.jsp" />
         <option value="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
         <option value="$PROJECT_DIR$/webapp/WEB-INF/mvc-dispatcher-servlet.xml.prod" />
-        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/MfoldDimer.java" />
         <option value="$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/home.jsp" />
         <option value="$PROJECT_DIR$/build.xml" />
         <option value="$PROJECT_DIR$/webapp/upload/parseRequest.jsp" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java" />
         <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/SequenceObject.java" />
+        <option value="$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/MfoldDimer.java" />
       </list>
     </option>
   </component>
@@ -231,7 +233,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1280" />
-    <option name="height" value="723" />
+    <option name="height" value="722" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -278,6 +280,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -440,8 +444,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -609,7 +611,6 @@
       </ConfigurationWrapper>
       <method>
         <option name="AntTarget" enabled="false" antfile="file://$PROJECT_DIR$/build.xml" target="buildLocalProdNoJavaDoc" />
-        <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="dgdweb:war exploded" />
         </option>
@@ -618,26 +619,6 @@
     <configuration default="true" type="#org.osmorc.OsgiConfigurationType" factoryName="OSGi Bundles" vmParameters="" programParameters="" includeAllBundlesInClassPath="false" workingDir="" useAlternativeJre="false" alternativeJrePath="" frameworkStartLevel="1" defaultStartLevel="5" generateWorkingDir="false">
       <framework instance="" />
       <additinalProperties startConsole="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="trunk" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
@@ -660,6 +641,26 @@
           </MavenRunnerParameters>
         </option>
       </MavenSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="trunk" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="TomeeConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
@@ -698,6 +699,27 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="TomeeConfiguration" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="transportHostId" />
+        </data>
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GriffonRunConfigurationType" factoryName="Griffon">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="true" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
     <configuration default="true" type="tests" factoryName="Nosetests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -720,46 +742,12 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="GriffonRunConfigurationType" factoryName="Griffon">
-      <module name="" />
-      <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app" />
-      <setting name="depsClasspath" value="true" />
-      <setting name="passParentEnv" value="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <method />
-    </configuration>
-    <configuration default="true" type="TomeeConfiguration" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="LOCAL" value="false" />
-      <deployment />
-      <server-settings>
-        <data>
-          <option name="transportHostId" />
-        </data>
-      </server-settings>
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="XSLT" factoryName="XSLT">
@@ -776,6 +764,19 @@
       <OutputType value="CONSOLE" save-to-file="false" />
       <FileType name="XML" />
       <JdkChoice value="FROM_MODULE" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="com.intellij.dmserver.run.DMServerRunConfigurationType:id" factoryName="Spring dmServer (Local)" ALTERNATIVE_JRE_ENABLED="false">
@@ -1112,6 +1113,19 @@
       <option name="SELECTION" value="0" />
       <method />
     </configuration>
+    <configuration default="true" type="GlassfishConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="DOMAIN" value="" />
+        <option name="PRESERVE" value="false" />
+        <option name="VIRTUAL_SERVER" />
+        <option name="USERNAME" value="admin" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <predefined_log_file id="GlassFish" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="externalProjectPath" />
@@ -1125,19 +1139,6 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="GlassfishConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment />
-      <server-settings>
-        <option name="DOMAIN" value="" />
-        <option name="PRESERVE" value="false" />
-        <option name="VIRTUAL_SERVER" />
-        <option name="USERNAME" value="admin" />
-        <option name="PASSWORD" value="" />
-      </server-settings>
-      <predefined_log_file id="GlassFish" enabled="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
     <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" output_log_level="null" package_name="" scope="Class">
@@ -1162,6 +1163,16 @@
       <option name="usbDebugPort" value="7936" />
       <method />
     </configuration>
+    <configuration default="true" type="com.intellij.dmserver.run.DMServerRunConfigurationType:id" factoryName="Spring dmServer (Remote)" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <option name="MBeanPassword" value="springsource" />
+        <option name="MBeanPort" value="9875" />
+        <option name="MBeanUserName" value="admin" />
+      </server-settings>
+      <method />
+    </configuration>
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -1180,16 +1191,6 @@
       <option name="TEST_TYPE" value="TEST_SCRIPT" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="com.intellij.dmserver.run.DMServerRunConfigurationType:id" factoryName="Spring dmServer (Remote)" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="LOCAL" value="false" />
-      <deployment />
-      <server-settings>
-        <option name="MBeanPassword" value="springsource" />
-        <option name="MBeanPort" value="9875" />
-        <option name="MBeanUserName" value="admin" />
-      </server-settings>
       <method />
     </configuration>
     <configuration default="false" name="Dgdweb_tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.50" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="" show_console_on_std_out="true" show_console_on_std_err="true">
@@ -1216,6 +1217,10 @@
         <option name="DEBUG_PORT" value="64392" />
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="JProfiler">
+        <option name="JVM" />
+        <option name="WINDOW" value="false" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
@@ -1248,6 +1253,21 @@
           <option name="PROGRAM_PARAMETERS" value="" />
         </SHUTDOWN>
       </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="JProfiler">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -1265,7 +1285,6 @@
       </ConfigurationWrapper>
       <method>
         <option name="AntTarget" enabled="false" antfile="file://$PROJECT_DIR$/build.xml" target="buildLocalProdNoJavaDoc" />
-        <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="dgdweb:war exploded" />
         </option>
@@ -1346,12 +1365,15 @@
       <workItem from="1411395379710" duration="109613000" />
       <workItem from="1412690309296" duration="102279000" />
       <workItem from="1413823359670" duration="15134000" />
-      <workItem from="1413999320943" duration="696000" />
+      <workItem from="1413999320943" duration="11212000" />
+      <workItem from="1414165381047" duration="1043000" />
+      <workItem from="1414167332747" duration="19000" />
+      <workItem from="1414167379708" duration="100000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="995271000" />
+    <option name="totallyTimeSpent" value="1006949000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1374,33 +1396,34 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="723" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="22" width="1280" height="722" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280543" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29001585" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09450727" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20274636" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872254" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32322428" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51277953" sideWeight="0.8034154" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5784469" sideWeight="0.19628432" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.08260524" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295362" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3191153" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980143" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280543" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18659128" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20678514" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5784469" sideWeight="0.80371565" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29001585" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53809524" sideWeight="0.8034154" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31904763" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980143" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1411,15 +1434,15 @@
     <layout-to-restore>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280543" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.134895" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872254" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32322428" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26746988" sideWeight="0.1965846" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.08260524" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295362" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280543" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16074313" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1436,8 +1459,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32646593" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980143" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980143" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39951178" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -1479,13 +1502,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="16" selection-start="7152" selection-end="7152" vertical-scroll-proportion="0.0" vertical-offset="1935" max-vertical-offset="2580">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/oligo/fileUpload.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="64" column="8" selection-start="1991" selection-end="1991" vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="1320">
@@ -1544,9 +1560,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/dgdweb/index-all.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="552" column="84" selection-start="60367" selection-end="60367" vertical-scroll-proportion="0.0" vertical-offset="8176" max-vertical-offset="12735">
-          <folding />
-        </state>
+        <state line="552" column="84" selection-start="60367" selection-end="60367" vertical-scroll-proportion="0.0" vertical-offset="8176" max-vertical-offset="12735" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/web/HttpRequestFacade.java">
@@ -1561,26 +1575,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/UploadedFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="148" selection-end="148" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-          <folding />
-        </state>
+        <state line="7" column="13" selection-start="148" selection-end="148" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/Chromosome.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" vertical-offset="21" max-vertical-offset="600">
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#381#389#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="8" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" vertical-offset="21" max-vertical-offset="600" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/Primer3Object.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="4560">
-          <folding />
-        </state>
+        <state line="12" column="13" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="4560" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/applicationContext.xml">
@@ -1592,16 +1597,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/BlatPsl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="0" selection-start="4988" selection-end="4988" vertical-scroll-proportion="0.0" vertical-offset="2049" max-vertical-offset="6195">
-          <folding />
-        </state>
+        <state line="146" column="0" selection-start="4988" selection-end="4988" vertical-scroll-proportion="0.0" vertical-offset="2049" max-vertical-offset="6195" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligoHomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="63" selection-start="794" selection-end="794" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-          <folding />
-        </state>
+        <state line="24" column="63" selection-start="794" selection-end="794" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495" />
       </provider>
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/src.zip!/java/util/Collections.java">
@@ -1614,18 +1615,9 @@
         <state line="852" column="15" selection-start="33034" selection-end="33034" vertical-scroll-proportion="0.33275262" vertical-offset="12199" max-vertical-offset="13080" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/SequenceObjectSubsections.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="69" selection-start="1539" selection-end="1539" vertical-scroll-proportion="0.0" vertical-offset="98" max-vertical-offset="1890">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/src.zip!/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="512" column="8" selection-start="23074" selection-end="23074" vertical-scroll-proportion="0.11143695" vertical-offset="7297" max-vertical-offset="8745">
-          <folding />
-        </state>
+        <state line="512" column="8" selection-start="23074" selection-end="23074" vertical-scroll-proportion="0.11143695" vertical-offset="7297" max-vertical-offset="8745" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-webmvc-4.0.0.RELEASE.jar!/org/springframework/web/servlet/FrameworkServlet.class">
@@ -1638,18 +1630,6 @@
         <state line="52" column="16" selection-start="2517" selection-end="2517" vertical-scroll-proportion="0.4054054" vertical-offset="720" max-vertical-offset="1020" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="63" selection-start="4338" selection-end="4372" vertical-scroll-proportion="-6.8461537" vertical-offset="1727" max-vertical-offset="2505">
-          <folding>
-            <element signature="e#4441#4738#0" expanded="false" />
-            <element signature="e#4727#4728#0" expanded="false" />
-            <element signature="e#4778#5109#0" expanded="false" />
-            <element signature="e#5098#5099#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/WEB-INF/pages/primer/primerReport.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="148" column="25" selection-start="6232" selection-end="6232" vertical-scroll-proportion="-12.041667" vertical-offset="1931" max-vertical-offset="4770" />
@@ -1657,9 +1637,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/MfoldHairpin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="1331" selection-end="1331" vertical-scroll-proportion="0.0" vertical-offset="392" max-vertical-offset="690">
-          <folding />
-        </state>
+        <state line="41" column="0" selection-start="1331" selection-end="1331" vertical-scroll-proportion="0.0" vertical-offset="392" max-vertical-offset="690" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/selenium-server-standalone-2.41.0.jar!/org/apache/commons/io/FileUtils.class">
@@ -1689,49 +1667,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/InsilicoPCRObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="48" selection-start="2085" selection-end="2117" vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="2160">
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#794#813#0" expanded="false" />
-            <element signature="e#1414#1433#0" expanded="false" />
-            <element signature="e#3427#3428#0" expanded="false" />
-            <element signature="e#3460#3461#0" expanded="false" />
-            <element signature="e#3512#3513#0" expanded="false" />
-            <element signature="e#3556#3557#0" expanded="false" />
-            <element signature="e#3594#3595#0" expanded="false" />
-            <element signature="e#3628#3629#0" expanded="false" />
-            <element signature="e#3682#3683#0" expanded="false" />
-            <element signature="e#3728#3729#0" expanded="false" />
-            <element signature="e#3758#3759#0" expanded="false" />
-            <element signature="e#3784#3785#0" expanded="false" />
-            <element signature="e#3822#3823#0" expanded="false" />
-            <element signature="e#3852#3853#0" expanded="false" />
-            <element signature="e#3890#3891#0" expanded="false" />
-            <element signature="e#3927#3928#0" expanded="false" />
-            <element signature="e#3984#3985#0" expanded="false" />
-            <element signature="e#4036#4037#0" expanded="false" />
-            <element signature="e#4072#4073#0" expanded="false" />
-            <element signature="e#4107#4108#0" expanded="false" />
-            <element signature="e#4160#4161#0" expanded="false" />
-            <element signature="e#4208#4209#0" expanded="false" />
-            <element signature="e#4241#4242#0" expanded="false" />
-            <element signature="e#4270#4271#0" expanded="false" />
-            <element signature="e#4314#4315#0" expanded="false" />
-            <element signature="e#4350#4351#0" expanded="false" />
-            <element signature="e#4380#4381#0" expanded="false" />
-            <element signature="e#4406#4407#0" expanded="false" />
-            <element signature="e#4444#4445#0" expanded="false" />
-            <element signature="e#4474#4475#0" expanded="false" />
-            <element signature="e#4505#4506#0" expanded="false" />
-            <element signature="e#4532#4533#0" expanded="false" />
-            <element signature="e#4572#4573#0" expanded="false" />
-            <element signature="e#4604#4605#0" expanded="false" />
-            <element signature="e#4638#4639#0" expanded="false" />
-            <element signature="e#4668#4669#0" expanded="false" />
-            <element signature="e#4714#4715#0" expanded="false" />
-            <element signature="e#4752#4753#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="62" column="48" selection-start="2085" selection-end="2117" vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="2160" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/spring-webmvc-4.0.0.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
@@ -1818,16 +1754,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/src.zip!/java/io/File.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1026" column="19" selection-start="42534" selection-end="42534" vertical-scroll-proportion="-0.6749117" vertical-offset="15217" max-vertical-offset="32430" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/oligo/OligosCreationController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="88" selection-start="3229" selection-end="3229" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="5145">
+        <state line="44" column="58" selection-start="1701" selection-end="1701" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="5145">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/SequenceObjectSubsections.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="77" selection-start="916" selection-end="916" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="1455">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/OligoObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="29" selection-start="1145" selection-end="1145" vertical-scroll-proportion="0.0" vertical-offset="502" max-vertical-offset="2415">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/edu/chop/dgd/dgdObjects/MfoldDimer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="376" column="45" selection-start="15101" selection-end="15101" vertical-scroll-proportion="0.09375" vertical-offset="5589" max-vertical-offset="6540">
+        <state line="408" column="0" selection-start="16416" selection-end="16416" vertical-scroll-proportion="-0.019434629" vertical-offset="6116" max-vertical-offset="6705">
           <folding />
         </state>
       </provider>
