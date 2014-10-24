@@ -14,3 +14,5 @@ do
 		echo "$line"
 	fi
 done
+
+rm output.fa
