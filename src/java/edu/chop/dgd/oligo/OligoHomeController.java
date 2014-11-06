@@ -20,14 +20,10 @@ public class OligoHomeController implements Controller{
         ArrayList warning = new ArrayList();
         ArrayList status = new ArrayList();
 
-        String uploadFilePath = "/data/downloads";
-
         HttpRequestFacade req = new HttpRequestFacade(request);
         //status.add("oligo Design homepage?");
+        String exampleFile = "/data/antholigo_test/antholigo_test.txt";
 
-        ModelAndView mv = new ModelAndView("/WEB-INF/pages/oligo/home.jsp", "message", "Design oligos for given positions.");
-        mv.addObject("uploads", uploadFilePath);
-
-        return mv;
+        return new ModelAndView("/WEB-INF/pages/oligo/home.jsp", "exampleFile", exampleFile);
     }
 }

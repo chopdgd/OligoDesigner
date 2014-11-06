@@ -1,124 +1,1 @@
-<%@ page import="edu.chop.dgd.web.DisplayMapper" %>
-<%@ page import="edu.chop.dgd.web.HttpRequestFacade" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="org.w3c.dom.*" %>
-<%@ page import="sun.plugin.javascript.navig.*" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: jayaramanp
-  Date: 6/1/14
-  Time: 7:35 PM
-  To change this template use File | Settings | File Templates.
---%>
-
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<%--
-<script type="text/javascript" src="jquery-1.2.6.min.js">
-
-
-    //init JavaPowUpload JavaScript object
-    var JavaPowUpload;
-    JavaPowUpload = document.getElementById("JavaPowUpload");
-    //where "javaPowUpload" is id attribute of <applet> tag>
-    //Now we can use javaPowUpload methods, for example show browse dialog
-    JavaPowUpload.clickBrowse();
-
-</script>
---%>
-
-<script type="text/javascript">
-    function getProjectId(id){
-        var projectId = document.getElementById(id);
-        var projectName = projectId.value;
-
-        return projectName;
-    }
-
-    function validateForm(formId){
-        var form = document.getElementById(formId);
-        alert("Everything looks good for:" + form.projectName.value);
-    }
-</script>
-
-
-<%
-    String uploadedFilePath = (String) request.getAttribute("uploads");
-    HttpRequestFacade req= new HttpRequestFacade(request);
-    ArrayList error = new ArrayList();
-    DisplayMapper dm = new DisplayMapper(req, error);
-    String pid = request.getParameter("proj_id");
-%>
-
-
-<html>
-<body>
-<form id="uploadForm" name="uploadForm" action="/dgdweb/oligo/fileUpload.html" method="GET" onsubmit="return validateForm(this)">
-    <table>
-        <tr>
-            <td>
-                <b>Enter Project ID</b>
-            </td>
-            <td>
-                <input id="proj_id" name="proj_id" type="text" size="94" align="left"
-                       value="<%=dm.out("proj_id", pid)%>" onkeyup="document.uploadFileForm.projectName.value=document.uploadForm.proj_id.value"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input id="uploadFolderPath" name="uploadFolderPath"
-                       value="<%=dm.out("uploadFolderPath", uploadedFilePath)%>" type="hidden">
-            </td>
-        </tr>
-        <tr>
-            <td>
-            <h3>Please select a file to upload !</h3>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-            <applet CODE="wjhk.jupload2.JUploadApplet"
-                    CODEBASE="/dgdweb/upload/"
-                    NAME="JUpload"
-                    ARCHIVE="wjhk.jupload.jar"
-                    WIDTH="800"
-                    HEIGHT="600"
-                    MAYSCRIPT="true"
-                    ALT="The java plugin must be installed.">
-                <PARAM name="postURL" value="/dgdweb/upload/parseRequest.jsp" />
-                <PARAM name="formdata" value="uploadFileForm" />
-                <PARAM name="error" value="true" />
-                <!--<PARAM name="afterUploadURL" value="/dgdweb/oligo/fileUpload.html?"/>-->
-                <!-- Optionnal, see code comments -->
-                <PARAM name="ftpCreateDirectoryStructure" value="true" />
-                <PARAM name="urlToSendErrorTo" value="/dgdweb/upload/uploadError.txt"/>
-
-                <!-- Optionnal, see code comments -->
-                <PARAM name="showLogWindow" value="true" />
-                <PARAM name="debugLevel" value="99" />"
-            </applet>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <!-- <input type="submit" onclick="alert(document.uploadFileForm.projectName.value)" value="click This!!"> -->
-                <br />
-                <h4>Compile Results..<input type="submit" size="200" >
-                </h4>
-            </td>
-        </tr>
-    </table>
-</form>
-
-<form name="uploadFileForm" id="uploadFileForm" action="">
-    <input name="uploadedFileLoc" id ="uploadedFileLoc" type="text" value="<%=uploadedFilePath%>">
-    <input name="projectName" id="projectName" type="text" disabled >
-</form>
-
-<SCRIPT TYPE="TEXT/JAVASCRIPT">
-    document.uploadForm.proj_id.focus()
-</SCRIPT>
-
-</body>
-</html>
+<%@ page import="edu.chop.dgd.web.DisplayMapper" %><%@ page import="edu.chop.dgd.web.HttpRequestFacade" %><%@ page import="java.util.ArrayList" %><%@ page import="org.w3c.dom.*" %><%@ page import="sun.plugin.javascript.navig.*" %><%--  Created by IntelliJ IDEA.  User: jayaramanp  Date: 6/1/14  Time: 7:35 PM  To change this template use File | Settings | File Templates.--%><%    String pageTitle = "Division of Genomics Diagnostics Oligo Design Application";    String headContent = "Division of Genomics Diagnostics Oligo Design Application";    String pageDescription = "Division of Genomics Diagnostics Oligo Design Application";%><script type="text/javascript">    function getProjectId(id){        var projectId = document.getElementById(id);        var projectName = projectId.value;        return projectName;    }    function validateForm(formId){        var form = document.getElementById(formId);        alert("Everything looks good for:" + form.projectName.value);    }</script><%    HttpRequestFacade req= new HttpRequestFacade(request);    ArrayList error = new ArrayList();    DisplayMapper dm = new DisplayMapper(req, error);    String exampleFile = (String) request.getAttribute("exampleFile");%><jsp:include page="../common/header.jsp" flush="false">    <jsp:param name="projectTitle" value="ANTHOLIGO" /></jsp:include><div class="row">    <div class="col-sm-6 col-md-4" style="padding-left: 30px">        <div class="panel" id="AnthOligoDesc" style="border: double;">            <h4 class="panel-heading" style="padding-left: 10px; padding-right: 10px">About AnthOligo:</h4>            <div class="panel-body" style="padding-left: 10px; padding-right: 10px">                AnthOligo is a web-based application developed to automatically generate oligo sequences where one or more                targeted genomic regions are lengthy and/or complex. It automates the complex process of checking                multiple applications so that the oligos selected successfully pass certain specific                parameter criteria and then get shortlisted as a possible use case for RSE (region specific extraction) processes.                The oligos generated are processed by the following applications and filtered                via AnthOligo to give the end user an optimal set of oligos:                <div class="tablist">                    <ul>                        <li>Primer3</li>                        <li>BLAT</li>                        <li>UNAFold (MFold)</li>                    </ul>                </div>            </div>        </div>    </div>    <div class="col-sm-6 col-md-4">        <div class="thumbnail" id="uploadDiv" style="border: double; padding-top: 5px">            <form id="uploadForm" name="uploadForm" action="/dgdweb/oligo/fileUpload.html"                  onsubmit="alert('checking upload now')" method="post" enctype="multipart/form-data">                <div class="form-group" style="padding-left: 5px">                    <p><h4>Please type a name for this project.</h4></p>                        <input class="form-control" id="proj_id" type="text" name="proj_id" placeholder="Enter name for project">                    <br />                    <p><h5>Please upload your file with coordinates separated by tab</h5></p>                        <input id="file" type="file" class="button" name="file" size="100"/>                    <br />                    <p><h5>Submit project for processing and creation of oligos.</h5></p>                        <input type="submit" class="btn btn-default navbar-btn" value="Upload File"/>                </div>            </form>        </div>    </div>    <div class="col-sm-6 col-md-4" style="padding-right: 30px">        <div class="nav-text" id="AnthOligoHelp" style="border: double; padding-top: 10px; padding-left: 10px; padding-right: 10px">            <p class="thumbnail">                For an example please use sample file provided here to test the application. Your input file needs to be                tab delimited text file with three columns.                <div class="tablist">                    <ul>                        <li>The first column consists of the Chromosome. please remember to add the "chr" tag prefix to                            your chromsome number. </li>                        <li>The second column consists of the start position of your region of interest. </li>                        <li>The third column consists of the end position of your region of interest. </li>                    </ul>                </div>                <div class="link"><a href="/dgdweb/oligo/FileDownload.html?file=<%=exampleFile%>&object=oligo">Use this example input file</a></div>            </p>        </div>    </div></div><jsp:include page="../common/footer.jsp" flush="true"></jsp:include>

@@ -24,6 +24,7 @@ public class OligosCreationController implements Controller{
     private static String blatOpDir;
     private static String oligoProcessScriptDir;
     private static String dataDir;
+    private static String downloadsDir;
     private static String oligoInputDir;
     private static String oligoOutputDir;
     private static String mfoldInpDir;
@@ -38,9 +39,10 @@ public class OligosCreationController implements Controller{
 
         String upFile = request.getParameter("uploadFolderPath");
         String projectId = request.getParameter("proj_id");
-        File newFile = new File(upFile+"/"+projectId);
-        File uploadedFiles[] = newFile.listFiles();
-        File fileToParse = uploadedFiles[0];
+        String origFileName = request.getParameter("origFile");
+        //File uploadedFiles[] = newFile.listFiles();
+        //File fileToParse = uploadedFiles[0];
+        File fileToParse = new File(upFile+projectId+"/"+origFileName);
         ArrayList<SequenceObject> objects =  getObjectsFromFile(fileToParse);
         SequenceObjectSubsections soss = new SequenceObjectSubsections();
         String reportFile="";String heterodimerReport="";
@@ -85,7 +87,7 @@ public class OligosCreationController implements Controller{
 
         String oligosFilename = writeOligosFinalFile(objects, dataDir, finalOligos, projectId);
 
-        ModelAndView mvObj = new ModelAndView("/WEB-INF/pages/oligo/fileUpload.jsp");
+        ModelAndView mvObj = new ModelAndView("/WEB-INF/pages/oligo/processOligos.jsp");
         mvObj.addObject("uploadedPath", upFile);
         mvObj.addObject("sequenceObjects", objects);
         mvObj.addObject("optimalOligosFile", oligosFilename);
@@ -119,9 +121,9 @@ public class OligosCreationController implements Controller{
 
 
             //write optimal oligos file
+            pwFirst.println("For query region: "+so.getChr()+":"+so.getStart()+"-"+so.getStop());
 
             for(OligoObject o : optimalOligos.get(optimalOligosTree.firstEntry().getKey().split("_")[0])){
-
                 pwFirst.println(optimalOligosTree.firstEntry().getKey().split("_")[0] + "\t" + o.getInternalPrimerId() + "\t" + so.getChr() + "\t" + o.getInternalStart() + "\t" + Integer.parseInt(o.getInternalStart()) + o.getInternalLen() + "\t" + o.getInternalSeq() + "\t-\t"
                         + o.getInternalGc() + "\t" + o.getInternalTm() + "\t" + o.getInternalLen() + "\t" + o.getHomodimerValue() + "\t-\t" + o.getHairpinValue() + "\t" + o.getInternalPrimerBlatList().size());
 
@@ -393,5 +395,13 @@ public class OligosCreationController implements Controller{
 
     public void setFinalOligos(String finalOligos) {
         OligosCreationController.finalOligos = finalOligos;
+    }
+
+    public static String getDownloadsDir() {
+        return downloadsDir;
+    }
+
+    public void setDownloadsDir(String downloadsDir) {
+        OligosCreationController.downloadsDir = downloadsDir;
     }
 }

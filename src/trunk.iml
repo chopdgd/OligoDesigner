@@ -4,47 +4,32 @@
     <facet type="web" name="Web">
       <configuration>
         <descriptors>
-          <deploymentDescriptor name="context.xml" url="file://$HOME_DIR$/PrimerDesigner/trunk/webapp/META-INF" />
-          <deploymentDescriptor name="web.xml" url="file://$HOME_DIR$/PrimerDesigner/trunk/webapp/WEB-INF/web.xml" />
+          <deploymentDescriptor name="web.xml" url="file://$HOME_DIR$/Oligodesigner/trunk/webapp/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
-          <root url="file://$HOME_DIR$/PrimerDesigner/trunk/webapp" relative="/" />
+          <root url="file://$HOME_DIR$/Oligodesigner/trunk/webapp" relative="/" />
         </webroots>
-        <sourceRoots />
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$HOME_DIR$/PrimerDesigner/trunk/webapp/WEB-INF/applicationContext.xml</file>
-          <file>file://$HOME_DIR$/PrimerDesigner/trunk/webapp/WEB-INF/mvc-dispatcher-servlet.xml</file>
-          <file>file://$HOME_DIR$/PrimerDesigner/trunk/ucsc.xml</file>
+          <file>file://$HOME_DIR$/Oligodesigner/trunk/ucsc.xml</file>
+          <file>file://$HOME_DIR$/Oligodesigner/trunk/webapp/WEB-INF/mvc-dispatcher-servlet.xml</file>
         </fileset>
       </configuration>
     </facet>
-    <facet type="web" name="Web2">
-      <configuration>
-        <descriptors>
-          <deploymentDescriptor name="web.xml" url="file://$HOME_DIR$/PrimerDesigner/trunk/.idea/compiler.xml" />
-        </descriptors>
-        <webroots>
-          <root url="file://$HOME_DIR$/PrimerDesigner/trunk/.idea" relative="/WEB-INF" />
-        </webroots>
-      </configuration>
-    </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
-    <output url="file://$HOME_DIR$/PrimerDesigner/trunk/dist/production" />
-    <output-test url="file://$HOME_DIR$/PrimerDesigner/trunk/dist/test" />
-    <exclude-output />
-    <content url="file://$HOME_DIR$/PrimerDesigner/trunk">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="true">
+    <content url="file://$HOME_DIR$/Oligodesigner/trunk">
       <sourceFolder url="file://$MODULE_DIR$/java" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 7.0.50" level="application_server_libraries" />
+    <orderEntry type="library" name="lib2" level="project" />
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="lib1" level="project" />
+    <orderEntry type="library" name="wjhk.jupload1" level="project" />
   </component>
 </module>
 

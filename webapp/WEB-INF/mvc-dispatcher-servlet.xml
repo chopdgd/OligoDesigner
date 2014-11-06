@@ -1,9 +1,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <context:component-scan base-package="edu.chop.dgd"/>
 
@@ -31,7 +32,8 @@
                         <prop key="primer/primerReport.html">PrimerCreateController</prop>
                         <prop key="primer/FileDownload.html">FileDownloadController</prop>
                         <prop key="oligo/home.html">OligoHomeController</prop>
-                        <prop key="oligo/fileUpload.html">OligosCreationController</prop>
+                        <prop key="oligo/fileUpload.html">FileUploadController</prop>
+                        <prop key="oligo/processOligos.html">OligosCreationController</prop>
                         <prop key="oligo/FileDownload.html">FileDownloadController</prop>
                     </props>
                 </property>
@@ -52,6 +54,7 @@
 
     <bean id="oligoDir" abstract="true">
         <property name="dataDir" value="/data/"/>
+        <property name="downloadsDir" value="downloads/"/>
         <property name="blatInpDir" value="blatOligoInp/" />
         <property name="blatOpDir" value="blatOligoOp/" />
         <property name="oligoProcessScriptDir" value="/data/" />
@@ -69,8 +72,10 @@
     <bean id="PrimerCreateController" class="edu.chop.dgd.primer.PrimerCreateController" parent="wwwDir" />
     <bean id="FileDownloadController" class="edu.chop.dgd.dgdUtils.FileDownloadController" parent="wwwDir" />
     <bean id="OligoHomeController" class="edu.chop.dgd.oligo.OligoHomeController" />
+    <bean id="FileUploadController" class="edu.chop.dgd.dgdUtils.FileUploadController" parent="oligoDir"/>
     <bean id="OligosCreationController" class="edu.chop.dgd.oligo.OligosCreationController" parent="oligoDir" />
 
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 
+    
 </beans>
