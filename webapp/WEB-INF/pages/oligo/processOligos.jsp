@@ -6,7 +6,16 @@
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.TreeMap" %>
+<%
+    String pageTitle = "ANTHOLIGO Report - Oligo Design Application";
+    String headContent = "ANTHOLIGO Report - Oligo Design Application";
+    String pageDescription = "ANTHOLIGO Report - Oligo Design Application";
+%>
 
+<jsp:include page="../common/header.jsp" flush="false">
+    <jsp:param name="projectTitle" value="ANTHOLIGO" />
+    <jsp:param name="pageTitle" value="<%=pageTitle%>"/>
+</jsp:include>
 
     <%
 
@@ -19,11 +28,6 @@
         String projectId = (String) request.getAttribute("projectId");
 
     %>
-
-
-<jsp:include page="../common/header.jsp" flush="false">
-    <jsp:param name="projectTitle" value="ANTHOLIGO" />
-</jsp:include>
 
 
     <div class="jumbotron">

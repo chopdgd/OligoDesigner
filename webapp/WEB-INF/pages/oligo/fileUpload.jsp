@@ -13,16 +13,18 @@
   Time: 11:47 AM
   To change this template use File | Settings | File Templates.
 --%>
+<%
+    String pageTitle = "ANTHOLIGO - Oligo Design Application";
+    String headContent = "ANTHOLIGO - Oligo Design Application";
+    String pageDescription = "ANTHOLIGO - Oligo Design Application";
+%>
+
 <jsp:include page="../common/header.jsp" flush="false">
     <jsp:param name="projectTitle" value="ANTHOLIGO" />
+    <jsp:param name="pageTitle" value="<%=pageTitle%>"/>
 </jsp:include>
 
-
 <%
-    String pageTitle = "Division of Genomic Diagnostics Oligo Design Application";
-    String headContent = "Division of Genomic Diagnostics Oligo Design Application";
-    String pageDescription = "Division of Genomic Diagnostics Oligo Design Application";
-
 
     HttpRequestFacade req= new HttpRequestFacade(request);
     ArrayList error = new ArrayList();
