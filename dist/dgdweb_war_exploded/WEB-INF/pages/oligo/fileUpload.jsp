@@ -44,12 +44,45 @@
 <META HTTP-EQUIV=Refresh CONTENT="3; URL=/dgdweb/oligo/processOligos.html?uploadFolderPath=<%=uploadedFilePath%>&proj_id=<%=pid%>&origFile=<%=origFileName%>"/>
 
 
-<div class="well well-large">
-    Please wait..while we are processing your oligos...
-    <%=uploadResponse%>
-</div>
-<div class="media">
-    <p class="media-middle"><img src="/dgdweb/resources/images/loader.gif" alt="dgdLoader" style="align-content: center;"/></p>
+<div class="panel">
+    <div class="panel-heading"><%=uploadResponse%></div>
+    <p class="panel-body">
+        <div class="media">
+            <p class="media-middle"><img src="/dgdweb/resources/images/loader.gif" alt="dgdLoader" style="align-content: center;"/></p>
+        </div>
+    </p>
+    <div class="alert alert-info">Please wait..while we are processing your oligos. Do not close this tab as you might lose your results.</div>
+    <div class="well">
+        <ul class="list-group">The following processes are running in order to create your optimal oligos set:
+        <li class="list-group-item">Primer3</li>
+        <li class="list-group-item">BLAT</li>
+        <li class="list-group-item">Hairpin Analysis</li>
+        <li class="list-group-item">Homodimer Analysis</li>
+        <li class="list-group-item">Heterodimer Analysis</li>
+        </ul>
+    </div>
+    <p class="panel-heading">We have estimated the following processing times based on the size of your region of interest</p>
+    <div class="panel-body">
+        <table class="table">
+            <div class="row">
+                <div class="col-sm-4">Region Size</div>
+                <div class="col-sm-4">Processing Time</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">30KB</div>
+                <div class="col-sm-4">~1-2min</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">200KB</div>
+                <div class="col-sm-4">~35-40mins</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">1MB</div>
+                <div class="col-sm-4">~2Hrs</div>
+            </div>
+        </table>
+    </div>
+
 </div>
 <%--<form action="/dgdweb/oligo/processOligos.html?uploadFolderPath=<%=uploadedFilePath%>&proj_id=<%=pid%>"
       method="post" style="align-content: center">
