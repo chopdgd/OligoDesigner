@@ -7,5 +7,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+
+    <div class="mastfoot" style="padding-left: 70px">
+        <div class="container">
+            <p class="text-muted">For Questions/Comments/Criticisms/Accolades please contact website admin: jayaramanp at email dot chop dot edu</p>
+        </div>
+    </div>
 </body>
 </html>

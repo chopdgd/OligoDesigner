@@ -47,7 +47,7 @@
 <div class="panel">
     <div class="panel-heading"><%=uploadResponse%></div>
     <p class="panel-body">
-        <div class="media">
+        <div class="media media-middle">
             <p class="media-middle"><img src="/dgdweb/resources/images/loader.gif" alt="dgdLoader" style="align-content: center;"/></p>
         </div>
     </p>
