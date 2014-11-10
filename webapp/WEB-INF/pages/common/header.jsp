@@ -67,10 +67,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href=/dgdweb/oligo/home.html><%=projectTitle%> Home</a></li>
+                <li class="active"><a href=/dgdweb/oligo/home.html>Home</a></li>
                 <li><a href="http://www.chop.edu/centers-programs/division-genomic-diagnostics">About</a></li>
                 <li><a href="https://www.chop.edu/centers-programs/pathology-and-laboratory-medicine/contact">Contact</a></li>
-                <li><a href="http://www.chop.edu/doctors/monos-dimitri-s#.VF5IX4eR-B0">IMMUNOGENETICS Laboratory</a></li>
             </ul>
             <ul class="nav navbar-right">
                 <li><img src="/dgdweb/resources/images/chopImmunoHorizBlack2.png" alt="dgdLogo"
