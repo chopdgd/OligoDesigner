@@ -22,6 +22,7 @@
 <jsp:include page="../common/header.jsp" flush="false">
     <jsp:param name="projectTitle" value="ANTHOLIGO" />
     <jsp:param name="pageTitle" value="<%=pageTitle%>"/>
+    <jsp:param name="logoImgPath" value="/dgdweb/resources/images/chopImmunoHorizBlack3.png"/>
 </jsp:include>
 
 <%
@@ -94,4 +95,6 @@
 </form>--%>
 <!-- this script submits the form AFTER it has been completely loaded -->
 
-<jsp:include page="../common/footer.jsp" flush="true"></jsp:include>
+<jsp:include page="../common/footer.jsp" flush="true">
+    <jsp:param name="contact" value="jayaramanp at email dot chop dot edu"/>
+</jsp:include>

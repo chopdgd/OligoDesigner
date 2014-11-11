@@ -10,7 +10,7 @@
 
     <div class="mastfoot" style="padding-left: 70px">
         <div class="container">
-            <p class="text-muted">For Questions/Comments/Criticisms/Accolades please contact website admin: jayaramanp at email dot chop dot edu</p>
+            <p class="text-muted">For Questions/Comments/Criticisms/Accolades please contact website admin:<%=request.getParameter("contact")%></p>
         </div>
     </div>
 </body>
