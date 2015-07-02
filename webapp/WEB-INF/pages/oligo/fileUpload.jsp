@@ -34,6 +34,26 @@
     String uploadedFilePath = (String) request.getAttribute("uploads");
     String origFileName = (String) request.getAttribute("origFilename");
     String uploadResponse = (String) request.getAttribute("fileUploadResponse");
+    String oligo_seq_separation = (String) request.getAttribute("separation");
+
+    String min_gc = (String) request.getAttribute("minGC");
+    String max_gc = (String) request.getAttribute("maxGC");
+    String opt_gc = (String) request.getAttribute("optGC");
+
+    String min_tm = (String) request.getAttribute("minTm");
+    String max_tm = (String) request.getAttribute("maxTm");
+    String opt_tm = (String) request.getAttribute("optTm");
+
+    String min_length = (String) request.getAttribute("minLen");
+    String max_length = (String) request.getAttribute("maxLen");
+    String opt_length = (String) request.getAttribute("optLen");
+
+    String na = (String) request.getAttribute("naIon");
+    String mg = (String) request.getAttribute("mgIon");
+
+    String self_any = (String) request.getAttribute("selfAny");
+    String self_end = (String) request.getAttribute("selfEnd");
+
 %>
 
 
@@ -42,7 +62,9 @@
 <base href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/">
 <script src="js/global.js"></script>
 <link rel="stylesheet" href="css/global.css">
-<META HTTP-EQUIV=Refresh CONTENT="3; URL=/dgdweb/oligo/processOligos.html?uploadFolderPath=<%=uploadedFilePath%>&proj_id=<%=pid%>&origFile=<%=origFileName%>"/>
+<META HTTP-EQUIV=Refresh CONTENT="3; URL=/dgdweb/oligo/processOligos.html?uploadFolderPath=<%=uploadedFilePath%>&proj_id=<%=pid%>&origFile=<%=origFileName%>
+&separation=<%=oligo_seq_separation%>&minGC=<%=min_gc%>&optGC=<%=opt_gc%>&maxGC=<%=max_gc%>&minTm=<%=min_tm%>&optTm=<%=opt_tm%>&maxTm=<%=max_tm%>&minLen=<%=min_length%>
+&optLen=<%=opt_length%>&maxLen=<%=max_length%>&Na=<%=na%>&Mg=<%=mg%>&selfAny=<%=self_any%>&selfEnd=<%=self_end%>"/>
 
 
 <div class="panel">

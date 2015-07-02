@@ -15,7 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
-<<<<<<< HEAD
+
  * Created by jayaramanp on 6/1/14.
  */
 public class OligosCreationController implements Controller{
@@ -34,16 +34,137 @@ public class OligosCreationController implements Controller{
     private static String heterodimerOpDir;
     private static String finalOligos;
 
+    private static String min_gc;
+    private static String max_gc;
+    private static String opt_gc;
+    private static String min_tm;
+    private static String opt_tm;
+    private static String max_tm;
+    private static String min_len;
+    private static String opt_len;
+    private static String max_len;
+    private static String na_ion;
+    private static String mg_ion;
+    private static String self_any;
+    private static String self_end;
+    private static int spacing=0;
+
+
+
+
+
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse httpServletResponse) throws Exception {
+
+        ArrayList error = new ArrayList();
+        ArrayList warning = new ArrayList();
+        ArrayList status = new ArrayList();
+        String exampleFile = "/data/antholigo_test/antholigo_test.txt";
 
         String upFile = request.getParameter("uploadFolderPath");
         String projectId = request.getParameter("proj_id");
         String origFileName = request.getParameter("origFile");
+
+        String spacing2 = request.getParameter("separation");
+        spacing = Integer.parseInt(spacing2);
+
+        String minGC = request.getParameter("minGC");
+        if(minGC.length()>0){
+            min_gc = minGC;
+        }else{
+            min_gc = "NA";
+        }
+
+        String maxGC = request.getParameter("maxGC");
+        if(maxGC.length()>0){
+            max_gc = maxGC;
+        }else{
+            max_gc = "NA";
+        }
+
+
+        String optGC = request.getParameter("optGC");
+        if(optGC.length()>0){
+            opt_gc = optGC;
+        }else{
+            opt_gc = "NA";
+        }
+
+        String minTm = request.getParameter("minTm");
+        if(optGC.length()>0){
+            min_tm = minTm;
+        }else{
+            min_tm = "NA";
+        }
+
+        String maxTm = request.getParameter("maxTm");
+        if(maxTm.length()>0){
+            max_tm = maxTm;
+        }else{
+            max_tm = "NA";
+        }
+
+        String optTm = request.getParameter("optTm");
+        if(optTm.length()>0){
+            opt_tm = optTm;
+        }else{
+            opt_tm = "NA";
+        }
+
+        String minLen = request.getParameter("minLen");
+        if(minLen.length()>0){
+            min_len = minLen;
+        }else{
+            min_len = "NA";
+        }
+
+        String maxLen = request.getParameter("maxLen");
+        if(maxLen.length()>0){
+            max_len = maxLen;
+        }else{
+            max_len = "NA";
+        }
+
+        String optLen = request.getParameter("optLen");
+        if(optLen.length()>0){
+            opt_len = optLen;
+        }else{
+            opt_len = "NA";
+        }
+
+        String naIon = request.getParameter("Na");
+        if(naIon.length()>0){
+            na_ion = naIon;
+        }else{
+            na_ion = "NA";
+        }
+
+        String mgIon = request.getParameter("Mg");
+        if(mgIon.length()>0){
+            mg_ion = mgIon;
+        }else{
+            mg_ion = "NA";
+        }
+
+        String selfAny = request.getParameter("selfAny");
+        if(selfAny.length()>0){
+            self_any = selfAny;
+        }else{
+            self_any = "NA";
+        }
+
+        String selfEnd = request.getParameter("selfEnd");
+        if(selfEnd.length()>0){
+            self_end = selfEnd;
+        }else{
+            self_end = "NA";
+        }
+
+
         //File uploadedFiles[] = newFile.listFiles();
         //File fileToParse = uploadedFiles[0];
         File fileToParse = new File(upFile+projectId+"/"+origFileName);
-        ArrayList<SequenceObject> objects =  getObjectsFromFile(fileToParse);
+        ArrayList<SequenceObject> objects =  getObjectsFromFile(fileToParse, error);
         SequenceObjectSubsections soss = new SequenceObjectSubsections();
         String reportFile="";String heterodimerReport="";
 
@@ -62,9 +183,8 @@ public class OligosCreationController implements Controller{
             String fileName = reportAndName[1];
             List<SequenceObjectSubsections> oligosSubsectionList = soss.retrieveResultsFromAnalyses(fileName, sosSubsList, dataDir, oligoOutputDir, blatInpDir, blatOpDir, mfoldInpDir, mfoldOpDir, homodimerOpDir, heterodimerInpDir, heterodimerOpDir);
             HashMap<OligoObject,List<OligoObject>> heterodimerOligosHashMap = new MfoldDimer().FilterOligosRetrieveHeteroDimers(oligosSubsectionList, fileName, heterodimerInpDir, heterodimerOpDir, dataDir);
-            HashMap<String, List<OligoObject>> hetDimerSets = new MfoldDimer().createMapSetsOfHets(heterodimerOligosHashMap, so);
+            HashMap<String, List<OligoObject>> hetDimerSets = new MfoldDimer().createMapSetsOfHets(heterodimerOligosHashMap, so, spacing);
             TreeMap<String, List<OligoObject>> hetDimerTreeMap = new MfoldDimer().sortOligosHetSetMinDeltaG(hetDimerSets);
-
 
             heterodimerReport = FileUtils.readFileToString(new File(dataDir + heterodimerOpDir + fileName + "_1_" + fileName + "_2.out"));
             reportFile+=heterodimerReport;
@@ -97,8 +217,8 @@ public class OligosCreationController implements Controller{
 
     }
 
-    private String writeOligosFinalFile(ArrayList<SequenceObject> objects, String dataDir, String finalOligos, String projectId) throws Exception {
 
+    private String writeOligosFinalFile(ArrayList<SequenceObject> objects, String dataDir, String finalOligos, String projectId) throws Exception {
 
         String firstOptimalOligosFile = dataDir+finalOligos+projectId+"_primary.txt";
         File firstOligosFile = new File(firstOptimalOligosFile);
@@ -177,22 +297,32 @@ public class OligosCreationController implements Controller{
             counter+=1;
             String subsectionId = "inpSeq_"+counter;
             oss.setSubsectionid(subsectionId);
-            pw.println("SEQUENCE_ID="+subsectionId+"\nSEQUENCE_TEMPLATE="+oss.getSubSectionSequence()+"\n=");
-            System.out.println("SEQUENCE_ID="+subsectionId+"\nSEQUENCE_TEMPLATE="+oss.getSubSectionSequence()+"\n=");
+            pw.println("SEQUENCE_ID="+subsectionId+"\nSEQUENCE_TEMPLATE="+oss.getSubSectionSequence()+"\n"+
+                    "PRIMER_INTERNAL_MAX_TM="+max_tm+"\nPRIMER_INTERNAL_OPT_TM="+opt_tm+"\nPRIMER_INTERNAL_MIN_TM="+min_tm+"\n"+
+                    "PRIMER_INTERNAL_MAX_GC="+max_gc+"\nPRIMER_INTERNAL_OPT_GC_PERCENT="+opt_gc+"\nPRIMER_INTERNAL_MIN_GC="+min_gc+"\n"+
+                    "PRIMER_INTERNAL_MAX_SIZE="+max_len+"\nPRIMER_INTERNAL_OPT_SIZE="+opt_len+"\nPRIMER_INTERNAL_MIN_SIZE="+min_len+"\n"+
+                    "PRIMER_INTERNAL_SALT_MONOVALENT="+na_ion+"\nPRIMER_INTERNAL_SALT_DIVALENT="+mg_ion+"\nPRIMER_INTERNAL_MAX_SELF_ANY="+self_any+"\n"+
+                    "PRIMER_INTERNAL_MAX_SELF_END="+self_end+"\n=");
+            System.out.println("SEQUENCE_ID="+subsectionId+"\nSEQUENCE_TEMPLATE="+oss.getSubSectionSequence()+"\n"+
+                    "PRIMER_INTERNAL_MAX_TM="+max_tm+"\nPRIMER_INTERNAL_OPT_TM="+opt_tm+"\nPRIMER_INTERNAL_MIN_TM="+min_tm+"\n"+
+                    "PRIMER_INTERNAL_MAX_GC="+max_gc+"\nPRIMER_INTERNAL_OPT_GC=PERCENT"+opt_gc+"\nPRIMER_INTERNAL_MIN_GC="+min_gc+"\n"+
+                 "PRIMER_INTERNAL_MAX_SIZE="+max_len+"\nPRIMER_INTERNAL_OPT_SIZE="+opt_len+"\nPRIMER_INTERNAL_MIN_SIZE="+min_len+"\n"+
+                "PRIMER_INTERNAL_SALT_MONOVALENT="+na_ion+"\nPRIMER_INTERNAL_SALT_DIVALENT="+mg_ion+"\nPRIMER_INTERNAL_MAX_SELF_ANY="+self_any+"\n"+
+                "PRIMER_INTERNAL_MAX_SELF_END="+self_end+"\n=");
         }
+
         pw.flush();
         pw.close();
 
         String resultPrimer3Blat = runOligoProcessBuilder(fileN);
         System.out.println(resultPrimer3Blat);
 
-
         return resultPrimer3Blat+"&"+fileN;
 
     }
 
 
-    private ArrayList<SequenceObject> getObjectsFromFile(File fileToParse) throws Exception {
+    private ArrayList<SequenceObject> getObjectsFromFile(File fileToParse, ArrayList error) throws Exception {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(fileToParse)));
         ArrayList<SequenceObject> oligoList = new ArrayList<SequenceObject>();
@@ -212,7 +342,11 @@ public class OligosCreationController implements Controller{
 
             }
 
-        }finally {
+        }catch (Exception e){
+            error.add("Something went wrong wile parsing file");
+            error.add(e.getStackTrace());
+        }
+        finally {
 
             reader.close();
 
@@ -403,5 +537,117 @@ public class OligosCreationController implements Controller{
 
     public void setDownloadsDir(String downloadsDir) {
         OligosCreationController.downloadsDir = downloadsDir;
+    }
+
+    public static String getMin_gc() {
+        return min_gc;
+    }
+
+    public static void setMin_gc(String min_gc) {
+        OligosCreationController.min_gc = min_gc;
+    }
+
+    public static String getMax_gc() {
+        return max_gc;
+    }
+
+    public static void setMax_gc(String max_gc) {
+        OligosCreationController.max_gc = max_gc;
+    }
+
+    public static String getOpt_gc() {
+        return opt_gc;
+    }
+
+    public static void setOpt_gc(String opt_gc) {
+        OligosCreationController.opt_gc = opt_gc;
+    }
+
+    public static String getMin_tm() {
+        return min_tm;
+    }
+
+    public static void setMin_tm(String min_tm) {
+        OligosCreationController.min_tm = min_tm;
+    }
+
+    public static String getOpt_tm() {
+        return opt_tm;
+    }
+
+    public static void setOpt_tm(String opt_tm) {
+        OligosCreationController.opt_tm = opt_tm;
+    }
+
+    public static String getMax_tm() {
+        return max_tm;
+    }
+
+    public static void setMax_tm(String max_tm) {
+        OligosCreationController.max_tm = max_tm;
+    }
+
+    public static String getMin_len() {
+        return min_len;
+    }
+
+    public static void setMin_len(String min_len) {
+        OligosCreationController.min_len = min_len;
+    }
+
+    public static String getOpt_len() {
+        return opt_len;
+    }
+
+    public static void setOpt_len(String opt_len) {
+        OligosCreationController.opt_len = opt_len;
+    }
+
+    public static String getMax_len() {
+        return max_len;
+    }
+
+    public static void setMax_len(String max_len) {
+        OligosCreationController.max_len = max_len;
+    }
+
+    public static String getNa_ion() {
+        return na_ion;
+    }
+
+    public static void setNa_ion(String na_ion) {
+        OligosCreationController.na_ion = na_ion;
+    }
+
+    public static String getMg_ion() {
+        return mg_ion;
+    }
+
+    public static void setMg_ion(String mg_ion) {
+        OligosCreationController.mg_ion = mg_ion;
+    }
+
+    public static String getSelf_any() {
+        return self_any;
+    }
+
+    public static void setSelf_any(String self_any) {
+        OligosCreationController.self_any = self_any;
+    }
+
+    public static String getSelf_end() {
+        return self_end;
+    }
+
+    public static void setSelf_end(String self_end) {
+        OligosCreationController.self_end = self_end;
+    }
+
+    public static int getSpacing() {
+        return spacing;
+    }
+
+    public static void setSpacing(int spacing) {
+        OligosCreationController.spacing = spacing;
     }
 }

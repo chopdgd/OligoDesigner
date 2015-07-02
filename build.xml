@@ -10,6 +10,7 @@
     <property name="web.lib.dir" value="${war.src}/WEB-INF/lib" />
     <property name="dist.dir" value="dist" />
     <property name="primer.dir" value="/data/" />
+    <property name="testFile.dir" value="${dist.dir}/antholigo_test" />
 
     <path id="master-classpath">
         <fileset dir="${lib.dir}">
@@ -34,6 +35,7 @@
         <mkdir dir="${logs.dir}"/>
         <mkdir dir="${web.lib.dir}"/>
         <mkdir dir="${dist.dir}"/>
+        <mkdir dir="${testFile.dir}" />
 
         <!--<delete file="${war.src}/WEB-INF/applicationContext.xml" failonerror="false"/>-->
         <delete file="${war.src}/WEB-INF/mvc-dispatcher-servlet.xml" failonerror="false"/>
@@ -69,6 +71,7 @@
         <copy file="${src.dir}/OligoProcess.sh" tofile="${dist.dir}/OligoProcess.sh"/>
         <copy file="${src.dir}/RetrieveSequence.sh" tofile="${primer.dir}/RetrieveSequence.sh"/>
         <copy file="${src.dir}/RetrieveSequence.sh" tofile="${dist.dir}/RetrieveSequence.sh"/>
+        <copy file="antholigo_test/antholigo_test.txt" tofile="${testFile.dir}/antholigo_test.txt"/>
 
         <fixcrlf srcdir="${dist.dir}" includes="**/*.sh" eol="crlf" />
 
@@ -125,6 +128,7 @@
 
         <copy file="${src.dir}/RetrieveSequence.sh" tofile="${primer.dir}/RetrieveSequence.sh"/>
         <copy file="${src.dir}/RetrieveSequence.sh" tofile="${dist.dir}/RetrieveSequence.sh"/>
+        <copy file="antholigo_test/antholigo_test.txt" tofile="${testFile.dir}/antholigo_test.txt"/>[
 
         <fixcrlf srcdir="${dist.dir}" includes="**/*.sh" eol="crlf" />
 

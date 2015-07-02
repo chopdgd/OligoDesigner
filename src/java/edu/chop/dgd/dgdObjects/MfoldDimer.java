@@ -276,7 +276,7 @@ public class MfoldDimer {
 
 
     public HashMap<String,List<OligoObject>> createMapSetsOfHets(HashMap<OligoObject, List<OligoObject>> heterodimerOligosHashMap,
-                                                                 SequenceObject sObj) throws Exception {
+                                                                 SequenceObject sObj, int spacingKB) throws Exception {
 
         HashMap<String, List<OligoObject>> hashSetOfHetPrimers = new HashMap<String, List<OligoObject>>();
 
@@ -290,7 +290,7 @@ public class MfoldDimer {
 
         int counter=1;
 
-        hashSetOfHetPrimers = getHashMapOfhetSets(oligoKeysList, oligoKeysList.get(0), hashSetOfHetPrimers, sObj, counter);
+        hashSetOfHetPrimers = getHashMapOfhetSets(oligoKeysList, oligoKeysList.get(0), hashSetOfHetPrimers, sObj, counter, spacingKB);
 
         return hashSetOfHetPrimers;
     }
@@ -299,7 +299,7 @@ public class MfoldDimer {
 
     public HashMap<String, List<OligoObject>> getHashMapOfhetSets(List<OligoObject> oligoKeysList,
                         OligoObject startingOligoHetObject, HashMap<String, List<OligoObject>> hashSetOfHetPrimers,
-                        SequenceObject sObj, int counter) throws Exception {
+                        SequenceObject sObj, int counter, int spacingKB) throws Exception {
 
         String set = "set"+counter;
 
@@ -326,7 +326,7 @@ public class MfoldDimer {
                             setOfhets = hashSetOfHetPrimers.get(set);
                         }
 
-                        OligoObject nextHetObj = getNext8KBOligoObj(oligoKeysList.get(i), oligoKeysList);
+                        OligoObject nextHetObj = getNext8KBOligoObj(oligoKeysList.get(i), oligoKeysList, spacingKB);
                         if(nextHetObj!=null){
                             i = oligoKeysList.indexOf(nextHetObj);
                             setOfhets.add(nextHetObj);
@@ -365,18 +365,24 @@ public class MfoldDimer {
 
 
 
-    public OligoObject getNext8KBOligoObj(OligoObject objInQuestion, List<OligoObject> oligosList) throws Exception{
+    public OligoObject getNext8KBOligoObj(OligoObject objInQuestion, List<OligoObject> oligosList, int spacingKB) throws Exception{
+
+        int diffLessThan1 = (spacingKB*1000)+2000;
+        int diffGreaterThan1 = (spacingKB*1000)-2000;
+
+        int diffLessThan2 = (spacingKB*1000)+4000;
+        int diffGreaterThan2 = (spacingKB*1000)-4000;
 
         for(OligoObject o : oligosList){
             int oligoStartDiff = Integer.parseInt(o.getInternalStart())-Integer.parseInt(objInQuestion.getInternalStart());
-            if(10000>oligoStartDiff && oligoStartDiff>6000){
+            if(diffLessThan1>oligoStartDiff && oligoStartDiff>diffGreaterThan1){
                 return o;
             }
         }
 
         for(OligoObject o : oligosList){
             int oligoStartDiff = Integer.parseInt(o.getInternalStart())-Integer.parseInt(objInQuestion.getInternalStart());
-            if(12000>oligoStartDiff && oligoStartDiff>4000){
+            if(diffLessThan2>oligoStartDiff && oligoStartDiff>diffGreaterThan2){
                 return o;
             }
         }
