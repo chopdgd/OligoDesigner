@@ -351,11 +351,21 @@ public class MfoldDimer {
                         set = "set"+counter;
                         i=oligoKeysList.indexOf(startingOligoHetObject);
                         i+=1;
-                        startingOligoHetObject=oligoKeysList.get(i);
+                        if(i<oligoKeysList.size()){
+                            startingOligoHetObject=oligoKeysList.get(i);
+                        }
                         break;
                         //something here!!
                     }
                 }
+
+                if(i>=oligoKeysList.size()){
+                    break;
+                }
+            }
+
+            if(i>=oligoKeysList.size()){
+                break;
             }
         }
 

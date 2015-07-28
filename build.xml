@@ -128,7 +128,7 @@
 
         <copy file="${src.dir}/RetrieveSequence.sh" tofile="${primer.dir}/RetrieveSequence.sh"/>
         <copy file="${src.dir}/RetrieveSequence.sh" tofile="${dist.dir}/RetrieveSequence.sh"/>
-        <copy file="antholigo_test/antholigo_test.txt" tofile="${testFile.dir}/antholigo_test.txt"/>[
+        <copy file="antholigo_test/antholigo_test.txt" tofile="${testFile.dir}/antholigo_test.txt"/>
 
         <fixcrlf srcdir="${dist.dir}" includes="**/*.sh" eol="crlf" />
 
