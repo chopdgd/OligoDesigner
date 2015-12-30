@@ -76,7 +76,7 @@ public class SequenceObject{
                 String queryDelims = "[:+ -]+";
                 String[] sequence = fastaSeq.split(queryDelims, -1);
                 System.out.println(sequence[0]+"\n"+sequence[1]+"\n"+sequence[2]);
-                //String seq = sequence[3].replaceAll("\n", "").toLowerCase();
+                String seq2 = sequence[3].replaceAll("\n", "").toLowerCase();
                 String seq = sequence[3].replaceAll("\n", "").toUpperCase();
 
                 SequenceObjectSubsections sosb = new SequenceObjectSubsections();

@@ -91,7 +91,7 @@ public class OligosCreationController implements Controller{
         }
 
         String minTm = request.getParameter("minTm");
-        if(optGC.length()>0){
+        if(minTm.length()>0){
             min_tm = minTm;
         }else{
             min_tm = "NA";

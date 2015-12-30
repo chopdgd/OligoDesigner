@@ -112,7 +112,6 @@
 
         <!--<copy file="${war.src}/WEB-INF/applicationContext.xml.curation" tofile="${war.src}/WEB-INF/applicationContext.xml"/>-->
         <copy file="${war.src}/WEB-INF/mvc-dispatcher-servlet.xml.prod" tofile="${war.src}/WEB-INF/mvc-dispatcher-servlet.xml"/>
-
         <copy file="${src.dir}/PrimerProcess.sh" tofile="${primer.dir}/PrimerProcess.sh"/>
         <copy file="${src.dir}/PrimerProcess.sh" tofile="${dist.dir}/PrimerProcess.sh"/>
         <copy file="${src.dir}/primer3_settings.txt" tofile="${primer.dir}/primer3_settings.txt"/>
@@ -164,6 +163,18 @@
             </fileset>
         </javadoc>
 
+    </target>
+
+    <target name="git-revision">
+        <taskdef name="jgit-buildnumber" classname="ru.concerteza.util.buildnumber.JGitBuildNumberAntTask" classpathref="master-classpath"/>
+        <jgit-buildnumber/>
+        <script language="javascript">
+            var tag = project.getProperty("git.tag")
+            var revision = project.getProperty("git.shortRevision")
+            var buildnumber = tag + "_" + revision
+            project.setProperty("git.buildnumber", buildnumber)
+        </script>
+        <echo>Git version extracted ${git.commitsCount} (${git.shortRevision})</echo>
     </target>
 
 

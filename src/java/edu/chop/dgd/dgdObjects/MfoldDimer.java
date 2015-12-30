@@ -22,7 +22,7 @@ public class MfoldDimer {
                 //line = reader.readLine();
                 if(line.contains("dG")){
                     String lineArr[] = line.split("\t", -1);
-                    String oligoHeader = lineArr[2];
+                    String oligoHeader = lineArr[3].split("-", -1)[0];
                     for(OligoObject o:oligoObjectsFromPrimer3){
                         if(o.getInternalPrimerId().equals(oligoHeader)){
                             String homodimerValue = lineArr[1].split(" = ", -1)[1];
@@ -150,7 +150,7 @@ public class MfoldDimer {
         HashMap<OligoObject, List<OligoObject>> hetDimerObjMap = new HashMap<OligoObject, List<OligoObject>>();
 
         for(OligoObject o : heteroDimerObjectsList){
-            List<OligoObject> hetObjectList = new ArrayList<OligoObject>();
+                List<OligoObject> hetObjectList = new ArrayList<OligoObject>();
             for(OligoObject valueObj : heteroDimerObjectsList){
                 if(!valueObj.getInternalPrimerId().equals(o.getInternalPrimerId())){
                     hetObjectList.add(valueObj);
@@ -332,9 +332,9 @@ public class MfoldDimer {
                             setOfhets.add(nextHetObj);
                             hashSetOfHetPrimers.put(set, setOfhets);
                         }else{
-                            OligoObject nullObj = new OligoObject();
-                            nullObj.setInternalPrimerId("NULL");
-                            setOfhets.add(nullObj);
+                            //OligoObject nullObj = new OligoObject();
+                            //nullObj.setInternalPrimerId("NULL");
+                            //setOfhets.add(nullObj);
                             hashSetOfHetPrimers.put(set, setOfhets);
 
                             //increase Counter start new set
@@ -412,7 +412,9 @@ public class MfoldDimer {
 
             for(int i=0; i<oligosInSet.size(); i++){
                 for(int j=i+1; j<oligosInSet.size(); j++){
-                    deltaGValue+=oligosInSet.get(i).getHeterodimerValues().get(oligosInSet.get(j).getInternalPrimerId());
+                    if(!oligosInSet.get(j).getInternalPrimerId().equalsIgnoreCase("NULL")){
+                        deltaGValue+=oligosInSet.get(i).getHeterodimerValues().get(oligosInSet.get(j).getInternalPrimerId());
+                    }
                 }
             }
 
