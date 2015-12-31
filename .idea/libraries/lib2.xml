@@ -42,10 +42,11 @@
       <root url="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/commons-io-2.4.jar!/" />
       <root url="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/spring-webmvc-4.0.0.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/commons-collections-3.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/biojava-core-4.0.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/biojava-genome-4.0.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/jgit-buildnumber-ant-task-1.2.10.jar!/" />
       <root url="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/org.eclipse.jgit-4.0.1.201506240215-r.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/biojava-core-4.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/biojava-genome-4.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webapp/WEB-INF/lib/slf4j-api-1.7.13.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

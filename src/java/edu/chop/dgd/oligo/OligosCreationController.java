@@ -5,6 +5,9 @@ import edu.chop.dgd.dgdObjects.OligoObject;
 import edu.chop.dgd.dgdObjects.SequenceObject;
 import edu.chop.dgd.dgdObjects.SequenceObjectSubsections;
 import org.apache.commons.io.FileUtils;
+import org.biojava.nbio.core.sequence.DNASequence;
+import org.biojava.nbio.core.sequence.compound.NucleotideCompound;
+import org.biojava.nbio.core.sequence.template.SequenceView;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
@@ -244,7 +247,12 @@ public class OligosCreationController implements Controller{
             pwFirst.println("For query region: "+so.getChr()+":"+so.getStart()+"-"+so.getStop());
 
             for(OligoObject o : optimalOligos.get(optimalOligosTree.firstEntry().getKey().split("_")[0])){
-                pwFirst.println(optimalOligosTree.firstEntry().getKey().split("_")[0] + "\t" + o.getInternalPrimerId() + "\t" + so.getChr() + "\t" + o.getInternalStart() + "\t" + Integer.parseInt(o.getInternalStart()) + o.getInternalLen() + "\t" + o.getInternalSeq() + "\t-\t"
+
+                DNASequence seq = new DNASequence(o.getInternalSeq());
+                SequenceView<NucleotideCompound> revcomp = seq.getReverseComplement();
+                String revCompSeq = revcomp.getSequenceAsString();
+
+                pwFirst.println(optimalOligosTree.firstEntry().getKey().split("_")[0] + "\t" + o.getInternalPrimerId() + "\t" + so.getChr() + "\t" + o.getInternalStart() + "\t" + Integer.parseInt(o.getInternalStart()) + o.getInternalLen() + "\t" + o.getInternalSeq() + "\t"+ revCompSeq +"\t"
                         + o.getInternalGc() + "\t" + o.getInternalTm() + "\t" + o.getInternalLen() + "\t" + o.getHomodimerValue() + "\t-\t" + o.getHairpinValue() + "\t" + o.getInternalPrimerBlatList().size());
 
             }
@@ -262,7 +270,11 @@ public class OligosCreationController implements Controller{
                 String key = set.split("_")[0];
                 for(OligoObject o : optimalOligos.get(key)){
 
-                    pwSecond.println(o.getInternalPrimerId() + "\t" + so.getChr() + "\t" + o.getInternalStart() + "\t" + Integer.parseInt(o.getInternalStart()) + o.getInternalLen() + "\t" + o.getInternalSeq() + "\t-\t"
+                    DNASequence seq = new DNASequence(o.getInternalSeq());
+                    SequenceView<NucleotideCompound> revcomp = seq.getReverseComplement();
+                    String revCompSeq = revcomp.getSequenceAsString();
+
+                    pwSecond.println(o.getInternalPrimerId() + "\t" + so.getChr() + "\t" + o.getInternalStart() + "\t" + Integer.parseInt(o.getInternalStart()) + o.getInternalLen() + "\t" + o.getInternalSeq() + "\t"+revCompSeq+"\t"
                             + o.getInternalGc() + "\t" + o.getInternalTm() + "\t" + o.getInternalLen() + "\t" + o.getHomodimerValue() + "\t-\t" + o.getHairpinValue() + "\t" + o.getInternalPrimerBlatList().size());
 
                 }

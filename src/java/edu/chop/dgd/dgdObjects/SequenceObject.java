@@ -93,7 +93,7 @@ public class SequenceObject{
                 amplObj.setBufferDownstream(0);
                 amplObj.setSequence(seq);
 
-                String maskedSeq = amplObj.maskAmpliconSequenceForOligo(amplObj, variantsInSequenceObject);
+                String maskedSeq = amplObj.maskAmpliconSequenceForOligoToN(amplObj, variantsInSequenceObject);
                 //String maskedlowercase = maskedSeq.replaceAll("N", "n");
 
                 sosb.setSubSectionSequence(maskedSeq);
