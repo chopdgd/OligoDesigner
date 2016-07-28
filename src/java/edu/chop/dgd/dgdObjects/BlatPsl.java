@@ -144,6 +144,7 @@ public class BlatPsl{
 
             for(OligoObject prObj : oligoObjectsFromPrimer3){
                 if(blatObj.getqName().equals(prObj.getInternalPrimerId()) && blatObj.gettName().equals(osSubsList.get(0).getSubSectionChr())){
+                //if(blatObj.getqName().equals(prObj.getInternalPrimerId())){
                     if(prObj.getInternalPrimerBlatList()==null){
                         List<BlatPsl> internalBlatList = new ArrayList<BlatPsl>();
                         internalBlatList.add(blatObj);

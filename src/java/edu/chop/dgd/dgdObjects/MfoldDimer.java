@@ -383,6 +383,9 @@ public class MfoldDimer {
         int diffLessThan2 = (spacingKB*1000)+4000;
         int diffGreaterThan2 = (spacingKB*1000)-4000;
 
+        int diffLessThan3 = (spacingKB*1000)+6000;
+        int diffGreaterThan3 = (spacingKB*1000)-6000;
+
         for(OligoObject o : oligosList){
             int oligoStartDiff = Integer.parseInt(o.getInternalStart())-Integer.parseInt(objInQuestion.getInternalStart());
             if(diffLessThan1>oligoStartDiff && oligoStartDiff>diffGreaterThan1){
@@ -393,6 +396,13 @@ public class MfoldDimer {
         for(OligoObject o : oligosList){
             int oligoStartDiff = Integer.parseInt(o.getInternalStart())-Integer.parseInt(objInQuestion.getInternalStart());
             if(diffLessThan2>oligoStartDiff && oligoStartDiff>diffGreaterThan2){
+                return o;
+            }
+        }
+
+        for(OligoObject o : oligosList){
+            int oligoStartDiff = Integer.parseInt(o.getInternalStart())-Integer.parseInt(objInQuestion.getInternalStart());
+            if(diffLessThan3>oligoStartDiff && oligoStartDiff>diffGreaterThan3){
                 return o;
             }
         }
