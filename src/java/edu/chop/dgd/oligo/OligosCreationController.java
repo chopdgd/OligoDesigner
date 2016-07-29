@@ -252,7 +252,7 @@ public class OligosCreationController implements Controller{
                 SequenceView<NucleotideCompound> revcomp = seq.getReverseComplement();
                 String revCompSeq = revcomp.getSequenceAsString();
 
-                pwFirst.println(optimalOligosTree.firstEntry().getKey().split("_")[0] + "\t" + o.getInternalPrimerId() + "\t" + so.getChr() + "\t" + o.getInternalStart() + "\t" + Integer.parseInt(o.getInternalStart()) + o.getInternalLen() + "\t" + o.getInternalSeq() + "\t"+ revCompSeq +"\t"
+                pwFirst.println(optimalOligosTree.firstEntry().getKey().split("_")[0] + "\t" + o.getInternalPrimerId() + "\t" + so.getChr() + "\t" + o.getInternalStart() + "\t" + (Integer.parseInt(o.getInternalStart())+o.getInternalLen()) + "\t" + o.getInternalSeq() + "\t"+ revCompSeq +"\t"
                         + o.getInternalGc() + "\t" + o.getInternalTm() + "\t" + o.getInternalLen() + "\t" + o.getHomodimerValue() + "\t-\t" + o.getHairpinValue() + "\t" + o.getInternalPrimerBlatList().size());
 
             }
@@ -274,7 +274,7 @@ public class OligosCreationController implements Controller{
                     SequenceView<NucleotideCompound> revcomp = seq.getReverseComplement();
                     String revCompSeq = revcomp.getSequenceAsString();
 
-                    pwSecond.println(o.getInternalPrimerId() + "\t" + so.getChr() + "\t" + o.getInternalStart() + "\t" + Integer.parseInt(o.getInternalStart()) + o.getInternalLen() + "\t" + o.getInternalSeq() + "\t"+revCompSeq+"\t"
+                    pwSecond.println(o.getInternalPrimerId() + "\t" + so.getChr() + "\t" + o.getInternalStart() + "\t" + (Integer.parseInt(o.getInternalStart())+o.getInternalLen()) + "\t" + o.getInternalSeq() + "\t"+revCompSeq+"\t"
                             + o.getInternalGc() + "\t" + o.getInternalTm() + "\t" + o.getInternalLen() + "\t" + o.getHomodimerValue() + "\t-\t" + o.getHairpinValue() + "\t" + o.getInternalPrimerBlatList().size());
 
                 }

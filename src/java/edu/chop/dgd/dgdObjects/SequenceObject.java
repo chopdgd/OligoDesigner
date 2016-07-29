@@ -67,6 +67,8 @@ public class SequenceObject{
 
         List<SequenceObjectSubsections> seqObjSubs = new ArrayList<SequenceObjectSubsections>();
         PrimerDAO prDao = new PrimerDAO();
+
+
         List<Variation> variantsInSequenceObject = prDao.getVariantsWithinRange(this.getChr(),
                 this.getStart(), this.getStop());
 
