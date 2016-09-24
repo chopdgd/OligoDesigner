@@ -15,6 +15,7 @@ import java.util.*;
  * Created by jayaramanp on 6/19/14.
  */
 public class SequenceObject{
+    String assembly;
     String chr;
     int start;
     int stop;
@@ -43,6 +44,7 @@ public class SequenceObject{
             counter+=1;
 
             SequenceObjectSubsections olSubsObj = new SequenceObjectSubsections();
+            olSubsObj.setSubSectionAssembly(this.getAssembly());
             olSubsObj.setSubSectionChr(this.getChr());
             olSubsObj.setSubSectionStart(subsectStart);
             olSubsObj.setSubSectionStop(subsectStop);
@@ -70,11 +72,11 @@ public class SequenceObject{
 
 
         List<Variation> variantsInSequenceObject = prDao.getVariantsWithinRange(this.getChr(),
-                this.getStart(), this.getStop());
+                this.getStart(), this.getStop(), this.getAssembly());
 
-        String[] seqArray = sequenceInfo.split(">", -1);
+        String[] seqArray = sequenceInfo.split("\\>", -1);
         for(String fastaSeq : seqArray){
-            if(fastaSeq.contains("chr")){
+            if((fastaSeq.contains("chr")) && (!fastaSeq.contains("twoBitReadSeqFrag"))){
                 String queryDelims = "[:+ -]+";
                 String[] sequence = fastaSeq.split(queryDelims, -1);
                 System.out.println(sequence[0]+"\n"+sequence[1]+"\n"+sequence[2]);
@@ -85,6 +87,7 @@ public class SequenceObject{
                 sosb.setSubSectionChr(sequence[0]);
                 sosb.setSubSectionStart(Integer.parseInt(sequence[1]));
                 sosb.setSubSectionStop(Integer.parseInt(sequence[2]));
+                sosb.setSubSectionAssembly(this.getAssembly());
 
 
                 AmpliconSeq amplObj = new AmpliconSeq();
@@ -116,7 +119,7 @@ public class SequenceObject{
         String errAnswer="NA";
 
         String inpFile = dataDir+inputFilename;
-        ProcessBuilder pb = new ProcessBuilder(dataDir+"RetrieveSequence.sh",inputFilename);
+        ProcessBuilder pb = new ProcessBuilder(dataDir+"RetrieveSequence.sh",inputFilename, this.getAssembly());
         //System.out.println( "environment before addition:"+pb.environment());
         Map<String, String> env = pb.environment();
         env.put("SHELL", "/bin/bash");
@@ -194,8 +197,9 @@ public class SequenceObject{
             olSubsObj.setSubSectionStart(subsectStart);
             olSubsObj.setSubSectionStop(subsectStop);
             olSubsObj.setSubSectionWindowNum(counter);
+            olSubsObj.setSubSectionAssembly(this.getAssembly());
 
-            String dasSequence = prDao.getAmpliconSequence(olSubsObj.getSubSectionChr(), olSubsObj.getSubSectionStart(), olSubsObj.getSubSectionStop());
+            String dasSequence = prDao.getAmpliconSequence(olSubsObj.getSubSectionChr(), olSubsObj.getSubSectionStart(), olSubsObj.getSubSectionStop(), this.getAssembly());
             AmpliconXomAnalyzer xom = new AmpliconXomAnalyzer();
             String sequence = xom.parseRecord(dasSequence).replaceAll("\n","");
 
@@ -209,7 +213,7 @@ public class SequenceObject{
             amplObj.setBufferDownstream(0);
             amplObj.setSequence(sequence);
 
-            String maskedSeq = amplObj.maskAmpliconSequence(amplObj);
+            String maskedSeq = amplObj.maskAmpliconSequence(amplObj, this.getAssembly());
 
             olSubsObj.setSubSectionSequence(maskedSeq);
 
@@ -221,6 +225,13 @@ public class SequenceObject{
     }
 
 
+    public String getAssembly() {
+        return assembly;
+    }
+
+    public void setAssembly(String assembly) {
+        this.assembly = assembly;
+    }
 
     public String getChr() {
         return chr;

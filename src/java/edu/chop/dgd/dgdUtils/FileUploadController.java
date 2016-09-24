@@ -61,7 +61,7 @@ public class FileUploadController implements Controller{
         String filePath = "/data/downloads/";
         System.out.println("#####"+filePath+"***");
         String fileResponse="";
-        String fileName=""; String projectId="proj_id";
+        String fileName=""; String projectId="proj_id"; String assembly = "hg19";
         String exampleFile = "/data/antholigo_test/antholigo_test.txt";
 
         boolean isMultipart = ServletFileUpload.isMultipartContent(request);
@@ -74,7 +74,7 @@ public class FileUploadController implements Controller{
                         (MultipartHttpServletRequest) request;
                 projectId = multipartRequest.getParameter("proj_id");
 
-
+                assembly = multipartRequest.getParameter("assembly");
 
                 spacing = multipartRequest.getParameter("oligo_seq_separation");
 
@@ -220,28 +220,29 @@ public class FileUploadController implements Controller{
             return mvErr;
         }
         else{
-        ModelAndView mvObj = new ModelAndView("/WEB-INF/pages/oligo/fileUpload.jsp");
-        mvObj.addObject("proj_id", projectId);
-        mvObj.addObject("uploads", filePath);
-        mvObj.addObject("origFilename", fileName);
-        mvObj.addObject("fileUploadResponse", fileResponse);
-        mvObj.addObject("separation", spacing);
-        mvObj.addObject("minGC", min_gc);
-        mvObj.addObject("optGC", opt_gc);
-        mvObj.addObject("maxGC", max_gc);
-        mvObj.addObject("maxTm", max_tm);
-        mvObj.addObject("minTm", min_tm);
-        mvObj.addObject("optTm", opt_tm);
-        mvObj.addObject("maxLen", max_len);
-        mvObj.addObject("minLen", min_len);
-        mvObj.addObject("optLen", opt_len);
-        mvObj.addObject("naIon", na_ion);
-        mvObj.addObject("mgIon", mg_ion);
-        mvObj.addObject("selfAny", self_any);
-        mvObj.addObject("selfEnd", self_end);
-
+            ModelAndView mvObj = new ModelAndView("/WEB-INF/pages/oligo/fileUpload.jsp");
+            mvObj.addObject("proj_id", projectId);
+            mvObj.addObject("assembly", assembly);
+            mvObj.addObject("uploads", filePath);
+            mvObj.addObject("origFilename", fileName);
+            mvObj.addObject("fileUploadResponse", fileResponse);
+            mvObj.addObject("separation", spacing);
+            mvObj.addObject("minGC", min_gc);
+            mvObj.addObject("optGC", opt_gc);
+            mvObj.addObject("maxGC", max_gc);
+            mvObj.addObject("maxTm", max_tm);
+            mvObj.addObject("minTm", min_tm);
+            mvObj.addObject("optTm", opt_tm);
+            mvObj.addObject("maxLen", max_len);
+            mvObj.addObject("minLen", min_len);
+            mvObj.addObject("optLen", opt_len);
+            mvObj.addObject("naIon", na_ion);
+            mvObj.addObject("mgIon", mg_ion);
+            mvObj.addObject("selfAny", self_any);
+            mvObj.addObject("selfEnd", self_end);
 
         return mvObj;
+
         }
     }
 

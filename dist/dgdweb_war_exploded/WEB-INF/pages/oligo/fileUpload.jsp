@@ -31,6 +31,7 @@
     ArrayList error = new ArrayList();
     DisplayMapper dm = new DisplayMapper(req, error);
     String pid = (String) request.getAttribute("proj_id");
+    String assembly = (String) request.getAttribute("assembly");
     String uploadedFilePath = (String) request.getAttribute("uploads");
     String origFileName = (String) request.getAttribute("origFilename");
     String uploadResponse = (String) request.getAttribute("fileUploadResponse");
@@ -62,7 +63,7 @@
 <base href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/">
 <script src="js/global.js"></script>
 <link rel="stylesheet" href="css/global.css">
-<META HTTP-EQUIV=Refresh CONTENT="3; URL=/dgdweb/oligo/processOligos.html?uploadFolderPath=<%=uploadedFilePath%>&proj_id=<%=pid%>&origFile=<%=origFileName%>
+<META HTTP-EQUIV=Refresh CONTENT="3; URL=/dgdweb/oligo/processOligos.html?uploadFolderPath=<%=uploadedFilePath%>&proj_id=<%=pid%>&assembly=<%=assembly%>&origFile=<%=origFileName%>
 &separation=<%=oligo_seq_separation%>&minGC=<%=min_gc%>&optGC=<%=opt_gc%>&maxGC=<%=max_gc%>&minTm=<%=min_tm%>&optTm=<%=opt_tm%>&maxTm=<%=max_tm%>&minLen=<%=min_length%>
 &optLen=<%=opt_length%>&maxLen=<%=max_length%>&Na=<%=na%>&Mg=<%=mg%>&selfAny=<%=self_any%>&selfEnd=<%=self_end%>"/>
 

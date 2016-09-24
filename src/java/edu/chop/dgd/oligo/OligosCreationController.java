@@ -66,6 +66,8 @@ public class OligosCreationController implements Controller{
 
         String upFile = request.getParameter("uploadFolderPath");
         String projectId = request.getParameter("proj_id");
+        String assembly = request.getParameter("assembly");
+
         String origFileName = request.getParameter("origFile");
 
         String spacing2 = request.getParameter("separation");
@@ -167,7 +169,7 @@ public class OligosCreationController implements Controller{
         //File uploadedFiles[] = newFile.listFiles();
         //File fileToParse = uploadedFiles[0];
         File fileToParse = new File(upFile+projectId+"/"+origFileName);
-        ArrayList<SequenceObject> objects =  getObjectsFromFile(fileToParse, error);
+        ArrayList<SequenceObject> objects =  getObjectsFromFile(fileToParse, error, assembly);
         SequenceObjectSubsections soss = new SequenceObjectSubsections();
         String reportFile="";String heterodimerReport="";
 
@@ -176,7 +178,7 @@ public class OligosCreationController implements Controller{
             //String fullReportFileName = generateReportSetSubsectionIds(sosSubsList, projectId);
 
             //testing new method
-            String inpFilename = projectId+"_"+so.getChr()+":"+so.getStart()+"-"+so.getStop()+".txt";
+            String inpFilename = assembly+"_"+projectId+"_"+so.getChr()+":"+so.getStart()+"-"+so.getStop()+".txt";
             List<SequenceObjectSubsections> sosSubsList = so.generateSequenceSubsections(inpFilename, dataDir);
             String fullReportFileName = generateReportSetSubsectionIds(sosSubsList, projectId);
 
@@ -334,7 +336,7 @@ public class OligosCreationController implements Controller{
     }
 
 
-    private ArrayList<SequenceObject> getObjectsFromFile(File fileToParse, ArrayList error) throws Exception {
+    private ArrayList<SequenceObject> getObjectsFromFile(File fileToParse, ArrayList error, String assembly) throws Exception {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(fileToParse)));
         ArrayList<SequenceObject> oligoList = new ArrayList<SequenceObject>();
@@ -346,6 +348,7 @@ public class OligosCreationController implements Controller{
                 String lineArr[] = line.split("\t", -1);
                 System.out.println(line);
                 SequenceObject obj = new SequenceObject();
+                obj.setAssembly(assembly);
                 obj.setChr(lineArr[0]);
                 obj.setStart(Integer.parseInt(lineArr[1]));
                 obj.setStop(Integer.parseInt(lineArr[2]));

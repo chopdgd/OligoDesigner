@@ -8,6 +8,7 @@ import java.util.List;
  */
 public class SequenceObjectSubsections {
 
+    String subSectionAssembly;
     String subSectionChr;
     int subSectionStart;
     int subSectionStop;
@@ -116,5 +117,11 @@ public class SequenceObjectSubsections {
         this.subsectionid = subsectionid;
     }
 
+    public String getSubSectionAssembly() {
+        return subSectionAssembly;
+    }
 
+    public void setSubSectionAssembly(String subSectionAssembly) {
+        this.subSectionAssembly = subSectionAssembly;
+    }
 }

@@ -18,13 +18,15 @@ cd $DATA_HOME
 hybrid-min -n DNA -t 25 -T 25 -N 0.05 -mfold -o $HET_OUTPUT_PREF $DATA_HOME"/heterodimerInp/"$OLIGO_HET_FILE1 $DATA_HOME"/heterodimerInp/"$OLIGO_HET_FILE2 > /dev/null 
 
 
-cat $HET_OUTPUT_PREF".ct" | while read line
-do
-	if [[ $line == *dG* ]]
-	then
-	echo "$line" >> $HET_OUTPUT_PREF".out"
-	fi
-done
+#cat $HET_OUTPUT_PREF".ct" | while read line
+#do
+#	if [[ $line == *dG* ]]
+#	then
+#	echo "$line" >> $HET_OUTPUT_PREF".out"
+#	fi
+#done
+
+awk '/dG/' $HET_OUTPUT_PREF".ct" > $HET_OUTPUT_PREF".out"
 
 echo "removing large .ct file"
 

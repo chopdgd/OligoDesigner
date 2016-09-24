@@ -258,11 +258,13 @@ public class MfoldDimer {
         List<OligoObject> hetDimerInputs = new ArrayList<OligoObject>();
         for(SequenceObjectSubsections s : sequenceObjectSubsectionsList){
             List<OligoObject> oligoList = s.getOligoList();
-            for(OligoObject o : oligoList){
-                if((o.getInternalPrimerBlatList()!=null) && (o.getInternalPrimerBlatList().size()==1) &&
-                        (Double.compare(o.getInternalPrimerBlatList().get(0).getPercentageIdentity(), Double.parseDouble("99.00"))>=0)){
-                    if(o.getHairpinValue()>-2.00 && o.getHomodimerValue()>-10.00){
-                        hetDimerInputs.add(o);
+            if(s.getOligoList()!=null){
+                for(OligoObject o : oligoList){
+                    if((o.getInternalPrimerBlatList()!=null) && (o.getInternalPrimerBlatList().size()==1) &&
+                            (Double.compare(o.getInternalPrimerBlatList().get(0).getPercentageIdentity(), Double.parseDouble("99.00"))>=0)){
+                        if(o.getHairpinValue()>-2.00 && o.getHomodimerValue()>-10.00){
+                            hetDimerInputs.add(o);
+                        }
                     }
                 }
             }

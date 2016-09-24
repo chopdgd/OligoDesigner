@@ -300,10 +300,12 @@ public class BlatPsl{
                     newPslObject.setScore(score);
 
                     double percentageIdentity = 100.00-newPslObject.pslCalcMilliBad(newPslObject, true);
-                    System.out.println("done with row#1\t"+qName+"\t and score is:\t"+score+"\tin chromosome:\t"+newPslObject.gettName()+"\t and percentage identity is:\t"+ percentageIdentity);
+                    //System.out.println("done with row#1\t"+qName+"\t and score is:\t"+score+"\tin chromosome:\t"+newPslObject.gettName()+"\t and percentage identity is:\t"+ percentageIdentity);
                     newPslObject.setPercentageIdentity(percentageIdentity);
 
-                    blatResults.add(newPslObject);
+                    if(!newPslObject.gettName().contains("_")){
+                        blatResults.add(newPslObject);
+                    }
 
                 }
             }
