@@ -4,7 +4,6 @@ import edu.chop.dgd.dgdObjects.MfoldDimer;
 import edu.chop.dgd.dgdObjects.OligoObject;
 import edu.chop.dgd.dgdObjects.SequenceObject;
 import edu.chop.dgd.dgdObjects.SequenceObjectSubsections;
-import org.apache.commons.io.FileUtils;
 import org.biojava.nbio.core.sequence.DNASequence;
 import org.biojava.nbio.core.sequence.compound.NucleotideCompound;
 import org.biojava.nbio.core.sequence.template.SequenceView;
@@ -187,12 +186,26 @@ public class OligosCreationController implements Controller{
             reportFile = reportAndName[0];
             String fileName = reportAndName[1];
             List<SequenceObjectSubsections> oligosSubsectionList = soss.retrieveResultsFromAnalyses(fileName, sosSubsList, dataDir, oligoOutputDir, blatInpDir, blatOpDir, mfoldInpDir, mfoldOpDir, homodimerOpDir, heterodimerInpDir, heterodimerOpDir);
+            System.out.println("filtering oligos retrieving results");
             HashMap<OligoObject,List<OligoObject>> heterodimerOligosHashMap = new MfoldDimer().FilterOligosRetrieveHeteroDimers(oligosSubsectionList, fileName, heterodimerInpDir, heterodimerOpDir, dataDir);
+            System.out.println("creating map sets of hets");
             HashMap<String, List<OligoObject>> hetDimerSets = new MfoldDimer().createMapSetsOfHets(heterodimerOligosHashMap, so, spacing);
+            System.out.println("sorting the oligos");
             TreeMap<String, List<OligoObject>> hetDimerTreeMap = new MfoldDimer().sortOligosHetSetMinDeltaG(hetDimerSets);
 
-            heterodimerReport = FileUtils.readFileToString(new File(dataDir + heterodimerOpDir + fileName + "_1_" + fileName + "_2.out"));
-            reportFile+=heterodimerReport;
+            //heterodimerReport = FileUtils.readFileToString(new File(dataDir + heterodimerOpDir + fileName + "_1_" + fileName + "_2.out"));
+            /*LineIterator it = FileUtils.lineIterator(new File(dataDir + heterodimerOpDir + fileName + "_1_" + fileName + "_2.out"), "UTF-8");
+            try {
+                while (it.hasNext()) {
+                    String line = it.nextLine();
+                    // do something with line
+                    reportFile+=line;
+                }
+            } finally {
+                LineIterator.closeQuietly(it);
+            }*/
+
+
 
             String detailFile = dataDir+finalOligos+fileName+"_detail.html";
             String secondaryFile = dataDir+finalOligos+fileName+"_secondary.txt";

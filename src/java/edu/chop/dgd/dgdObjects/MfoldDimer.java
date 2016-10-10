@@ -49,8 +49,11 @@ public class MfoldDimer {
     public HashMap<OligoObject, List<OligoObject>> FilterOligosRetrieveHeteroDimers(List<SequenceObjectSubsections> sequenceSubsectionsList, String fileName, String heterodimerInpDir, String heterodimerOpDir, String dataDir) throws Exception {
 
         List<OligoObject> heteroDimerObjectsList = filterOligosCreateHeterodimers(sequenceSubsectionsList, dataDir, fileName);
+        System.out.println("running Heterodimer analysis");
         HashMap<OligoObject, List<OligoObject>> oligoObjectsMap = mapOligosRunHeterodimerAnalysis(heteroDimerObjectsList, heterodimerInpDir, dataDir, fileName);
+        System.out.println("getting deltaG values for HetDimer Pairs");
         oligoObjectsMap = getDeltaGValuesForHetDimerPairs(oligoObjectsMap, dataDir, heterodimerOpDir, fileName);
+        System.out.println("filtering Map creating only viable hets");
         oligoObjectsMap = filterMapCreateOnlyViablehetsMap(oligoObjectsMap);
         return oligoObjectsMap;
     }
@@ -80,9 +83,12 @@ public class MfoldDimer {
 
             oligoObj.setHeterodimerValues(hetScoreOligomap_new);
             oligoObjectsMap.put(oligoObj, oligoObjectsMap.get(oligoObj));
+            hetScoreOligomap.clear();
 
         }
 
+
+        System.out.println("returning hashmap of hets");
         return oligoObjectsMap;
 
     }
@@ -292,6 +298,7 @@ public class MfoldDimer {
 
         int counter=1;
 
+        System.out.println("getting hash map sets of hets");
         hashSetOfHetPrimers = getHashMapOfhetSets(oligoKeysList, oligoKeysList.get(0), hashSetOfHetPrimers, sObj, counter, spacingKB);
 
         return hashSetOfHetPrimers;
