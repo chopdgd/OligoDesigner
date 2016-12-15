@@ -46,36 +46,32 @@ public class MfoldDimer {
 
 
 
-    public HashMap<OligoObject, List<OligoObject>> FilterOligosRetrieveHeteroDimers(List<SequenceObjectSubsections> sequenceSubsectionsList, String fileName, String heterodimerInpDir, String heterodimerOpDir, String dataDir) throws Exception {
+    public LinkedHashMap<OligoObject, List<OligoObject>> FilterOligosRetrieveHeteroDimers(List<SequenceObjectSubsections> sequenceSubsectionsList, String fileName, String heterodimerInpDir, String heterodimerOpDir, String dataDir) throws Exception {
 
-        List<OligoObject> heteroDimerObjectsList = filterOligosCreateHeterodimers(sequenceSubsectionsList, dataDir, fileName);
+        int filenum =1;
+        List<OligoObject> heteroDimerObjectsList = filterOligosCreateHeterodimers(sequenceSubsectionsList);
         System.out.println("running Heterodimer analysis");
-        HashMap<OligoObject, List<OligoObject>> oligoObjectsMap = mapOligosRunHeterodimerAnalysis(heteroDimerObjectsList, heterodimerInpDir, dataDir, fileName);
+        LinkedHashMap<OligoObject, List<OligoObject>> oligoObjectsMap = mapOligosRunHeterodimerAnalysis(heteroDimerObjectsList, heterodimerInpDir, dataDir, fileName, filenum);
         System.out.println("getting deltaG values for HetDimer Pairs");
-        oligoObjectsMap = getDeltaGValuesForHetDimerPairs(oligoObjectsMap, dataDir, heterodimerOpDir, fileName);
+        oligoObjectsMap = getDeltaGValuesForHetDimerPairs(oligoObjectsMap, dataDir, heterodimerOpDir, fileName, filenum);
         System.out.println("filtering Map creating only viable hets");
         oligoObjectsMap = filterMapCreateOnlyViablehetsMap(oligoObjectsMap);
         return oligoObjectsMap;
     }
 
-    private HashMap<OligoObject, List<OligoObject>> filterMapCreateOnlyViablehetsMap(HashMap<OligoObject, List<OligoObject>> oligoObjectsMap) {
+    private LinkedHashMap<OligoObject, List<OligoObject>> filterMapCreateOnlyViablehetsMap(HashMap<OligoObject, List<OligoObject>> oligoObjectsMap) {
 
 
         for(OligoObject oligoObj : oligoObjectsMap.keySet()){
 
-            HashMap<String, Float> hetScoreOligomap = oligoObj.getHeterodimerValues();
+            LinkedHashMap<String, Float> hetScoreOligomap = oligoObj.getHeterodimerValues();
 
             //trying to optimize code 23rd Oct 254pm.
-            //HashMap<String, Float> hetScoreOligomap_new = hetScoreOligomap;
-            HashMap<String, Float> hetScoreOligomap_new = new HashMap<String, Float>();
+            LinkedHashMap<String, Float> hetScoreOligomap_new = new LinkedHashMap<String, Float>();
 
             for(String oligoId : hetScoreOligomap.keySet()){
 
                 //trying to optimize code. 23rd oct 254pm
-                /*if(hetScoreOligomap.get(oligoId)<-15.00){
-                    hetScoreOligomap_new.remove(oligoId);
-                }*/
-
                 if(hetScoreOligomap.get(oligoId)>=-15.00){
                     hetScoreOligomap_new.put(oligoId, hetScoreOligomap.get(oligoId));
                 }
@@ -89,17 +85,49 @@ public class MfoldDimer {
 
 
         System.out.println("returning hashmap of hets");
-        return oligoObjectsMap;
+
+        return (LinkedHashMap<OligoObject, List<OligoObject>>) oligoObjectsMap;
+
 
     }
 
 
-    private HashMap<OligoObject, List<OligoObject>> getDeltaGValuesForHetDimerPairs(HashMap<OligoObject, List<OligoObject>> oligoObjectsMap, String dataDir, String heterodimerOpDir, String fileName) throws Exception {
+    public LinkedHashMap<OligoObject, List<OligoObject>> filterMapCreateOnlyHetsWithinDistanceMap(List<OligoObject> oligoKeysList, int spacing) throws Exception{
 
-        String hetOpFilename = dataDir+heterodimerOpDir+fileName+"_1_"+fileName+"_2.out";
+        LinkedHashMap<OligoObject, List<OligoObject>> filteredoligoObjectsMap = new LinkedHashMap<OligoObject, List<OligoObject>>();
+
+        for(OligoObject oligoObj : oligoKeysList){
+
+            List<OligoObject> nextBinOligosWithinSpacing = getNext8_10KBOligoObjs(oligoObj, oligoKeysList, spacing);
+            if(nextBinOligosWithinSpacing.size()>0){
+                filteredoligoObjectsMap.put(oligoObj, nextBinOligosWithinSpacing);
+            }
+
+        }
+
+
+        System.out.println("returning hashmap of hets");
+
+        return filteredoligoObjectsMap;
+
+
+    }
+
+
+    public LinkedHashMap<OligoObject, List<OligoObject>> getDeltaGValuesForHetDimerPairs(LinkedHashMap<OligoObject, List<OligoObject>> oligoObjectsMap, String dataDir, String heterodimerOpDir, String fileName, int subpartnum) throws Exception {
+
+        String hetOpFilename = dataDir+heterodimerOpDir+fileName+"_"+subpartnum+"_1_"+fileName+"_"+subpartnum+"_2.out";
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(hetOpFilename)));
-        Set<OligoObject> hashMapKeys = oligoObjectsMap.keySet();
+        //Set<OligoObject> hashMapKeys = oligoObjectsMap.keySet();
         //HashMap<String, Float> hetDimerDeltaGValuesMap = new HashMap<String, Float>();
+
+        Set<OligoObject> oligoKeys = oligoObjectsMap.keySet();
+        List<OligoObject> oligoKeysList = new ArrayList<OligoObject>();
+        for(OligoObject o : oligoKeys){
+            oligoKeysList.add(o);
+        }
+
+        oligoKeysList = new OligoObject().sortOligosBySubsectionAndSerialNum(oligoKeysList);
 
         try{
             String line;
@@ -110,10 +138,10 @@ public class MfoldDimer {
                     String hetOligoHeader1 = oligoHeaderArr[0];
                     String hetOligoHeader2 = oligoHeaderArr[1];
 
-                    for(OligoObject o:hashMapKeys){
+                    for(OligoObject o:oligoKeysList){
                         if(o.getInternalPrimerId().equals(hetOligoHeader1)){
                             List<OligoObject> hetObjects = oligoObjectsMap.get(o);
-                            HashMap<String, Float> hetDimerDeltaGValuesMap = o.getHeterodimerValues();
+                            LinkedHashMap<String, Float> hetDimerDeltaGValuesMap = o.getHeterodimerValues();
 
                             for(OligoObject oObj : hetObjects){
                                 if(oObj.getInternalPrimerId().equals(hetOligoHeader2)){
@@ -121,7 +149,7 @@ public class MfoldDimer {
                                     if(hetDimerDeltaGValuesMap!=null){
                                         hetDimerDeltaGValuesMap.put(hetOligoHeader2, Float.parseFloat(hetdimerValue));
                                     }else{
-                                        hetDimerDeltaGValuesMap = new HashMap<String, Float>();
+                                        hetDimerDeltaGValuesMap = new LinkedHashMap<String, Float>();
                                         hetDimerDeltaGValuesMap.put(hetOligoHeader2, Float.parseFloat(hetdimerValue));
                                     }
                                 }
@@ -144,16 +172,16 @@ public class MfoldDimer {
     }
 
 
-    private HashMap<OligoObject, List<OligoObject>> mapOligosRunHeterodimerAnalysis(List<OligoObject> heteroDimerObjectsList,
-                                                                                    String heterodimerInpDir, String dataDir, String fileName) throws Exception {
-        String file1 = fileName+"_1";
-        String file2 = fileName+"_2";
+    public LinkedHashMap<OligoObject, List<OligoObject>> mapOligosRunHeterodimerAnalysis(List<OligoObject> heteroDimerObjectsList,
+                                                                                    String heterodimerInpDir, String dataDir, String fileName, int serialNum) throws Exception {
+        String file1 = fileName+"_"+serialNum+"_1";
+        String file2 = fileName+"_"+serialNum+"_2";
         File hetInpFile1 = new File(dataDir+heterodimerInpDir+file1);
         File hetInpFile2 = new File(dataDir+heterodimerInpDir+file2);
         PrintWriter pw1 = new PrintWriter(hetInpFile1);
         PrintWriter pw2 = new PrintWriter(hetInpFile2);
 
-        HashMap<OligoObject, List<OligoObject>> hetDimerObjMap = new HashMap<OligoObject, List<OligoObject>>();
+        LinkedHashMap<OligoObject, List<OligoObject>> hetDimerObjMap = new LinkedHashMap<OligoObject, List<OligoObject>>();
 
         for(OligoObject o : heteroDimerObjectsList){
                 List<OligoObject> hetObjectList = new ArrayList<OligoObject>();
@@ -174,6 +202,25 @@ public class MfoldDimer {
         pw2.close();
 
         String resultHeterodimerString = runHeterodimerAnalysisProcessBuilder(file1, file2, dataDir);
+        //System.out.println(resultHeterodimerString);
+
+        return hetDimerObjMap;
+    }
+
+
+    public LinkedHashMap<OligoObject, List<OligoObject>> mapOligosCreateHetDimerInpSections(List<OligoObject> heteroDimerObjectsList) throws Exception {
+
+        LinkedHashMap<OligoObject, List<OligoObject>> hetDimerObjMap = new LinkedHashMap<OligoObject, List<OligoObject>>();
+
+        for(OligoObject o : heteroDimerObjectsList){
+            List<OligoObject> hetObjectList = new ArrayList<OligoObject>();
+            for(OligoObject valueObj : heteroDimerObjectsList){
+                if(!valueObj.getInternalPrimerId().equals(o.getInternalPrimerId())){
+                    hetObjectList.add(valueObj);
+                }
+            }
+            hetDimerObjMap.put(o, hetObjectList);
+        }
 
         return hetDimerObjMap;
     }
@@ -200,9 +247,9 @@ public class MfoldDimer {
         pb.directory(new File(dataDir));
 
         pb.redirectErrorStream(true);
-        System.out.println(pb.directory());
-        System.out.println(pb.command());
-        System.out.println(pb.environment());
+        //System.out.println(pb.directory());
+        //System.out.println(pb.command());
+        //System.out.println(pb.environment());
         System.out.println("should've initiated the HeteroDimerAnalyzeProcess.sh..");
         try{
             Process p = pb.start();
@@ -234,9 +281,9 @@ public class MfoldDimer {
             }
             answer = sb.toString();
 
-            System.out.println(erranswer);
+            //System.out.println(erranswer);
 
-            System.out.println(answer);
+            //System.out.println(answer);
 
             System.out.println("should have got an output from hybrid-min..");
 
@@ -258,8 +305,7 @@ public class MfoldDimer {
 
 
 
-    private List<OligoObject> filterOligosCreateHeterodimers(List<SequenceObjectSubsections> sequenceObjectSubsectionsList,
-                                                             String dataDir, String fileName) {
+    public List<OligoObject> filterOligosCreateHeterodimers(List<SequenceObjectSubsections> sequenceObjectSubsectionsList) {
 
         List<OligoObject> hetDimerInputs = new ArrayList<OligoObject>();
         for(SequenceObjectSubsections s : sequenceObjectSubsectionsList){
@@ -283,10 +329,12 @@ public class MfoldDimer {
 
 
 
-    public HashMap<String,List<OligoObject>> createMapSetsOfHets(HashMap<OligoObject, List<OligoObject>> heterodimerOligosHashMap,
+    public HashMap<String,List<OligoObject>> createMapSetsOfHets(LinkedHashMap<OligoObject, List<OligoObject>> heterodimerOligosHashMap,
                                                                  SequenceObject sObj, int spacingKB) throws Exception {
 
-        HashMap<String, List<OligoObject>> hashSetOfHetPrimers = new HashMap<String, List<OligoObject>>();
+        //modified on NOv8th 2016 to linkedHashMap to preserver order.
+        //HashMap<String, List<OligoObject>> hashSetOfHetPrimers = new HashMap<String, List<OligoObject>>();
+        LinkedHashMap<String, List<OligoObject>> hashSetOfHetPrimers = new LinkedHashMap<String, List<OligoObject>>();
 
         Set<OligoObject> oligoKeys = heterodimerOligosHashMap.keySet();
         List<OligoObject> oligoKeysList = new ArrayList<OligoObject>();
@@ -302,17 +350,29 @@ public class MfoldDimer {
         hashSetOfHetPrimers = getHashMapOfhetSets(oligoKeysList, oligoKeysList.get(0), hashSetOfHetPrimers, sObj, counter, spacingKB);
 
         return hashSetOfHetPrimers;
+
     }
 
 
-
-    public HashMap<String, List<OligoObject>> getHashMapOfhetSets(List<OligoObject> oligoKeysList,
-                        OligoObject startingOligoHetObject, HashMap<String, List<OligoObject>> hashSetOfHetPrimers,
+    /***
+     *
+     * @param oligoKeysList
+     * @param startingOligoHetObject
+     * @param hashSetOfHetPrimers
+     * @param sObj
+     * @param counter
+     * @param spacingKB
+     * @return
+     * @throws Exception
+     */
+    public LinkedHashMap<String, List<OligoObject>> getHashMapOfhetSets(List<OligoObject> oligoKeysList,
+                        OligoObject startingOligoHetObject, LinkedHashMap<String, List<OligoObject>> hashSetOfHetPrimers,
                         SequenceObject sObj, int counter, int spacingKB) throws Exception {
 
         String set = "set"+counter;
 
-        while(Integer.parseInt(startingOligoHetObject.getInternalStart())-sObj.getStart()<=10000){
+        while(Integer.parseInt(startingOligoHetObject.getInternalStart())-sObj.getStart()<=4000){
+
             int i=oligoKeysList.indexOf(startingOligoHetObject);
 
             for(; i<oligoKeysList.size(); ){
@@ -329,7 +389,7 @@ public class MfoldDimer {
                     }
 
                 }else if(hashSetOfHetPrimers.size()>0){
-                    if(sObj.getStop()-Integer.parseInt(oligoKeysList.get(i).getInternalStart())>=3000){
+                    if(sObj.getStop()-Integer.parseInt(oligoKeysList.get(i).getInternalStart())>=2000){
                         List<OligoObject> setOfhets =  new ArrayList<OligoObject>();
                         if(hashSetOfHetPrimers.get(set)!=null){
                             setOfhets = hashSetOfHetPrimers.get(set);
@@ -383,6 +443,14 @@ public class MfoldDimer {
 
 
 
+    /***
+     *
+     * @param objInQuestion
+     * @param oligosList
+     * @param spacingKB
+     * @return
+     * @throws Exception
+     */
 
     public OligoObject getNext8KBOligoObj(OligoObject objInQuestion, List<OligoObject> oligosList, int spacingKB) throws Exception{
 
@@ -420,6 +488,68 @@ public class MfoldDimer {
     }
 
 
+
+    /***
+     *
+     * @param objInQuestion
+     * @param oligosList
+     * @param spacingKB
+     * @return
+     * @throws Exception
+     */
+
+    public List<OligoObject> getNext8_10KBOligoObjs(OligoObject objInQuestion, List<OligoObject> oligosList, int spacingKB) throws Exception{
+
+        int diffLessThan0 = (spacingKB*1000)+500;
+        int diffGreaterThan0 = (spacingKB*1000)-500;
+
+        int diffLessThan1 = (spacingKB*1000)+2000;
+        int diffGreaterThan1 = (spacingKB*1000)-2000;
+
+        int diffLessThan2 = (spacingKB*1000)+4000;
+        int diffGreaterThan2 = (spacingKB*1000)-4000;
+
+        int diffLessThan3 = (spacingKB*1000)+6000;
+        int diffGreaterThan3 = (spacingKB*1000)-6000;
+
+        ArrayList<OligoObject> oligosReturned = new ArrayList<OligoObject>();
+
+        for(OligoObject o : oligosList){
+            int oligoStartDiff = Integer.parseInt(o.getInternalStart())-Integer.parseInt(objInQuestion.getInternalStart());
+            if(diffLessThan1>oligoStartDiff && oligoStartDiff>diffGreaterThan1){
+                oligosReturned.add(o);
+            }
+        }
+
+        if(oligosReturned.size()==0){
+            for(OligoObject o : oligosList){
+                int oligoStartDiff = Integer.parseInt(o.getInternalStart())-Integer.parseInt(objInQuestion.getInternalStart());
+                if(diffLessThan2>oligoStartDiff && oligoStartDiff>diffGreaterThan2){
+                    oligosReturned.add(o);
+                }
+            }
+        }
+
+        if(oligosReturned.size()==0){
+            for(OligoObject o : oligosList){
+                int oligoStartDiff = Integer.parseInt(o.getInternalStart())-Integer.parseInt(objInQuestion.getInternalStart());
+                if(diffLessThan3>oligoStartDiff && oligoStartDiff>diffGreaterThan3){
+                    oligosReturned.add(o);
+                }
+            }
+        }
+
+
+        return oligosReturned;
+    }
+
+
+    /***
+     *
+     * @param hetDimerSets
+     * @return
+     * @throws Exception
+     */
     public TreeMap<String,List<OligoObject>> sortOligosHetSetMinDeltaG(HashMap<String,List<OligoObject>> hetDimerSets) throws Exception{
 
         TreeMap<String, List<OligoObject>> treeMapSetsWithDeltaG = new TreeMap<String, List<OligoObject>>(new DeltaGComprator());
@@ -446,6 +576,131 @@ public class MfoldDimer {
         return treeMapSetsWithDeltaG;
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        MfoldDimer that = (MfoldDimer) o;
+
+        if (!dimer1Id.equals(that.dimer1Id)) return false;
+        if (!dimer2Id.equals(that.dimer2Id)) return false;
+        if (!dimerDeltaG.equals(that.dimerDeltaG)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = dimer1Id.hashCode();
+        result = 31 * result + dimer2Id.hashCode();
+        result = 31 * result + dimerDeltaG.hashCode();
+        return result;
+    }
+
+    /***
+     *
+      *
+     * @param allHetDimerPairsObjectsMap
+    * @param so
+     * @return
+     */
+
+    public LinkedHashMap<OligoObject, List<OligoObject>> getHetDimersForRegion(LinkedHashMap<OligoObject, List<OligoObject>> allHetDimerPairsObjectsMap, SequenceObject so) {
+
+
+        LinkedHashMap<OligoObject, List<OligoObject>> hetDimersForGivenRegion = new LinkedHashMap<OligoObject, List<OligoObject>>();
+        Set<OligoObject> hetDimermapKeys = allHetDimerPairsObjectsMap.keySet();
+
+        for(OligoObject hetDimerObj : hetDimermapKeys){
+            String hetDimerOligoid = hetDimerObj.getInternalPrimerId().split("_", -1)[0];
+            String chr = hetDimerOligoid.split(":", -1)[0].replaceAll("inpSeq", "");
+            int sostart = Integer.parseInt(hetDimerOligoid.split(":", -1)[1]);
+            int soend = Integer.parseInt(hetDimerOligoid.split(":", -1)[2]);
+
+            if( so.getChr().equalsIgnoreCase(chr) && sostart==so.getStart() && soend==so.getStop() ){
+                hetDimersForGivenRegion.put(hetDimerObj, allHetDimerPairsObjectsMap.get(hetDimerObj));
+            }
+        }
+
+
+        return hetDimersForGivenRegion;
+    }
+
+    public String createSubsetRunHeterodimerAnalysis(LinkedHashMap<OligoObject, List<OligoObject>> heteroDimerObjectsMap, String heterodimerInpDir, String dataDir, String hetdimerFilename, int serialNum, int numlinesInFile, int oligoIdStoppedAt, int oligoIdIndexInArrayOfMapValuesArray ) throws Exception {
+
+        String file1 = hetdimerFilename+"_"+serialNum+"_1";
+        String file2 = hetdimerFilename+"_"+serialNum+"_2";
+        File hetInpFile1 = new File(dataDir+heterodimerInpDir+file1);
+        File hetInpFile2 = new File(dataDir+heterodimerInpDir+file2);
+        PrintWriter pw1 = new PrintWriter(hetInpFile1);
+        PrintWriter pw2 = new PrintWriter(hetInpFile2);
+
+        Set<OligoObject> oligoIdsSet = heteroDimerObjectsMap.keySet();
+        ArrayList<OligoObject> oligoIdsArray = new ArrayList<OligoObject>();
+        oligoIdsArray.addAll(oligoIdsSet);
+
+        //int indexofOligoIdLastStoppedAtInArr = oligoIdStoppedAt;
+
+        int counter=0;
+
+        for(int olig=oligoIdStoppedAt; olig<oligoIdsArray.size(); olig++){
+            OligoObject oligoObj = oligoIdsArray.get(olig);
+
+            List<OligoObject> oligoArrays = heteroDimerObjectsMap.get(oligoObj);
+
+            int i=0;
+            if(olig==oligoIdStoppedAt){
+                i=oligoIdIndexInArrayOfMapValuesArray;
+            }
+
+            for( ;i<oligoArrays.size(); i++){
+
+                OligoObject o = oligoArrays.get(i);
+
+                //make sure you're not comparing the same oligoObject with the same oligoObject.
+                if(!o.getInternalPrimerId().equals(oligoObj.getInternalPrimerId())){
+
+                    if(counter>numlinesInFile){
+                        pw1.close();
+                        pw2.close();
+
+                        String resultHeterodimerString = runHeterodimerAnalysisProcessBuilder(file1, file2, dataDir);
+                        //System.out.println(resultHeterodimerString);
+
+                        //return oligoObj.getInternalPrimerId()+"&"+i;
+                        return olig+"&"+i;
+                    }
+
+                    pw1.println(">"+oligoObj.getInternalPrimerId());
+                    pw1.println(oligoObj.getInternalSeq());
+                    pw2.println(">"+o.getInternalPrimerId());
+                    pw2.println(o.getInternalSeq());
+
+                    counter+=1;
+
+                }
+
+            }
+
+        }
+
+       // System.out.println("last oligoId is:"+ oligoIdsArray.get(oligoIdsArray.size()-1).getInternalPrimerId() + " and second last oligoId is: "+ oligoIdsArray.get(oligoIdsArray.size()-2).getInternalPrimerId());
+
+        int remainingObjects = oligoIdsArray.size()-oligoIdStoppedAt;
+        int remaininglines = remainingObjects*(remainingObjects-1);
+        if(counter <= numlinesInFile){
+            //supposedly last set of the file will have this..
+            pw1.close();
+            pw2.close();
+            String resultHeterodimerString = runHeterodimerAnalysisProcessBuilder(file1, file2, dataDir);
+            //System.out.println(resultHeterodimerString);
+
+        }
+        return oligoIdStoppedAt+"&"+oligoIdIndexInArrayOfMapValuesArray;
+
+    }
 
 
     private class DeltaGComprator implements Comparator<String>{

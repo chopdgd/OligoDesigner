@@ -11,7 +11,7 @@ public class OligoObject extends Primer3Object{
 
     float hairpinValue;
     float homodimerValue;
-    HashMap<String, Float> heterodimerValues;
+    LinkedHashMap<String, Float> heterodimerValues;
 
 
 
@@ -131,6 +131,13 @@ public class OligoObject extends Primer3Object{
         Collections.sort(oligoList, new Comparator<OligoObject>() {
             @Override
             public int compare(OligoObject o1, OligoObject o2) {
+                return (o1.getInternalPrimerId().split("_",-1)[0].compareTo(o2.getInternalPrimerId().split("_",-1)[0]));
+            }
+        });
+
+        Collections.sort(oligoList, new Comparator<OligoObject>() {
+            @Override
+            public int compare(OligoObject o1, OligoObject o2) {
                 return (Integer.valueOf(o1.getInternalPrimerId().split("_",-1)[1]).compareTo(Integer.valueOf(o2.getInternalPrimerId().split("_",-1)[1])));
             }
         });
@@ -162,13 +169,12 @@ public class OligoObject extends Primer3Object{
         this.homodimerValue = homodimerValue;
     }
 
-    public HashMap<String, Float> getHeterodimerValues() {
+    public LinkedHashMap<String, Float> getHeterodimerValues() {
         return heterodimerValues;
     }
 
-    public void setHeterodimerValues(HashMap<String, Float> heterodimerValues) {
+    public void setHeterodimerValues(LinkedHashMap<String, Float> heterodimerValues) {
         this.heterodimerValues = heterodimerValues;
     }
-
 
 }
