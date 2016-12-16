@@ -502,13 +502,13 @@ public class Graph<OligoObject> {
 
         ArrayList<String> pathList = new ArrayList<String>();
         v.setMarkState(VISIT_COLOR_GREY);
-        System.out.println("Visiting vertex:"+v.toString());
+        //System.out.println("Visiting vertex:"+v.toString());
 
         int count = v.getOutgoingEdgeCount();
         for (int n = 0; n < count; n++) {
 
             Edge<OligoObject> e = v.getOutgoingEdge(n);
-            System.out.println("Getting edges:"+e.toString());
+            //System.out.println("Getting edges:"+e.toString());
 
             Vertex<OligoObject> u = e.getTo();
             if (u.getMarkState() == VISIT_COLOR_GREY) {

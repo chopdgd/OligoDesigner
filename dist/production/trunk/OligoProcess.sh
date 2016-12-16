@@ -80,9 +80,8 @@ echo " "
 echo "<h1>Primer3 Primers</h1><hr>"
 
 
-
-cat $OLIGO_OUTPUT_FILE | \
-{
+#cat $OLIGO_OUTPUT_FILE | \
+#{
 while read regExLine
 do
 
@@ -130,8 +129,8 @@ then
 NO_PR_TAG=NO_PRIMER
 fi
 
-done
-}
+done < $OLIGO_OUTPUT_FILE
+#}
 
 #echo "-----------------------------------"
 

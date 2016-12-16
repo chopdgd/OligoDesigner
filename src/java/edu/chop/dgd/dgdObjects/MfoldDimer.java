@@ -138,6 +138,10 @@ public class MfoldDimer {
                     String hetOligoHeader1 = oligoHeaderArr[0];
                     String hetOligoHeader2 = oligoHeaderArr[1];
 
+                    if(hetOligoHeader1.equalsIgnoreCase("inpSeqchr6:33006323:33032680_3_O31") && hetOligoHeader2.equalsIgnoreCase("inpSeqchr6:33006323:33032680_5_O67")){
+                        System.out.println("check here..");
+                    }
+
                     for(OligoObject o:oligoKeysList){
                         if(o.getInternalPrimerId().equals(hetOligoHeader1)){
                             List<OligoObject> hetObjects = oligoObjectsMap.get(o);
@@ -213,6 +217,9 @@ public class MfoldDimer {
         LinkedHashMap<OligoObject, List<OligoObject>> hetDimerObjMap = new LinkedHashMap<OligoObject, List<OligoObject>>();
 
         for(OligoObject o : heteroDimerObjectsList){
+            if(o.getInternalPrimerId().equalsIgnoreCase("inpSeqchr6:33006323:33032680_3_O31")){
+                System.out.println();
+            }
             List<OligoObject> hetObjectList = new ArrayList<OligoObject>();
             for(OligoObject valueObj : heteroDimerObjectsList){
                 if(!valueObj.getInternalPrimerId().equals(o.getInternalPrimerId())){
@@ -646,7 +653,14 @@ public class MfoldDimer {
         int counter=0;
 
         for(int olig=oligoIdStoppedAt; olig<oligoIdsArray.size(); olig++){
+
+            if(olig==152){
+                System.out.println("here");
+            }
             OligoObject oligoObj = oligoIdsArray.get(olig);
+            if(oligoObj.getInternalPrimerId().equalsIgnoreCase("inpSeqchr6:33006323:33032680_3_O31")){
+                System.out.println("here");
+            }
 
             List<OligoObject> oligoArrays = heteroDimerObjectsMap.get(oligoObj);
 
@@ -659,6 +673,9 @@ public class MfoldDimer {
 
                 OligoObject o = oligoArrays.get(i);
 
+                if(oligoObj.getInternalPrimerId().equalsIgnoreCase("inpSeqchr6:33006323:33032680_3_O31")){
+                    System.out.println();
+                }
                 //make sure you're not comparing the same oligoObject with the same oligoObject.
                 if(!o.getInternalPrimerId().equals(oligoObj.getInternalPrimerId())){
 
@@ -688,8 +705,6 @@ public class MfoldDimer {
 
        // System.out.println("last oligoId is:"+ oligoIdsArray.get(oligoIdsArray.size()-1).getInternalPrimerId() + " and second last oligoId is: "+ oligoIdsArray.get(oligoIdsArray.size()-2).getInternalPrimerId());
 
-        int remainingObjects = oligoIdsArray.size()-oligoIdStoppedAt;
-        int remaininglines = remainingObjects*(remainingObjects-1);
         if(counter <= numlinesInFile){
             //supposedly last set of the file will have this..
             pw1.close();

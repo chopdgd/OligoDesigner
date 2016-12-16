@@ -7,7 +7,8 @@ ASSEMBLY=$2
 twoBitToFa "/data/blatDb/"$ASSEMBLY".2bit" -seqList="/data/"$INPUTFILE output.fa
 echo $?
 
-cat output.fa | while read line
+#cat output.fa | while read line
+while read line
 do
 	if [[ $line == *chr* ]]
 	then
@@ -15,6 +16,6 @@ do
 	else
 		echo "$line"
 	fi
-done
+done < output.fa
 
 rm output.fa

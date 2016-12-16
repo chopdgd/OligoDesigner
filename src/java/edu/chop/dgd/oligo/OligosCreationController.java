@@ -209,7 +209,7 @@ public class OligosCreationController implements Controller{
 
 
         int numfiles = 1; int numlines = 10000; //int numlinescopy = numlines;
-        double temp = Math.ceil(((heteroDimerObjectsList.size()-1)*(heteroDimerObjectsList.size()-1))/(double)(numlines));
+        double temp = Math.ceil(((heteroDimerObjectsList.size())*(heteroDimerObjectsList.size()))/(double)(numlines));
         int temp1= (int) temp;
 
         if(temp1 != 0){
@@ -245,6 +245,9 @@ public class OligosCreationController implements Controller{
 
             }
 
+            //clearOligoobjectsmap
+            //oligoObjectsMap.clear();
+
             //startHetDimerOligoarray = startHetDimerOligoarray + numlinescopy;
             //numlines = numlines + numlinescopy;
 
@@ -264,7 +267,7 @@ public class OligosCreationController implements Controller{
 
             oligoKeysList = new OligoObject().sortOligosBySubsectionAndSerialNum(oligoKeysList);
             LinkedHashMap<OligoObject, List<OligoObject>> filteredhetDimerMapForSO = mfd.filterMapCreateOnlyHetsWithinDistanceMap(oligoKeysList, spacing);
-            LinkedHashMap<String, Graph<OligoObject>> setsOfGraphs = new LinkedHashMap<String, Graph<OligoObject>>();
+            //LinkedHashMap<String, Graph<OligoObject>> setsOfGraphs = new LinkedHashMap<String, Graph<OligoObject>>();
             LinkedHashMap<String, ArrayList<OligoObject>> setsOfOligoSets = new LinkedHashMap<String, ArrayList<OligoObject>>();
 
             int startingcounter = 1;
@@ -291,7 +294,7 @@ public class OligosCreationController implements Controller{
                         traverse(rootvertex, filteredhetDimerMapForSO, dagOligo, so);
                     }
 
-                    setsOfGraphs.put(set[0], dagOligo);
+                    //setsOfGraphs.put(set[0], dagOligo);
                     startingcounter+=1;
 
 
@@ -333,10 +336,10 @@ public class OligosCreationController implements Controller{
 
                         for(int i=0; i<pathArray.size(); i++){
                             for(int j=i+1; j<pathArray.size(); j++){
+                                System.out.println(pathArray.get(i).getInternalPrimerId() + "\t" + pathArray.get(j).getInternalPrimerId());
+
                                 System.out.println(pathArray.get(i).getInternalPrimerId() + "\t" + pathArray.get(j).getInternalPrimerId()+ "\t" + pathArray.get(i).getHeterodimerValues().get(pathArray.get(j).getInternalPrimerId()));
-                                if(pathArray.get(i).getInternalPrimerId().equalsIgnoreCase("inpSeqchr18:43304092:43332485_1_O10")){
-                                   System.out.println("testHere..");
-                                }
+
                                 if(pathArray.get(i).getHeterodimerValues().get(pathArray.get(j).getInternalPrimerId()) < -10.00){
                                     toremoveFlag=1;
                                     break;
@@ -371,7 +374,7 @@ public class OligosCreationController implements Controller{
         }
 
         //clearing large hashmapObject.
-        //allHetDimerPairsObjectsMap.clear();
+        allHetDimerPairsObjectsMap.clear();
 
         System.out.println("checking Oligos interaction across SO");
         Set<ArrayList<String>> setOfSets = new SequenceObject().checkOligosInteractAcrossSO(objects);
@@ -418,46 +421,27 @@ public class OligosCreationController implements Controller{
                 Vertex<OligoObject> childVertex = new Vertex<OligoObject>(childObj.getInternalPrimerId(), childObj);
                 //System.out.println("iterating through all children for "+vertex.getName()+" Now at childVertex:" + childObj.getInternalPrimerId()+ " Same as:"+ childVertex.getName()+" POS: "+ childObj.getInternalStart());
 
-                //commenting today 18thnov 2016
-                //vertex.addOutgoingEdge(childVertex, 1);
-
-                //Edge<OligoObject> edgeOligObj = new Edge<OligoObject>(vertex, childVertex, vertex.getData().getHeterodimerValues().get(childVertex.getName()));
-
-
-                //commenting today 18thnov2016
-                //Edge<OligoObject> edgeOligObj = new Edge<OligoObject>(vertex, childVertex, 1);
-                //vertex.addEdge(edgeOligObj);
-
-
                 //uncomenting today 18thnov 2016
                 dagOligo.addVertex(vertex);
 
                 childVertex.setData(childObj);
-                //commenting 18thnov 2016
-                //childVertex.addIncomingEdge(vertex, 1);
 
                 dagOligo.addVertex(childVertex);
 
                 boolean result = dagOligo.addEdge(vertex, childVertex, 1);
-                /*if(!result){
-                    System.out.println("looks like this vertex is already there");
-                }else{
-                    System.out.println("added edge");
-                }*/
-
 
                 List<Edge<OligoObject>> edgesList = dagOligo.getEdges();
                 //System.out.println("edges list:"+ edgesList.size());
 
                 if(so.getStop()-Integer.parseInt(childObj.getInternalStart())>=2000){
-                    System.out.println("Traversing from childVertex to its children:" + childObj.getInternalPrimerId() + " " + childObj.getInternalStart());
+                    //System.out.println("Traversing from childVertex to its children:" + childObj.getInternalPrimerId() + " " + childObj.getInternalStart());
                     if(filteredhetDimerMapForSO.size()>0){
                         traverse(childVertex, filteredhetDimerMapForSO, dagOligo, so);
                     }
                 }
 
                 if(so.getStop()-Integer.parseInt(childObj.getInternalStart())<2000){
-                    System.out.println("End of this path at:" + childObj.getInternalPrimerId() + " at " + childObj.getInternalStart() + " with so stop at:" + so.getStop() + " starting at root vertex:"+ dagOligo.getRootVertex().getName());
+                    //System.out.println("End of this path at:" + childObj.getInternalPrimerId() + " at " + childObj.getInternalStart() + " with so stop at:" + so.getStop() + " starting at root vertex:"+ dagOligo.getRootVertex().getName());
                 }
             }
         }
@@ -597,7 +581,7 @@ public class OligosCreationController implements Controller{
         pw.close();
 
         String resultPrimer3Blat = runOligoProcessBuilder(fileN);
-        System.out.println(resultPrimer3Blat);
+        //System.out.println(resultPrimer3Blat);
 
         return resultPrimer3Blat;
 
@@ -614,7 +598,7 @@ public class OligosCreationController implements Controller{
             while((line=reader.readLine()) != null){
                 //line = reader.readLine();
                 String lineArr[] = line.split("\t", -1);
-                System.out.println(line);
+                //System.out.println(line);
                 SequenceObject obj = new SequenceObject();
                 obj.setAssembly(assembly);
                 obj.setChr(lineArr[0]);
