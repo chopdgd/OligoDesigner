@@ -471,8 +471,12 @@ public class OligosCreationController implements Controller{
 
             //write optimal oligos file
             pwFirst.println("For query region: "+so.getChr()+":"+so.getStart()+"-"+so.getStop());
+            System.out.println("For query region: " + so.getChr() + ":" + so.getStart() + "-" + so.getStop());
+            System.out.println("primary oligos set size:"+so.getPrimaryOptimalSetOfOligosForSet());
 
             LinkedHashMap<String, List<OligoObject>> primaryOligosSet = so.getPrimaryOptimalSetOfOligosForSet();
+
+            System.out.println("primary oligo keyset size is:"+primaryOligosSet.keySet().size());
 
             String primarySet = primaryOligosSet.keySet().iterator().next();
 

@@ -654,7 +654,7 @@ public class MfoldDimer {
 
         for(int olig=oligoIdStoppedAt; olig<oligoIdsArray.size(); olig++){
 
-            if(olig==152){
+            if(olig>142){
                 System.out.println("here");
             }
             OligoObject oligoObj = oligoIdsArray.get(olig);
