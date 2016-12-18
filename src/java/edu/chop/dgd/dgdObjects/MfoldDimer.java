@@ -138,10 +138,6 @@ public class MfoldDimer {
                     String hetOligoHeader1 = oligoHeaderArr[0];
                     String hetOligoHeader2 = oligoHeaderArr[1];
 
-                    if(hetOligoHeader1.equalsIgnoreCase("inpSeqchr6:33006323:33032680_3_O31") && hetOligoHeader2.equalsIgnoreCase("inpSeqchr6:33006323:33032680_5_O67")){
-                        System.out.println("check here..");
-                    }
-
                     for(OligoObject o:oligoKeysList){
                         if(o.getInternalPrimerId().equals(hetOligoHeader1)){
                             List<OligoObject> hetObjects = oligoObjectsMap.get(o);
@@ -217,9 +213,7 @@ public class MfoldDimer {
         LinkedHashMap<OligoObject, List<OligoObject>> hetDimerObjMap = new LinkedHashMap<OligoObject, List<OligoObject>>();
 
         for(OligoObject o : heteroDimerObjectsList){
-            if(o.getInternalPrimerId().equalsIgnoreCase("inpSeqchr6:33006323:33032680_3_O31")){
-                System.out.println();
-            }
+
             List<OligoObject> hetObjectList = new ArrayList<OligoObject>();
             for(OligoObject valueObj : heteroDimerObjectsList){
                 if(!valueObj.getInternalPrimerId().equals(o.getInternalPrimerId())){
@@ -269,7 +263,7 @@ public class MfoldDimer {
                 errsb.append(errline).append("\n");
             }
             String erranswer = errsb.toString();
-            System.out.println(erranswer);
+            //System.out.println(erranswer);
 
             BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
             StringBuilder sb = new StringBuilder();
@@ -614,7 +608,7 @@ public class MfoldDimer {
      * @return
      */
 
-    public LinkedHashMap<OligoObject, List<OligoObject>> getHetDimersForRegion(LinkedHashMap<OligoObject, List<OligoObject>> allHetDimerPairsObjectsMap, SequenceObject so) {
+/*    public LinkedHashMap<OligoObject, List<OligoObject>> getHetDimersForRegion(LinkedHashMap<OligoObject, List<OligoObject>> allHetDimerPairsObjectsMap, SequenceObject so) {
 
 
         LinkedHashMap<OligoObject, List<OligoObject>> hetDimersForGivenRegion = new LinkedHashMap<OligoObject, List<OligoObject>>();
@@ -633,7 +627,34 @@ public class MfoldDimer {
 
 
         return hetDimersForGivenRegion;
+    }*/
+
+    public LinkedHashMap<String, List<OligoObject>> getHetDimersForRegion(LinkedHashMap<String, List<OligoObject>> allHetDimerPairsObjectsMap, SequenceObject so) {
+
+
+        LinkedHashMap<String, List<OligoObject>> hetDimersForGivenRegion = new LinkedHashMap<String, List<OligoObject>>();
+        Set<String> hetDimermapKeys = allHetDimerPairsObjectsMap.keySet();
+
+        for(String hetDimerObj : hetDimermapKeys){
+            String hetDimerOligoid = hetDimerObj.split("_", -1)[0];
+            String chr = hetDimerOligoid.split(":", -1)[0].replaceAll("inpSeq", "");
+            int sostart = Integer.parseInt(hetDimerOligoid.split(":", -1)[1]);
+            int soend = Integer.parseInt(hetDimerOligoid.split(":", -1)[2]);
+
+            if( so.getChr().equalsIgnoreCase(chr) && sostart==so.getStart() && soend==so.getStop() ){
+                hetDimersForGivenRegion.put(hetDimerObj, allHetDimerPairsObjectsMap.get(hetDimerObj));
+            }
+        }
+
+
+        return hetDimersForGivenRegion;
     }
+
+
+
+
+
+
 
     public String createSubsetRunHeterodimerAnalysis(LinkedHashMap<OligoObject, List<OligoObject>> heteroDimerObjectsMap, String heterodimerInpDir, String dataDir, String hetdimerFilename, int serialNum, int numlinesInFile, int oligoIdStoppedAt, int oligoIdIndexInArrayOfMapValuesArray ) throws Exception {
 
@@ -648,23 +669,17 @@ public class MfoldDimer {
         ArrayList<OligoObject> oligoIdsArray = new ArrayList<OligoObject>();
         oligoIdsArray.addAll(oligoIdsSet);
 
-        //int indexofOligoIdLastStoppedAtInArr = oligoIdStoppedAt;
-
         int counter=0;
 
+        //making allhetdimerhashmap ordered instead of two way.. two way is unnecessary and hugely memory dependent.
         for(int olig=oligoIdStoppedAt; olig<oligoIdsArray.size(); olig++){
 
-            if(olig>142){
-                System.out.println("here");
-            }
             OligoObject oligoObj = oligoIdsArray.get(olig);
-            if(oligoObj.getInternalPrimerId().equalsIgnoreCase("inpSeqchr6:33006323:33032680_3_O31")){
-                System.out.println("here");
-            }
 
             List<OligoObject> oligoArrays = heteroDimerObjectsMap.get(oligoObj);
 
-            int i=0;
+            //int i=0;
+            int i=olig+1;
             if(olig==oligoIdStoppedAt){
                 i=oligoIdIndexInArrayOfMapValuesArray;
             }
@@ -673,9 +688,6 @@ public class MfoldDimer {
 
                 OligoObject o = oligoArrays.get(i);
 
-                if(oligoObj.getInternalPrimerId().equalsIgnoreCase("inpSeqchr6:33006323:33032680_3_O31")){
-                    System.out.println();
-                }
                 //make sure you're not comparing the same oligoObject with the same oligoObject.
                 if(!o.getInternalPrimerId().equals(oligoObj.getInternalPrimerId())){
 
@@ -695,6 +707,8 @@ public class MfoldDimer {
                     pw2.println(">"+o.getInternalPrimerId());
                     pw2.println(o.getInternalSeq());
 
+                    System.out.println(oligoObj.getInternalPrimerId()+"\t"+o.getInternalPrimerId());
+
                     counter+=1;
 
                 }
@@ -703,7 +717,7 @@ public class MfoldDimer {
 
         }
 
-       // System.out.println("last oligoId is:"+ oligoIdsArray.get(oligoIdsArray.size()-1).getInternalPrimerId() + " and second last oligoId is: "+ oligoIdsArray.get(oligoIdsArray.size()-2).getInternalPrimerId());
+        System.out.println("last oligoId is:"+ oligoIdsArray.get(oligoIdsArray.size()-1).getInternalPrimerId() + " and second last oligoId is: "+ oligoIdsArray.get(oligoIdsArray.size()-2).getInternalPrimerId());
 
         if(counter <= numlinesInFile){
             //supposedly last set of the file will have this..
@@ -714,6 +728,90 @@ public class MfoldDimer {
 
         }
         return oligoIdStoppedAt+"&"+oligoIdIndexInArrayOfMapValuesArray;
+
+    }
+
+
+    public ArrayList<String[]> createSubsetofhetDimersRunHeterodimerAnalysis(LinkedHashMap<OligoObject, List<OligoObject>> oligoObjectsMap) {
+
+        Set<OligoObject> oligoIdsSet = oligoObjectsMap.keySet();
+        ArrayList<OligoObject> oligoIdsArray = new ArrayList<OligoObject>();
+        oligoIdsArray.addAll(oligoIdsSet);
+
+        ArrayList<String[]> inputlinesArr = new ArrayList<String[]>();
+
+        for(int o=0;o<oligoIdsArray.size(); o++){
+            OligoObject oligo = oligoIdsArray.get(o);
+
+            for(int p=o+1; p<oligoIdsArray.size(); p++){
+                OligoObject secondfileOLigo = oligoIdsArray.get(p);
+
+                String p1 = ">"+oligo.getInternalPrimerId()+"\n"+ oligo.getInternalSeq()+"\n";
+                String p2 = ">"+secondfileOLigo.getInternalPrimerId()+"\n"+secondfileOLigo.getInternalSeq()+"\n";
+
+                String inputArr[]  = new String[2];
+                inputArr[0] = p1;
+                inputArr[1] = p2;
+
+                inputlinesArr.add(inputArr);
+
+            }
+        }
+
+
+        return inputlinesArr;
+    }
+
+
+    /***
+     *
+     * @param inputlistforHetDimerAnalysis
+     * @param heterodimerInpDir
+     * @param dataDir
+     * @param hetdimerFilename
+     * @param serialNum
+     * @param oligoidStoppedAt
+     * @param numlines
+     * @return
+     * @throws Exception
+     */
+    public String createFileRunHeterodimerAnalysis(ArrayList<String[]> inputlistforHetDimerAnalysis, String heterodimerInpDir, String dataDir, String hetdimerFilename, int serialNum, int oligoidStoppedAt, int numlines) throws Exception {
+
+        String file1 = hetdimerFilename+"_"+serialNum+"_1";
+        String file2 = hetdimerFilename+"_"+serialNum+"_2";
+        File hetInpFile1 = new File(dataDir+heterodimerInpDir+file1);
+        File hetInpFile2 = new File(dataDir+heterodimerInpDir+file2);
+        PrintWriter pw1 = new PrintWriter(hetInpFile1);
+        PrintWriter pw2 = new PrintWriter(hetInpFile2);
+
+
+        if(inputlistforHetDimerAnalysis.size()-oligoidStoppedAt<=numlines){
+            //numlines = inputlistforHetDimerAnalysis.size()-oligoidStoppedAt;
+            numlines = inputlistforHetDimerAnalysis.size();
+        }else{
+            numlines = oligoidStoppedAt+numlines;
+        }
+
+        int counter = oligoidStoppedAt;
+        for(int i=oligoidStoppedAt; i<numlines; i++){
+            String[] inputarr = inputlistforHetDimerAnalysis.get(i);
+
+            String fileLine1 = inputarr[0];
+            String fileLine2 = inputarr[1];
+
+            pw1.print(fileLine1);
+            pw2.print(fileLine2);
+
+            counter += 1;
+        }
+
+        pw1.close();
+        pw2.close();
+
+
+        String resultHeterodimerString = runHeterodimerAnalysisProcessBuilder(file1, file2, dataDir);
+
+        return counter+"&"+resultHeterodimerString;
 
     }
 

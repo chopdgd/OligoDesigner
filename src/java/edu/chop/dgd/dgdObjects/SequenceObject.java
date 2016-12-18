@@ -24,6 +24,7 @@ public class SequenceObject{
     String filename;
     HashMap<OligoObject, List<OligoObject>> hetDimerHashMap;
     HashMap<String, List<OligoObject>> OligoSetsMap;
+    List<OligoObject> hetDimerOligosList;
     TreeMap<String, List<OligoObject>> OligoSetsTreeMap;
     LinkedHashMap<String, Graph<OligoObject>> hetDimerDagMap;
     LinkedHashMap<String, ArrayList<OligoObject>> oligoSetsFullMap;
@@ -377,6 +378,7 @@ public class SequenceObject{
 
         Iterator<ArrayList<String>> arrayIt = setOfSets.iterator();
         Float minSumDeltaGAcrosssets = Float.parseFloat("0.00");
+        System.out.println("sorting sets by mindelta G. sets of sets size:"+ setOfSets.size());
 
         while(arrayIt.hasNext()){
             ArrayList<String> setArray = arrayIt.next();
@@ -406,9 +408,12 @@ public class SequenceObject{
                 }
             }
 
+           // System.out.println("sum deltaG across sets:" + sumDeltaGAcrossSets);
+           // System.out.println("Min sum deltaG across sets:" + minSumDeltaGAcrosssets);
+
             if(minSumDeltaGAcrosssets>sumDeltaGAcrossSets){
                 minSumDeltaGAcrosssets = sumDeltaGAcrossSets;
-                System.out.println("this set has min full set deltag"+setArray.toString());
+                //System.out.println("this set has min full set deltag"+setArray.toString());
                 for(String setid : setArray){
 
 
@@ -592,5 +597,11 @@ public class SequenceObject{
         this.primaryOptimalSetOfOligosForSet = primaryOptimalSetOfOligosForSet;
     }
 
+    public List<OligoObject> getHetDimerOligosList() {
+        return hetDimerOligosList;
+    }
 
+    public void setHetDimerOligosList(List<OligoObject> hetDimerOligosList) {
+        this.hetDimerOligosList = hetDimerOligosList;
+    }
 }

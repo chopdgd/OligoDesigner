@@ -189,6 +189,8 @@ public class OligosCreationController implements Controller{
             List<SequenceObjectSubsections> oligosSubsectionList = soss.retrieveResultsFromAnalyses(fileName, sosSubsList, dataDir, oligoOutputDir, blatInpDir, blatOpDir, mfoldInpDir, mfoldOpDir, homodimerOpDir, heterodimerInpDir, heterodimerOpDir);
             List<OligoObject> heteroDimerObjectsListFromSO = mfd.filterOligosCreateHeterodimers(oligosSubsectionList);
 
+            so.setHetDimerOligosList(heteroDimerObjectsListFromSO);
+
             heteroDimerObjectsList.addAll(heteroDimerObjectsListFromSO);
 
             System.out.println("adding for Heterodimer analysis");
@@ -203,12 +205,14 @@ public class OligosCreationController implements Controller{
 
         System.out.println("Running Heterodimer analysis now");
         String hetdimerFilename = "oligoInp_"+projectId+"_"+ new SimpleDateFormat("yyyyMMddhhmm'.txt'").format(new Date());
-        LinkedHashMap<OligoObject, List<OligoObject>> allHetDimerPairsObjectsMap = new LinkedHashMap<OligoObject, List<OligoObject>>();
+
+        //LinkedHashMap<OligoObject, List<OligoObject>> allHetDimerPairsObjectsMap = new LinkedHashMap<OligoObject, List<OligoObject>>();
+        LinkedHashMap<String, List<OligoObject>> allHetDimerPairsObjectsMap = new LinkedHashMap<String, List<OligoObject>>();
         LinkedHashMap<OligoObject, List<OligoObject>> oligoObjectsMap = mfd.mapOligosCreateHetDimerInpSections(heteroDimerObjectsList);
+        ArrayList<String[]> inputlistforHetDimerAnalysis = mfd.createSubsetofhetDimersRunHeterodimerAnalysis(oligoObjectsMap);
 
 
-
-        int numfiles = 1; int numlines = 10000; //int numlinescopy = numlines;
+        /*int numfiles = 1; int numlines = 10000; //int numlinescopy = numlines;
         double temp = Math.ceil(((heteroDimerObjectsList.size())*(heteroDimerObjectsList.size()))/(double)(numlines));
         int temp1= (int) temp;
 
@@ -222,34 +226,43 @@ public class OligosCreationController implements Controller{
 
         //getting first oligoId to begin with.
         int oligoIdStoppedAt = 0;
-        int oligoidValueIndexStoppedAt = 0;
+        int oligoidValueIndexStoppedAt = 1;*/
+
+        int numfiles = 1; int numlines = 10000; //int numlinescopy = numlines;
+        double temp = Math.ceil((inputlistforHetDimerAnalysis.size())/(double)(numlines));
+        int temp1= (int) temp;
+
+        if(temp1 != 0){
+            numfiles = temp1;
+        }else{
+            numfiles = temp1 + 1;
+        }
+
+        //getting first oligoId to begin with.
+        int oligoIdStoppedAt = 0;
+
 
         for(int n=1; n<=numfiles; n++){
 
             System.out.println("starting hetdimer run in subset of file");
-            String hetDimerSubsectionIndexes = mfd.createSubsetRunHeterodimerAnalysis(oligoObjectsMap, heterodimerInpDir, dataDir, hetdimerFilename, n, numlines, oligoIdStoppedAt, oligoidValueIndexStoppedAt);
+            //String hetDimerSubsectionIndexes = mfd.createSubsetRunHeterodimerAnalysis(oligoObjectsMap, heterodimerInpDir, dataDir, hetdimerFilename, n, numlines, oligoIdStoppedAt, oligoidValueIndexStoppedAt);
+            String hetDimerSubsectionIndexes = mfd.createFileRunHeterodimerAnalysis(inputlistforHetDimerAnalysis, heterodimerInpDir, dataDir, hetdimerFilename, n, oligoIdStoppedAt, numlines);
             oligoIdStoppedAt = Integer.parseInt(hetDimerSubsectionIndexes.split("&", -1)[0]);
-            oligoidValueIndexStoppedAt = Integer.parseInt(hetDimerSubsectionIndexes.split("&", -1)[1]);
 
             System.out.println("getting deltaG values for HetDimer Pairs");
             oligoObjectsMap = mfd.getDeltaGValuesForHetDimerPairs(oligoObjectsMap, dataDir, heterodimerOpDir, hetdimerFilename, n);
             for(OligoObject objectKey : oligoObjectsMap.keySet()){
-                if(allHetDimerPairsObjectsMap.containsKey(objectKey)){
-                    List<OligoObject> oligosFromPrevRuns = allHetDimerPairsObjectsMap.get(objectKey);
+
+                if(allHetDimerPairsObjectsMap.containsKey(objectKey.getInternalPrimerId())){
+                    List<OligoObject> oligosFromPrevRuns = allHetDimerPairsObjectsMap.get(objectKey.getInternalPrimerId());
 
                     oligosFromPrevRuns.addAll(oligoObjectsMap.get(objectKey));
-                    allHetDimerPairsObjectsMap.put(objectKey, oligosFromPrevRuns);
+                    allHetDimerPairsObjectsMap.put(objectKey.getInternalPrimerId(), oligosFromPrevRuns);
                 }else{
-                    allHetDimerPairsObjectsMap.put(objectKey, oligoObjectsMap.get(objectKey));
+                    allHetDimerPairsObjectsMap.put(objectKey.getInternalPrimerId(), oligoObjectsMap.get(objectKey));
                 }
 
             }
-
-            //clearOligoobjectsmap
-            //oligoObjectsMap.clear();
-
-            //startHetDimerOligoarray = startHetDimerOligoarray + numlinescopy;
-            //numlines = numlines + numlinescopy;
 
         }
 
@@ -257,12 +270,21 @@ public class OligosCreationController implements Controller{
 
         for(SequenceObject so : objects){
 
-            LinkedHashMap<OligoObject, List<OligoObject>>   hetDimerMapForSO = mfd.getHetDimersForRegion(allHetDimerPairsObjectsMap, so);
+            //LinkedHashMap<OligoObject, List<OligoObject>>   hetDimerMapForSO = mfd.getHetDimersForRegion(allHetDimerPairsObjectsMap, so);
+            //Set<OligoObject> oligoKeys = hetDimerMapForSO.keySet();
 
-            Set<OligoObject> oligoKeys = hetDimerMapForSO.keySet();
+            LinkedHashMap<String, List<OligoObject>>   hetDimerMapForSO = mfd.getHetDimersForRegion(allHetDimerPairsObjectsMap, so);
+            Set<String> oligoKeys = hetDimerMapForSO.keySet();
+
             List<OligoObject> oligoKeysList = new ArrayList<OligoObject>();
-            for(OligoObject o : oligoKeys){
-                oligoKeysList.add(o);
+
+            for(OligoObject sobj : so.getHetDimerOligosList()){
+                for(String o : oligoKeys){
+                    if(sobj.getInternalPrimerId().equalsIgnoreCase(o)){
+                        oligoKeysList.add(sobj);
+                        break;
+                    }
+                }
             }
 
             oligoKeysList = new OligoObject().sortOligosBySubsectionAndSerialNum(oligoKeysList);
@@ -331,14 +353,20 @@ public class OligosCreationController implements Controller{
 
                         //System.out.println(key);
                         ArrayList<OligoObject> pathArray = dagOligo.getMapOfOligoPathArrays().get(key1part);
+
+                        //sort by region and subsection. because we have het dimer interactions only for sorted Oligos.
+                        pathArray = (ArrayList<OligoObject>) new OligoObject().sortOligosBySubsectionAndSerialNum(pathArray);
+
+
                         int toremoveFlag=0;
                         Float deltagForThisArray = Float.parseFloat("0.00");
 
                         for(int i=0; i<pathArray.size(); i++){
                             for(int j=i+1; j<pathArray.size(); j++){
-                                System.out.println(pathArray.get(i).getInternalPrimerId() + "\t" + pathArray.get(j).getInternalPrimerId());
 
-                                System.out.println(pathArray.get(i).getInternalPrimerId() + "\t" + pathArray.get(j).getInternalPrimerId()+ "\t" + pathArray.get(i).getHeterodimerValues().get(pathArray.get(j).getInternalPrimerId()));
+                                //System.out.println(pathArray.get(i).getInternalPrimerId() + "\t" + pathArray.get(j).getInternalPrimerId());
+
+                                //System.out.println(pathArray.get(i).getInternalPrimerId() + "\t" + pathArray.get(j).getInternalPrimerId()+ "\t" + pathArray.get(i).getHeterodimerValues().get(pathArray.get(j).getInternalPrimerId()));
 
                                 if(pathArray.get(i).getHeterodimerValues().get(pathArray.get(j).getInternalPrimerId()) < -10.00){
                                     toremoveFlag=1;
