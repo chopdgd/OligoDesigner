@@ -531,14 +531,14 @@ public class MfoldDimer {
             }
         }
 
-        if(oligosReturned.size()==0){
+        /*if(oligosReturned.size()==0){
             for(OligoObject o : oligosList){
                 int oligoStartDiff = Integer.parseInt(o.getInternalStart())-Integer.parseInt(objInQuestion.getInternalStart());
                 if(diffLessThan3>oligoStartDiff && oligoStartDiff>diffGreaterThan3){
                     oligosReturned.add(o);
                 }
             }
-        }
+        }*/
 
 
         return oligosReturned;

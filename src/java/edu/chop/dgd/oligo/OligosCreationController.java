@@ -299,7 +299,7 @@ public class OligosCreationController implements Controller{
             for(OligoObject obj : oligoKeysList){
                 final String[] set = {"set" + startingcounter};
 
-                if((Integer.parseInt(obj.getInternalStart())-so.getStart()<=2500) && (Integer.parseInt(obj.getInternalStart())-so.getStart()>1)){
+                if((Integer.parseInt(obj.getInternalStart())-so.getStart()<=2000) && (Integer.parseInt(obj.getInternalStart())-so.getStart()>1)){
 
                     Graph<OligoObject> dagOligo = new Graph<OligoObject>();
                     Vertex<OligoObject> rootvertex = new Vertex<OligoObject>("root:"+obj.getInternalPrimerId(), obj);
