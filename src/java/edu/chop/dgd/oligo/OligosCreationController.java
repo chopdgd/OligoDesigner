@@ -711,7 +711,7 @@ public class OligosCreationController implements Controller{
 
             System.out.println(erranswer);
 
-            System.out.println(answer);
+            //System.out.println(answer);
 
             System.out.println("should have got an output from Primer3 and BLAT..");
 

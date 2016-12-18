@@ -248,9 +248,9 @@ public class MfoldDimer {
         pb.directory(new File(dataDir));
 
         pb.redirectErrorStream(true);
-        //System.out.println(pb.directory());
-        //System.out.println(pb.command());
-        //System.out.println(pb.environment());
+        System.out.println(pb.directory());
+        System.out.println(pb.command());
+        System.out.println(pb.environment());
         System.out.println("should've initiated the HeteroDimerAnalyzeProcess.sh..");
         try{
             Process p = pb.start();
@@ -263,7 +263,7 @@ public class MfoldDimer {
                 errsb.append(errline).append("\n");
             }
             String erranswer = errsb.toString();
-            //System.out.println(erranswer);
+            System.out.println(erranswer);
 
             BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
             StringBuilder sb = new StringBuilder();
@@ -282,9 +282,9 @@ public class MfoldDimer {
             }
             answer = sb.toString();
 
-            //System.out.println(erranswer);
+            System.out.println(erranswer);
 
-            //System.out.println(answer);
+            System.out.println(answer);
 
             System.out.println("should have got an output from hybrid-min..");
 
