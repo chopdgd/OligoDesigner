@@ -395,11 +395,6 @@ public class Graph<OligoObject> {
         //System.out.println("Count value is:"+ count);
         if(v.getOutgoingEdgeCount()==0){
 
-            for(OligoObject o : pathArrays){
-                edu.chop.dgd.dgdObjects.OligoObject obj = (edu.chop.dgd.dgdObjects.OligoObject) o;
-                //System.out.print(obj.getInternalPrimerId() + "\t");
-            }
-
             if(dagOligo.getMapOfOligoPathArrays().size()>0){
                 LinkedHashMap<String, ArrayList<edu.chop.dgd.dgdObjects.OligoObject>> oligoArraysMap = dagOligo.getMapOfOligoPathArrays();
                 count = oligoArraysMap.size()+1;
