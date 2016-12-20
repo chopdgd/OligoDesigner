@@ -452,32 +452,36 @@ public class SequenceObject{
 
         // extract each of the integers in the first list
         // and add each to ints as a new list
-        for(String i: listofSets.get(0)) {
-            ArrayList<String> newList = new ArrayList<String>();
-            newList.add(i);
-            combinations.add(newList);
-        }
-        index++;
-        while(index < listofSets.size()) {
-            List<String> nextList = listofSets.get(index);
-            newCombinations = new HashSet<ArrayList<String>>();
-            for(ArrayList<String> first: combinations) {
-                for(String second: nextList) {
+        if(listofSets.size()>0){
+            if(listofSets.get(0).size()>0){
+                for(String i: listofSets.get(0)) {
                     ArrayList<String> newList = new ArrayList<String>();
-
-                    ArrayList<String> filteredFirst = filterEachSetOfOligosBasedOnInteractions(first, second, objects);
-
-                    if(filteredFirst.size()>0){
-                        newList.addAll(first);
-                        newList.add(second);
-
-                        newCombinations.add(newList);
-                    }
+                    newList.add(i);
+                    combinations.add(newList);
                 }
             }
-            combinations = newCombinations;
-
             index++;
+            while(index < listofSets.size()) {
+                List<String> nextList = listofSets.get(index);
+                newCombinations = new HashSet<ArrayList<String>>();
+                for(ArrayList<String> first: combinations) {
+                    for(String second: nextList) {
+                        ArrayList<String> newList = new ArrayList<String>();
+
+                        ArrayList<String> filteredFirst = filterEachSetOfOligosBasedOnInteractions(first, second, objects);
+
+                        if(filteredFirst.size()>0){
+                            newList.addAll(first);
+                            newList.add(second);
+
+                            newCombinations.add(newList);
+                        }
+                    }
+                }
+                combinations = newCombinations;
+
+                index++;
+            }
         }
 
         return combinations;

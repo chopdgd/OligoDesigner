@@ -387,7 +387,9 @@ public class OligosCreationController implements Controller{
 
         System.out.println("sorting oligo sets by minDeltaG");
 
-        objects = new SequenceObject().sortSetsByMinDeltaG(setOfSets, objects);
+        if(setOfSets.size()>0){
+            objects = new SequenceObject().sortSetsByMinDeltaG(setOfSets, objects);
+        }
 
         System.out.println("writing oligos to file");
         String oligosFilename = writeOligosFinalFile(objects, dataDir, finalOligos, projectId);
@@ -396,9 +398,9 @@ public class OligosCreationController implements Controller{
         //clear everything!!!
         for(SequenceObject so : objects){
             so.getOligoSetsFullMap().clear();
-            so.getHetDimerDagMap().clear();
-            so.getHetDimerOligosList().clear();
-            so.getHetDimerHashMap().clear();
+            //so.getHetDimerDagMap().clear();
+            //so.getHetDimerOligosList().clear();
+            //so.getHetDimerHashMap().clear();
         }
 
 
@@ -513,8 +515,9 @@ public class OligosCreationController implements Controller{
                             + o.getInternalGc() + "\t" + o.getInternalTm() + "\t" + o.getInternalLen() + "\t" + o.getHomodimerValue() + "\t-\t" + o.getHairpinValue() + "\t" + o.getInternalPrimerBlatList().size());
                 }
 
+            }else{
+                pwFirst.println("NO oligos found");
             }
-            pwFirst.println("NO oligos found");
 
 
             //write detailed file
