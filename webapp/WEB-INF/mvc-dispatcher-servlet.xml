@@ -28,9 +28,7 @@
                 <property name="mappings">
                     <props>
 
-                        <prop key="primer/home.html">PrimerHomeController</prop>
-                        <prop key="primer/primerReport.html">PrimerCreateController</prop>
-                        <prop key="primer/FileDownload.html">FileDownloadController</prop>
+                        <prop key="index.html">RootController</prop>
                         <prop key="oligo/home.html">OligoHomeController</prop>
                         <prop key="oligo/fileUpload.html">FileUploadController</prop>
                         <prop key="oligo/processOligos.html">OligosCreationController</prop>
@@ -68,8 +66,7 @@
         <property name="finalOligos" value="FinalOligosReport/"/>
     </bean>
 
-    <bean id="PrimerHomeController" class="edu.chop.dgd.primer.PrimerHomeController" />
-    <bean id="PrimerCreateController" class="edu.chop.dgd.primer.PrimerCreateController" parent="wwwDir" />
+    <bean id="RootController" class="edu.chop.dgd.RootController" />
     <bean id="FileDownloadController" class="edu.chop.dgd.dgdUtils.FileDownloadController" parent="wwwDir" />
     <bean id="OligoHomeController" class="edu.chop.dgd.oligo.OligoHomeController" />
     <bean id="FileUploadController" class="edu.chop.dgd.dgdUtils.FileUploadController" parent="oligoDir"/>

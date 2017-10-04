@@ -1,11 +1,11 @@
-<project name="dgdweb" default="build" basedir=".">
+<project name="Antholigo" default="build" basedir=".">
 
     <property name="src.dir" value="src/java"/>
     <property name="build.dir" value="classes"/>
     <property name="lib.dir" value="lib"/>
     <property name="doc.dir" value="doc"/>
     <property name="logs.dir" value="logs"/>
-    <property name="name" value="dgdweb"/>
+    <property name="name" value="Antholigo"/>
     <property name="war.src" value="webapp" />
     <property name="web.lib.dir" value="${war.src}/WEB-INF/lib" />
     <property name="dist.dir" value="dist" />
@@ -21,9 +21,9 @@
     <!-- Remove old build files -->
     <target name="clean" description="Clean output directories">
         <delete dir="${build.dir}"/>
-        <delete file="${lib.dir}/${name}.jar" failonerror="false"/>
-        <delete file="${web.lib.dir}/${name}.jar" failonerror="false"/>
-        <delete file="dist/${name}.war" failonerror="false"/>
+        <delete file="${lib.dir}/${name}.jar" failonerror="true"/>
+        <delete file="${web.lib.dir}/${name}.jar" failonerror="true"/>
+        <delete file="dist/${name}.war" failonerror="true"/>
     </target>
 
 
@@ -38,7 +38,7 @@
         <mkdir dir="${testFile.dir}" />
 
         <!--<delete file="${war.src}/WEB-INF/applicationContext.xml" failonerror="false"/>-->
-        <delete file="${war.src}/WEB-INF/mvc-dispatcher-servlet.xml" failonerror="false"/>
+        <delete file="${war.src}/WEB-INF/mvc-dispatcher-servlet.xml" failonerror="true"/>
 
         <copy todir="${web.lib.dir}" description="">
             <files includes="${lib.dir}/*.jar"/>
@@ -49,7 +49,7 @@
 
     <!-- Compile all of our class files -->
     <target name="build" depends="prepare" description="Compile main source tree java files and build war file">
-        <javac destdir="${build.dir}" target="1.7" debug="true" deprecation="false" optimize="false" failonerror="true">
+        <javac destdir="${build.dir}" target="1.8" includeantruntime="yes" debug="true" deprecation="false" optimize="false" failonerror="true">
             <src path="${src.dir}"/>
             <classpath refid="master-classpath"/>
         </javac>
@@ -98,7 +98,7 @@
     </target>
 
     <target name="buildProdNoJavaDoc" depends="prepare" description="Build prod without running javadoc">
-        <javac destdir="${build.dir}" target="1.7" includeantruntime="yes" debug="true" deprecation="false" optimize="true" failonerror="true">
+        <javac destdir="${build.dir}" target="1.8" includeantruntime="yes" debug="true" deprecation="false" optimize="true" failonerror="true">
             <src path="${src.dir}"/>
             <classpath refid="master-classpath"/>
         </javac>
@@ -145,6 +145,9 @@
 
     <target name="buildLocalProdNoJavaDoc" depends="buildProdNoJavaDoc" description="Build dgd on local tomcat without running javadoc">
         <copy todir="/Applications/Tomcat7/webapps" file="${dist.dir}/${name}.war"/>
+    </target>
+    <target name="buildLocalTomcat9ProdNoJavaDoc" depends="buildProdNoJavaDoc" description="Build dgd on local tomcat without running javadoc">
+        <copy todir="/Applications/Tomcat8/apache-tomcat-9.0.0.M22/webapps" file="${dist.dir}/${name}.war"/>
     </target>
 
     <!-- Compile all of our class files -->

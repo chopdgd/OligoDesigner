@@ -11,6 +11,7 @@ public class OligoObject extends Primer3Object{
 
     float hairpinValue;
     float homodimerValue;
+    float hetdimerValue;
     LinkedHashMap<String, Float> heterodimerValues;
 
 
@@ -177,4 +178,11 @@ public class OligoObject extends Primer3Object{
         this.heterodimerValues = heterodimerValues;
     }
 
+    public float getHetdimerValue() {
+        return hetdimerValue;
+    }
+
+    public void setHetdimerValue(float hetdimerValue) {
+        this.hetdimerValue = hetdimerValue;
+    }
 }

@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="https://github.com/flatlogic/awesome-bootstrap-checkbox/blob/master/awesome-bootstrap-checkbox.css">
 <link rel="stylesheet" href="navbar_changed.css">
-<link rel="stylesheet" href="/dgdweb/resources/css/awesome-bootstrap-checkbox.css">;
+<link rel="stylesheet" href="/Antholigo/resources/css/awesome-bootstrap-checkbox.css">;
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -47,7 +47,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
 
-<link rel="shortcut icon" href="/dgdweb/resources/images/favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="/Antholigo/resources/images/favicon.ico" type="image/x-icon"/>
 <title><%=request.getParameter("pageTitle")%></title>
 
 </head>
@@ -72,7 +72,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href=/dgdweb/oligo/home.html>Home</a></li>
+                <li class="active"><a href=/Antholigo/oligo/home.html>Home</a></li>
                 <li><a href="http://www.chop.edu/centers-programs/division-genomic-diagnostics">About</a></li>
                 <li><a href="https://www.chop.edu/centers-programs/pathology-and-laboratory-medicine/contact">Contact</a></li>
             </ul>

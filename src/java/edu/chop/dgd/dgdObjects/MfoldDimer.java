@@ -92,13 +92,13 @@ public class MfoldDimer {
     }
 
 
-    public LinkedHashMap<OligoObject, List<OligoObject>> filterMapCreateOnlyHetsWithinDistanceMap(List<OligoObject> oligoKeysList, int spacing) throws Exception{
+    public LinkedHashMap<OligoObject, List<OligoObject>> filterMapCreateOnlyHetsWithinDistanceMap(List<OligoObject> oligoKeysList, int spacing, LinkedHashMap<String, List<OligoObject>> hetDimerMapForSO) throws Exception{
 
         LinkedHashMap<OligoObject, List<OligoObject>> filteredoligoObjectsMap = new LinkedHashMap<OligoObject, List<OligoObject>>();
 
         for(OligoObject oligoObj : oligoKeysList){
 
-            List<OligoObject> nextBinOligosWithinSpacing = getNext8_10KBOligoObjs(oligoObj, oligoKeysList, spacing);
+            List<OligoObject> nextBinOligosWithinSpacing = getNext8_10KBOligoObjs(oligoObj, oligoKeysList, spacing, hetDimerMapForSO);
             if(nextBinOligosWithinSpacing.size()>0){
                 filteredoligoObjectsMap.put(oligoObj, nextBinOligosWithinSpacing);
             }
@@ -146,17 +146,83 @@ public class MfoldDimer {
                             for(OligoObject oObj : hetObjects){
                                 if(oObj.getInternalPrimerId().equals(hetOligoHeader2)){
                                     String hetdimerValue = lineArr[1].split(" = ", -1)[1];
-                                    if(hetDimerDeltaGValuesMap!=null){
-                                        hetDimerDeltaGValuesMap.put(hetOligoHeader2, Float.parseFloat(hetdimerValue));
-                                    }else{
-                                        hetDimerDeltaGValuesMap = new LinkedHashMap<String, Float>();
-                                        hetDimerDeltaGValuesMap.put(hetOligoHeader2, Float.parseFloat(hetdimerValue));
+                                    if(Float.parseFloat(hetdimerValue) >= -10.00){
+                                        if(hetDimerDeltaGValuesMap!=null){
+                                            hetDimerDeltaGValuesMap.put(hetOligoHeader2, Float.parseFloat(hetdimerValue));
+                                        }else{
+                                            hetDimerDeltaGValuesMap = new LinkedHashMap<String, Float>();
+                                            hetDimerDeltaGValuesMap.put(hetOligoHeader2, Float.parseFloat(hetdimerValue));
+                                        }
                                     }
                                 }
                             }
 
                             o.setHeterodimerValues(hetDimerDeltaGValuesMap);
                             oligoObjectsMap.put(o, oligoObjectsMap.get(o));
+                        }
+                    }
+                }
+            }
+
+        }finally {
+
+            reader.close();
+
+        }
+
+        return oligoObjectsMap;
+    }
+
+
+    public LinkedHashMap<OligoObject, List<OligoObject>> getDeltaGValuesForHetDimerPairs_new(LinkedHashMap<OligoObject, List<OligoObject>> oligoObjectsMap, String dataDir, String heterodimerOpDir, String fileName, int subpartnum) throws Exception {
+
+        String hetOpFilename = dataDir+heterodimerOpDir+fileName+"_"+subpartnum+"_1_"+fileName+"_"+subpartnum+"_2.out";
+        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(hetOpFilename)));
+        //Set<OligoObject> hashMapKeys = oligoObjectsMap.keySet();
+        //HashMap<String, Float> hetDimerDeltaGValuesMap = new HashMap<String, Float>();
+
+        Set<OligoObject> oligoKeys = oligoObjectsMap.keySet();
+        List<OligoObject> oligoKeysList = new ArrayList<OligoObject>();
+        for(OligoObject o : oligoKeys){
+            oligoKeysList.add(o);
+        }
+
+        oligoKeysList = new OligoObject().sortOligosBySubsectionAndSerialNum(oligoKeysList);
+
+        try{
+            String line;
+            while((line=reader.readLine()) != null){
+                if(line.contains("dG")){
+                    String lineArr[] = line.split("\t", -1);
+                    String[] oligoHeaderArr = lineArr[3].split("-", -1);
+                    String hetOligoHeader1 = oligoHeaderArr[0];
+                    String hetOligoHeader2 = oligoHeaderArr[1];
+                    // MS commented dont loop withpt checking for dG
+                    // if dG <-10
+                    //        continue
+
+                    for(OligoObject o:oligoKeysList){
+                        if(o.getInternalPrimerId().equals(hetOligoHeader1)){
+                            List<OligoObject> hetObjects = oligoObjectsMap.get(o);
+
+                            for(OligoObject oObj : hetObjects){
+                                if(oObj.getInternalPrimerId().equals(hetOligoHeader2)){
+                                    String hetdimerValue = lineArr[1].split(" = ", -1)[1];
+                                    if(Float.parseFloat(hetdimerValue) >= -10.00){
+                                        oObj.setHetdimerValue(Float.parseFloat(hetdimerValue));
+                                        //hetObjects.add(oObj);
+
+                                    }else{
+                                        hetObjects.remove(hetObjects.indexOf(oObj));
+
+                                    }
+
+                                    break;
+                                }
+                            }
+
+                            oligoObjectsMap.put(o, hetObjects);
+                            break;
                         }
                     }
                 }
@@ -220,6 +286,27 @@ public class MfoldDimer {
                     hetObjectList.add(valueObj);
                 }
             }
+            hetDimerObjMap.put(o, hetObjectList);
+        }
+
+        return hetDimerObjMap;
+    }
+
+    public LinkedHashMap<OligoObject, List<OligoObject>> mapOligosCreateHetDimerInpSections_new(List<OligoObject> heteroDimerObjectsList) throws Exception {
+
+        LinkedHashMap<OligoObject, List<OligoObject>> hetDimerObjMap = new LinkedHashMap<OligoObject, List<OligoObject>>();
+
+        for(int i=0; i< heteroDimerObjectsList.size(); i++){
+
+            OligoObject o = heteroDimerObjectsList.get(i);
+            List<OligoObject> hetObjectList = new ArrayList<OligoObject>();
+
+            for(int j=i+1; j<heteroDimerObjectsList.size(); j++){
+
+                hetObjectList.add(heteroDimerObjectsList.get(j));
+
+            }
+
             hetDimerObjMap.put(o, hetObjectList);
         }
 
@@ -492,14 +579,16 @@ public class MfoldDimer {
 
     /***
      *
+     *
      * @param objInQuestion
      * @param oligosList
      * @param spacingKB
+     * @param hetDimerMapForSO
      * @return
      * @throws Exception
      */
 
-    public List<OligoObject> getNext8_10KBOligoObjs(OligoObject objInQuestion, List<OligoObject> oligosList, int spacingKB) throws Exception{
+    public List<OligoObject> getNext8_10KBOligoObjs(OligoObject objInQuestion, List<OligoObject> oligosList, int spacingKB, LinkedHashMap<String, List<OligoObject>> hetDimerMapForSO) throws Exception{
 
         int diffLessThan0 = (spacingKB*1000)+500;
         int diffGreaterThan0 = (spacingKB*1000)-500;
@@ -518,18 +607,29 @@ public class MfoldDimer {
         for(OligoObject o : oligosList){
             int oligoStartDiff = Integer.parseInt(o.getInternalStart())-Integer.parseInt(objInQuestion.getInternalStart());
             if(diffLessThan1>oligoStartDiff && oligoStartDiff>diffGreaterThan1){
-                oligosReturned.add(o);
+
+                //check if obj is present in hetDimerMapForSO.
+                if(hetDimerMapForSO.containsKey(objInQuestion.getInternalPrimerId())){
+                    List<OligoObject> hetDimerInteractionsList = hetDimerMapForSO.get(objInQuestion.getInternalPrimerId());
+                    for(OligoObject hetDimerInteractionObj : hetDimerInteractionsList){
+                        if(hetDimerInteractionObj.getInternalPrimerId().equalsIgnoreCase(o.getInternalPrimerId())){
+                            oligosReturned.add(o);
+                            break;
+                        }
+                    }
+                }
+
             }
         }
 
-        if(oligosReturned.size()==0){
+        /*if(oligosReturned.size()==0){
             for(OligoObject o : oligosList){
                 int oligoStartDiff = Integer.parseInt(o.getInternalStart())-Integer.parseInt(objInQuestion.getInternalStart());
                 if(diffLessThan2>oligoStartDiff && oligoStartDiff>diffGreaterThan2){
                     oligosReturned.add(o);
                 }
             }
-        }
+        }*/
 
         /*if(oligosReturned.size()==0){
             for(OligoObject o : oligosList){
@@ -641,8 +741,22 @@ public class MfoldDimer {
             int sostart = Integer.parseInt(hetDimerOligoid.split(":", -1)[1]);
             int soend = Integer.parseInt(hetDimerOligoid.split(":", -1)[2]);
 
+            ArrayList<OligoObject> hetDimerObjectsInteractedForThisregion = new ArrayList<OligoObject>();
+
+            for(OligoObject obj : allHetDimerPairsObjectsMap.get(hetDimerObj)){
+                String objchr = obj.getInternalPrimerId().split("_", -1)[0].split(":", -1)[0].replaceAll("inpSeq", "");
+                int objsostart = Integer.parseInt(obj.getInternalPrimerId().split("_", -1)[0].split(":", -1)[1]);
+                int objsoend = Integer.parseInt(obj.getInternalPrimerId().split("_", -1)[0].split(":", -1)[2]);
+
+                if( so.getChr().equalsIgnoreCase(objchr) && objsostart==so.getStart() && objsoend==so.getStop() ){
+                    hetDimerObjectsInteractedForThisregion.add(obj);
+                }
+            }
+            List<OligoObject> hetDimerObjectsInteractedForThisregionList = hetDimerObjectsInteractedForThisregion;
+
             if( so.getChr().equalsIgnoreCase(chr) && sostart==so.getStart() && soend==so.getStop() ){
-                hetDimersForGivenRegion.put(hetDimerObj, allHetDimerPairsObjectsMap.get(hetDimerObj));
+                //hetDimersForGivenRegion.put(hetDimerObj, allHetDimerPairsObjectsMap.get(hetDimerObj));
+                hetDimersForGivenRegion.put(hetDimerObj, hetDimerObjectsInteractedForThisregionList);
             }
         }
 

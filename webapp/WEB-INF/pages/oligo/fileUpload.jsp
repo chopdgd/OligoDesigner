@@ -22,7 +22,7 @@
 <jsp:include page="../common/header.jsp" flush="false">
     <jsp:param name="projectTitle" value="ANTHOLIGO" />
     <jsp:param name="pageTitle" value="<%=pageTitle%>"/>
-    <jsp:param name="logoImgPath" value="/dgdweb/resources/images/chopImmunoHorizBlack3.png"/>
+    <jsp:param name="logoImgPath" value="/Antholigo/resources/images/chopImmunoHorizBlack3.png"/>
 </jsp:include>
 
 <%
@@ -63,7 +63,7 @@
 <base href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/">
 <script src="js/global.js"></script>
 <link rel="stylesheet" href="css/global.css">
-<META HTTP-EQUIV=Refresh CONTENT="3; URL=/dgdweb/oligo/processOligos.html?uploadFolderPath=<%=uploadedFilePath%>&proj_id=<%=pid%>&assembly=<%=assembly%>&origFile=<%=origFileName%>
+<META HTTP-EQUIV=Refresh CONTENT="3; URL=/Antholigo/oligo/processOligos.html?uploadFolderPath=<%=uploadedFilePath%>&proj_id=<%=pid%>&assembly=<%=assembly%>&origFile=<%=origFileName%>
 &separation=<%=oligo_seq_separation%>&minGC=<%=min_gc%>&optGC=<%=opt_gc%>&maxGC=<%=max_gc%>&minTm=<%=min_tm%>&optTm=<%=opt_tm%>&maxTm=<%=max_tm%>&minLen=<%=min_length%>
 &optLen=<%=opt_length%>&maxLen=<%=max_length%>&Na=<%=na%>&Mg=<%=mg%>&selfAny=<%=self_any%>&selfEnd=<%=self_end%>"/>
 
@@ -72,7 +72,7 @@
     <div class="panel-heading"><%=uploadResponse%></div>
     <p class="panel-body">
         <div class="media media-middle">
-            <p class="media-middle"><img src="/dgdweb/resources/images/loader.gif" alt="dgdLoader" style="align-content: center;"/></p>
+            <p class="media-middle"><img src="/Antholigo/resources/images/loader.gif" alt="dgdLoader" style="align-content: center;"/></p>
         </div>
     </p>
     <div class="alert alert-info">Please wait..while we are processing your oligos. Do not close this tab as you might lose your results.</div>
@@ -108,9 +108,9 @@
     </div>
 
 </div>
-<%--<form action="/dgdweb/oligo/processOligos.html?uploadFolderPath=<%=uploadedFilePath%>&proj_id=<%=pid%>"
+<%--<form action="/Antholigo/oligo/processOligos.html?uploadFolderPath=<%=uploadedFilePath%>&proj_id=<%=pid%>"
       method="post" style="align-content: center">
-    <p><img src="/dgdweb/resources/images/loader.gif" alt="dgdLoader" style="align-content: center;"/></p>
+    <p><img src="/Antholigo/resources/images/loader.gif" alt="dgdLoader" style="align-content: center;"/></p>
     <div>
         Please wait..wait we are processing your oligos...
         <%=uploadResponse%>

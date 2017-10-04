@@ -17,6 +17,9 @@
           <file>file://$HOME_DIR$/Oligodesigner/trunk/ucsc.xml</file>
           <file>file://$HOME_DIR$/Oligodesigner/trunk/webapp/WEB-INF/mvc-dispatcher-servlet.xml</file>
         </fileset>
+        <fileset id="fileset2" name="Spring Application Context (2)" removed="false">
+          <file>file://$HOME_DIR$/Oligodesigner/trunk/webapp/WEB-INF/mvc-dispatcher-servlet.xml</file>
+        </fileset>
       </configuration>
     </facet>
   </component>
@@ -24,7 +27,7 @@
     <content url="file://$HOME_DIR$/Oligodesigner/trunk">
       <sourceFolder url="file://$MODULE_DIR$/java" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="lib2" level="project" />
     <orderEntry type="library" name="lib" level="project" />

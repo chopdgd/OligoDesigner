@@ -85,7 +85,7 @@
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="js/bootstrap.min.js"></script>
 
-      <img src="/dgdweb/resources/images/dgd.png" alt="dgdLogo" width="100" height="75"/>
+      <img src="/Antholigo/resources/images/dgd.png" alt="dgdLogo" width="100" height="75"/>
 
             <h3>DGD Primer Designer Report</h3>
 
@@ -141,11 +141,11 @@
                 %>
                 <tr>
                     <td>
-                        <a href="/dgdweb/primer/FileDownload.html?file=<%=filepath+"_soft.xls"%>">SOFT Excel File</a>
+                        <a href="/Antholigo/primer/FileDownload.html?file=<%=filepath+"_soft.xls"%>">SOFT Excel File</a>
                         <br/>
-                        <a href="/dgdweb/primer/FileDownload.html?file=<%=filepath+".detail.html"%>">Full Report</a>
+                        <a href="/Antholigo/primer/FileDownload.html?file=<%=filepath+".detail.html"%>">Full Report</a>
                         <br/>
-                        <a href="/dgdweb/primer/FileDownload.html?file=<%=filepath+"_secondary.xls"%>">Secondary Excel File</a>
+                        <a href="/Antholigo/primer/FileDownload.html?file=<%=filepath+"_secondary.xls"%>">Secondary Excel File</a>
                     </td>
                 </tr>
                 <tr>

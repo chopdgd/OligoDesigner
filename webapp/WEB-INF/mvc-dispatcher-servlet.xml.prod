@@ -28,9 +28,7 @@
                 <property name="mappings">
                     <props>
 
-                        <prop key="primer/home.html">PrimerHomeController</prop>
-                        <prop key="primer/primerReport.html">PrimerCreateController</prop>
-                        <prop key="primer/FileDownload.html">FileDownloadController</prop>
+                        <prop key="index.html">RootController</prop>
                         <prop key="oligo/home.html">OligoHomeController</prop>
                         <prop key="oligo/fileUpload.html">FileUploadController</prop>
                         <prop key="oligo/processOligos.html">OligosCreationController</prop>

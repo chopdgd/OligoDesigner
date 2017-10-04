@@ -239,8 +239,7 @@ public class SequenceObject{
 
 
 
-    public Set<ArrayList<String>> checkOligosInteractAcrossSO(ArrayList<SequenceObject> objects) {
-
+    public ArrayList<ArrayList<String>> checkOligosInteractAcrossSO(ArrayList<SequenceObject> objects, LinkedHashMap<String, List<OligoObject>> allHetDimerPairsObjectsMap) {
 
 
         ArrayList<ArrayList<String>> listofSets = new ArrayList<ArrayList<String>>();
@@ -254,12 +253,20 @@ public class SequenceObject{
                 Set<String> mapOligoKeyset = mapOfOligoObjectSetsForROI.keySet();
                 listofSets.add(new ArrayList<String>(mapOligoKeyset));
             }
-
         }
 
         System.out.println("create SetsOfArraysAcross SO");
 
-        Set<ArrayList<String>> setsOfArraySetsAcrossSO = getCombinationsFilterSets(listofSets, objects);
+        //commenting it today, apr27th2017
+        //Set<ArrayList<String>> setsOfArraySetsAcrossSO = getCombinationsFilterSets(listofSets, objects, allHetDimerPairsObjectsMap);
+
+        ArrayList<ArrayList<String>> setsOfArraySetsAcrossSO = new ArrayList<ArrayList<String>>();
+
+        if(listofSets.size()>1){
+            setsOfArraySetsAcrossSO = getFirstFiveCombinationsFilterSets(listofSets, objects, allHetDimerPairsObjectsMap);
+        }else{
+            System.out.println("printing first set across So");
+        }
 
         //see if you can merge the two methods into one.. so as to save memory.
         //Set<ArrayList<String>> setsOfArraySetsAcrossSO = getCombinations(listofSets);
@@ -305,7 +312,7 @@ public class SequenceObject{
                     }
 
 
-                    for(OligoObject o : oligoObjArrInSet){
+                    for(OligoObject o : oligoObjArrInSet)   {
                         for(OligoObject objInNextSet : oligoObjArrInNextSet){
                             if(o.getHeterodimerValues().get(objInNextSet.getInternalPrimerId())<-10.00){
                                 flagRemoveArrayListOfSets=1;
@@ -342,7 +349,7 @@ public class SequenceObject{
 
 
 
-    private ArrayList<String> filterEachSetOfOligosBasedOnInteractions(ArrayList<String> arraySetToCheck, String setIdToCheckInteractionWith, ArrayList<SequenceObject> objects) {
+    private ArrayList<String> filterEachSetOfOligosBasedOnInteractions(ArrayList<String> arraySetToCheck, String setIdToCheckInteractionWith, ArrayList<SequenceObject> objects, LinkedHashMap<String, List<OligoObject>> allHetDimerPairsObjectsMap) {
 
 
 
@@ -374,8 +381,21 @@ public class SequenceObject{
 
 
             for(OligoObject o : oligoObjArrInSet){
+                List<OligoObject> hetDimerObjValues = allHetDimerPairsObjectsMap.get(o.getInternalPrimerId());
                 for(OligoObject objInNextSet : oligoObjArrInNextSet){
-                    if(o.getHeterodimerValues().get(objInNextSet.getInternalPrimerId())<-10.00){
+                    int found=0;
+                    /*if(o.getHeterodimerValues().get(objInNextSet.getInternalPrimerId())<-10.00){
+                        flagRemoveArrayListOfSets=1;
+                        break;
+                    }*/
+                    for(OligoObject oligoObjWithhetDimerValues : hetDimerObjValues){
+                        if(oligoObjWithhetDimerValues.getInternalPrimerId().equalsIgnoreCase(objInNextSet.getInternalPrimerId())){
+                            found=1;
+                            break;
+                        }
+                    }
+
+                    if(found ==0){
                         flagRemoveArrayListOfSets=1;
                         break;
                     }
@@ -441,7 +461,7 @@ public class SequenceObject{
     }
 
 
-    private Set<ArrayList<String>> getCombinationsFilterSets(ArrayList<ArrayList<String>> listofSets, ArrayList<SequenceObject> objects) {
+    private Set<ArrayList<String>> getCombinationsFilterSets(ArrayList<ArrayList<String>> listofSets, ArrayList<SequenceObject> objects, LinkedHashMap<String, List<OligoObject>> allHetDimerPairsObjectsMap) {
 
         //Set<ArrayList<String>> setsOfArraySetsAcrossSO = new LinkedHashSet<ArrayList<String>>();
 
@@ -468,7 +488,7 @@ public class SequenceObject{
                     for(String second: nextList) {
                         ArrayList<String> newList = new ArrayList<String>();
 
-                        ArrayList<String> filteredFirst = filterEachSetOfOligosBasedOnInteractions(first, second, objects);
+                        ArrayList<String> filteredFirst = filterEachSetOfOligosBasedOnInteractions(first, second, objects, allHetDimerPairsObjectsMap);
 
                         if(filteredFirst.size()>0){
                             newList.addAll(first);
@@ -483,6 +503,122 @@ public class SequenceObject{
                 index++;
             }
         }
+
+        return combinations;
+
+        //setsOfArraySetsAcrossSO = combinations;
+        //return setsOfArraySetsAcrossSO;
+    }
+
+    private ArrayList<ArrayList<String>> getFirstFiveCombinationsFilterSets(ArrayList<ArrayList<String>> listofSets, ArrayList<SequenceObject> objects, LinkedHashMap<String, List<OligoObject>> allHetDimerPairsObjectsMap) {
+
+        //Set<ArrayList<String>> setsOfArraySetsAcrossSO = new LinkedHashSet<ArrayList<String>>();
+
+        ArrayList<ArrayList<String>> combinations = new ArrayList<ArrayList<String>>();
+        Set<ArrayList<String>> newCombinations;
+
+
+
+        // extract each of the integers in the first list
+        // and add each to ints as a new list
+        int count=0;
+        int i=0; boolean flag=true;
+        int totalCount=0; int product=1;
+
+
+
+        for(int l=0; l<listofSets.size(); l++){
+            int setsize = listofSets.get(l).size();
+            int tempprod = product*setsize;
+            product = tempprod;
+        }
+
+
+
+        do {
+
+            ArrayList<String> combinationArray = new ArrayList<String>();
+
+            Random rnd = new Random();
+
+
+            for(;i<listofSets.size();i++){
+
+                ArrayList<String> extractedList = listofSets.get(i);
+                int randIndex = rnd.nextInt(extractedList.size());
+                combinationArray.add(extractedList.get(randIndex));
+                totalCount++;
+
+            }
+
+            System.out.println("combinationarray is:"+ combinationArray.size());
+
+            //check interaction of all oligos in combinationarray
+            //if interaction is good, then accept that set as the first combination.
+
+            List<OligoObject> oligosFromCombinationArray = new ArrayList<OligoObject>();
+
+
+
+            for( int s=0; s<combinationArray.size(); s++){
+
+                List<OligoObject> oligosFromOneCombinationArray = new ArrayList<OligoObject>();
+
+                for(int o=0; o<objects.size(); o++){
+                    if(objects.get(o).getOligoSetsFullMap()!=null && objects.get(o).getOligoSetsFullMap().size()>0){
+                        LinkedHashMap<String, ArrayList<OligoObject>> mapOfOligoObjectSetsForROI = objects.get(o).getOligoSetsFullMap();
+
+                        if(mapOfOligoObjectSetsForROI.containsKey(combinationArray.get(s))){
+                            oligosFromOneCombinationArray.addAll(mapOfOligoObjectSetsForROI.get(combinationArray.get(s)));
+                            break;
+                        }
+
+                    }
+                }
+
+
+                //for( int t=s+1; t<combinationArray.size(); t++){
+
+                List<OligoObject> oligosFromAnotherCombinationArray = new ArrayList<OligoObject>();
+
+                for(int p=0; p<objects.size(); p++){
+                    if(objects.get(p).getOligoSetsFullMap()!=null && objects.get(p).getOligoSetsFullMap().size()>0){
+                        LinkedHashMap<String, ArrayList<OligoObject>> mapOfOligoObjectSetsForROI = objects.get(p).getOligoSetsFullMap();
+
+                        if(mapOfOligoObjectSetsForROI.containsKey(combinationArray.get(s+1))){
+                            oligosFromAnotherCombinationArray.addAll(mapOfOligoObjectSetsForROI.get(combinationArray.get(s+1)));
+                            break;
+                        }
+
+                    }
+                }
+
+
+
+                for(OligoObject objOneCombObj : oligosFromOneCombinationArray){
+                    for(OligoObject objSecondCombObj : oligosFromAnotherCombinationArray){
+
+                    }
+                }
+
+
+
+
+                //}
+
+
+            }
+
+
+
+
+        }
+        while(count<2 || (totalCount+listofSets.size())<=product );
+
+
+
+
+
 
         return combinations;
 
@@ -550,6 +686,120 @@ public class SequenceObject{
                 }
             }
         }
+
+        return objects;
+    }
+
+
+    public ArrayList<SequenceObject> sortArrByMinDeltaG(ArrayList<ArrayList<String>> arrofArr, ArrayList<SequenceObject> objects) {
+
+        //Iterator<ArrayList<String>> arrayIt = setOfSets.iterator();
+        Float minSumDeltaGAcrosssets = Float.parseFloat("0.00");
+        System.out.println("sorting sets by mindelta G. sets of sets size:"+ arrofArr.size());
+
+        int counter =0;
+        for(ArrayList<String> arrObject : arrofArr){
+            //ArrayList<String> setArray = arrayIt.next();
+
+            Float sumDeltaGAcrossSets = Float.parseFloat("0.00");
+
+            for(String setid : arrObject){
+
+                for(SequenceObject obj :objects){
+
+                    if(obj.getOligoSetsFullMap().get(setid)!=null && obj.getOligoSetsFullMap().containsKey(setid)){
+
+                        Float delGForArrayOfoligosInEachSet = Float.parseFloat(setid.split("&DelG=", -1)[1]);
+                        sumDeltaGAcrossSets += delGForArrayOfoligosInEachSet;
+
+                        if(obj.getOligoSetsTreeMap()!=null){
+                            TreeMap<String, List<OligoObject>> oligoHashmapSet = obj.getOligoSetsTreeMap();
+                            oligoHashmapSet.put(setid, obj.getOligoSetsFullMap().get(setid));
+                            //obj.setOligoSetsTreeMap(oligoHashmapSet);
+
+                        }else{
+                            TreeMap<String, List<OligoObject>> oligoHashmapSet = new TreeMap<String, List<OligoObject>>();
+                            oligoHashmapSet.put(setid, obj.getOligoSetsFullMap().get(setid));
+                            //obj.setOligoSetsTreeMap(oligoHashmapSet);
+
+                        }
+
+                        break;
+                    }
+
+                }
+
+            }
+
+            // System.out.println("sum deltaG across sets:" + sumDeltaGAcrossSets);
+            // System.out.println("Min sum deltaG across sets:" + minSumDeltaGAcrosssets);
+
+            if(minSumDeltaGAcrosssets>sumDeltaGAcrossSets){
+                minSumDeltaGAcrosssets = sumDeltaGAcrossSets;
+                //System.out.println("this set has min full set deltag"+setArray.toString());
+                //for(String setid : setArray){
+                for(String setid : arrObject){
+                    for(SequenceObject obj :objects){
+                        if(obj.getOligoSetsFullMap().get(setid)!=null && obj.getOligoSetsFullMap().containsKey(setid)){
+                            LinkedHashMap<String, List<OligoObject>> primaryDelGOligoHashmapSet = new LinkedHashMap<String, List<OligoObject>>();
+                            primaryDelGOligoHashmapSet.put(setid, obj.getOligoSetsFullMap().get(setid));
+                            obj.setPrimaryOptimalSetOfOligosForSet(primaryDelGOligoHashmapSet);
+                        }
+                    }
+                }
+            }
+        }
+
+        return objects;
+    }
+
+
+    public ArrayList<SequenceObject> sortSequenceObjectSetsByMinDeltaG(ArrayList<SequenceObject> objects) {
+
+        Float minSumDeltaGAcrosssets = Float.parseFloat("0.00");
+        int maxNumOligosInSet = 0;
+
+        System.out.println("sorting sets by mindelta G. sets of sets size:");
+
+
+
+        for(SequenceObject obj :objects){
+            int counter=0;
+
+            Set<String> objSetIds = obj.getOligoSetsFullMap().keySet();
+            while(objSetIds.iterator().hasNext()){
+
+                if(counter>10){
+                    break;
+                }
+
+                String setid = objSetIds.iterator().next();
+                Float delGForArrayOfoligosInEachSet = Float.parseFloat(setid.split("&DelG=", -1)[1]);
+
+                if(delGForArrayOfoligosInEachSet<minSumDeltaGAcrosssets && obj.getOligoSetsFullMap().get(setid).size()>maxNumOligosInSet){
+                    LinkedHashMap<String, List<OligoObject>> primaryDelGOligoHashmapSet = new LinkedHashMap<String, List<OligoObject>>();
+                    primaryDelGOligoHashmapSet.put(setid, obj.getOligoSetsFullMap().get(setid));
+                    obj.setPrimaryOptimalSetOfOligosForSet(primaryDelGOligoHashmapSet);
+                }
+
+
+                if(obj.getOligoSetsTreeMap()!=null){
+                    TreeMap<String, List<OligoObject>> oligoHashmapSet = obj.getOligoSetsTreeMap();
+                    oligoHashmapSet.put(setid, obj.getOligoSetsFullMap().get(setid));
+                    obj.setOligoSetsTreeMap(oligoHashmapSet);
+
+                }else{
+                    TreeMap<String, List<OligoObject>> oligoHashmapSet = new TreeMap<String, List<OligoObject>>();
+                    oligoHashmapSet.put(setid, obj.getOligoSetsFullMap().get(setid));
+                    obj.setOligoSetsTreeMap(oligoHashmapSet);
+
+                }
+
+                counter+=1;
+
+            }
+        }
+
 
         return objects;
     }

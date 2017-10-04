@@ -62,10 +62,10 @@
 
 <div class="container">
 
-    <p><img src="/dgdweb/resources/images/dgd.png" alt="dgdLogo" width="100" height="75" style="border: inset"/></p>
+    <p><img src="/Antholigo/resources/images/dgd.png" alt="dgdLogo" width="100" height="75" style="border: inset"/></p>
 
 
-    <form id="primerCreate" action="/dgdweb/primer/primerReport.html" method="GET"
+    <form id="primerCreate" action="/Antholigo/primer/primerReport.html" method="GET"
           onsubmit="return validateDetails()">
 
     <div id="regionId">

@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
 	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
-	<display-name>dgdweb</display-name>
+	<display-name>Antholigo</display-name>
 
     <context-param>
         <param-name>debug</param-name>
@@ -17,7 +17,7 @@
 
     <context-param>
         <param-name>webAppRootKey</param-name>
-        <param-value>dgdweb</param-value>
+        <param-value>Antholigo</param-value>
     </context-param>
 
     <servlet>

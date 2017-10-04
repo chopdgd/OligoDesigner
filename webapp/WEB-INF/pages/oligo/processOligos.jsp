@@ -15,7 +15,7 @@
 <jsp:include page="../common/header.jsp" flush="false">
     <jsp:param name="projectTitle" value="ANTHOLIGO" />
     <jsp:param name="pageTitle" value="<%=pageTitle%>"/>
-    <jsp:param name="logoImgPath" value="/dgdweb/resources/images/chopImmunoHorizBlack3.png"/>
+    <jsp:param name="logoImgPath" value="/Antholigo/resources/images/chopImmunoHorizBlack3.png"/>
 </jsp:include>
 
     <%
@@ -42,7 +42,7 @@
             <div class="link">
 
                 <ul class="list-groups">
-                     <li class="list-group-item"><a href="/dgdweb/oligo/FileDownload.html?file=<%=optimalOligosFile%>&object=oligo">Optimal Oligos from each section</a></li>
+                     <li class="list-group-item"><a href="/Antholigo/oligo/FileDownload.html?file=<%=optimalOligosFile%>&object=oligo">Optimal Oligos from each section</a></li>
                 </ul>
             </div>
             <div class="panel-heading">
@@ -55,8 +55,8 @@
                         <h5 class="panel-body">For Query Region: <%=so.getChr()%>:<%=so.getStart()%>-<%=so.getStop()%></h5>
                         <div class="link">
                             <ul class="list-groups">
-                                <li class="list-group-item"><a href="/dgdweb/oligo/FileDownload.html?file=<%=so.getDetailsFile()%>&object=oligo">Detailed report</a></li>
-                                <li class="list-group-item"><a href="/dgdweb/oligo/FileDownload.html?file=<%=so.getSecondaryFile()%>&object=oligo">All Oligos</a></li>
+                                <li class="list-group-item"><a href="/Antholigo/oligo/FileDownload.html?file=<%=so.getDetailsFile()%>&object=oligo">Detailed report</a></li>
+                                <li class="list-group-item"><a href="/Antholigo/oligo/FileDownload.html?file=<%=so.getSecondaryFile()%>&object=oligo">All Oligos</a></li>
                             </ul>
                         </div>
                         <br/>

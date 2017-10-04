@@ -4,6 +4,11 @@ import edu.chop.dgd.dgdObjects.*;
 import org.biojava.nbio.core.sequence.DNASequence;
 import org.biojava.nbio.core.sequence.compound.NucleotideCompound;
 import org.biojava.nbio.core.sequence.template.SequenceView;
+import org.mapdb.DB;
+import org.mapdb.DBMaker;
+import org.mapdb.HTreeMap;
+import org.mapdb.Serializer;
+import org.mapdb.serializer.SerializerCompressionWrapper;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
@@ -170,7 +175,6 @@ public class OligosCreationController implements Controller{
         SequenceObjectSubsections soss = new SequenceObjectSubsections();
         String reportFile="";String heterodimerReport="";
 
-
         List<OligoObject> heteroDimerObjectsList = new ArrayList<OligoObject>();
         MfoldDimer mfd = new MfoldDimer();
 
@@ -206,27 +210,21 @@ public class OligosCreationController implements Controller{
         System.out.println("Running Heterodimer analysis now");
         String hetdimerFilename = "oligoInp_"+projectId+"_"+ new SimpleDateFormat("yyyyMMddhhmm'.txt'").format(new Date());
 
-        //LinkedHashMap<OligoObject, List<OligoObject>> allHetDimerPairsObjectsMap = new LinkedHashMap<OligoObject, List<OligoObject>>();
+        //going to try adding in Mapdb
         LinkedHashMap<String, List<OligoObject>> allHetDimerPairsObjectsMap = new LinkedHashMap<String, List<OligoObject>>();
-        LinkedHashMap<OligoObject, List<OligoObject>> oligoObjectsMap = mfd.mapOligosCreateHetDimerInpSections(heteroDimerObjectsList);
+        //import org.mapdb.*
+        //DB db = DBMaker.tempFileDB().make();
+        DB db2 = DBMaker.tempFileDB().fileDeleteAfterClose().make();
+        //DB db = DBMaker.newTempFileDB().make();
+        //DB db = DBMaker.fileDB(dataDir+heterodimerOpDir+hetdimerFilename+".db").fileChannelEnable().fileDeleteAfterClose().closeOnJvmShutdown().make();
+        //ConcurrentMap map = db.hashMap("map").make();
+        HTreeMap<String, List<OligoObject>> allHetDimerPairsObjectsMapMapdb = db2.hashMap("allHetDimerPairsObjectsMapMapdb").keySerializer(new SerializerCompressionWrapper(Serializer.STRING)).createOrOpen();
+        //HTreeMap<String, List<OligoObject>> allHetDimerPairsObjectsMapMapdb = (HTreeMap<String, List<OligoObject>>) db.hashMap("allHetDimerPairsObjectsMapMapdb").createOrOpen();
+        //HTreeMap<String, List<OligoObject>> allHetDimerPairsObjectsMapMapdb = db.createHashMap("allHetDimerPairsObjectsMapMapdb").make();
+        //modified to new method.
+        LinkedHashMap<OligoObject, List<OligoObject>> oligoObjectsMap = mfd.mapOligosCreateHetDimerInpSections_new(heteroDimerObjectsList);
+
         ArrayList<String[]> inputlistforHetDimerAnalysis = mfd.createSubsetofhetDimersRunHeterodimerAnalysis(oligoObjectsMap);
-
-
-        /*int numfiles = 1; int numlines = 10000; //int numlinescopy = numlines;
-        double temp = Math.ceil(((heteroDimerObjectsList.size())*(heteroDimerObjectsList.size()))/(double)(numlines));
-        int temp1= (int) temp;
-
-        if(temp1 != 0){
-            numfiles = temp1;
-        }else{
-            numfiles = temp1 + 1;
-        }
-
-        int startHetDimerOligoarray = 0;
-
-        //getting first oligoId to begin with.
-        int oligoIdStoppedAt = 0;
-        int oligoidValueIndexStoppedAt = 1;*/
 
         int numfiles = 1; int numlines = 10000; //int numlinescopy = numlines;
         double temp = Math.ceil((inputlistforHetDimerAnalysis.size())/(double)(numlines));
@@ -250,7 +248,11 @@ public class OligosCreationController implements Controller{
             oligoIdStoppedAt = Integer.parseInt(hetDimerSubsectionIndexes.split("&", -1)[0]);
 
             System.out.println("getting deltaG values for HetDimer Pairs");
-            oligoObjectsMap = mfd.getDeltaGValuesForHetDimerPairs(oligoObjectsMap, dataDir, heterodimerOpDir, hetdimerFilename, n);
+
+
+            //commenting temporarily.
+            oligoObjectsMap = mfd.getDeltaGValuesForHetDimerPairs_new(oligoObjectsMap, dataDir, heterodimerOpDir, hetdimerFilename, n);
+
             for(OligoObject objectKey : oligoObjectsMap.keySet()){
 
                 if(allHetDimerPairsObjectsMap.containsKey(objectKey.getInternalPrimerId())){
@@ -258,15 +260,30 @@ public class OligosCreationController implements Controller{
 
                     oligosFromPrevRuns.addAll(oligoObjectsMap.get(objectKey));
                     allHetDimerPairsObjectsMap.put(objectKey.getInternalPrimerId(), oligosFromPrevRuns);
+                    allHetDimerPairsObjectsMapMapdb.put(objectKey.getInternalPrimerId(), oligoObjectsMap.get(objectKey));
 
                 }else{
                     allHetDimerPairsObjectsMap.put(objectKey.getInternalPrimerId(), oligoObjectsMap.get(objectKey));
-
+                    allHetDimerPairsObjectsMapMapdb.put(objectKey.getInternalPrimerId(), oligoObjectsMap.get(objectKey));
                 }
+
+                /**
+                // Get the Java runtime
+                Runtime runtime = Runtime.getRuntime();
+                // Run the garbage collector
+                runtime.gc();
+                // Calculate the used memory
+                long memory = runtime.totalMemory() - runtime.freeMemory();
+                System.out.println("Used memory is bytes: " + memory);
+                System.out.println("Used memory is megabytes: "+ (memory/10000000.00));
+                 **/
             }
+
 
         }
 
+        //need to comment when done.
+        //System.exit(1);
 
 
         for(SequenceObject so : objects){
@@ -286,14 +303,19 @@ public class OligosCreationController implements Controller{
             }
 
             oligoKeysList = new OligoObject().sortOligosBySubsectionAndSerialNum(oligoKeysList);
-            LinkedHashMap<OligoObject, List<OligoObject>> filteredhetDimerMapForSO = mfd.filterMapCreateOnlyHetsWithinDistanceMap(oligoKeysList, spacing);
+            LinkedHashMap<OligoObject, List<OligoObject>> filteredhetDimerMapForSO = mfd.filterMapCreateOnlyHetsWithinDistanceMap(oligoKeysList, spacing, hetDimerMapForSO);
             LinkedHashMap<String, ArrayList<OligoObject>> setsOfOligoSets = new LinkedHashMap<String, ArrayList<OligoObject>>();
 
             int startingcounter = 1;
             //now create tree.
 
+            ArrayList<OligoObject> filteredOligoKeysArrayList = new ArrayList<OligoObject>();
 
-            for(OligoObject obj : oligoKeysList){
+            //create array of keys from filteredhash
+            filteredOligoKeysArrayList.addAll(filteredhetDimerMapForSO.keySet());
+
+            //for(OligoObject obj : oligoKeysList){
+            for(OligoObject obj : filteredOligoKeysArrayList){
 
                 if((Integer.parseInt(obj.getInternalStart())-so.getStart()<=2000) && (Integer.parseInt(obj.getInternalStart())-so.getStart()>=1)){
 
@@ -351,14 +373,24 @@ public class OligosCreationController implements Controller{
                         Float deltagForThisArray = Float.parseFloat("0.00");
 
                         for(int i=0; i<pathArray.size(); i++){
+                            List<OligoObject> hetDimerOligoObjsList = hetDimerMapForSO.get(pathArray.get(i).getInternalPrimerId());
+
                             for(int j=i+1; j<pathArray.size(); j++){
-                                if(pathArray.get(i).getHeterodimerValues().get(pathArray.get(j).getInternalPrimerId()) < -10.00){
-                                    toremoveFlag=1;
-                                    break;
-                                }else{
-                                    deltagForThisArray += pathArray.get(i).getHeterodimerValues().get(pathArray.get(j).getInternalPrimerId());
+                                int found=0;
+
+                                for(OligoObject hetdimerOligoObjValue : hetDimerOligoObjsList){
+                                    if(hetdimerOligoObjValue.getInternalPrimerId().equalsIgnoreCase(pathArray.get(j).getInternalPrimerId())){
+                                        deltagForThisArray += hetdimerOligoObjValue.getHetdimerValue();
+                                        found=1;
+                                        break;
+                                    }
                                 }
+                                if(found==0){
+                                    toremoveFlag=1;
+                                }
+
                             }
+
                             if(toremoveFlag==1){
                                 break;
                             }
@@ -373,23 +405,38 @@ public class OligosCreationController implements Controller{
 
 
                 }
+
+                //clear hetDimerValues. 21stDec2016
+                //obj.getHeterodimerValues().clear();
             }
 
             so.setOligoSetsFullMap(setsOfOligoSets);
-            System.out.println("done with this so");
+            System.out.println("done with this so. sets of oligo sets size:"+ setsOfOligoSets.size());
+
         }
+
+
+        //commenting this as of now because we ont need it since we have already filtered all interactions within region and across regions already 21st Dec 2016
+        System.out.println("checking Oligos interaction across SO");
+        ArrayList<ArrayList<String>> setOfSetsArr = new SequenceObject().checkOligosInteractAcrossSO(objects, allHetDimerPairsObjectsMap);
 
         //clearing large hashmapObject.
         allHetDimerPairsObjectsMap.clear();
 
-        System.out.println("checking Oligos interaction across SO");
-        Set<ArrayList<String>> setOfSets = new SequenceObject().checkOligosInteractAcrossSO(objects);
 
         System.out.println("sorting oligo sets by minDeltaG");
 
-        if(setOfSets.size()>0){
+        //changed sets to array.
+        //Set<ArrayList<String>> setOfSets = convertArrayListToSet(setOfSetsArr);
+        /*if(setOfSets.size()>0){
             objects = new SequenceObject().sortSetsByMinDeltaG(setOfSets, objects);
+        }*/
+
+        if(setOfSetsArr.size()>0){
+            objects = new SequenceObject().sortArrByMinDeltaG(setOfSetsArr, objects);
         }
+
+        objects = new SequenceObject().sortSequenceObjectSetsByMinDeltaG(objects);
 
         System.out.println("writing oligos to file");
         String oligosFilename = writeOligosFinalFile(objects, dataDir, finalOligos, projectId);
@@ -439,6 +486,12 @@ public class OligosCreationController implements Controller{
         if(filteredhetDimerMapForSO.get(parentObj)!=null && filteredhetDimerMapForSO.get(parentObj).size()>0){
 
             List<OligoObject> childrenObj = filteredhetDimerMapForSO.get(parentObj);
+
+            //only return 8 or so children at a time.
+            if(childrenObj.size()>=8){
+                childrenObj = childrenObj.subList(0,8);
+            }
+
             for(OligoObject childObj : childrenObj){
 
                 Vertex<OligoObject> childVertex = new Vertex<OligoObject>(childObj.getInternalPrimerId(), childObj);
@@ -526,7 +579,7 @@ public class OligosCreationController implements Controller{
 
             //remove writing details file for now!
 
-            /*pwSecond.println("\"Primer Set\tPrimer Id\tPrimerChr\tPrimer Start\tPrimer End\tSequence\tSequence Rev. Complement\tGC\tTm\tSize\tSelf Dimer\tHairpin Tm\tHairpin dG\tBlat");
+            pwSecond.println("\"Primer Set\tPrimer Id\tPrimerChr\tPrimer Start\tPrimer End\tSequence\tSequence Rev. Complement\tGC\tTm\tSize\tSelf Dimer\tHairpin Tm\tHairpin dG\tBlat");
 
             if(optimalOligosTree!=null && optimalOligosTree.size()>0){
                 for(String set : optimalOligosTree.keySet()){
@@ -546,7 +599,7 @@ public class OligosCreationController implements Controller{
                     }
 
                 }
-            }*/
+            }
 
             pwSecond.close();
             pwDetail.close();
@@ -624,7 +677,6 @@ public class OligosCreationController implements Controller{
                 obj.setStop(Integer.parseInt(lineArr[2]));
 
                 oligoList.add(obj);
-
             }
 
         }catch (Exception e){
@@ -676,7 +728,7 @@ public class OligosCreationController implements Controller{
                 errsb.append(errline).append("\n");
             }
             String erranswer = errsb.toString();
-            System.out.println(erranswer);
+            //System.out.println(erranswer);
 
             BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
             StringBuilder sb = new StringBuilder();
@@ -695,7 +747,7 @@ public class OligosCreationController implements Controller{
             }
             answer = sb.toString();
 
-            System.out.println(erranswer);
+            //System.out.println(erranswer);
 
             //System.out.println(answer);
 

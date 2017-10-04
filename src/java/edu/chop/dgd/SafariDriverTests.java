@@ -42,7 +42,7 @@ public class SafariDriverTests {
     @Test
     public void shouldBeAbleToPerformAGoogleSearch() {
         //driver.get("http://dgdwebapp01.chop.edu/dgdweb/primer/primerReport.html?selectObject=1&start=139000&stop=139000");
-        driver.get("http://127.0.0.1:8080/dgdweb/primer/primerReport.html?selectObject=1&start=1666303&stop=1666304");
+        //driver.get("http://127.0.0.1:8080/dgdweb/primer/primerReport.html?selectObject=1&start=1666303&stop=1666304");
         /*driver.findElement(By.name("q")).sendKeys("webdriver");
         driver.findElement(By.name("btnG")).click();*/
         WebElement queryInfoTable = driver.findElement(By.id("queryInfo1"));
