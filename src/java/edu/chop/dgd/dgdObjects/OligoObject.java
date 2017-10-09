@@ -104,6 +104,8 @@ public class OligoObject extends Primer3Object{
 
                                 prObj.setInternalPrimerId(primerId);
                                 prObj.setInternalStart(String.valueOf(oss.getSubSectionStart()+Integer.parseInt(prObj.getInternalStart())));
+                                prObj.setChr(String.valueOf(oss.getSubSectionChr()));
+                                prObj.setAssembly(oss.getSubSectionAssembly());
 
                                 primerId="NA";
                                 if(!prObj.getInternalPrimerId().equals("NA")){

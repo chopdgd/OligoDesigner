@@ -1,5 +1,7 @@
 package edu.chop.dgd.dgdObjects;
 
+import org.mapdb.HTreeMap;
+
 import java.io.*;
 import java.util.*;
 
@@ -210,7 +212,6 @@ public class MfoldDimer {
                                     String hetdimerValue = lineArr[1].split(" = ", -1)[1];
                                     if(Float.parseFloat(hetdimerValue) >= -10.00){
                                         oObj.setHetdimerValue(Float.parseFloat(hetdimerValue));
-                                        //hetObjects.add(oObj);
 
                                     }else{
                                         hetObjects.remove(hetObjects.indexOf(oObj));
@@ -927,6 +928,38 @@ public class MfoldDimer {
 
         return counter+"&"+resultHeterodimerString;
 
+    }
+
+    public HTreeMap<String, Float> getDeltaGValuesForHetDimerPairs_createMapDBHash(HTreeMap<String, Float> allHetDimerPairsObjectsMapMapdb, String dataDir, String heterodimerOpDir, String fileName, int subpartnum) throws Exception{
+
+        String hetOpFilename = dataDir+heterodimerOpDir+fileName+"_"+subpartnum+"_1_"+fileName+"_"+subpartnum+"_2.out";
+        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(hetOpFilename)));
+        //Set<OligoObject> hashMapKeys = oligoObjectsMap.keySet();
+        //HashMap<String, Float> hetDimerDeltaGValuesMap = new HashMap<String, Float>();
+
+        try{
+
+            String line;
+            while((line=reader.readLine()) != null){
+                if(line.contains("dG")){
+                    String lineArr[] = line.split("\t", -1);
+                    String[] oligoHeaderArr = lineArr[3].split("-", -1);
+                    String hetOligoHeader1 = oligoHeaderArr[0];
+                    String hetOligoHeader2 = oligoHeaderArr[1];
+                    String hetdimerValue = lineArr[1].split(" = ", -1)[1];
+                    if(Float.parseFloat(hetdimerValue) >= -10.00){
+                        allHetDimerPairsObjectsMapMapdb.put(hetOligoHeader1 + "&" + hetOligoHeader2, Float.parseFloat(hetdimerValue));
+                    }
+                }
+            }
+
+        }finally {
+
+            reader.close();
+
+        }
+
+        return allHetDimerPairsObjectsMapMapdb;
     }
 
 
