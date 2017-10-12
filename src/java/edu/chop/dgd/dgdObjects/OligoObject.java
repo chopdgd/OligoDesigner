@@ -7,13 +7,17 @@ import java.util.*;
  * Created by jayaramanp on 9/26/14.
  */
 
-public class OligoObject extends Primer3Object{
+public class OligoObject extends Primer3Object implements Serializable{
 
     float hairpinValue;
     float homodimerValue;
     float hetdimerValue;
     LinkedHashMap<String, Float> heterodimerValues;
 
+
+    /*public OligoObject(){
+        super();
+    }*/
 
 
     public OligoObject createOligoObject(String line, String tag, OligoObject pr) throws Exception{
@@ -153,6 +157,34 @@ public class OligoObject extends Primer3Object{
         });
 
         return oligoList;
+
+    }
+
+
+    public ArrayList<String> sortOligoIdListBySubsectionAndSerialNum(ArrayList<String> oligoIdsList) {
+
+        Collections.sort(oligoIdsList, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return (o1.split("_", -1)[0].compareTo(o2.split("_", -1)[0]));
+            }
+        });
+
+        Collections.sort(oligoIdsList, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return (Integer.valueOf(o1.split("_", -1)[1]).compareTo(Integer.valueOf(o2.split("_", -1)[1])));
+            }
+        });
+
+        Collections.sort(oligoIdsList, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return (Integer.valueOf(o1.split("_", -1)[2].split("O",-1)[1]).compareTo(Integer.valueOf(o2.split("_", -1)[2].split("O",-1)[1])));
+            }
+        });
+
+        return oligoIdsList;
 
     }
 

@@ -1,5 +1,6 @@
 package edu.chop.dgd.dgdObjects;
 
+import com.google.common.collect.Multimap;
 import org.mapdb.HTreeMap;
 
 import java.io.*;
@@ -646,6 +647,7 @@ public class MfoldDimer {
     }
 
 
+
     /***
      *
      * @param hetDimerSets
@@ -963,6 +965,143 @@ public class MfoldDimer {
     }
 
 
+    /**
+     *
+     * @param allHetDimerPairsObjectsMapMapdb
+     * @param so
+     * @param hetDimerHashMapMAPDB
+     * @param hetDimerMapForSO_mapDB
+     * @return
+     * @throws Exception
+     */
+
+    public HTreeMap<String, OligoObject> getHetDimersForRegion_mapDB(HTreeMap<String, Float> allHetDimerPairsObjectsMapMapdb, SequenceObject so, Map<String, OligoObject> hetDimerHashMapMAPDB, HTreeMap<String, OligoObject> hetDimerMapForSO_mapDB) throws Exception{
+
+        for(String htreeKey : allHetDimerPairsObjectsMapMapdb.getKeys()){
+            String[] hetdimerids = htreeKey.split("&", -1);
+            OligoObject hetDimerOligoObj1 = hetDimerHashMapMAPDB.get(hetdimerids[0]);
+            int sostart1 = Integer.parseInt(hetdimerids[0].split(":", -1)[1]);
+            int soend1 = Integer.parseInt(hetdimerids[0].split(":", -1)[2]);
+            OligoObject hetDimerOligoObj2 = hetDimerHashMapMAPDB.get(hetdimerids[1]);
+            int sostart2 = Integer.parseInt(hetdimerids[1].split(":", -1)[1]);
+            int soend2 = Integer.parseInt(hetdimerids[1].split(":", -1)[2]);
+
+
+            if(hetDimerOligoObj1.getChr().equalsIgnoreCase(so.getChr()) && hetDimerOligoObj2.getChr().equalsIgnoreCase(so.getChr())){
+                if( sostart1==so.getStart() && soend1==so.getStop() && sostart2==so.getStart() && soend2==so.getStop()){
+                    hetDimerMapForSO_mapDB.put(hetDimerOligoObj1.getInternalPrimerId(), hetDimerOligoObj1);
+                    hetDimerMapForSO_mapDB.put(hetDimerOligoObj2.getInternalPrimerId(), hetDimerOligoObj2);
+                }
+            }
+        }
+
+        return hetDimerMapForSO_mapDB;
+    }
+
+
+    /**
+     *
+     * @param allHetDimerPairsObjectsMapMapdb
+     * @param so
+     * @param hetDimerHashMapMAPDB
+     * @return
+     * @throws Exception
+     */
+    public ArrayList<String> getHetDimersIdsForRegion(HTreeMap<String, Float> allHetDimerPairsObjectsMapMapdb, SequenceObject so, Map<String, OligoObject> hetDimerHashMapMAPDB) throws Exception{
+
+        ArrayList<String> hetDimersList = new ArrayList<String>();
+
+        for(String htreeKey : allHetDimerPairsObjectsMapMapdb.getKeys()){
+            String[] hetdimerids = htreeKey.split("&", -1);
+            OligoObject hetDimerOligoObj1 = hetDimerHashMapMAPDB.get(hetdimerids[0]);
+            int sostart1 = Integer.parseInt(hetdimerids[0].split("_", -1)[0].split(":", -1)[1]);
+            int soend1 = Integer.parseInt(hetdimerids[0].split("_", -1)[0].split(":", -1)[2]);
+            OligoObject hetDimerOligoObj2 = hetDimerHashMapMAPDB.get(hetdimerids[1]);
+            int sostart2 = Integer.parseInt(hetdimerids[1].split("_", -1)[0].split(":", -1)[1]);
+            int soend2 = Integer.parseInt(hetdimerids[1].split("_", -1)[0].split(":", -1)[2]);
+
+
+            if(hetDimerOligoObj1.getChr().equalsIgnoreCase(so.getChr()) && hetDimerOligoObj2.getChr().equalsIgnoreCase(so.getChr())){
+                if( sostart1==so.getStart() && soend1==so.getStop() && sostart2==so.getStart() && soend2==so.getStop()){
+                    hetDimersList.add(hetDimerOligoObj1.getInternalPrimerId());
+                    hetDimersList.add(hetDimerOligoObj2.getInternalPrimerId());
+                }
+            }
+        }
+
+        return hetDimersList;
+    }
+
+
+    /**
+     *
+     * @param hetDimerIdListForSO
+     * @param spacing
+     * @param hetDimerMapForSO_mapDB
+     * @param filteredHetDimerMapForSO_multimap
+     * @return
+     */
+    public Multimap<String, String> filterMapCreateOnlyHetsWithinDistanceMap_MapDB(ArrayList<String> hetDimerIdListForSO, int spacing, HTreeMap<String, OligoObject> hetDimerMapForSO_mapDB, Multimap<String, String> filteredHetDimerMapForSO_multimap) throws Exception {
+
+        for(String oligoid : hetDimerIdListForSO){
+            List<String> nextBinOligosWithinSpacing = getNext8_10KBOligoObjs_mapDB(hetDimerMapForSO_mapDB.get(oligoid), hetDimerIdListForSO, hetDimerMapForSO_mapDB, spacing, hetDimerIdListForSO.indexOf(oligoid));
+            if(nextBinOligosWithinSpacing.size()>0){
+                for(String nextoligo : nextBinOligosWithinSpacing){
+                    //filteredHetDimerMapForSO_multimap.add(new Object[]{oligoid,nextoligo});
+                    filteredHetDimerMapForSO_multimap.put(oligoid, nextoligo);
+                }
+            }
+        }
+
+        System.out.println("returning filtered hets sorted by distance");
+        return filteredHetDimerMapForSO_multimap;
+    }
+
+
+    /**
+     *
+     *
+     * @param objInQuestion
+     * @param hetDimerIdListForSO
+     * @param hetDimerMapForSO_mapDB
+     *@param spacing
+     * @param i   @return
+     */
+    public List<String> getNext8_10KBOligoObjs_mapDB(OligoObject objInQuestion, ArrayList<String> hetDimerIdListForSO, HTreeMap<String, OligoObject> hetDimerMapForSO_mapDB, int spacing, int i) throws Exception{
+
+        int diffLessThan0 = (spacing*1000)+500;
+        int diffGreaterThan0 = (spacing*1000)-500;
+
+        int diffLessThan1 = (spacing*1000)+2000;
+        int diffGreaterThan1 = (spacing*1000)-2000;
+
+        int diffLessThan2 = (spacing*1000)+4000;
+        int diffGreaterThan2 = (spacing*1000)-4000;
+
+        int diffLessThan3 = (spacing*1000)+6000;
+        int diffGreaterThan3 = (spacing*1000)-6000;
+
+        ArrayList<String> oligosReturned = new ArrayList<String>();
+
+        for(String oligoid : hetDimerIdListForSO){
+            OligoObject o = hetDimerMapForSO_mapDB.get(oligoid);
+            int oligoStartDiff = Integer.parseInt(o.getInternalStart())-Integer.parseInt(objInQuestion.getInternalStart());
+            if(diffLessThan1>oligoStartDiff && oligoStartDiff>diffGreaterThan1){
+                //check if obj is present in hetDimerMapForSO.
+                oligosReturned.add(oligoid);
+            }
+
+        }
+
+        oligosReturned = new OligoObject().sortOligoIdListBySubsectionAndSerialNum(oligosReturned);
+        return oligosReturned;
+
+    }
+
+
+    /**
+     *
+     */
     private class DeltaGComprator implements Comparator<String>{
 
         @Override
@@ -975,6 +1114,9 @@ public class MfoldDimer {
         }
 
     }
+
+
+
 
 
     public String getDimer1Id() {

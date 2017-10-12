@@ -1,9 +1,11 @@
 package edu.chop.dgd.dgdObjects;
 
+import com.google.common.collect.Multimap;
 import edu.chop.dgd.process.primerCreate.AmpliconSeq;
 import edu.chop.dgd.process.primerCreate.AmpliconXomAnalyzer;
 import edu.chop.dgd.process.primerCreate.PrimerDAO;
 import edu.chop.dgd.process.primerCreate.Variation;
+import org.mapdb.HTreeMap;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -28,6 +30,7 @@ public class SequenceObject{
     TreeMap<String, List<OligoObject>> OligoSetsTreeMap;
     LinkedHashMap<String, Graph<OligoObject>> hetDimerDagMap;
     LinkedHashMap<String, ArrayList<OligoObject>> oligoSetsFullMap;
+    Multimap<String, String> oligoSetsFullMapMultiMap;
     LinkedHashMap<String, List<OligoObject>> primaryOptimalSetOfOligosForSet;
 
     String detailsFile;
@@ -844,6 +847,14 @@ public class SequenceObject{
 
 
 
+    ////Need to write code!!!!
+    public ArrayList<ArrayList<String>> checkOligosInteractAcrossSO_mapDB(ArrayList<SequenceObject> objects, HTreeMap<String, Float> allHetDimerPairsObjectsMapMapdb) {
+
+        return null;
+    }
+
+
+
 
     public String getAssembly() {
         return assembly;
@@ -972,4 +983,14 @@ public class SequenceObject{
     public void setHetDimerOligosList(List<OligoObject> hetDimerOligosList) {
         this.hetDimerOligosList = hetDimerOligosList;
     }
+
+    public Multimap<String, String> getOligoSetsFullMapMultiMap() {
+        return oligoSetsFullMapMultiMap;
+    }
+
+    public void setOligoSetsFullMapMultiMap(Multimap<String, String> oligoSetsFullMapMultiMap) {
+        this.oligoSetsFullMapMultiMap = oligoSetsFullMapMultiMap;
+    }
+
+
 }

@@ -8,12 +8,12 @@ package edu.chop.dgd.dgdObjects;
  *
  * @author Scott.Stark@jboss.org
  * @version $Revision$
- * @param <OligoObject>
+ * @param <String>
  */
-public class Edge<OligoObject> {
-    private Vertex<OligoObject> from;
+public class Edge<String> {
+    private Vertex<String> from;
 
-    private Vertex<OligoObject> to;
+    private Vertex<String> to;
 
     private int cost;
 
@@ -27,7 +27,7 @@ public class Edge<OligoObject> {
      * @param to
      *          the ending vertex
      */
-    public Edge(Vertex<OligoObject> from, Vertex<OligoObject> to) {
+    public Edge(Vertex<String> from, Vertex<String> to) {
         this(from, to, 0);
     }
 
@@ -40,7 +40,7 @@ public class Edge<OligoObject> {
      *          the ending vertex
      * @param cost
      */
-    public Edge(Vertex<OligoObject> from, Vertex<OligoObject> to, int cost) {
+    public Edge(Vertex<String> from, Vertex<String> to, int cost) {
         this.from = from;
         this.to = to;
         this.cost = cost;
@@ -52,7 +52,7 @@ public class Edge<OligoObject> {
      *
      * @return ending vertex
      */
-    public Vertex<OligoObject> getTo() {
+    public Vertex<String> getTo() {
         return to;
     }
 
@@ -61,7 +61,7 @@ public class Edge<OligoObject> {
      *
      * @return starting vertex
      */
-    public Vertex<OligoObject> getFrom() {
+    public Vertex<String> getFrom() {
         return from;
     }
 
@@ -104,7 +104,7 @@ public class Edge<OligoObject> {
      *
      * @return string rep with from/to vertex names and cost
      */
-    public String toString() {
+    public java.lang.String toString() {
         StringBuffer tmp = new StringBuffer("Edge[from: ");
         tmp.append(from.getName());
         tmp.append(",to: ");
