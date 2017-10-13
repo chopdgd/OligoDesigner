@@ -7,17 +7,29 @@ import java.util.*;
  * Created by jayaramanp on 9/26/14.
  */
 
-public class OligoObject extends Primer3Object implements Serializable{
+public class OligoObject implements Serializable{
 
+
+    String internalPrimerId;
+    String internalSeq;
+    int internalLen;
+    String internalStart;
+    String internalTm;
+    String internalGc;
+    String internalAny;
+    String internal3;
+    String chr;
+    String assembly;
+    List<BlatPsl> internalPrimerBlatList;
     float hairpinValue;
     float homodimerValue;
     float hetdimerValue;
     LinkedHashMap<String, Float> heterodimerValues;
 
 
-    /*public OligoObject(){
+    public OligoObject(){
         super();
-    }*/
+    }
 
 
     public OligoObject createOligoObject(String line, String tag, OligoObject pr) throws Exception{
@@ -219,4 +231,93 @@ public class OligoObject extends Primer3Object implements Serializable{
     public void setHetdimerValue(float hetdimerValue) {
         this.hetdimerValue = hetdimerValue;
     }
+
+    public String getInternalPrimerId() {
+        return internalPrimerId;
+    }
+
+    public void setInternalPrimerId(String internalPrimerId) {
+        this.internalPrimerId = internalPrimerId;
+    }
+
+    public String getInternalSeq() {
+        return internalSeq;
+    }
+
+    public void setInternalSeq(String internalSeq) {
+        this.internalSeq = internalSeq;
+    }
+
+    public int getInternalLen() {
+        return internalLen;
+    }
+
+    public void setInternalLen(int internalLen) {
+        this.internalLen = internalLen;
+    }
+
+    public String getInternalStart() {
+        return internalStart;
+    }
+
+    public void setInternalStart(String internalStart) {
+        this.internalStart = internalStart;
+    }
+
+    public String getInternalTm() {
+        return internalTm;
+    }
+
+    public void setInternalTm(String internalTm) {
+        this.internalTm = internalTm;
+    }
+
+    public String getInternalGc() {
+        return internalGc;
+    }
+
+    public void setInternalGc(String internalGc) {
+        this.internalGc = internalGc;
+    }
+
+    public String getInternalAny() {
+        return internalAny;
+    }
+
+    public void setInternalAny(String internalAny) {
+        this.internalAny = internalAny;
+    }
+
+    public String getInternal3() {
+        return internal3;
+    }
+
+    public void setInternal3(String internal3) {
+        this.internal3 = internal3;
+    }
+
+    public String getChr() {
+        return chr;
+    }
+
+    public void setChr(String chr) {
+        this.chr = chr;
+    }
+
+    public String getAssembly() {
+        return assembly;
+    }
+
+    public void setAssembly(String assembly) {
+        this.assembly = assembly;
+    }
+
+    public List<BlatPsl> getInternalPrimerBlatList() {
+        return internalPrimerBlatList;
+    }
+
+    public void setInternalPrimerBlatList(List<BlatPsl> internalPrimerBlatList) {
+        this.internalPrimerBlatList = internalPrimerBlatList;
+    }
+
 }

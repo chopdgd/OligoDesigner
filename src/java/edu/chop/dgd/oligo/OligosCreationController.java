@@ -186,8 +186,8 @@ public class OligosCreationController implements Controller{
         Serializer<OligoObject> serializer = new OligoSerializer();
         DB hetdimerdb = DBMaker.tempFileDB().fileDeleteAfterClose().make();
         //stores all hetdimer object info. so that only storing the ids for the other maps, are enough further down.
-        //Map<String, OligoObject> hetDimerHashMapMAPDB = hetdimerdb.hashMap("hetDimerHashMap").keySerializer(Serializer.STRING).valueSerializer(serializer).createOrOpen();
         Map<String, OligoObject> hetDimerHashMapMAPDB = hetdimerdb.hashMap("hetDimerHashMap").keySerializer(Serializer.STRING).valueSerializer(serializer).createOrOpen();
+        //HTreeMap<String, OligoObject> hetDimerHashMapMAPDB = hetdimerdb.hashMap("hetDimerHashMap").keySerializer(Serializer.STRING).valueSerializer(Serializer.ELSA).createOrOpen();
 
 
         for(SequenceObject so : objects){
@@ -227,12 +227,11 @@ public class OligosCreationController implements Controller{
         //NEED to parallellize this section! Commenting out MapDB implementation temporarily.
 
         String hetdimerFilename = "oligoInp_"+projectId+"_"+ new SimpleDateFormat("yyyyMMddhhmm'.txt'").format(new Date());
-       // LinkedHashMap<String, List<OligoObject>> allHetDimerPairsObjectsMap = new LinkedHashMap<String, List<OligoObject>>();
 
         //using MapDB, it will only add the two ids as a string and a float value as the value.
         DB db2 = DBMaker.tempFileDB().fileDeleteAfterClose().make();
+        //HTreeMap<String, Float> allHetDimerPairsObjectsMapMapdb = db2.hashMap("allHetDimerPairsObjectsMapMapdb").keySerializer(Serializer.STRING).valueSerializer(Serializer.FLOAT).createOrOpen();
         HTreeMap<String, Float> allHetDimerPairsObjectsMapMapdb = db2.hashMap("allHetDimerPairsObjectsMapMapdb").keySerializer(Serializer.STRING).valueSerializer(Serializer.FLOAT).createOrOpen();
-
 
         //Oct9th 2017 need to change this to: https://github.com/harishreedharan/MapDB/blob/master/src/test/java/examples/MultiMap.java
         LinkedHashMap<OligoObject, List<OligoObject>> oligoObjectsMap = mfd.mapOligosCreateHetDimerInpSections_new(heteroDimerObjectsList);

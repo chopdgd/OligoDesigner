@@ -49,7 +49,7 @@ public class OligoSerializer implements Serializer<OligoObject>, Serializable {
     @Override
     public OligoObject deserialize(@NotNull DataInput2 dataInput2, int i) throws IOException {
         //return null;
-        OligoObject o = new OligoObject();
+        /*OligoObject o = new OligoObject();
         o.setInternalPrimerId(dataInput2.readUTF());
         o.setChr(dataInput2.readUTF());
         o.setAssembly(dataInput2.readUTF());
@@ -60,7 +60,8 @@ public class OligoSerializer implements Serializer<OligoObject>, Serializable {
         o.setInternalTm(dataInput2.readUTF());
         o.setInternalAny(dataInput2.readUTF());
         o.setInternal3(dataInput2.readUTF());
-        return o;
+        return o;*/
+        return new OligoObject();
     }
 
     @Override
