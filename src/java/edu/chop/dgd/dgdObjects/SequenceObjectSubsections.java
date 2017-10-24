@@ -1,5 +1,7 @@
 package edu.chop.dgd.dgdObjects;
 
+import edu.chop.dgd.dgdUtils.OligoUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,8 +26,8 @@ public class SequenceObjectSubsections {
                                                           String homodimerOpDir, String heterodimerInpDir, String heterodimeropDir)throws Exception {
 
 
-        List<OligoObject> oligoObjectsFromPrimer3 = new OligoObject().createOligoObjsList(fileName, dataDir, oligoOutputDir);
-        oligoObjectsFromPrimer3 = new OligoObject().addIdsToOligos(fileName, oligoObjectsFromPrimer3, blatOligoInpDir, dataDir, osSubsList);
+        List<OligoObject> oligoObjectsFromPrimer3 = new OligoUtils().createOligoObjsList(fileName, dataDir, oligoOutputDir);
+        oligoObjectsFromPrimer3 = new OligoUtils().addIdsToOligos(fileName, oligoObjectsFromPrimer3, blatOligoInpDir, dataDir, osSubsList);
         List<BlatPsl> blatResults = new BlatPsl().createOligoBlatList(fileName, blatOligoOpDir, dataDir);
         oligoObjectsFromPrimer3 = new BlatPsl().addBlatResultsToOligos(blatResults, oligoObjectsFromPrimer3, osSubsList);
         oligoObjectsFromPrimer3 = new MfoldHairpin().getDeltaGValuesForHairpin(oligoObjectsFromPrimer3, fileName, mfoldOpDir, dataDir);

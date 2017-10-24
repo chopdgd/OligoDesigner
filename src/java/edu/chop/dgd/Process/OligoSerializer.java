@@ -41,6 +41,9 @@ public class OligoSerializer implements Serializer<OligoObject>, Serializable {
             dataOutput2.writeUTF(oligoObject.getInternalTm());
             dataOutput2.writeUTF(oligoObject.getInternalAny());
             dataOutput2.writeUTF(oligoObject.getInternal3());
+            dataOutput2.writeFloat(oligoObject.getHairpinValue());
+            dataOutput2.writeFloat(oligoObject.getHomodimerValue());
+
         }
 
 
@@ -48,21 +51,14 @@ public class OligoSerializer implements Serializer<OligoObject>, Serializable {
 
     @Override
     public OligoObject deserialize(@NotNull DataInput2 dataInput2, int i) throws IOException {
+        //String chr, String assembly, String internalPrimerid, String internalSeq, String internalStart,
+        // int internalLen, String internal3, String internalAny, String internalGc, Float hairpinValue, Float homodimerValue)
         //return null;
-        /*OligoObject o = new OligoObject();
-        o.setInternalPrimerId(dataInput2.readUTF());
-        o.setChr(dataInput2.readUTF());
-        o.setAssembly(dataInput2.readUTF());
-        o.setInternalStart(dataInput2.readUTF());
-        o.setInternalLen(Integer.parseInt(dataInput2.readUTF()));
-        o.setInternalSeq(dataInput2.readUTF());
-        o.setInternalGc(dataInput2.readUTF());
-        o.setInternalTm(dataInput2.readUTF());
-        o.setInternalAny(dataInput2.readUTF());
-        o.setInternal3(dataInput2.readUTF());
-        return o;*/
-        return new OligoObject();
+        return new OligoObject(dataInput2.readUTF(), dataInput2.readUTF(), dataInput2.readUTF(), dataInput2.readUTF(),
+                dataInput2.readUTF(),dataInput2.readUnsignedShort(), dataInput2.readUTF(), dataInput2.readUTF(), dataInput2.readUTF(),
+                dataInput2.readUTF(), dataInput2.readFloat(), dataInput2.readFloat());
     }
+
 
     @Override
     public int compare(OligoObject o1, OligoObject o2) {

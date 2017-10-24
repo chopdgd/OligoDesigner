@@ -23,7 +23,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="true">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="true">
     <content url="file://$HOME_DIR$/Oligodesigner/trunk">
       <sourceFolder url="file://$MODULE_DIR$/java" isTestSource="false" />
     </content>
