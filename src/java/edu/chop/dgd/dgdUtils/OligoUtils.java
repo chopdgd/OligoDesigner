@@ -288,7 +288,10 @@ public class OligoUtils {
     }
 
 
-
+    /**
+     *
+     * @param oligoList
+     */
     public void compareOligos(List<OligoObject> oligoList){
         Collections.sort(oligoList, new Comparator<OligoObject>() {
             @Override

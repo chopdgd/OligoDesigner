@@ -24,9 +24,7 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-
 /**
-
  * Created by jayaramanp on 6/1/14.
  */
 public class OligosCreationController implements Controller{
@@ -44,7 +42,6 @@ public class OligosCreationController implements Controller{
     private static String heterodimerInpDir;
     private static String heterodimerOpDir;
     private static String finalOligos;
-
     private static String min_gc;
     private static String max_gc;
     private static String opt_gc;
@@ -60,10 +57,6 @@ public class OligosCreationController implements Controller{
     private static String self_end;
     private static int spacing=0;
 
-
-
-
-
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse httpServletResponse) throws Exception {
 
@@ -71,13 +64,10 @@ public class OligosCreationController implements Controller{
         ArrayList warning = new ArrayList();
         ArrayList status = new ArrayList();
         String exampleFile = "/data/antholigo_test/antholigo_test.txt";
-
         String upFile = request.getParameter("uploadFolderPath");
         String projectId = request.getParameter("proj_id");
         String assembly = request.getParameter("assembly");
-
         String origFileName = request.getParameter("origFile");
-
         String spacing2 = request.getParameter("separation");
         spacing = Integer.parseInt(spacing2);
 
@@ -94,7 +84,6 @@ public class OligosCreationController implements Controller{
         }else{
             max_gc = "NA";
         }
-
 
         String optGC = request.getParameter("optGC");
         if(optGC.length()>0){
@@ -173,9 +162,6 @@ public class OligosCreationController implements Controller{
             self_end = "NA";
         }
 
-
-        //File uploadedFiles[] = newFile.listFiles();
-        //File fileToParse = uploadedFiles[0];
         File fileToParse = new File(upFile+projectId+"/"+origFileName);
         ArrayList<SequenceObject> objects =  getObjectsFromFile(fileToParse, error, assembly);
         SequenceObjectSubsections soss = new SequenceObjectSubsections();
@@ -193,7 +179,6 @@ public class OligosCreationController implements Controller{
         HTreeMap<String, Object> hetDimerHashMapMAPDB = hetdimerdb.hashMap("hetDimerHashMap").keySerializer(Serializer.STRING).valueSerializer(new SerializerJava()).createOrOpen();
 
         for(SequenceObject so : objects){
-
             //testing new method
             String inpFilename = assembly+"_"+projectId+"_"+so.getChr()+":"+so.getStart()+"-"+so.getStop()+".txt";
             List<SequenceObjectSubsections> sosSubsList = so.generateSequenceSubsections(inpFilename, dataDir);
@@ -203,7 +188,6 @@ public class OligosCreationController implements Controller{
 
             String detailFile = dataDir+finalOligos+fileName+"_detail.html";
             String secondaryFile = dataDir+finalOligos+fileName+"_secondary.txt";
-
             List<SequenceObjectSubsections> oligosSubsectionList = soss.retrieveResultsFromAnalyses(fileName, sosSubsList, dataDir, oligoOutputDir, blatInpDir, blatOpDir, mfoldInpDir, mfoldOpDir, homodimerOpDir, heterodimerInpDir, heterodimerOpDir);
             List<OligoObject> heteroDimerObjectsListFromSO = mfd.filterOligosCreateHeterodimers(oligosSubsectionList);
             so.setHetDimerOligosList(heteroDimerObjectsListFromSO);
@@ -214,9 +198,7 @@ public class OligosCreationController implements Controller{
                 hetDimerHashMapMAPDB.put(hetdimerObj.getInternalPrimerId(), hetdimerObj);
             }
 
-
             System.out.println("adding for Heterodimer analysis");
-
             so.setOligoObjectSubsections(oligosSubsectionList);
             so.setDetailsFile(detailFile);
             so.setSecondaryFile(secondaryFile);
@@ -226,7 +208,6 @@ public class OligosCreationController implements Controller{
         }
 
         System.out.println("Running Heterodimer analysis now");
-
         heteroDimerObjectsList = new OligoUtils().sortOligosBySubsectionAndSerialNum(heteroDimerObjectsList);
         //NEED to parallellize this section!
 
@@ -258,43 +239,16 @@ public class OligosCreationController implements Controller{
         for(int n=1; n<=numfiles; n++){
 
             System.out.println("starting hetdimer run in subset of file");
-
             String hetDimerSubsectionIndexes = mfd.createFileRunHeterodimerAnalysis(inputlistforHetDimerAnalysis, heterodimerInpDir, dataDir, hetdimerFilename, n, oligoIdStoppedAt, numlines);
             oligoIdStoppedAt = Integer.parseInt(hetDimerSubsectionIndexes.split("&", -1)[0]);
-
             System.out.println("getting deltaG values for HetDimer Pairs");
-
-            //commenting temporarily.
-            //oligoObjectsMap = mfd.getDeltaGValuesForHetDimerPairs_new(oligoObjectsMap, dataDir, heterodimerOpDir, hetdimerFilename, n);
             allHetDimerPairsObjectsMapMapdb = mfd.getDeltaGValuesForHetDimerPairs_createMapDBHash(allHetDimerPairsObjectsMapMapdb, dataDir, heterodimerOpDir, hetdimerFilename, n);
 
-            //commenting because the allHetDimerPairsObjectsMapMapdb now stores the float value.
-            /*for(OligoObject objectKey : oligoObjectsMap.keySet()){
-
-                if(allHetDimerPairsObjectsMap.containsKey(objectKey.getInternalPrimerId())){
-                    List<OligoObject> oligosFromPrevRuns = allHetDimerPairsObjectsMap.get(objectKey.getInternalPrimerId());
-
-                    oligosFromPrevRuns.addAll(oligoObjectsMap.get(objectKey));
-                    allHetDimerPairsObjectsMap.put(objectKey.getInternalPrimerId(), oligosFromPrevRuns);
-
-                }else{
-                    allHetDimerPairsObjectsMap.put(objectKey.getInternalPrimerId(), oligoObjectsMap.get(objectKey));
-
-                }
-            }*/
         }
-
 
         for(SequenceObject so : objects){
 
-            // Oct9th Will be rewriting this section of code using MapDB storage. Use this for MapDB: https://github.com/harishreedharan/MapDB/blob/master/src/test/java/examples/MultiMap.java. Not going to use NavigableSet.
-            //DB db = DBMaker.tempFileDB().fileDeleteAfterClose().make();
             DB db = DBMaker.memoryDB().fileDeleteAfterClose().make();
-            /*NavigableSet<Object[]> hetDimerMapForSO_multimap = db.treeSet("towns")
-                    //set tuple serializer
-                    .serializer(new SerializerArrayTuple(Serializer.STRING, serializer)).counterEnable().createOrOpen();
-            hetDimerMapForSO_multimap = mfd.getHetDimersForRegion_mapDB(allHetDimerPairsObjectsMapMapdb, so, hetDimerHashMapMAPDB);
-            */
             ArrayList<String> hetDimerIdListForSO = mfd.getHetDimersIdsForRegion(allHetDimerPairsObjectsMapMapdb, so, hetDimerHashMapMAPDB);
             hetDimerIdListForSO = new OligoUtils().sortOligoIdListBySubsectionAndSerialNum(hetDimerIdListForSO);
 
@@ -304,7 +258,6 @@ public class OligosCreationController implements Controller{
             }
 
             //Create NavigableSet. set tuple serializer
-            //NavigableSet<Object[]> filteredHetDimerMapForSO_multimap = db.treeSet("filtredHetDimerMapforSO").serializer(new SerializerArrayTuple(Serializer.STRING, Serializer.STRING)).counterEnable().counterEnable().counterEnable().createOrOpen();
             Multimap<String, String> filteredHetDimerMapForSO_multimap = ArrayListMultimap.create();
             filteredHetDimerMapForSO_multimap = mfd.filterMapCreateOnlyHetsWithinDistanceMap_MapDB(hetDimerIdListForSO, spacing, hetDimerMapForSO_mapDB_sorted, filteredHetDimerMapForSO_multimap);
 
@@ -315,12 +268,9 @@ public class OligosCreationController implements Controller{
             int startingcounter = 1;
 
             //Creating a multi-map instead
-            //NavigableSet<Object[]> setsOfOligoSets_mapDB = db.treeSet("setsOfOligoSets").serializer(new SerializerArrayTuple(Serializer.STRING, Serializer.STRING)).counterEnable().counterEnable().counterEnable().createOrOpen();
             Multimap<String, String> setsOfOligoSets_mapDB = LinkedListMultimap.create();
 
             //sorting the keys.
-            //for(OligoObject obj : oligoKeysList){
-            //for(String oligoobjid : filteredHetDimerMapForSO_multimap_keys){
             for(String oligoobjid : filteredHetDimerMapForSO_multimap_keys_sorted){
                 OligoObject obj = (OligoObject) hetDimerMapForSO_mapDB_sorted.get(oligoobjid);
                 if((Integer.parseInt(obj.getInternalStart())-so.getStart()<=2500) && (Integer.parseInt(obj.getInternalStart())-so.getStart()>=1)){
@@ -403,11 +353,9 @@ public class OligosCreationController implements Controller{
 
         }
 
-
         System.out.println("checking Oligos interaction across SO");
 
         ///will come to this in the evening!!!!! 12th Oct 2017.
-        //ArrayList<ArrayList<String>> setOfSetsArr = new SequenceObject().checkOligosInteractAcrossSO_mapDB(objects, allHetDimerPairsObjectsMapMapdb);
         objects = new SequenceObject().checkOligosInteractAcrossSO_mapDB(objects, allHetDimerPairsObjectsMapMapdb);
 
         System.out.println("sorting oligo sets by minDeltaG");
@@ -421,26 +369,16 @@ public class OligosCreationController implements Controller{
 
         //clear everything!!!
         for(SequenceObject so : objects){
-            //so.getOligoSetsFullMap().clear();
             so.getHetDimerOligosList().clear();
-            //so.getHetDimerHashMap().clear();
-            //so.getHetDimerDagMap().clear();
-            //so.getOligoSetsMap().clear();
         }
-
-
 
         ModelAndView mvObj = new ModelAndView("/WEB-INF/pages/oligo/processOligos.jsp");
         mvObj.addObject("uploadedPath", upFile);
         mvObj.addObject("sequenceObjects", objects);
         mvObj.addObject("optimalOligosFile", oligosFilename);
         mvObj.addObject("projectId", projectId);
-
-
         hetdimerdb.close();
         db2.close();
-
-
         return mvObj;
 
     }
@@ -454,17 +392,7 @@ public class OligosCreationController implements Controller{
 
         for(SequenceObject so : objects){
 
-            String detailFileN=so.getDetailsFile();
-            String secondaryOptimalOligosFile = so.getSecondaryFile();
-
-            //File detailFile = new File(detailFileN);
-            //File secondOligosFile = new File(secondaryOptimalOligosFile);
-
-            //PrintWriter pwDetail = new PrintWriter(detailFile);
-            //PrintWriter pwSecond = new PrintWriter(secondOligosFile);
-
             LinkedHashMap<String, ArrayList<String>> optimalOligosLinkedHashmap = so.getPrimaryOptimalSetOfOligosForSet();
-
 
             //write optimal oligos file
             pwFirst.println("For query region: "+so.getChr()+":"+so.getStart()+"-"+so.getStop());
@@ -475,10 +403,7 @@ public class OligosCreationController implements Controller{
                 LinkedHashMap<String, ArrayList<String>> primaryOligosSet = so.getPrimaryOptimalSetOfOligosForSet();
 
                 System.out.println("primary oligo keyset size is:"+primaryOligosSet.keySet().size());
-
                 String primarySet = primaryOligosSet.keySet().iterator().next();
-
-                //pwFirst.println(primarySet.split("&DelG=")[1]);
 
                 for(String o : primaryOligosSet.get(primarySet)){
                     OligoObject oligoobj = (OligoObject) hetDimerHashMapMAPDB.get(o);
@@ -495,18 +420,11 @@ public class OligosCreationController implements Controller{
             }else{
                 pwFirst.println("NO oligos found");
             }
-
         }
 
         pwFirst.close();
 
-
         return firstOptimalOligosFile;
-
-
-
-
-
 
     }
 
@@ -514,11 +432,6 @@ public class OligosCreationController implements Controller{
 
     private void traverse_mapDB(Vertex<String> vertex, Multimap<String, String> filteredhetDimerIdsMapForSO, Graph<String> dagOligo, SequenceObject so, HTreeMap<String, Object> hetdimerMapForSO_sorted) {
         String parentObjId = vertex.getName();
-        //System.out.println("parentObj:" + parentObj.getInternalPrimerId() + " " + parentObj.getInternalStart());
-        /*if(vertex.getName().equalsIgnoreCase("Root")){
-            System.out.println("-----------starting traversal from root vertex! Parent Obj is root vertex!----------------\n");
-        }
-*/
 
         if(filteredhetDimerIdsMapForSO.get(parentObjId)!=null && filteredhetDimerIdsMapForSO.get(parentObjId).size()>0){
 
@@ -562,97 +475,15 @@ public class OligosCreationController implements Controller{
     }
 
 
-    /*private String writeOligosFinalFile(ArrayList<SequenceObject> objects, String dataDir, String finalOligos, String projectId) throws Exception {
-
-        String firstOptimalOligosFile = dataDir+finalOligos+projectId+"_primary.txt";
-        File firstOligosFile = new File(firstOptimalOligosFile);
-        PrintWriter pwFirst = new PrintWriter(firstOligosFile);
-        pwFirst.println("Primer Set\tPrimer Id\tPrimerChr\tPrimer Start\tPrimer End\tSequence\tSequence Rev. Complement\tGC\tTm\tSize\tSelf Dimer\tHairpin Tm\tHairpin dG\tBlat");
-
-        for(SequenceObject so : objects){
-
-            String detailFileN=so.getDetailsFile();
-            String secondaryOptimalOligosFile = so.getSecondaryFile();
-
-            File detailFile = new File(detailFileN);
-            File secondOligosFile = new File(secondaryOptimalOligosFile);
-
-            PrintWriter pwDetail = new PrintWriter(detailFile);
-            PrintWriter pwSecond = new PrintWriter(secondOligosFile);
-
-            TreeMap<String, List<OligoObject>> optimalOligosTree = so.getOligoSetsTreeMap();
-
-
-            //write optimal oligos file
-            pwFirst.println("For query region: "+so.getChr()+":"+so.getStart()+"-"+so.getStop());
-            System.out.println("For query region: " + so.getChr() + ":" + so.getStart() + "-" + so.getStop());
-
-            if(so.getPrimaryOptimalSetOfOligosForSet()!=null && so.getPrimaryOptimalSetOfOligosForSet().size()>0){
-                System.out.println("primary oligos set size:"+so.getPrimaryOptimalSetOfOligosForSet());
-                LinkedHashMap<String, ArrayList<String>> primaryOligosSet = so.getPrimaryOptimalSetOfOligosForSet();
-
-                System.out.println("primary oligo keyset size is:"+primaryOligosSet.keySet().size());
-
-                String primarySet = primaryOligosSet.keySet().iterator().next();
-
-                pwFirst.println(primarySet.split("&DelG=")[1]);
-
-                for(OligoObject o : primaryOligosSet.get(primarySet)){
-
-                    DNASequence seq = new DNASequence(o.getInternalSeq());
-                    SequenceView<NucleotideCompound> revcomp = seq.getReverseComplement();
-                    String revCompSeq = revcomp.getSequenceAsString();
-                    pwFirst.println(primarySet.split("&DelG=")[0]+"\t"+ o.getInternalPrimerId() + "\t" + so.getChr() + "\t" + o.getInternalStart() + "\t" + (Integer.parseInt(o.getInternalStart())+o.getInternalLen()) + "\t" + o.getInternalSeq() + "\t"+ revCompSeq +"\t"
-                            + o.getInternalGc() + "\t" + o.getInternalTm() + "\t" + o.getInternalLen() + "\t" + o.getHomodimerValue() + "\t-\t" + o.getHairpinValue() + "\t" + o.getInternalPrimerBlatList().size());
-                }
-
-            }else{
-                pwFirst.println("NO oligos found");
-            }
-
-
-            //write detailed file
-            pwDetail.println("<pre>"+so.getReportFile()+"</pre>");
-
-
-            //remove writing details file for now!
-
-            pwSecond.println("\"Primer Set\tPrimer Id\tPrimerChr\tPrimer Start\tPrimer End\tSequence\tSequence Rev. Complement\tGC\tTm\tSize\tSelf Dimer\tHairpin Tm\tHairpin dG\tBlat");
-
-            if(optimalOligosTree!=null && optimalOligosTree.size()>0){
-                for(String set : optimalOligosTree.keySet()){
-
-                    pwSecond.println("\n"+set.split("&DelG=",-1)[1]);
-
-                    //String key = set.split("_")[0];
-                    for(OligoObject o : optimalOligosTree.get(set)){
-
-                        DNASequence seq = new DNASequence(o.getInternalSeq());
-                        SequenceView<NucleotideCompound> revcomp = seq.getReverseComplement();
-                        String revCompSeq = revcomp.getSequenceAsString();
-
-                        pwSecond.println(set.split("&DelG=")[0]+"\t"+ o.getInternalPrimerId() + "\t" + so.getChr() + "\t" + o.getInternalStart() + "\t" + (Integer.parseInt(o.getInternalStart())+o.getInternalLen()) + "\t" + o.getInternalSeq() + "\t"+revCompSeq+"\t"
-                                + o.getInternalGc() + "\t" + o.getInternalTm() + "\t" + o.getInternalLen() + "\t" + o.getHomodimerValue() + "\t-\t" + o.getHairpinValue() + "\t" + o.getInternalPrimerBlatList().size());
-
-                    }
-
-                }
-            }
-
-            pwSecond.close();
-            pwDetail.close();
-
-        }
-
-        pwFirst.close();
-
-
-        return firstOptimalOligosFile;
-
-    }*/
-
-
-
+    /**
+     *
+     * @param ampliconObjList
+     * @param projectId
+     * @param filename
+     * @param so
+     * @return
+     * @throws Exception
+     */
 
     private String generateReportSetSubsectionIds(List<SequenceObjectSubsections> ampliconObjList, String projectId, String filename, SequenceObject so) throws Exception{
 
@@ -713,7 +544,6 @@ public class OligosCreationController implements Controller{
                 obj.setChr(lineArr[0]);
                 obj.setStart(Integer.parseInt(lineArr[1]));
                 obj.setStop(Integer.parseInt(lineArr[2]));
-
                 oligoList.add(obj);
             }
 
@@ -722,9 +552,7 @@ public class OligosCreationController implements Controller{
             error.add(e.getStackTrace());
         }
         finally {
-
             reader.close();
-
         }
 
         return oligoList;
@@ -785,17 +613,11 @@ public class OligosCreationController implements Controller{
             }
             answer = sb.toString();
 
-            //System.out.println(erranswer);
-
-            //System.out.println(answer);
-
             System.out.println("should have got an output from Primer3 and BLAT..");
-
 
             if(errAnswer.length()>2){
 
                 throw new Exception("Exception: Blat server issues. The BLAT server may have " +
-
                         "not been started. Please start server using gfServer.");
             }
 
@@ -805,9 +627,7 @@ public class OligosCreationController implements Controller{
         }
 
         return answer;
-
     }
-
 
 
     public String getBlatInpDir() {
