@@ -32,13 +32,13 @@ import java.util.List;
  *
  * @author Scott.Stark@jboss.org
  * @version $Revision$
- * @param <OligoObject>
+ * @param <String>
  */
 @SuppressWarnings("unchecked")
-public class Vertex<OligoObject> {
-    private List<Edge<OligoObject>> incomingEdges;
+public class Vertex<String> {
+    private List<Edge<String>> incomingEdges;
 
-    private List<Edge<OligoObject>> outgoingEdges;
+    private List<Edge<String>> outgoingEdges;
 
     private String name;
 
@@ -46,7 +46,7 @@ public class Vertex<OligoObject> {
 
     private int markState;
 
-    private OligoObject data;
+    private String data;
 
     /**
      * Calls this(null, null).
@@ -72,13 +72,14 @@ public class Vertex<OligoObject> {
      * @param data -
      *          data associated with vertex
      */
-    public Vertex(String n, OligoObject data) {
-        incomingEdges = new ArrayList<Edge<OligoObject>>();
-        outgoingEdges = new ArrayList<Edge<OligoObject>>();
+    public Vertex(String n, String data) {
+        incomingEdges = new ArrayList<Edge<String>>();
+        outgoingEdges = new ArrayList<Edge<String>>();
         name = n;
         mark = false;
         this.data = data;
     }
+
 
     /**
      * @return the possibly null name of the vertex
@@ -90,7 +91,7 @@ public class Vertex<OligoObject> {
     /**
      * @return the possibly null data of the vertex
      */
-    public OligoObject getData() {
+    public String getData() {
         return this.data;
     }
 
@@ -98,7 +99,7 @@ public class Vertex<OligoObject> {
      * @param data
      *          The data to set.
      */
-    public void setData(OligoObject data) {
+    public void setData(String data) {
         this.data = data;
     }
 
@@ -111,7 +112,7 @@ public class Vertex<OligoObject> {
      *          the edge to add
      * @return true if the edge was added, false otherwise
      */
-    public boolean addEdge(Edge<OligoObject> e) {
+    public boolean addEdge(Edge<String> e) {
         if (e.getFrom() == this)
             outgoingEdges.add(e);
         else if (e.getTo() == this)
@@ -128,8 +129,8 @@ public class Vertex<OligoObject> {
      *          the destination vertex
      * @param cost
      */
-    public void addOutgoingEdge(Vertex<OligoObject> to, int cost) {
-        Edge<OligoObject> out = new Edge<OligoObject>(this, to, cost);
+    public void addOutgoingEdge(Vertex<String> to, int cost) {
+        Edge<String> out = new Edge<String>(this, to, cost);
         outgoingEdges.add(out);
     }
 
@@ -140,8 +141,8 @@ public class Vertex<OligoObject> {
      *          the starting vertex
      * @param cost
      */
-    public void addIncomingEdge(Vertex<OligoObject> from, int cost) {
-        Edge<OligoObject> out = new Edge<OligoObject>(this, from, cost);
+    public void addIncomingEdge(Vertex<String> from, int cost) {
+        Edge<String> out = new Edge<String>(this, from, cost);
         incomingEdges.add(out);
     }
 
@@ -152,7 +153,7 @@ public class Vertex<OligoObject> {
      *          the edge to check
      * @return true it has an edge
      */
-    public boolean hasEdge(Edge<OligoObject> e) {
+    public boolean hasEdge(Edge<String> e) {
         if (e.getFrom() == this)
             return incomingEdges.contains(e);
         else if (e.getTo() == this)
@@ -169,7 +170,7 @@ public class Vertex<OligoObject> {
      * @return true if the edge was removed, false if the edge was not connected
      *         to this vertex
      */
-    public boolean remove(Edge<OligoObject> e) {
+    public boolean remove(Edge<String> e) {
         if (e.getFrom() == this)
             incomingEdges.remove(e);
         else if (e.getTo() == this)
@@ -194,7 +195,7 @@ public class Vertex<OligoObject> {
      *          the index into incoming edges
      * @return ith incoming edge
      */
-    public Edge<OligoObject> getIncomingEdge(int i) {
+    public Edge<String> getIncomingEdge(int i) {
         return incomingEdges.get(i);
     }
 
@@ -222,7 +223,7 @@ public class Vertex<OligoObject> {
      *          the index into outgoing edges
      * @return ith outgoing edge
      */
-    public Edge<OligoObject> getOutgoingEdge(int i) {
+    public Edge<String> getOutgoingEdge(int i) {
         return outgoingEdges.get(i);
     }
 
@@ -242,8 +243,8 @@ public class Vertex<OligoObject> {
      *          the destination
      * @return the outgoing edge going to dest if one exists, null otherwise.
      */
-    public Edge<OligoObject> findEdge(Vertex<OligoObject> dest) {
-        for (Edge<OligoObject> e : outgoingEdges) {
+    public Edge<String> findEdge(Vertex<String> dest) {
+        for (Edge<String> e : outgoingEdges) {
             if (e.getTo() == dest)
                 return e;
         }
@@ -257,7 +258,7 @@ public class Vertex<OligoObject> {
      *          the edge to check
      * @return e if its a member of the outgoing edges, null otherwise.
      */
-    public Edge<OligoObject> findEdge(Edge<OligoObject> e) {
+    public Edge<String> findEdge(Edge<String> e) {
         if (outgoingEdges.contains(e))
             return e;
         else
@@ -272,11 +273,11 @@ public class Vertex<OligoObject> {
      * @return Return Integer.MAX_VALUE if we have no edge to dest, 0 if dest is
      *         this vertex, the cost of the outgoing edge otherwise.
      */
-    public int cost(Vertex<OligoObject> dest) {
+    public int cost(Vertex<String> dest) {
         if (dest == this)
             return 0;
 
-        Edge<OligoObject> e = findEdge(dest);
+        Edge<String> e = findEdge(dest);
         int cost = Integer.MAX_VALUE;
         if (e != null)
             cost = e.getCost();
@@ -291,7 +292,7 @@ public class Vertex<OligoObject> {
      * @return true if there is an outgoing edge ending at vertex, false
      *         otherwise.
      */
-    public boolean hasEdge(Vertex<OligoObject> dest) {
+    public boolean hasEdge(Vertex<String> dest) {
         return (findEdge(dest) != null);
     }
 
@@ -350,14 +351,14 @@ public class Vertex<OligoObject> {
     /**
      * @return a string form of the vertex with in and out edges.
      */
-    public String toString() {
+    public java.lang.String toString() {
         StringBuffer tmp = new StringBuffer("Vertex(");
         tmp.append(name);
         tmp.append(", data=");
         tmp.append(data);
         tmp.append("), in:[");
         for (int i = 0; i < incomingEdges.size(); i++) {
-            Edge<OligoObject> e = incomingEdges.get(i);
+            Edge<String> e = incomingEdges.get(i);
             if (i > 0)
                 tmp.append(',');
             tmp.append('{');
@@ -368,7 +369,7 @@ public class Vertex<OligoObject> {
         }
         tmp.append("], out:[");
         for (int i = 0; i < outgoingEdges.size(); i++) {
-            Edge<OligoObject> e = outgoingEdges.get(i);
+            Edge<String> e = outgoingEdges.get(i);
             if (i > 0)
                 tmp.append(',');
             tmp.append('{');

@@ -45,7 +45,7 @@
                      <li class="list-group-item"><a href="/Antholigo/oligo/FileDownload.html?file=<%=optimalOligosFile%>&object=oligo">Optimal Oligos from each section</a></li>
                 </ul>
             </div>
-            <div class="panel-heading">
+            <%--<div class="panel-heading">
             <br/>
             <h3 class="panel-title">Download all files in Project:</h3>
                 <%
@@ -63,7 +63,7 @@
                 <%
                     }
                 %>
-            </div>
+            </div>--%>
         </div>
     </div>
 

@@ -31,9 +31,9 @@ package edu.chop.dgd.dgdObjects;
  *
  * @author Scott.Stark@jboss.org
  * @version $Revision$
- * @param <OligoObject>
+ * @param <String>
  */
-public interface DFSVisitor<OligoObject> {
+public interface DFSVisitor<String> {
     /**
      * Called by the graph traversal methods when a vertex is first visited.
      *
@@ -43,7 +43,7 @@ public interface DFSVisitor<OligoObject> {
      *          the vertex being visited.
      */
 
-    public void visit(Graph<OligoObject> g, Vertex<OligoObject> v);
+    public void visit(Graph<String> g, Vertex<String> v);
 
     /**
      * Used dfsSpanningTree to notify the visitor of each outgoing edge to an
@@ -56,5 +56,5 @@ public interface DFSVisitor<OligoObject> {
      * @param e -
      *          the outgoing edge from v
      */
-    public void visit(Graph<OligoObject> g, Vertex<OligoObject> v, Edge<OligoObject> e);
+    public void visit(Graph<String> g, Vertex<String> v, Edge<String> e);
 }

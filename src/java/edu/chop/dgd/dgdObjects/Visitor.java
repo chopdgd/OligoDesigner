@@ -31,9 +31,9 @@ package edu.chop.dgd.dgdObjects;
  *
  * @author Scott.Stark@jboss.org
  * @version $Revision$
- * @param <OligoObject>
+ * @param <String>
  */
-public interface Visitor<OligoObject> {
+public interface Visitor<String> {
     /**
      * Called by the graph traversal methods when a vertex is first visited.
      *
@@ -43,7 +43,7 @@ public interface Visitor<OligoObject> {
      *          the vertex being visited.
      */
 
-    public void visit(Graph<OligoObject> g, Vertex<OligoObject> v);
+    public void visit(Graph<String> g, Vertex<String> v);
 
     //public void visit(Graph<edu.chop.dgd.dgdObjects.OligoObject> g, Vertex<edu.chop.dgd.dgdObjects.OligoObject> startVertex, Vertex<edu.chop.dgd.dgdObjects.OligoObject> currentVertex, Set<Vertex<edu.chop.dgd.dgdObjects.OligoObject>> currentPath);
 }

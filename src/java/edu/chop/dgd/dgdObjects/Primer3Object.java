@@ -35,6 +35,8 @@ public class Primer3Object {
     String left3;
     String right3;
     String internal3;
+    String chr;
+    String assembly;
     List<BlatPsl> leftPrimerBlatList;
     List<BlatPsl> rightPrimerBlatList;
     List<BlatPsl> internalPrimerBlatList;
@@ -415,4 +417,19 @@ public class Primer3Object {
         this.internalPrimerBlatList = internalPrimerBlatList;
     }
 
+    public String getChr() {
+        return chr;
+    }
+
+    public void setChr(String chr) {
+        this.chr = chr;
+    }
+
+    public String getAssembly() {
+        return assembly;
+    }
+
+    public void setAssembly(String assembly) {
+        this.assembly = assembly;
+    }
 }

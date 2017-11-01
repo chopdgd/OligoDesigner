@@ -1,6 +1,7 @@
 package edu.chop.dgd.dgdObjects;
 
 import java.io.FileReader;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -8,7 +9,7 @@ import java.util.Scanner;
 /**
  * Created by jayaramanp on 3/4/14.
  */
-public class BlatPsl{
+public class BlatPsl implements Serializable{
 
     int match;
     int misMatch;
