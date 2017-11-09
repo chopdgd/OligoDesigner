@@ -6,6 +6,7 @@ import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.Multimap;
 import edu.chop.dgd.Process.*;
 import edu.chop.dgd.dgdObjects.*;
+import edu.chop.dgd.dgdUtils.OSValidator;
 import edu.chop.dgd.dgdUtils.OligoUtils;
 import org.biojava.nbio.core.sequence.DNASequence;
 import org.biojava.nbio.core.sequence.compound.NucleotideCompound;
@@ -189,6 +190,12 @@ public class OligosCreationController implements Controller{
 
 
         int numthreads=2;
+        int numcores = getNumberOfCPUCores();
+        System.out.println(numcores);
+
+        if(numcores>numthreads){
+            numthreads = numcores;
+        }
         //OligoSeedDaemon daemon = new OligoSeedDaemon(this.threads);
         OligoSeedDaemon daemon = new OligoSeedDaemon(objects.size(), numthreads);
         daemon.start(); int threadcount=0;
@@ -681,6 +688,60 @@ public class OligosCreationController implements Controller{
         }
 
         return answer;
+    }
+
+    private int getNumberOfCPUCores() {
+        OSValidator osValidator = new OSValidator();
+        String command = "";
+        if(osValidator.isMac()){
+            command = "sysctl -n machdep.cpu.core_count";
+        }else if(osValidator.isUnix()){
+            command = "lscpu";
+        }else if(osValidator.isWindows()){
+            command = "cmd /C WMIC CPU Get /Format:List";
+        }
+        Process process = null;
+        int numberOfCores = 0;
+        int sockets = 0;
+        try {
+            if(osValidator.isMac()){
+                String[] cmd = { "/bin/sh", "-c", command};
+                process = Runtime.getRuntime().exec(cmd);
+            }else{
+                process = Runtime.getRuntime().exec(command);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        BufferedReader reader = new BufferedReader(
+                new InputStreamReader(process.getInputStream()));
+        String line;
+
+        try {
+            while ((line = reader.readLine()) != null) {
+                if(osValidator.isMac()){
+                    numberOfCores = line.length() > 0 ? Integer.parseInt(line) : 0;
+                }else if (osValidator.isUnix()) {
+                    if (line.contains("Core(s) per socket:")) {
+                        numberOfCores = Integer.parseInt(line.split("\\s+")[line.split("\\s+").length - 1]);
+                    }
+                    if(line.contains("Socket(s):")){
+                        sockets = Integer.parseInt(line.split("\\s+")[line.split("\\s+").length - 1]);
+                    }
+                } else if (osValidator.isWindows()) {
+                    if (line.contains("NumberOfCores")) {
+                        numberOfCores = Integer.parseInt(line.split("=")[1]);
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if(osValidator.isUnix()){
+            return numberOfCores * sockets;
+        }
+        return numberOfCores;
     }
 
 
