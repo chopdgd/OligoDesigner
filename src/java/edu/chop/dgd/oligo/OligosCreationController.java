@@ -1,7 +1,6 @@
 package edu.chop.dgd.oligo;
 
 import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.Multimap;
 import edu.chop.dgd.Process.*;
@@ -276,7 +275,7 @@ public class OligosCreationController implements Controller{
 
         //running hetdimer analysis and deltaG filteration, only, in parallel.
         for(int n=1; n<=numfiles; n++){
-
+            hetdimer_threadcount = n-1;
             OligoHetDimerThread jobThread_hetDimer = new OligoHetDimerThread(n, numlines, hetdimer_threadcount, hetdimerFilename, dataDir, heterodimerOpDir);
             daemon_hetdimerMap.addJob(jobThread_hetDimer);
             /*System.out.println("starting hetdimer run in subset of file");
@@ -316,13 +315,16 @@ public class OligosCreationController implements Controller{
             //now create tree.
             Set<String> filteredHetDimerMapForSO_multimap_keys = filteredHetDimerMapForSO_multimap.keySet();
             ArrayList<String> filteredHetDimerMapForSO_multimap_keys_sorted = new OligoUtils().sortOligoIdListBySubsectionAndSerialNum(new ArrayList<String>(filteredHetDimerMapForSO_multimap_keys));
-            int startingcounter = 1;
+
 
             //Creating a multi-map instead
             Multimap<String, String> setsOfOligoSets_mapDB = LinkedListMultimap.create();
 
             ArrayList<String> seedOligoslist = new ArrayList<String>();
+            ArrayList<String> seedOligoslist_short = new ArrayList<String>();
 
+
+            //if seed oligos found within 3kb, dont do 6kb.
             for(String oligoobjid : filteredHetDimerMapForSO_multimap_keys_sorted){
                 OligoObject obj = (OligoObject) hetDimerMapForSO_mapDB_sorted.get(oligoobjid);
                 if((Integer.parseInt(obj.getInternalStart())-so.getStart()<=3000) && (Integer.parseInt(obj.getInternalStart())-so.getStart()>=1)){
@@ -330,7 +332,8 @@ public class OligosCreationController implements Controller{
                 }
             }
 
-            //if no seed oligos found.. dont do 6kb
+
+            //if no seed oligos found.. do 6kb
             if(seedOligoslist.size()==0){
                 for(String oligoobjid : filteredHetDimerMapForSO_multimap_keys_sorted){
                     OligoObject obj = (OligoObject) hetDimerMapForSO_mapDB_sorted.get(oligoobjid);
@@ -343,9 +346,27 @@ public class OligosCreationController implements Controller{
             //sorting the keys.
             //for(String oligoobjid : filteredHetDimerMapForSO_multimap_keys_sorted){
             if(seedOligoslist.size()>0){
+                //only return 5-10 or so children at a time.Subject to change.
+                if(seedOligoslist.size()>=5){
+                    for(int s=0; s<5; s++){
+                        seedOligoslist_short.add(seedOligoslist.get(s));
+                    }
+                    seedOligoslist.clear();
+                    seedOligoslist = seedOligoslist_short;
+                }
+
+                //Start GraphDaemon so as to parallelize graphs generation.
+                OligoGraphDaemon graphDaemon = new OligoGraphDaemon(numfiles, numthreads);
+                graphDaemon.start();
+
+                int jobcount=0;
+                int startingcounter = 1;
                 for(String oligoobjid : seedOligoslist){
-                    OligoObject obj = (OligoObject) hetDimerMapForSO_mapDB_sorted.get(oligoobjid);
-                    //if(((Integer.parseInt(obj.getInternalStart())-so.getStart()<=6000) || (Integer.parseInt(obj.getInternalStart())-so.getStart()<=3000)) && (Integer.parseInt(obj.getInternalStart())-so.getStart()>=1)){
+
+                    OligoGraphThread graphjobThread = new OligoGraphThread(oligoobjid, hetDimerMapForSO_mapDB_sorted, filteredHetDimerMapForSO_multimap, so, jobcount, startingcounter, allHetDimerPairsObjectsMapMapdb);
+                    graphDaemon.addJob(graphjobThread);
+
+                    /*OligoObject obj = (OligoObject) hetDimerMapForSO_mapDB_sorted.get(oligoobjid);
 
                     Graph<String> dagOligo = new Graph<String>();
                     //Vertex<String> rootvertex = new Vertex<String>("root:"+obj.getInternalPrimerId());
@@ -410,9 +431,21 @@ public class OligosCreationController implements Controller{
                                 setsOfOligoSets_mapDB.put(key, pathid);
                             }
                         }
-                    }
-                    //}
+                    }*/
+                    jobcount+=1;
                 }
+
+                try {
+                    graphDaemon.join();
+                    Thread.sleep(2000);
+                } catch (InterruptedException ie) {
+                    System.out.println("Graph Daemon interrupted, exiting");
+                    System.exit(1);
+                }
+
+                setsOfOligoSets_mapDB = graphDaemon.getCombinedResultMap();
+
+
             }else{
                 System.out.println("SO has no seed oligos within 6Kb to create graphs");
             }
@@ -490,105 +523,6 @@ public class OligosCreationController implements Controller{
 
     }
 
-
-
-    private void traverse_mapDB(Vertex<String> vertex, Multimap<String, String> filteredhetDimerIdsMapForSO, Graph<String> dagOligo, SequenceObject so, HTreeMap<String, Object> hetdimerMapForSO_sorted) {
-        String parentObjId = vertex.getName();
-
-        if(filteredhetDimerIdsMapForSO.get(parentObjId)!=null && filteredhetDimerIdsMapForSO.get(parentObjId).size()>0){
-
-            Collection<String> childrenObjCollection = filteredhetDimerIdsMapForSO.get(parentObjId);
-            List<String> childrenObj = new ArrayList<String>(childrenObjCollection);
-
-            //only return 5-10 or so children at a time.Subject to change.
-            if(childrenObj.size()>=5){
-                childrenObj = childrenObj.subList(0, 4);
-            }
-
-            for(String childObjid : childrenObj){
-                OligoObject childOligoObj = (OligoObject) hetdimerMapForSO_sorted.get(childObjid);
-
-                Vertex<String> childVertex = new Vertex<String>(childObjid, childObjid);
-                //System.out.println("iterating through all children for "+vertex.getName()+" Now at childVertex:" + childObjid+ " Same as:"+ childVertex.getName()+" POS: "+ childOligoObj.getInternalStart());
-
-                //uncomenting today 18thnov 2016
-                dagOligo.addVertex(vertex);
-                childVertex.setData(childObjid);
-                dagOligo.addVertex(childVertex);
-
-                boolean result = dagOligo.addEdge(vertex, childVertex, 1);
-
-                List<Edge<String>> edgesList = dagOligo.getEdges();
-                //System.out.println("edges list:"+ edgesList.size());
-
-                if(so.getStop()-Integer.parseInt(childOligoObj.getInternalStart())>=2000){
-                    System.out.println("Traversing from childVertex:" + childObjid + " " + childOligoObj.getInternalStart()+" to its children");
-                    if(filteredhetDimerIdsMapForSO.size()>0){
-                        traverse_mapDB(childVertex, filteredhetDimerIdsMapForSO, dagOligo, so, hetdimerMapForSO_sorted);
-                    }
-                }
-
-                /*if(so.getStop()-Integer.parseInt(childObj.getInternalStart())<2000){
-                    //System.out.println("End of this path at:" + childObj.getInternalPrimerId() + " at " + childObj.getInternalStart() + " with so stop at:" + so.getStop() + " starting at root vertex:"+ dagOligo.getRootVertex().getName());
-                }*/
-            }
-        }
-    }
-
-
-    /**
-     *
-     * @param ampliconObjList
-     * @param projectId
-     * @param filename
-     * @param so
-     * @return
-     * @throws Exception
-     */
-
-    private String generateReportSetSubsectionIds(List<SequenceObjectSubsections> ampliconObjList, String projectId, String filename, SequenceObject so) throws Exception{
-
-        Date dt = new Date();
-
-        //create a placeholder for filename. it should be sent in from parameter. this is for backward compatibility. although i see no reason for filename to be set here.
-        String fileN="oligoInp_"+projectId+"_"+ new SimpleDateFormat("yyyyMMddhhmm'.txt'").format(new Date());
-        if(filename.length()>0){
-            fileN = filename;
-        }
-
-        File oligoInputFile = new File(dataDir+oligoInputDir+fileN);
-        PrintWriter pw = new PrintWriter(oligoInputFile);
-        int counter = 0;
-
-        for(SequenceObjectSubsections oss : ampliconObjList){
-            counter+=1;
-            String subsectionId = "inpSeq"+so.getChr()+":"+so.getStart()+":"+so.getStop()+"_"+counter;
-            oss.setSubsectionid(subsectionId);
-            pw.println("SEQUENCE_ID="+subsectionId+"\nSEQUENCE_TEMPLATE="+oss.getSubSectionSequence()+"\n"+
-                    "PRIMER_INTERNAL_MAX_TM="+max_tm+"\nPRIMER_INTERNAL_OPT_TM="+opt_tm+"\nPRIMER_INTERNAL_MIN_TM="+min_tm+"\n"+
-                    "PRIMER_INTERNAL_MAX_GC="+max_gc+"\nPRIMER_INTERNAL_OPT_GC_PERCENT="+opt_gc+"\nPRIMER_INTERNAL_MIN_GC="+min_gc+"\n"+
-                    "PRIMER_INTERNAL_MAX_SIZE="+max_len+"\nPRIMER_INTERNAL_OPT_SIZE="+opt_len+"\nPRIMER_INTERNAL_MIN_SIZE="+min_len+"\n"+
-                    "PRIMER_INTERNAL_SALT_MONOVALENT="+na_ion+"\nPRIMER_INTERNAL_SALT_DIVALENT="+mg_ion+"\nPRIMER_INTERNAL_MAX_SELF_ANY="+self_any+"\n"+
-                    "PRIMER_INTERNAL_MAX_SELF_END="+self_end+"\n=");
-            System.out.println("SEQUENCE_ID="+subsectionId+"\nSEQUENCE_TEMPLATE="+oss.getSubSectionSequence()+"\n"+
-                    "PRIMER_INTERNAL_MAX_TM="+max_tm+"\nPRIMER_INTERNAL_OPT_TM="+opt_tm+"\nPRIMER_INTERNAL_MIN_TM="+min_tm+"\n"+
-                    "PRIMER_INTERNAL_MAX_GC="+max_gc+"\nPRIMER_INTERNAL_OPT_GC=PERCENT"+opt_gc+"\nPRIMER_INTERNAL_MIN_GC="+min_gc+"\n"+
-                 "PRIMER_INTERNAL_MAX_SIZE="+max_len+"\nPRIMER_INTERNAL_OPT_SIZE="+opt_len+"\nPRIMER_INTERNAL_MIN_SIZE="+min_len+"\n"+
-                "PRIMER_INTERNAL_SALT_MONOVALENT="+na_ion+"\nPRIMER_INTERNAL_SALT_DIVALENT="+mg_ion+"\nPRIMER_INTERNAL_MAX_SELF_ANY="+self_any+"\n"+
-                "PRIMER_INTERNAL_MAX_SELF_END="+self_end+"\n=");
-        }
-
-        pw.flush();
-        pw.close();
-
-        String resultPrimer3Blat = runOligoProcessBuilder(fileN);
-        //System.out.println(resultPrimer3Blat);
-
-        return resultPrimer3Blat;
-
-    }
-
-
     private ArrayList<SequenceObject> getObjectsFromFile(File fileToParse, ArrayList error, String assembly) throws Exception {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(fileToParse)));
@@ -603,8 +537,9 @@ public class OligosCreationController implements Controller{
                 SequenceObject obj = new SequenceObject();
                 obj.setAssembly(assembly);
                 obj.setChr(lineArr[0]);
-                obj.setStart(Integer.parseInt(lineArr[1]));
-                obj.setStop(Integer.parseInt(lineArr[2]));
+                //padding it by 3kb each end
+                obj.setStart(Integer.parseInt(lineArr[1])-3000);
+                obj.setStop(Integer.parseInt(lineArr[2])+3000);
                 oligoList.add(obj);
             }
 
