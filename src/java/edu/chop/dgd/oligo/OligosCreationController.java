@@ -347,8 +347,8 @@ public class OligosCreationController implements Controller{
             //for(String oligoobjid : filteredHetDimerMapForSO_multimap_keys_sorted){
             if(seedOligoslist.size()>0){
                 //only return 5-10 or so children at a time.Subject to change.
-                if(seedOligoslist.size()>=4){
-                    for(int s=0; s<4; s++){
+                if(seedOligoslist.size()>=3){
+                    for(int s=0; s<3; s++){
                         seedOligoslist_short.add(seedOligoslist.get(s));
                     }
                     seedOligoslist.clear();

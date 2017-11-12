@@ -134,8 +134,8 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
             List<String> childrenObj = new ArrayList<String>(childrenObjCollection);
 
             //only return 5-10 or so children at a time.Subject to change.
-            if(childrenObj.size()>=5){
-                childrenObj = childrenObj.subList(0, 4);
+            if(childrenObj.size()>=3){
+                childrenObj = childrenObj.subList(0, 2);
             }
 
             for(String childObjid : childrenObj){
