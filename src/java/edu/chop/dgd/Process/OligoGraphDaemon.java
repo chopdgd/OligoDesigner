@@ -54,7 +54,18 @@ public class OligoGraphDaemon extends Thread {
 				if (result != null) {
 					finishedJobs++;
 
-                    sortedOligosmultiMapsegment.putAll(result.get());
+                    Multimap<String, String> seedOligoMultimap = result.get();
+                    for(String key : seedOligoMultimap.keySet()){
+                        if(sortedOligosmultiMapsegment.containsKey(key)){
+                            System.out.println("sortedOligosMultimap contains key!!"+seedOligoMultimap.get(key));
+                        }else{
+                            for(String value: seedOligoMultimap.get(key)){
+                                sortedOligosmultiMapsegment.put(key, value);
+                            }
+                        }
+                    }
+
+                    //sortedOligosmultiMapsegment.putAll(result.get());
 
 				}
 

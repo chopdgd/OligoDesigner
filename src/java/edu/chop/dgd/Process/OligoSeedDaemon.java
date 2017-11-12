@@ -85,7 +85,8 @@ public class OligoSeedDaemon extends Thread {
 
 		} catch (ExecutionException exex) {
 			System.out.println("Error retrieving thread result, exiting");
-			System.exit(1);
+            exex.printStackTrace();
+            System.exit(1);
 		}
 	}
 	

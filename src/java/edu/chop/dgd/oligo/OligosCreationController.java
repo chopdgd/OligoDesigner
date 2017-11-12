@@ -347,8 +347,8 @@ public class OligosCreationController implements Controller{
             //for(String oligoobjid : filteredHetDimerMapForSO_multimap_keys_sorted){
             if(seedOligoslist.size()>0){
                 //only return 5-10 or so children at a time.Subject to change.
-                if(seedOligoslist.size()>=5){
-                    for(int s=0; s<5; s++){
+                if(seedOligoslist.size()>=4){
+                    for(int s=0; s<4; s++){
                         seedOligoslist_short.add(seedOligoslist.get(s));
                     }
                     seedOligoslist.clear();
@@ -356,7 +356,7 @@ public class OligosCreationController implements Controller{
                 }
 
                 //Start GraphDaemon so as to parallelize graphs generation.
-                OligoGraphDaemon graphDaemon = new OligoGraphDaemon(numfiles, numthreads);
+                OligoGraphDaemon graphDaemon = new OligoGraphDaemon(seedOligoslist.size(), numthreads);
                 graphDaemon.start();
 
                 int jobcount=0;
@@ -433,6 +433,7 @@ public class OligosCreationController implements Controller{
                         }
                     }*/
                     jobcount+=1;
+                    startingcounter++;
                 }
 
                 try {
@@ -487,8 +488,7 @@ public class OligosCreationController implements Controller{
 
         for(SequenceObject so : objects){
 
-            LinkedHashMap<String, ArrayList<String>> optimalOligosLinkedHashmap = so.getPrimaryOptimalSetOfOligosForSet();
-
+            //LinkedHashMap<String, ArrayList<String>> optimalOligosLinkedHashmap = so.getPrimaryOptimalSetOfOligosForSet();
             //write optimal oligos file
             pwFirst.println("For query region: "+so.getChr()+":"+so.getStart()+"-"+so.getStop());
             System.out.println("For query region: " + so.getChr() + ":" + so.getStart() + "-" + so.getStop());
@@ -498,9 +498,10 @@ public class OligosCreationController implements Controller{
                 LinkedHashMap<String, ArrayList<String>> primaryOligosSet = so.getPrimaryOptimalSetOfOligosForSet();
 
                 System.out.println("primary oligo keyset size is:"+primaryOligosSet.keySet().size());
-                String primarySet = primaryOligosSet.keySet().iterator().next();
+                //String primarySet = primaryOligosSet.keySet().iterator().next();
+                Iterator<String> primarySetKeySetit = primaryOligosSet.keySet().iterator();
 
-                for(String o : primaryOligosSet.get(primarySet)){
+                /*for(String o : primaryOligosSet.get(primarySet)){
                     OligoObject oligoobj = (OligoObject) hetDimerHashMapMAPDB.get(o);
                     DNASequence seq = new DNASequence(oligoobj.getInternalSeq());
                     SequenceView<NucleotideCompound> revcomp = seq.getReverseComplement();
@@ -510,6 +511,22 @@ public class OligosCreationController implements Controller{
                             + "\t" + oligoobj.getInternalSeq() + "\t"+ revCompSeq +"\t"
                             + oligoobj.getInternalGc() + "\t" + oligoobj.getInternalTm() + "\t" + oligoobj.getInternalLen()
                             + "\t" + oligoobj.getHomodimerValue() + "\t-\t" + oligoobj.getHairpinValue() + "\t" + oligoobj.getInternalPrimerBlatList().size());
+                }*/
+
+
+                while(primarySetKeySetit.hasNext()){
+                    String primarySet = primarySetKeySetit.next();
+                    for(String o : primaryOligosSet.get(primarySet)){
+                        OligoObject oligoobj = (OligoObject) hetDimerHashMapMAPDB.get(o);
+                        DNASequence seq = new DNASequence(oligoobj.getInternalSeq());
+                        SequenceView<NucleotideCompound> revcomp = seq.getReverseComplement();
+                        String revCompSeq = revcomp.getSequenceAsString();
+                        pwFirst.println(primarySet.split("inpSeq")[0]+"\t"+ oligoobj.getInternalPrimerId() + "\t" + so.getChr() + "\t" + oligoobj.getInternalStart()
+                                + "\t" + (Integer.parseInt(oligoobj.getInternalStart())+oligoobj.getInternalLen())
+                                + "\t" + oligoobj.getInternalSeq() + "\t"+ revCompSeq +"\t"
+                                + oligoobj.getInternalGc() + "\t" + oligoobj.getInternalTm() + "\t" + oligoobj.getInternalLen()
+                                + "\t" + oligoobj.getHomodimerValue() + "\t-\t" + oligoobj.getHairpinValue() + "\t" + oligoobj.getInternalPrimerBlatList().size());
+                    }
                 }
 
             }else{
@@ -538,8 +555,8 @@ public class OligosCreationController implements Controller{
                 obj.setAssembly(assembly);
                 obj.setChr(lineArr[0]);
                 //padding it by 3kb each end
-                obj.setStart(Integer.parseInt(lineArr[1])-3000);
-                obj.setStop(Integer.parseInt(lineArr[2])+3000);
+                obj.setStart(Integer.parseInt(lineArr[1])-2000);
+                obj.setStop(Integer.parseInt(lineArr[2])+2000);
                 oligoList.add(obj);
             }
 

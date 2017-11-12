@@ -62,10 +62,10 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
         //LinkedHashMap<String, ArrayList<OligoObject>> arrayOfPathsForRoot = new LinkedHashMap<String, ArrayList<OligoObject>>();
         Multimap<java.lang.String, java.lang.String> arrayOfPathsForRoot_multimap = LinkedHashMultimap.create();
         final ArrayList<String> pathArrays = new ArrayList<String>();
-        int counter=1;
+        //int counter=1;
         //dagOligo.setMapOfOligoPathArrays(arrayOfPathsForRoot);
         dagOligo.setMapOfOligoidsPathMultimapArrays(arrayOfPathsForRoot_multimap);
-        dagOligo.dfsSpanningTree(rootvertex, pathArrays, counter, dagOligo, new DFSVisitor<String>() {
+        dagOligo.dfsSpanningTree(rootvertex, pathArrays, startingcounter, dagOligo, new DFSVisitor<String>() {
 
             @Override
             public void visit(Graph<String> g, Vertex<String> v) {
@@ -151,7 +151,7 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
 
                 boolean result = dagOligo.addEdge(vertex, childVertex, 1);
 
-                List<Edge<String>> edgesList = dagOligo.getEdges();
+                //List<Edge<String>> edgesList = dagOligo.getEdges();
                 //System.out.println("edges list:"+ edgesList.size());
 
                 if(so.getStop()-Integer.parseInt(childOligoObj.getInternalStart())>=2000){
@@ -161,9 +161,9 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
                     }
                 }
 
-                /*if(so.getStop()-Integer.parseInt(childObj.getInternalStart())<2000){
-                    //System.out.println("End of this path at:" + childObj.getInternalPrimerId() + " at " + childObj.getInternalStart() + " with so stop at:" + so.getStop() + " starting at root vertex:"+ dagOligo.getRootVertex().getName());
-                }*/
+                if(so.getStop()-Integer.parseInt(childOligoObj.getInternalStart())<2000){
+                    System.out.println("End of this path at:" + childOligoObj.getInternalPrimerId() + " at " + childOligoObj.getInternalStart() + " with so stop at:" + so.getStop() + " starting at root vertex:"+ dagOligo.getRootVertex().getName());
+                }
             }
         }
     }

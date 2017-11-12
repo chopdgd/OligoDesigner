@@ -1039,6 +1039,7 @@ public class MfoldDimer {
         }
 
         oligosReturned = new OligoUtils().sortOligoIdListBySubsectionAndSerialNum(oligosReturned);
+        Collections.shuffle(oligosReturned);
         return oligosReturned;
 
     }
