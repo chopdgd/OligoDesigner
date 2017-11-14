@@ -350,13 +350,33 @@ public class OligosCreationController implements Controller{
             //for(String oligoobjid : filteredHetDimerMapForSO_multimap_keys_sorted){
             if(seedOligoslist.size()>0){
                 //only return 5-10 or so children at a time.Subject to change.
-                if(seedOligoslist.size()>=3){
+                if(so.getStop()-so.getStart()>=100000){
+                    //more seed oligos but only 2 children per parent node. more of a binary tree.
+                    if(seedOligoslist.size()>=5){
+                        for(int s=0; s<5; s++){
+                            seedOligoslist_short.add(seedOligoslist.get(s));
+                        }
+                        seedOligoslist.clear();
+                        seedOligoslist = seedOligoslist_short;
+                    }
+                }else if(so.getStop()-so.getStart()<100000){
+                    //feer seed oligos but 3 children per parent node. wider graph.
+                    if(seedOligoslist.size()>=3){
+                        for(int s=0; s<3; s++){
+                            seedOligoslist_short.add(seedOligoslist.get(s));
+                        }
+                        seedOligoslist.clear();
+                        seedOligoslist = seedOligoslist_short;
+                    }
+                }
+
+                /*if(seedOligoslist.size()>=3){
                     for(int s=0; s<3; s++){
                         seedOligoslist_short.add(seedOligoslist.get(s));
                     }
                     seedOligoslist.clear();
                     seedOligoslist = seedOligoslist_short;
-                }
+                }*/
 
                 //Start GraphDaemon so as to parallelize graphs generation.
                 OligoGraphDaemon graphDaemon = new OligoGraphDaemon(seedOligoslist.size(), numthreads);
