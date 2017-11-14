@@ -725,7 +725,7 @@ public class MfoldDimer {
      * @param oligoObjectsMap
      * @return
      */
-    public ArrayList<String[]> createSubsetofhetDimersRunHeterodimerAnalysis(LinkedHashMap<OligoObject, List<OligoObject>> oligoObjectsMap) {
+    public ArrayList<String[]> createSubsetofhetDimers(LinkedHashMap<OligoObject, List<OligoObject>> oligoObjectsMap) {
 
         Set<OligoObject> oligoIdsSet = oligoObjectsMap.keySet();
         ArrayList<OligoObject> oligoIdsArray = new ArrayList<OligoObject>();
@@ -800,6 +800,56 @@ public class MfoldDimer {
 
         return counter+"&"+resultHeterodimerString;
     }
+
+    /***
+     *
+     * @param inputlistforHetDimerAnalysis
+     * @param heterodimerInpDir
+     * @param dataDir
+     * @param hetdimerFilename
+     * @param serialNum
+     * @param oligoidStoppedAt
+     * @param numlines
+     * @return
+     * @throws Exception
+     */
+    public int createFileForHeterodimerAnalysis(ArrayList<String[]> inputlistforHetDimerAnalysis, String heterodimerInpDir, String dataDir, String hetdimerFilename, int serialNum, int oligoidStoppedAt, int numlines) throws Exception {
+
+        String file1 = hetdimerFilename+"_"+serialNum+"_1";
+        String file2 = hetdimerFilename+"_"+serialNum+"_2";
+        File hetInpFile1 = new File(dataDir+heterodimerInpDir+file1);
+        File hetInpFile2 = new File(dataDir+heterodimerInpDir+file2);
+        PrintWriter pw1 = new PrintWriter(hetInpFile1);
+        PrintWriter pw2 = new PrintWriter(hetInpFile2);
+
+        if(inputlistforHetDimerAnalysis.size()-oligoidStoppedAt<=numlines){
+            //numlines = inputlistforHetDimerAnalysis.size()-oligoidStoppedAt;
+            numlines = inputlistforHetDimerAnalysis.size();
+        }else{
+            numlines = oligoidStoppedAt+numlines;
+        }
+
+        int counter = oligoidStoppedAt;
+        for(int i=oligoidStoppedAt; i<numlines; i++){
+            String[] inputarr = inputlistforHetDimerAnalysis.get(i);
+
+            String fileLine1 = inputarr[0];
+            String fileLine2 = inputarr[1];
+
+            pw1.print(fileLine1);
+            pw2.print(fileLine2);
+
+            counter += 1;
+        }
+
+        pw1.close();
+        pw2.close();
+
+
+        return counter;
+    }
+
+
 
     /**
      *
@@ -989,6 +1039,7 @@ public class MfoldDimer {
         }
 
         oligosReturned = new OligoUtils().sortOligoIdListBySubsectionAndSerialNum(oligosReturned);
+        Collections.shuffle(oligosReturned);
         return oligosReturned;
 
     }

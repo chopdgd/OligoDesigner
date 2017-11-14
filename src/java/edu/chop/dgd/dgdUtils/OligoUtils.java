@@ -80,6 +80,10 @@ public class OligoUtils {
                 String any = prObjarr[5];
                 String dash3 = prObjarr[6];
                 String seq = prObjarr[7];
+                if(prObjarr.length>=9){
+                    String hairpintemp = prObjarr[7];
+                    seq = prObjarr[8];
+                }
                 String internalPrimerId = "";
                 String chr = "";
                 String assembly = "";
