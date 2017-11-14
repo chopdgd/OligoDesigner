@@ -263,9 +263,12 @@ public class SequenceObject{
             Random random = new Random();
             Multimap<String, String> setofOligosInObject = o.getOligoSetsFullMapMultiMap();
             List<String> setofOligoskeys = new ArrayList<String>(setofOligosInObject.keySet());
-            Collections.shuffle(setofOligoskeys);
-            String randomKey = setofOligoskeys.get(random.nextInt(setofOligoskeys.size()));
-            oligoSetsFullMap.put(randomKey, new ArrayList<String>(setofOligosInObject.get(randomKey)));
+            if(setofOligoskeys.size()>0){
+                Collections.shuffle(setofOligoskeys);
+                String randomKey = setofOligoskeys.get(random.nextInt(setofOligoskeys.size()));
+                oligoSetsFullMap.put(randomKey, new ArrayList<String>(setofOligosInObject.get(randomKey)));
+            }
+
             o.setPrimaryOptimalSetOfOligosForSet(oligoSetsFullMap);
         }
 
