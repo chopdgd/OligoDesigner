@@ -61,6 +61,7 @@ public class OligoHetDimerDaemon extends Thread {
 					} else {*/
                         //combinedhetDimerlistResult.combine(result.get());
                         allHetDimerPairsObjectsMapMapdb.putAll(result.get());
+                        db2.commit();
 					//}
 				}
 

@@ -181,10 +181,10 @@ public class OligosCreationController implements Controller{
         //create new MapDB database to store all hetdimer objects:
         Serializer<OligoObject> serializer = new OligoSerializer();
         DB hetdimerdb = DBMaker.fileDB("/data/"+heterodimerInpDir+"/"+assembly+"_"+projectId+".db")
-                //.closeOnJvmShutdown()
+                .closeOnJvmShutdown().transactionEnable()
                 .fileDeleteAfterClose().make();
         //stores all hetdimer object info. so that only storing the ids for the other maps, are enough further down.
-        HTreeMap<String, Object> hetDimerHashMapMAPDB = hetdimerdb.hashMap("hetDimerHashMap").keySerializer(Serializer.STRING).
+        HTreeMap<String, Object> hetDimerHashMapMAPDB = hetdimerdb.hashMap("hetDimerHashMap"+assembly+"_"+projectId).keySerializer(Serializer.STRING).
                 valueSerializer(new SerializerJava()).createOrOpen();
 
 
@@ -261,7 +261,7 @@ public class OligosCreationController implements Controller{
 
         String hetdimerFilename = "oligoInp_"+projectId+"_"+ new SimpleDateFormat("yyyyMMddhhmm'.txt'").format(new Date());
         //using MapDB, it will only add the two ids as a string and a float value as the value.
-        DB db2 = DBMaker.tempFileDB().fileDeleteAfterClose().make();
+        DB db2 = DBMaker.tempFileDB().closeOnJvmShutdown().transactionEnable().fileDeleteAfterClose().make();
         HTreeMap<String, Float> allHetDimerPairsObjectsMapMapdb = db2.hashMap("allHetDimerPairsObjectsMapMapdb").keySerializer(Serializer.STRING).valueSerializer(Serializer.FLOAT).createOrOpen();
 
         //getting first oligoId to begin with.
@@ -300,13 +300,16 @@ public class OligosCreationController implements Controller{
 
         for(SequenceObject so : objects){
 
-            DB db = DBMaker.memoryDB().fileDeleteAfterClose().make();
             ArrayList<String> hetDimerIdListForSO = mfd.getHetDimersIdsForRegion(allHetDimerPairsObjectsMapMapdb, so, hetDimerHashMapMAPDB);
             hetDimerIdListForSO = new OligoUtils().sortOligoIdListBySubsectionAndSerialNum(hetDimerIdListForSO);
-            HTreeMap<String, Object> hetDimerMapForSO_mapDB_sorted = db.hashMap("hetDimerMapOnlySO_sorted").keySerializer(Serializer.STRING).valueSerializer(new SerializerJava()).createOrOpen();
+
+            DB db = DBMaker.memoryDB().closeOnJvmShutdown().transactionEnable().fileDeleteAfterClose().make();
+            HTreeMap<String, Object> hetDimerMapForSO_mapDB_sorted = db.hashMap("hetDimerMapOnlySO_sorted"+so.getChr()+"_"+so.getStart()+"_"+so.getStop()).keySerializer(Serializer.STRING).valueSerializer(new SerializerJava()).createOrOpen();
+
             for(String id : hetDimerIdListForSO){
                 hetDimerMapForSO_mapDB_sorted.put(id, hetDimerHashMapMAPDB.get(id));
             }
+            db.commit();
 
             //Create NavigableSet. set tuple serializer
             Multimap<String, String> filteredHetDimerMapForSO_multimap = ArrayListMultimap.create();
@@ -363,75 +366,8 @@ public class OligosCreationController implements Controller{
                 int startingcounter = 1;
                 for(String oligoobjid : seedOligoslist){
 
-                    OligoGraphThread graphjobThread = new OligoGraphThread(oligoobjid, hetDimerMapForSO_mapDB_sorted, filteredHetDimerMapForSO_multimap, so, jobcount, startingcounter, allHetDimerPairsObjectsMapMapdb);
+                    OligoGraphThread graphjobThread = new OligoGraphThread(oligoobjid, hetDimerMapForSO_mapDB_sorted, filteredHetDimerMapForSO_multimap, so, jobcount, startingcounter, allHetDimerPairsObjectsMapMapdb, spacing);
                     graphDaemon.addJob(graphjobThread);
-
-                    /*OligoObject obj = (OligoObject) hetDimerMapForSO_mapDB_sorted.get(oligoobjid);
-
-                    Graph<String> dagOligo = new Graph<String>();
-                    //Vertex<String> rootvertex = new Vertex<String>("root:"+obj.getInternalPrimerId());
-                    Vertex<String> rootvertex = new Vertex<String>(obj.getInternalPrimerId());
-                    //rootvertex.setData(obj);
-                    rootvertex.setMarkState(0);
-                    dagOligo.addVertex(rootvertex);
-                    dagOligo.setRootVertex(rootvertex);
-
-                    if(so.getStop()-Integer.parseInt(obj.getInternalStart())>=2000){
-                        //traverse(rootvertex, filteredhetDimerMapForSO, dagOligo, so);
-                        traverse_mapDB(rootvertex, filteredHetDimerMapForSO_multimap, dagOligo, so, hetDimerMapForSO_mapDB_sorted);
-                    }
-
-                    startingcounter+=1;
-                    //LinkedHashMap<String, ArrayList<OligoObject>> arrayOfPathsForRoot = new LinkedHashMap<String, ArrayList<OligoObject>>();
-                    Multimap<java.lang.String, java.lang.String> arrayOfPathsForRoot_multimap = LinkedHashMultimap.create();
-                    final ArrayList<String> pathArrays = new ArrayList<String>();
-                    int counter=1;
-                    //dagOligo.setMapOfOligoPathArrays(arrayOfPathsForRoot);
-                    dagOligo.setMapOfOligoidsPathMultimapArrays(arrayOfPathsForRoot_multimap);
-                    dagOligo.dfsSpanningTree(rootvertex, pathArrays, counter, dagOligo, new DFSVisitor<String>() {
-
-                        @Override
-                        public void visit(Graph<String> g, Vertex<String> v) {
-                            System.out.println("at dag: "+ v.getName() + " num outgoing vertices: "+ v.getOutgoingEdgeCount() + " and outgoing verticeshash = ");
-                        }
-
-                        @Override
-                        public void visit(Graph<String> g, Vertex<String> v, Edge<String> e) {
-
-                        }
-                    });
-
-                    Set<String> keyset = dagOligo.getMapOfOligoidsPathMultimapArrays().keySet();
-                    Iterator<String> keyit = keyset.iterator();
-                    while (keyit.hasNext()){
-                        String key1part = keyit.next();
-                        String key2part = obj.getInternalPrimerId();
-                        String key = key1part+key2part;
-
-                        //System.out.println(key);
-                        Collection<String> pathCollection = dagOligo.getMapOfOligoidsPathMultimapArrays().get(key1part);
-                        ArrayList<String> pathArray = new ArrayList<String>(pathCollection);
-                        //sort by region and subsection. because we have het dimer interactions only for sorted Oligos.
-                        pathArray = new OligoUtils().sortOligoIdListBySubsectionAndSerialNum(pathArray);
-                        int toremoveFlag=0;
-                        Float deltagForThisArray = Float.parseFloat("0.00");
-
-                        for(int p=0; p<(pathArray.size()-1); p++){
-                            for(int q=p+1; q<pathArray.size(); q++){
-                                String key_part1 = pathArray.get(p);
-                                String key_part2 = pathArray.get(q);
-
-                                if(!(allHetDimerPairsObjectsMapMapdb.containsKey(key_part1+"&"+key_part2))){
-                                    toremoveFlag=1;
-                                }
-                            }
-                        }
-                        if(toremoveFlag==0){
-                            for(String pathid : pathArray){
-                                setsOfOligoSets_mapDB.put(key, pathid);
-                            }
-                        }
-                    }*/
                     jobcount+=1;
                     startingcounter++;
                 }
@@ -452,6 +388,7 @@ public class OligosCreationController implements Controller{
             }
 
             so.setOligoSetsFullMapMultiMap(setsOfOligoSets_mapDB);
+
             db.close();
             System.out.println("done with this so. sets of oligo sets size:"+ setsOfOligoSets_mapDB.size());
 
@@ -473,6 +410,8 @@ public class OligosCreationController implements Controller{
         mvObj.addObject("sequenceObjects", objects);
         mvObj.addObject("optimalOligosFile", oligosFilename);
         mvObj.addObject("projectId", projectId);
+        allHetDimerPairsObjectsMapMapdb.close();
+        hetDimerHashMapMAPDB.close();
         hetdimerdb.close();
         db2.close();
         return mvObj;

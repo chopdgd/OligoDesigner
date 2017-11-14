@@ -19,10 +19,11 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
     private SequenceObject so;
     private int startingcounter;
     private HTreeMap<String, Float> allHetDimerPairsObjectsMapMapdb;
+    private int spacing;
 
 
 
-    public OligoGraphThread(String oligoobjid, HTreeMap<String, Object> hetDimerMapForSO_mapDB_sorted, Multimap<String, String> filteredHetDimerMapForSO_multimap, SequenceObject so, int threadcount, int startingcounter, HTreeMap<String, Float> allHetDimerPairsObjectsMapMapdb) {
+    public OligoGraphThread(String oligoobjid, HTreeMap<String, Object> hetDimerMapForSO_mapDB_sorted, Multimap<String, String> filteredHetDimerMapForSO_multimap, SequenceObject so, int threadcount, int startingcounter, HTreeMap<String, Float> allHetDimerPairsObjectsMapMapdb, int spacing) {
         this.threadCount = threadcount;
         this.oligoobjid = oligoobjid;
         this.hetDimerMapForSO_mapDB_sorted = hetDimerMapForSO_mapDB_sorted;
@@ -30,6 +31,7 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
         this.so = so;
         this.startingcounter = startingcounter;
         this.allHetDimerPairsObjectsMapMapdb = allHetDimerPairsObjectsMapMapdb;
+        this.spacing = spacing;
     }
 
 
@@ -53,9 +55,12 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
         dagOligo.addVertex(rootvertex);
         dagOligo.setRootVertex(rootvertex);
 
-        if(so.getStop()-Integer.parseInt(obj.getInternalStart())>=2000){
+        int nextspacing = (int) Math.ceil(spacing * 0.5);
+
+        //if(so.getStop()-Integer.parseInt(obj.getInternalStart())>=2000){
+        if(so.getStop()-Integer.parseInt(obj.getInternalStart())>=(nextspacing*1000)){
             //traverse(rootvertex, filteredhetDimerMapForSO, dagOligo, so);
-            traverse_mapDB(rootvertex, filteredHetDimerMapForSO_multimap, dagOligo, so, hetDimerMapForSO_mapDB_sorted);
+            traverse_mapDB(rootvertex, filteredHetDimerMapForSO_multimap, dagOligo, so, hetDimerMapForSO_mapDB_sorted, nextspacing);
         }
 
         startingcounter+=1;
@@ -69,7 +74,7 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
 
             @Override
             public void visit(Graph<String> g, Vertex<String> v) {
-                System.out.println("at dag: "+ v.getName() + " num outgoing vertices: "+ v.getOutgoingEdgeCount() + " and outgoing verticeshash = ");
+                //System.out.println("at dag: "+ v.getName() + " num outgoing vertices: "+ v.getOutgoingEdgeCount() + " and outgoing verticeshash = ");
             }
 
             @Override
@@ -124,8 +129,9 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
      * @param dagOligo
      * @param so
      * @param hetdimerMapForSO_sorted
+     * @param spacing
      */
-    private void traverse_mapDB(Vertex<String> vertex, Multimap<String, String> filteredhetDimerIdsMapForSO, Graph<String> dagOligo, SequenceObject so, HTreeMap<String, Object> hetdimerMapForSO_sorted) {
+    private void traverse_mapDB(Vertex<String> vertex, Multimap<String, String> filteredhetDimerIdsMapForSO, Graph<String> dagOligo, SequenceObject so, HTreeMap<String, Object> hetdimerMapForSO_sorted, int spacing) {
         String parentObjId = vertex.getName();
 
         if(filteredhetDimerIdsMapForSO.get(parentObjId)!=null && filteredhetDimerIdsMapForSO.get(parentObjId).size()>0){
@@ -154,16 +160,18 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
                 //List<Edge<String>> edgesList = dagOligo.getEdges();
                 //System.out.println("edges list:"+ edgesList.size());
 
-                if(so.getStop()-Integer.parseInt(childOligoObj.getInternalStart())>=2000){
+                //if(so.getStop()-Integer.parseInt(childOligoObj.getInternalStart())>=2000){
+                if(so.getStop()-Integer.parseInt(childOligoObj.getInternalStart())>=(spacing*1000)){
                     //System.out.println("Traversing from childVertex:" + childObjid + " " + childOligoObj.getInternalStart()+" to its children");
                     if(filteredhetDimerIdsMapForSO.size()>0){
-                        traverse_mapDB(childVertex, filteredhetDimerIdsMapForSO, dagOligo, so, hetdimerMapForSO_sorted);
+                        traverse_mapDB(childVertex, filteredhetDimerIdsMapForSO, dagOligo, so, hetdimerMapForSO_sorted, spacing);
                     }
                 }
 
-                if(so.getStop()-Integer.parseInt(childOligoObj.getInternalStart())<2000){
-                    System.out.println("End of this path at:" + childOligoObj.getInternalPrimerId() + " at " + childOligoObj.getInternalStart() + " with so stop at:" + so.getStop() + " starting at root vertex:"+ dagOligo.getRootVertex().getName());
-                }
+                /*//if(so.getStop()-Integer.parseInt(childOligoObj.getInternalStart())<2000){
+                if(so.getStop()-Integer.parseInt(childOligoObj.getInternalStart())<(spacing*1000)){
+                    //System.out.println("End of this path at:" + childOligoObj.getInternalPrimerId() + " at " + childOligoObj.getInternalStart() + " with so stop at:" + so.getStop() + " starting at root vertex:"+ dagOligo.getRootVertex().getName());
+                }*/
             }
         }
     }

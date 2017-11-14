@@ -396,7 +396,7 @@ public class Graph<String> {
             visitor.visit(this, v);
 
         //added to spit out array
-        System.out.println("Count value is:"+ count);
+        //System.out.println("Count value is:"+ count);
 
         if(v.getOutgoingEdgeCount()==0){
             if(dagOligo.getMapOfOligoidsPathMultimapArrays().size()>0){
@@ -423,7 +423,7 @@ public class Graph<String> {
 
                 dagOligo.setMapOfOligoidsPathMultimapArrays(oligoArraysMap);
                 count+=1;
-                System.out.println("count is:" + count);
+                //System.out.println("count is:" + count);
             }
 
             //System.out.println("\n");
