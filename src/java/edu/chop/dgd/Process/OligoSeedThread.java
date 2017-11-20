@@ -40,10 +40,6 @@ public class OligoSeedThread implements Callable<List<OligoObject>> {
 
     public OligoSeedThread(SequenceObject so, int threadCount, String projectId, String assembly, String primer3OligoadditionalParams) {
     //public OligoSeedThread(File inputFile, int threadCount, OligoSeedFinder seedFinder, int extendScore) {
-		/*this.inputFile = inputFile;
-		this.threadCount = threadCount;
-		this.extendScore = extendScore;
-		this.seedFinder = seedFinder;*/
         this.threadCount = threadCount;
         this.sequenceobject = so;
         this.projectId = projectId;
@@ -72,9 +68,11 @@ public class OligoSeedThread implements Callable<List<OligoObject>> {
 
         String detailFile = dataDir+finalOligos+fileName+"_detail.html";
         String secondaryFile = dataDir+finalOligos+fileName+"_secondary.txt";
+        //create oligos, add blat results, add ids, get results from mfold, create hetdimer inputs.
         List<SequenceObjectSubsections> oligosSubsectionList = retrieveResultsFromAnalyses(fileName, sosSubsList,
                 dataDir, oligoOutputDir, blatInpDir, blatOpDir, mfoldInpDir, mfoldOpDir, homodimerOpDir,
                 heterodimerInpDir, heterodimerOpDir);
+
         List<OligoObject> heteroDimerObjectsListFromSO = new MfoldDimer().filterOligosCreateHeterodimers(oligosSubsectionList);
         sequenceobject.setHetDimerOligosList(heteroDimerObjectsListFromSO);
         //commenting this out for parallelization, it will combine results at the end.
@@ -119,18 +117,9 @@ public class OligoSeedThread implements Callable<List<OligoObject>> {
             oss.setSubsectionid(subsectionId);
             pw.println("SEQUENCE_ID="+subsectionId+"\nSEQUENCE_TEMPLATE="+oss.getSubSectionSequence()+"\n"+
                     primer3OligoadditionalParams);
-                    /*"PRIMER_INTERNAL_MAX_TM="+max_tm+"\nPRIMER_INTERNAL_OPT_TM="+opt_tm+"\nPRIMER_INTERNAL_MIN_TM="+min_tm+"\n"+
-                    "PRIMER_INTERNAL_MAX_GC="+max_gc+"\nPRIMER_INTERNAL_OPT_GC_PERCENT="+opt_gc+"\nPRIMER_INTERNAL_MIN_GC="+min_gc+"\n"+
-                    "PRIMER_INTERNAL_MAX_SIZE="+max_len+"\nPRIMER_INTERNAL_OPT_SIZE="+opt_len+"\nPRIMER_INTERNAL_MIN_SIZE="+min_len+"\n"+
-                    "PRIMER_INTERNAL_SALT_MONOVALENT="+na_ion+"\nPRIMER_INTERNAL_SALT_DIVALENT="+mg_ion+"\nPRIMER_INTERNAL_MAX_SELF_ANY="+self_any+"\n"+
-                    "PRIMER_INTERNAL_MAX_SELF_END="+self_end+"\n=");*/
+
             System.out.println("SEQUENCE_ID="+subsectionId+"\nSEQUENCE_TEMPLATE="+oss.getSubSectionSequence()+"\n"+
                     primer3OligoadditionalParams);
-                    /*"PRIMER_INTERNAL_MAX_TM="+max_tm+"\nPRIMER_INTERNAL_OPT_TM="+opt_tm+"\nPRIMER_INTERNAL_MIN_TM="+min_tm+"\n"+
-                    "PRIMER_INTERNAL_MAX_GC="+max_gc+"\nPRIMER_INTERNAL_OPT_GC=PERCENT"+opt_gc+"\nPRIMER_INTERNAL_MIN_GC="+min_gc+"\n"+
-                    "PRIMER_INTERNAL_MAX_SIZE="+max_len+"\nPRIMER_INTERNAL_OPT_SIZE="+opt_len+"\nPRIMER_INTERNAL_MIN_SIZE="+min_len+"\n"+
-                    "PRIMER_INTERNAL_SALT_MONOVALENT="+na_ion+"\nPRIMER_INTERNAL_SALT_DIVALENT="+mg_ion+"\nPRIMER_INTERNAL_MAX_SELF_ANY="+self_any+"\n"+
-                    "PRIMER_INTERNAL_MAX_SELF_END="+self_end+"\n=");*/
         }
 
         pw.flush();
