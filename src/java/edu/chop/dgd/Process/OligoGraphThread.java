@@ -137,11 +137,24 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
         if(filteredhetDimerIdsMapForSO.get(parentObjId)!=null && filteredhetDimerIdsMapForSO.get(parentObjId).size()>0){
 
             Collection<String> childrenObjCollection = filteredhetDimerIdsMapForSO.get(parentObjId);
+
             List<String> childrenObj = new ArrayList<String>(childrenObjCollection);
+            Collections.shuffle(childrenObj);
 
             //only return 5-10 or so children at a time.Subject to change.
-            if(childrenObj.size()>=3){
+            /*if(childrenObj.size()>=3){
                 childrenObj = childrenObj.subList(0, 2);
+            }
+            */
+
+            if(so.getStop()-so.getStart()<100000){
+                if(childrenObj.size()>=3){
+                    childrenObj = childrenObj.subList(0, 2);
+                }
+            }else if(so.getStop()-so.getStart()>=100000){
+                if(childrenObj.size()>=2){
+                    childrenObj = childrenObj.subList(0, 1);
+                }
             }
 
             for(String childObjid : childrenObj){

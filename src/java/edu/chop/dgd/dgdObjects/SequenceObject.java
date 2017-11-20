@@ -40,8 +40,9 @@ public class SequenceObject{
     public List<SequenceObjectSubsections> generateSequenceSubsections(String inputFilename, String dataDir) throws Exception{
 
         String file = dataDir+inputFilename;
+        String bedfile = dataDir+inputFilename+"_subsection_log.bed";
         PrintWriter subsectionWriter = new PrintWriter(file);
-
+        PrintWriter subsectionLogBedFileWriter = new PrintWriter(bedfile);
         int counter=0;
 
         for(int i=this.getStart(); i<=this.getStop(); ){
@@ -63,7 +64,9 @@ public class SequenceObject{
             olSubsObj.setSubSectionStop(subsectStop);
             olSubsObj.setSubSectionWindowNum(counter);
 
+
             subsectionWriter.println(olSubsObj.getSubSectionChr() + ":" + olSubsObj.getSubSectionStart() + "-" + olSubsObj.getSubSectionStop());
+            subsectionLogBedFileWriter.println(olSubsObj.getSubSectionChr() + "\t" + olSubsObj.getSubSectionStart() + "\t" + olSubsObj.getSubSectionStop()+"\t"+this.getStart()+"-"+this.getStop()+"-"+counter);
             System.out.println(olSubsObj.getSubSectionChr() + ":" + olSubsObj.getSubSectionStart() + "-" + olSubsObj.getSubSectionStop());
             if(subsectStop == this.getStop()){
                 break;
@@ -72,6 +75,7 @@ public class SequenceObject{
         }
 
         subsectionWriter.close();
+        subsectionLogBedFileWriter.close();
 
         String sequenceInfo = retrieveSubsectionSequencesProcessBuilder(inputFilename, dataDir);
 
@@ -263,9 +267,12 @@ public class SequenceObject{
             Random random = new Random();
             Multimap<String, String> setofOligosInObject = o.getOligoSetsFullMapMultiMap();
             List<String> setofOligoskeys = new ArrayList<String>(setofOligosInObject.keySet());
-            Collections.shuffle(setofOligoskeys);
-            String randomKey = setofOligoskeys.get(random.nextInt(setofOligoskeys.size()));
-            oligoSetsFullMap.put(randomKey, new ArrayList<String>(setofOligosInObject.get(randomKey)));
+            if(setofOligoskeys.size()>0){
+                Collections.shuffle(setofOligoskeys);
+                String randomKey = setofOligoskeys.get(random.nextInt(setofOligoskeys.size()));
+                oligoSetsFullMap.put(randomKey, new ArrayList<String>(setofOligosInObject.get(randomKey)));
+            }
+
             o.setPrimaryOptimalSetOfOligosForSet(oligoSetsFullMap);
         }
 
