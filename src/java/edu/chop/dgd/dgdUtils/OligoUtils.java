@@ -147,7 +147,7 @@ public class OligoUtils {
 
                                 primerId="NA";
                                 if(!prObj.getInternalPrimerId().equals("NA")){
-                                    oligosbedfilewriter.print(prObj.getChr()+"\t"+prObj.getInternalStart()+"\t"+Integer.parseInt(prObj.getInternalStart())+prObj.getInternalLen()+"\t"+prObj.getInternalPrimerId());
+                                    oligosbedfilewriter.println(prObj.getChr()+"\t"+prObj.getInternalStart()+"\t"+Integer.parseInt(prObj.getInternalStart())+prObj.getInternalLen()+"\t"+prObj.getInternalPrimerId());
                                     newOligoObjects.add(prObj);
                                 }
                                 i+=1;

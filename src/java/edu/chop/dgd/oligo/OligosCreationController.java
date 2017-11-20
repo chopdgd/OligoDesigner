@@ -242,7 +242,7 @@ public class OligosCreationController implements Controller{
 
         PrintWriter preHetdimerOligosBedWriter = new PrintWriter(dataDir+heterodimerInpDir+projectId+"_hetdimer_bedfile.bed");
         for(OligoObject hetdimerobj : heteroDimerObjectsList){
-            preHetdimerOligosBedWriter.print(hetdimerobj.getChr()+"\t"+hetdimerobj.getInternalStart()+"\t"+Integer.parseInt(hetdimerobj.getInternalStart())+hetdimerobj.getInternalLen()+"\t"+hetdimerobj.getInternalPrimerId());
+            preHetdimerOligosBedWriter.println(hetdimerobj.getChr()+"\t"+hetdimerobj.getInternalStart()+"\t"+Integer.parseInt(hetdimerobj.getInternalStart())+hetdimerobj.getInternalLen()+"\t"+hetdimerobj.getInternalPrimerId());
         }
         preHetdimerOligosBedWriter.close();
 
@@ -318,7 +318,7 @@ public class OligosCreationController implements Controller{
             for(String id : hetDimerIdListForSO){
                 OligoObject hetDimerOligoObj_sorted = (OligoObject) hetDimerHashMapMAPDB.get(id);
                 hetDimerMapForSO_mapDB_sorted.put(id, hetDimerHashMapMAPDB.get(id));
-                postHetdimerOligosBedWriter.print(hetDimerOligoObj_sorted.getChr()+"\t"+hetDimerOligoObj_sorted.getInternalStart()+"\t"+Integer.parseInt(hetDimerOligoObj_sorted.getInternalStart())+hetDimerOligoObj_sorted.getInternalLen()+"\t"+hetDimerOligoObj_sorted.getInternalPrimerId());
+                postHetdimerOligosBedWriter.println(hetDimerOligoObj_sorted.getChr()+"\t"+hetDimerOligoObj_sorted.getInternalStart()+"\t"+Integer.parseInt(hetDimerOligoObj_sorted.getInternalStart())+hetDimerOligoObj_sorted.getInternalLen()+"\t"+hetDimerOligoObj_sorted.getInternalPrimerId());
             }
 
             db.commit();
