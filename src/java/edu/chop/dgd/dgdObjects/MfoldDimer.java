@@ -410,14 +410,14 @@ public class MfoldDimer {
 
         String set = "set"+counter;
 
-        while(Integer.parseInt(startingOligoHetObject.getInternalStart())-sObj.getStart()<=4000){
+        while(startingOligoHetObject.getInternalStart()-sObj.getStart()<=4000){
 
             int i=oligoKeysList.indexOf(startingOligoHetObject);
 
             for(; i<oligoKeysList.size(); ){
 
                 if(hashSetOfHetPrimers.size()==0){
-                    if(Integer.parseInt(startingOligoHetObject.getInternalStart())-sObj.getStart()>=2000){
+                    if(startingOligoHetObject.getInternalStart()-sObj.getStart()>=2000){
                         List<OligoObject> setOfHets = new ArrayList<OligoObject>();
                         setOfHets.add(oligoKeysList.get(i));
                         hashSetOfHetPrimers.put(set, setOfHets);
@@ -427,7 +427,7 @@ public class MfoldDimer {
                     }
 
                 }else if(hashSetOfHetPrimers.size()>0){
-                    if(sObj.getStop()-Integer.parseInt(oligoKeysList.get(i).getInternalStart())>=2000){
+                    if(sObj.getStop()-oligoKeysList.get(i).getInternalStart()>=2000){
                         List<OligoObject> setOfhets =  new ArrayList<OligoObject>();
                         if(hashSetOfHetPrimers.get(set)!=null){
                             setOfhets = hashSetOfHetPrimers.get(set);
@@ -498,21 +498,21 @@ public class MfoldDimer {
         int diffGreaterThan3 = (spacingKB*1000)-6000;
 
         for(OligoObject o : oligosList){
-            int oligoStartDiff = Integer.parseInt(o.getInternalStart())-Integer.parseInt(objInQuestion.getInternalStart());
+            int oligoStartDiff = o.getInternalStart()-objInQuestion.getInternalStart();
             if(diffLessThan1>oligoStartDiff && oligoStartDiff>diffGreaterThan1){
                 return o;
             }
         }
 
         for(OligoObject o : oligosList){
-            int oligoStartDiff = Integer.parseInt(o.getInternalStart())-Integer.parseInt(objInQuestion.getInternalStart());
+            int oligoStartDiff = o.getInternalStart()-objInQuestion.getInternalStart();
             if(diffLessThan2>oligoStartDiff && oligoStartDiff>diffGreaterThan2){
                 return o;
             }
         }
 
         for(OligoObject o : oligosList){
-            int oligoStartDiff = Integer.parseInt(o.getInternalStart())-Integer.parseInt(objInQuestion.getInternalStart());
+            int oligoStartDiff = o.getInternalStart()-objInQuestion.getInternalStart();
             if(diffLessThan3>oligoStartDiff && oligoStartDiff>diffGreaterThan3){
                 return o;
             }
@@ -551,7 +551,7 @@ public class MfoldDimer {
         ArrayList<OligoObject> oligosReturned = new ArrayList<OligoObject>();
 
         for(OligoObject o : oligosList){
-            int oligoStartDiff = Integer.parseInt(o.getInternalStart())-Integer.parseInt(objInQuestion.getInternalStart());
+            int oligoStartDiff = o.getInternalStart()-objInQuestion.getInternalStart();
             if(diffLessThan1>oligoStartDiff && oligoStartDiff>diffGreaterThan1){
 
                 //check if obj is present in hetDimerMapForSO.
@@ -1030,12 +1030,11 @@ public class MfoldDimer {
 
         for(String oligoid : hetDimerIdListForSO){
             OligoObject o = (OligoObject) hetDimerMapForSO_mapDB.get(oligoid);
-            int oligoStartDiff = Integer.parseInt(o.getInternalStart())-Integer.parseInt(oligoObjectinQuestion.getInternalStart());
+            int oligoStartDiff = o.getInternalStart()-oligoObjectinQuestion.getInternalStart();
             if(diffLessThan1>oligoStartDiff && oligoStartDiff>diffGreaterThan1){
                 //check if obj is present in hetDimerMapForSO.
                 oligosReturned.add(oligoid);
             }
-
         }
 
         oligosReturned = new OligoUtils().sortOligoIdListBySubsectionAndSerialNum(oligosReturned);

@@ -34,8 +34,9 @@ public class OligoSerializer implements Serializer<OligoObject>, Serializable {
             dataOutput2.writeUTF(oligoObject.getInternalPrimerId());
             dataOutput2.writeUTF(oligoObject.getChr());
             dataOutput2.writeUTF((oligoObject.getAssembly()));
-            dataOutput2.writeUTF(oligoObject.getInternalStart());
+            dataOutput2.writeInt(oligoObject.getInternalStart());
             dataOutput2.writeInt(oligoObject.getInternalLen());
+            dataOutput2.writeInt(oligoObject.getInternalStop());
             dataOutput2.writeUTF(oligoObject.getInternalSeq());
             dataOutput2.writeUTF(oligoObject.getInternalGc());
             dataOutput2.writeUTF(oligoObject.getInternalTm());

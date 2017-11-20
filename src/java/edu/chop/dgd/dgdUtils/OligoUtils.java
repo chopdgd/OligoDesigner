@@ -42,8 +42,9 @@ public class OligoUtils {
             pr.setInternalAny(any);
             pr.setInternalGc(gc);
             pr.setInternalLen(Integer.parseInt(len));
+            pr.setInternalStop(pr.getInternalStart()+pr.getInternalLen());
             pr.setInternalTm(tm);
-            pr.setInternalStart(start);
+            pr.setInternalStart(Integer.parseInt(start));
         }
 
         return pr;
@@ -141,13 +142,14 @@ public class OligoUtils {
                             if(counter.equals("O"+i)){
 
                                 prObj.setInternalPrimerId(primerId);
-                                prObj.setInternalStart(String.valueOf(oss.getSubSectionStart()+Integer.parseInt(prObj.getInternalStart())));
+                                prObj.setInternalStart(oss.getSubSectionStart()+prObj.getInternalStart());
                                 prObj.setChr(String.valueOf(oss.getSubSectionChr()));
+                                prObj.setInternalStop(prObj.getInternalStart()+prObj.getInternalLen());
                                 prObj.setAssembly(oss.getSubSectionAssembly());
 
                                 primerId="NA";
                                 if(!prObj.getInternalPrimerId().equals("NA")){
-                                    oligosbedfilewriter.println(prObj.getChr()+"\t"+prObj.getInternalStart()+"\t"+Integer.parseInt(prObj.getInternalStart())+prObj.getInternalLen()+"\t"+prObj.getInternalPrimerId());
+                                    oligosbedfilewriter.println(prObj.getChr()+"\t"+prObj.getInternalStart()+"\t"+prObj.getInternalStop()+"\t"+prObj.getInternalPrimerId());
                                     newOligoObjects.add(prObj);
                                 }
                                 i+=1;

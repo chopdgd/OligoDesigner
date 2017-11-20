@@ -242,7 +242,7 @@ public class OligosCreationController implements Controller{
 
         PrintWriter preHetdimerOligosBedWriter = new PrintWriter(dataDir+heterodimerInpDir+projectId+"_hetdimer_bedfile.bed");
         for(OligoObject hetdimerobj : heteroDimerObjectsList){
-            preHetdimerOligosBedWriter.println(hetdimerobj.getChr()+"\t"+hetdimerobj.getInternalStart()+"\t"+Integer.parseInt(hetdimerobj.getInternalStart())+hetdimerobj.getInternalLen()+"\t"+hetdimerobj.getInternalPrimerId());
+            preHetdimerOligosBedWriter.println(hetdimerobj.getChr()+"\t"+hetdimerobj.getInternalStart()+"\t"+hetdimerobj.getInternalStop()+"\t"+hetdimerobj.getInternalPrimerId());
         }
         preHetdimerOligosBedWriter.close();
 
@@ -318,7 +318,7 @@ public class OligosCreationController implements Controller{
             for(String id : hetDimerIdListForSO){
                 OligoObject hetDimerOligoObj_sorted = (OligoObject) hetDimerHashMapMAPDB.get(id);
                 hetDimerMapForSO_mapDB_sorted.put(id, hetDimerHashMapMAPDB.get(id));
-                postHetdimerOligosBedWriter.println(hetDimerOligoObj_sorted.getChr()+"\t"+hetDimerOligoObj_sorted.getInternalStart()+"\t"+Integer.parseInt(hetDimerOligoObj_sorted.getInternalStart())+hetDimerOligoObj_sorted.getInternalLen()+"\t"+hetDimerOligoObj_sorted.getInternalPrimerId());
+                postHetdimerOligosBedWriter.println(hetDimerOligoObj_sorted.getChr()+"\t"+hetDimerOligoObj_sorted.getInternalStart()+"\t"+hetDimerOligoObj_sorted.getInternalStop()+"\t"+hetDimerOligoObj_sorted.getInternalPrimerId());
             }
 
             db.commit();
@@ -343,7 +343,7 @@ public class OligosCreationController implements Controller{
             //if seed oligos found within 3kb, dont do 6kb.
             for(String oligoobjid : filteredHetDimerMapForSO_multimap_keys_sorted){
                 OligoObject obj = (OligoObject) hetDimerMapForSO_mapDB_sorted.get(oligoobjid);
-                if((Integer.parseInt(obj.getInternalStart())-so.getStart()<=3000) && (Integer.parseInt(obj.getInternalStart())-so.getStart()>=1)){
+                if((obj.getInternalStart()-so.getStart()<=3000) && (obj.getInternalStart()-so.getStart()>=1)){
                     seedOligoslist.add(oligoobjid);
                 }
             }
@@ -353,7 +353,7 @@ public class OligosCreationController implements Controller{
             if(seedOligoslist.size()==0){
                 for(String oligoobjid : filteredHetDimerMapForSO_multimap_keys_sorted){
                     OligoObject obj = (OligoObject) hetDimerMapForSO_mapDB_sorted.get(oligoobjid);
-                    if((Integer.parseInt(obj.getInternalStart())-so.getStart()<=6000) && (Integer.parseInt(obj.getInternalStart())-so.getStart()>=1)){
+                    if((obj.getInternalStart()-so.getStart()<=6000) && (obj.getInternalStart()-so.getStart()>=1)){
                         seedOligoslist.add(oligoobjid);
                     }
                 }
@@ -504,7 +504,7 @@ public class OligosCreationController implements Controller{
                         SequenceView<NucleotideCompound> revcomp = seq.getReverseComplement();
                         String revCompSeq = revcomp.getSequenceAsString();
                         pwFirst.println(primarySet.split("inpSeq")[0]+"\t"+ oligoobj.getInternalPrimerId() + "\t" + so.getChr() + "\t" + oligoobj.getInternalStart()
-                                + "\t" + (Integer.parseInt(oligoobj.getInternalStart())+oligoobj.getInternalLen())
+                                + "\t" + oligoobj.getInternalStop()
                                 + "\t" + oligoobj.getInternalSeq() + "\t"+ revCompSeq +"\t"
                                 + oligoobj.getInternalGc() + "\t" + oligoobj.getInternalTm() + "\t" + oligoobj.getInternalLen()
                                 + "\t" + oligoobj.getHomodimerValue() + "\t-\t" + oligoobj.getHairpinValue() + "\t" + oligoobj.getInternalPrimerBlatList().size());

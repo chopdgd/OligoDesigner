@@ -13,7 +13,8 @@ public class OligoObject implements Serializable{
     String internalPrimerId;
     String internalSeq;
     int internalLen;
-    String internalStart;
+    int internalStart;
+    int internalStop;
     String internalTm;
     String internalGc;
     String internalAny;
@@ -35,13 +36,14 @@ public class OligoObject implements Serializable{
         this.internalPrimerId = internalPrimerid;
         this.internalSeq = internalSeq;
         this.internalLen = internalLen;
-        this.internalStart = internalStart;
+        this.internalStart = Integer.parseInt(internalStart);
         this.internal3 = internal3;
         this.internalTm = internalTm;
         this.internalAny = internalAny;
         this.internalGc = internalGc;
         this.hairpinValue = hairpinValue;
         this.homodimerValue = homodimerValue;
+        this.internalStop = this.internalStart+this.internalLen;
         //this.internalPrimerBlatList = internalBlatList;
 
     }
@@ -140,12 +142,20 @@ public class OligoObject implements Serializable{
         this.internalLen = internalLen;
     }
 
-    public String getInternalStart() {
+    public int getInternalStart() {
         return internalStart;
     }
 
-    public void setInternalStart(String internalStart) {
+    public void setInternalStart(int internalStart) {
         this.internalStart = internalStart;
+    }
+
+    public int getInternalStop() {
+        return internalStop;
+    }
+
+    public void setInternalStop(int internalStop) {
+        this.internalStop = internalStop;
     }
 
     public String getInternalTm() {

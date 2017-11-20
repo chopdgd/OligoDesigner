@@ -58,7 +58,7 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
         int nextspacing = (int) Math.ceil(spacing * 0.5);
 
         //if(so.getStop()-Integer.parseInt(obj.getInternalStart())>=2000){
-        if(so.getStop()-Integer.parseInt(obj.getInternalStart())>=(nextspacing*1000)){
+        if(so.getStop()-obj.getInternalStart()>=(nextspacing*1000)){
             //traverse(rootvertex, filteredhetDimerMapForSO, dagOligo, so);
             traverse_mapDB(rootvertex, filteredHetDimerMapForSO_multimap, dagOligo, so, hetDimerMapForSO_mapDB_sorted, nextspacing);
         }
@@ -174,7 +174,7 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
                 //System.out.println("edges list:"+ edgesList.size());
 
                 //if(so.getStop()-Integer.parseInt(childOligoObj.getInternalStart())>=2000){
-                if(so.getStop()-Integer.parseInt(childOligoObj.getInternalStart())>=(spacing*1000)){
+                if(so.getStop()-childOligoObj.getInternalStart()>=(spacing*1000)){
                     //System.out.println("Traversing from childVertex:" + childObjid + " " + childOligoObj.getInternalStart()+" to its children");
                     if(filteredhetDimerIdsMapForSO.size()>0){
                         traverse_mapDB(childVertex, filteredhetDimerIdsMapForSO, dagOligo, so, hetdimerMapForSO_sorted, spacing);
