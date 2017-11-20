@@ -429,7 +429,7 @@ public class OligosCreationController implements Controller{
             System.out.println("done with this so. sets of oligo sets size:"+ setsOfOligoSets_mapDB.size());
 
             for(String setsofoligossetskey : setsOfOligoSets_mapDB.keySet()){
-                setsOfOligosBedWriter.print(setsOfOligoSets_mapDB.get(setsofoligossetskey));
+                setsOfOligosBedWriter.println(setsOfOligoSets_mapDB.get(setsofoligossetskey));
             }
 
         }
