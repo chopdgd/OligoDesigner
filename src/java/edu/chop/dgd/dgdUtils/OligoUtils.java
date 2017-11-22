@@ -120,7 +120,7 @@ public class OligoUtils {
         InputStream fileStream = new FileInputStream(blatInputFile);
         BufferedReader reader = new BufferedReader(new InputStreamReader(fileStream));
         File allOligosBedFile = new File(dataDir+fileName+"_allrawoligos.bed");
-        PrintWriter oligosbedfilewriter = new PrintWriter(allOligosBedFile);
+        //PrintWriter oligosbedfilewriter = new PrintWriter(allOligosBedFile);
 
         String line; String primerId="NA"; String primerSubsectionId="NA"; String counter = "0";
         int i=1;
@@ -149,7 +149,7 @@ public class OligoUtils {
 
                                 primerId="NA";
                                 if(!prObj.getInternalPrimerId().equals("NA")){
-                                    oligosbedfilewriter.println(prObj.getChr()+"\t"+prObj.getInternalStart()+"\t"+prObj.getInternalStop()+"\t"+prObj.getInternalPrimerId());
+                                    //oligosbedfilewriter.println(prObj.getChr()+"\t"+prObj.getInternalStart()+"\t"+prObj.getInternalStop()+"\t"+prObj.getInternalPrimerId());
                                     newOligoObjects.add(prObj);
                                 }
                                 i+=1;
@@ -166,7 +166,7 @@ public class OligoUtils {
             }
         }
 
-        oligosbedfilewriter.close();
+        //oligosbedfilewriter.close();
         return newOligoObjects;
     }
 

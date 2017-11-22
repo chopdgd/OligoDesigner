@@ -219,6 +219,7 @@ public class MfoldDimer {
      */
     public LinkedHashMap<OligoObject, List<OligoObject>> mapOligosCreateHetDimerInpSections_new(List<OligoObject> heteroDimerObjectsList) throws Exception {
 
+        System.out.println("In mapOligosCreateHetDimerInpSections_new. Returning LinkedhashMapforhetdimerinputsections");
         LinkedHashMap<OligoObject, List<OligoObject>> hetDimerObjMap = new LinkedHashMap<OligoObject, List<OligoObject>>();
         for(int i=0; i< heteroDimerObjectsList.size(); i++){
 
@@ -244,6 +245,7 @@ public class MfoldDimer {
     public Multimap<String, String> mapOligosCreateHetDimerInpSections_newMapDB(List<OligoObject> heteroDimerObjectsList) throws Exception {
 
         //LinkedHashMap<String, List<String>> hetDimerObjMap = new LinkedHashMap<String, List<String>>();
+        System.out.println("In mapOligosCreateHetDimerInpSections_newMapDB. Returning multimapforhetdimerinputsections");
         Multimap<String, String> hetDimerObjIdsMap = LinkedListMultimap.create();
         for(int i=0; i< heteroDimerObjectsList.size(); i++){
 
@@ -738,6 +740,42 @@ public class MfoldDimer {
 
             for(int p=o+1; p<oligoIdsArray.size(); p++){
                 OligoObject secondfileOLigo = oligoIdsArray.get(p);
+                String p1 = ">"+oligo.getInternalPrimerId()+"\n"+ oligo.getInternalSeq()+"\n";
+                String p2 = ">"+secondfileOLigo.getInternalPrimerId()+"\n"+secondfileOLigo.getInternalSeq()+"\n";
+                String inputArr[]  = new String[2];
+                inputArr[0] = p1;
+                inputArr[1] = p2;
+
+                inputlinesArr.add(inputArr);
+            }
+        }
+
+        return inputlinesArr;
+    }
+
+
+
+
+    /**
+     *
+     *
+     * @param oligoObjectsMap
+     * @param hetDimerHashMapMAPDB
+     * @return
+     */
+    public ArrayList<String[]> createSubsetofhetDimers_multimap(Multimap<String, String> oligoObjectsMap, HTreeMap<String, Object> hetDimerHashMapMAPDB) {
+
+        Set<String> oligoIdsSet = oligoObjectsMap.keySet();
+        ArrayList<String> oligoIdsArray = new ArrayList<String>();
+        oligoIdsArray.addAll(oligoIdsSet);
+
+        ArrayList<String[]> inputlinesArr = new ArrayList<String[]>();
+
+        for(int o=0;o<oligoIdsArray.size(); o++){
+            OligoObject oligo = (OligoObject) hetDimerHashMapMAPDB.get(oligoIdsArray.get(o));
+
+            for(int p=o+1; p<oligoIdsArray.size(); p++){
+                OligoObject secondfileOLigo = (OligoObject) hetDimerHashMapMAPDB.get(oligoIdsArray.get(p));
                 String p1 = ">"+oligo.getInternalPrimerId()+"\n"+ oligo.getInternalSeq()+"\n";
                 String p2 = ">"+secondfileOLigo.getInternalPrimerId()+"\n"+secondfileOLigo.getInternalSeq()+"\n";
                 String inputArr[]  = new String[2];

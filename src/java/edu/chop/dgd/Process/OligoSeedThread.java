@@ -118,8 +118,7 @@ public class OligoSeedThread implements Callable<List<OligoObject>> {
             pw.println("SEQUENCE_ID="+subsectionId+"\nSEQUENCE_TEMPLATE="+oss.getSubSectionSequence()+"\n"+
                     primer3OligoadditionalParams);
 
-            System.out.println("SEQUENCE_ID="+subsectionId+"\nSEQUENCE_TEMPLATE="+oss.getSubSectionSequence()+"\n"+
-                    primer3OligoadditionalParams);
+            //System.out.println("SEQUENCE_ID="+subsectionId+"\nSEQUENCE_TEMPLATE="+oss.getSubSectionSequence()+"\n"+primer3OligoadditionalParams);
         }
 
         pw.flush();
