@@ -1025,6 +1025,7 @@ public class MfoldDimer {
      */
     public Multimap<String, String> filterMapCreateOnlyHetsWithinDistanceMap_MapDB(ArrayList<String> hetDimerIdListForSO, int spacing, HTreeMap<String, Object> hetDimerMapForSO_mapDB, Multimap<String, String> filteredHetDimerMapForSO_multimap) throws Exception {
 
+        System.out.println("creating only hets within distance");
         for(String oligoid : hetDimerIdListForSO){
             List<String> nextBinOligosWithinSpacing = getNext8_10KBOligoObjs_mapDB(hetDimerMapForSO_mapDB.get(oligoid), hetDimerIdListForSO, hetDimerMapForSO_mapDB, spacing, hetDimerIdListForSO.indexOf(oligoid));
             if(nextBinOligosWithinSpacing.size()>0){
@@ -1035,8 +1036,14 @@ public class MfoldDimer {
             }
         }
 
+        for(String hetdimermapbyDistanceKey : filteredHetDimerMapForSO_multimap.keySet()){
+            System.out.println("Size of Oligos for key:"+hetdimermapbyDistanceKey+ " value size is:"+filteredHetDimerMapForSO_multimap.get(hetdimermapbyDistanceKey));
+        }
+
         System.out.println("returning filtered hets sorted by distance");
+
         return filteredHetDimerMapForSO_multimap;
+
     }
 
 
@@ -1069,7 +1076,16 @@ public class MfoldDimer {
         for(String oligoid : hetDimerIdListForSO){
             OligoObject o = (OligoObject) hetDimerMapForSO_mapDB.get(oligoid);
             int oligoStartDiff = o.getInternalStart()-oligoObjectinQuestion.getInternalStart();
+
+            if(diffLessThan0>oligoStartDiff && oligoStartDiff>diffGreaterThan0){
+                //check if obj is present in hetDimerMapForSO.
+                oligosReturned.add(oligoid);
+            }else
             if(diffLessThan1>oligoStartDiff && oligoStartDiff>diffGreaterThan1){
+                //check if obj is present in hetDimerMapForSO.
+                oligosReturned.add(oligoid);
+            }else
+            if(diffLessThan2>oligoStartDiff && oligoStartDiff>diffGreaterThan2){
                 //check if obj is present in hetDimerMapForSO.
                 oligosReturned.add(oligoid);
             }
