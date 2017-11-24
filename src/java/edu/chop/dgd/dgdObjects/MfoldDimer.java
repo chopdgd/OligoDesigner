@@ -1037,7 +1037,7 @@ public class MfoldDimer {
         }
 
         for(String hetdimermapbyDistanceKey : filteredHetDimerMapForSO_multimap.keySet()){
-            System.out.println("Size of Oligos for key:"+hetdimermapbyDistanceKey+ " value size is:"+filteredHetDimerMapForSO_multimap.get(hetdimermapbyDistanceKey));
+            System.out.println("Size of Oligos for key:"+hetdimermapbyDistanceKey+ " value size is:"+filteredHetDimerMapForSO_multimap.get(hetdimermapbyDistanceKey).size());
         }
 
         System.out.println("returning filtered hets sorted by distance");

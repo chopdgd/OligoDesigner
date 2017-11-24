@@ -84,13 +84,15 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
         });
 
         Set<String> keyset = dagOligo.getMapOfOligoidsPathMultimapArrays().keySet();
+        System.out.println("map of oligos path multimap arrays size is:"+ keyset);
+
         Iterator<String> keyit = keyset.iterator();
         while (keyit.hasNext()){
             String key1part = keyit.next();
             String key2part = obj.getInternalPrimerId();
             String key = key1part+key2part;
 
-            //System.out.println(key);
+            System.out.println("getting map of oligos path multimap arrays"+key);
             Collection<String> pathCollection = dagOligo.getMapOfOligoidsPathMultimapArrays().get(key1part);
             ArrayList<String> pathArray = new ArrayList<String>(pathCollection);
             //sort by region and subsection. because we have het dimer interactions only for sorted Oligos.
@@ -114,6 +116,8 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
                 }
             }
         }
+
+        System.out.println("returning set of oligos from multimap from seed oligos:"+ setOfOligosMultimapFromSeed.keySet());
 
 
         return setOfOligosMultimapFromSeed;
