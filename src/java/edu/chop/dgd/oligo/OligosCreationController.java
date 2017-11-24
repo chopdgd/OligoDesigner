@@ -436,11 +436,7 @@ public class OligosCreationController implements Controller{
             so.setOligoSetsFullMapMultiMap(setsOfOligoSets_mapDB);
 
             db.close();
-            System.out.println("done with this so. sets of oligo sets size:"+ setsOfOligoSets_mapDB.size());
-
-            for(String setsofoligossetskey : setsOfOligoSets_mapDB.keySet()){
-                //setsOfOligosBedWriter.println(setsOfOligoSets_mapDB.get(setsofoligossetskey));
-            }
+            System.out.println("done with this so. sets of oligo sets keys are:"+ setsOfOligoSets_mapDB.keySet());
 
         }
 

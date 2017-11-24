@@ -114,6 +114,9 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
                 for(String pathid : pathArray){
                     setOfOligosMultimapFromSeed.put(key, pathid);
                 }
+                System.out.println("set of oligosMultimapfromSeed keyset is:"+ setOfOligosMultimapFromSeed.keySet());
+            }else{
+                System.out.println("removing patharray because toremove flag is 1"+ pathArray);
             }
         }
 
