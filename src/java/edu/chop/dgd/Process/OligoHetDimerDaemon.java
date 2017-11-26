@@ -17,7 +17,8 @@ public class OligoHetDimerDaemon extends Thread {
 	private ExecutorService pool = null;
 	private ExecutorCompletionService<TreeMap<String, Float>> service;
 	private int totalJobs;
-    private DB db2 = DBMaker.tempFileDB().fileDeleteAfterClose().make();
+    //private DB db2 = DBMaker.tempFileDB().fileDeleteAfterClose().make();
+    private DB db2 = DBMaker.fileDB("/data/downloads/allHetDimerPairsObjectsMapFiledb.db").closeOnJvmShutdown().transactionEnable().fileDeleteAfterClose().make();
 	private HTreeMap<String, Float> allHetDimerPairsObjectsMapMapdb = db2.hashMap("allHetDimerPairsObjectsMapMapdb").keySerializer(Serializer.STRING).valueSerializer(Serializer.FLOAT).createOrOpen();
 
 
@@ -56,6 +57,7 @@ public class OligoHetDimerDaemon extends Thread {
 				Future<TreeMap<String, Float>> result = service.poll();
 				if (result != null) {
 					finishedJobs++;
+                    System.out.println("finished jobs:"+finishedJobs);
 					/*if (allHetDimerPairsObjectsMapMapdb == null) {
                         allHetDimerPairsObjectsMapMapdb.putAll(result.get());
 					} else {*/

@@ -114,13 +114,13 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
                 for(String pathid : pathArray){
                     setOfOligosMultimapFromSeed.put(key, pathid);
                 }
-                System.out.println("set of oligosMultimapfromSeed keyset is:"+ setOfOligosMultimapFromSeed.keySet());
+                //System.out.println("set of oligosMultimapfromSeed keyset is:"+ setOfOligosMultimapFromSeed.keySet());
             }else{
-                System.out.println("removing patharray because toremove flag is 1"+ pathArray);
+                System.out.println("removing patharray because toremove flag is 1"+ key1part);
             }
         }
 
-        System.out.println("returning set of oligos from multimap from seed oligos:"+ setOfOligosMultimapFromSeed.keySet());
+        System.out.println("returning set of oligos from multimap from seed oligos:"+ setOfOligosMultimapFromSeed.keySet().size());
 
 
         return setOfOligosMultimapFromSeed;

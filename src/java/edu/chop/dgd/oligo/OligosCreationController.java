@@ -273,7 +273,7 @@ public class OligosCreationController implements Controller{
 
         String hetdimerFilename = "oligoInp_"+projectId+"_"+ new SimpleDateFormat("yyyyMMddhhmm'.txt'").format(new Date());
         //using MapDB, it will only add the two ids as a string and a float value as the value.
-        DB db2 = DBMaker.tempFileDB().closeOnJvmShutdown().transactionEnable().fileDeleteAfterClose().make();
+        DB db2 = DBMaker.fileDB(dataDir+heterodimerInpDir+hetdimerFilename+"allHetDimerPairsObjectsMap.db").closeOnJvmShutdown().transactionEnable().fileDeleteAfterClose().make();
         HTreeMap<String, Float> allHetDimerPairsObjectsMapMapdb = db2.hashMap("allHetDimerPairsObjectsMapMapdb").keySerializer(Serializer.STRING).valueSerializer(Serializer.FLOAT).createOrOpen();
 
         //getting first oligoId to begin with.
