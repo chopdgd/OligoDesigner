@@ -1,9 +1,6 @@
 package edu.chop.dgd.Process;
 
-import org.mapdb.DB;
-import org.mapdb.DBMaker;
 import org.mapdb.HTreeMap;
-import org.mapdb.Serializer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,17 +14,18 @@ public class OligoHetDimerDaemon extends Thread {
 	private ExecutorService pool = null;
 	private ExecutorCompletionService<TreeMap<String, Float>> service;
 	private int totalJobs;
+    private String hetdimerfilename = "NA";
     //private DB db2 = DBMaker.tempFileDB().fileDeleteAfterClose().make();
-    private DB db2 = DBMaker.fileDB("/data/downloads/allHetDimerPairsObjectsMapFiledb.db").closeOnJvmShutdown().transactionEnable().fileDeleteAfterClose().make();
-	private HTreeMap<String, Float> allHetDimerPairsObjectsMapMapdb = db2.hashMap("allHetDimerPairsObjectsMapMapdb").keySerializer(Serializer.STRING).valueSerializer(Serializer.FLOAT).createOrOpen();
+    private HTreeMap<String, Float> allHetDimerPairsObjectsMapMapdb;
 
 
-    public OligoHetDimerDaemon(Integer totalJobs, int concurrentJobs) {
+    public OligoHetDimerDaemon(Integer totalJobs, int concurrentJobs, HTreeMap<String, Float> allHetdimerMapMapDB) {
 		System.out.println("Starting up job Daemon");
 		this.totalJobs = totalJobs;
 		this.pool = Executors.newFixedThreadPool(concurrentJobs);
 		this.service = new ExecutorCompletionService<TreeMap<String, Float>>(pool);
 		this.taskList = new ArrayList<Callable<TreeMap<String, Float>>>();
+        this.allHetDimerPairsObjectsMapMapdb = allHetdimerMapMapDB;
 	}
 
 	public void addJob(Callable<TreeMap<String, Float>> job) {
@@ -45,6 +43,8 @@ public class OligoHetDimerDaemon extends Thread {
 
 	@Override
 	public void run() {
+
+
 		try {
 			int finishedJobs = 0;
 
@@ -58,13 +58,9 @@ public class OligoHetDimerDaemon extends Thread {
 				if (result != null) {
 					finishedJobs++;
                     System.out.println("finished jobs:"+finishedJobs);
-					/*if (allHetDimerPairsObjectsMapMapdb == null) {
-                        allHetDimerPairsObjectsMapMapdb.putAll(result.get());
-					} else {*/
-                        //combinedhetDimerlistResult.combine(result.get());
-                        allHetDimerPairsObjectsMapMapdb.putAll(result.get());
-                        db2.commit();
-					//}
+
+                    allHetDimerPairsObjectsMapMapdb.putAll(result.get());
+
 				}
 
 				if (finishedJobs == this.totalJobs) {
@@ -75,7 +71,7 @@ public class OligoHetDimerDaemon extends Thread {
 				    throw new InterruptedException();
 				}
 
-				Thread.sleep(100);
+				Thread.sleep(500);
 			}
 
 		} catch (InterruptedException irrex) {

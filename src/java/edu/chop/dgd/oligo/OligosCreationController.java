@@ -267,12 +267,9 @@ public class OligosCreationController implements Controller{
 
 
         System.out.println("starting parallel processing for hetdimer analysis");
-        OligoHetDimerDaemon daemon_hetdimerMap = new OligoHetDimerDaemon(numfiles, numthreads);
-        daemon_hetdimerMap.start();
-        int hetdimer_threadcount=0;
-
         String hetdimerFilename = "oligoInp_"+projectId+"_"+ new SimpleDateFormat("yyyyMMddhhmm'.txt'").format(new Date());
         //using MapDB, it will only add the two ids as a string and a float value as the value.
+
         DB db2 = DBMaker.fileDB(dataDir+heterodimerInpDir+hetdimerFilename+"allHetDimerPairsObjectsMap.db").closeOnJvmShutdown().transactionEnable().fileDeleteAfterClose().make();
         HTreeMap<String, Float> allHetDimerPairsObjectsMapMapdb = db2.hashMap("allHetDimerPairsObjectsMapMapdb").keySerializer(Serializer.STRING).valueSerializer(Serializer.FLOAT).createOrOpen();
 
@@ -286,17 +283,15 @@ public class OligosCreationController implements Controller{
         }
 
         System.out.println("Running Heterodimer analysis now");
+        OligoHetDimerDaemon daemon_hetdimerMap = new OligoHetDimerDaemon(numfiles, numthreads, allHetDimerPairsObjectsMapMapdb);
+        daemon_hetdimerMap.start();
+        int hetdimer_threadcount=0;
+
         //running hetdimer analysis and deltaG filteration, only, in parallel.
         for(int n=1; n<=numfiles; n++){
             hetdimer_threadcount = n-1;
             OligoHetDimerThread jobThread_hetDimer = new OligoHetDimerThread(n, numlines, hetdimer_threadcount, hetdimerFilename, dataDir, heterodimerOpDir);
             daemon_hetdimerMap.addJob(jobThread_hetDimer);
-            /*System.out.println("starting hetdimer run in subset of file");
-            String hetDimerSubsectionIndexes = mfd.createFileRunHeterodimerAnalysis(inputlistforHetDimerAnalysis, heterodimerInpDir, dataDir, hetdimerFilename, n, oligoIdStoppedAt, numlines);
-            oligoIdStoppedAt = Integer.parseInt(hetDimerSubsectionIndexes.split("&", -1)[0]);
-            System.out.println("getting deltaG values for HetDimer Pairs");
-            allHetDimerPairsObjectsMapMapdb = mfd.getDeltaGValuesForHetDimerPairs_createMapDBHash(allHetDimerPairsObjectsMapMapdb, dataDir, heterodimerOpDir, hetdimerFilename, n);*/
-
         }
 
         try {
@@ -315,6 +310,7 @@ public class OligosCreationController implements Controller{
         //PrintWriter setsOfOligosBedWriter = new PrintWriter(dataDir+finalOligos+projectId+"_setsofoligos_bedfile.bed");
 
         for(SequenceObject so : objects){
+            System.out.println("going back to each sequenceobject");
 
             ArrayList<String> hetDimerIdListForSO = mfd.getHetDimersIdsForRegion(allHetDimerPairsObjectsMapMapdb, so, hetDimerHashMapMAPDB);
             hetDimerIdListForSO = new OligoUtils().sortOligoIdListBySubsectionAndSerialNum(hetDimerIdListForSO);
