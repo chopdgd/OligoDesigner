@@ -92,7 +92,7 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
             String key2part = obj.getInternalPrimerId();
             String key = key1part+key2part;
 
-            System.out.println("getting map of oligos path multimap arrays"+key);
+            //System.out.println("getting map of oligos path multimap arrays"+key);
             Collection<String> pathCollection = dagOligo.getMapOfOligoidsPathMultimapArrays().get(key1part);
             ArrayList<String> pathArray = new ArrayList<String>(pathCollection);
             //sort by region and subsection. because we have het dimer interactions only for sorted Oligos.
