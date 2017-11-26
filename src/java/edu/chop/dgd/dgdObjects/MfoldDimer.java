@@ -250,10 +250,10 @@ public class MfoldDimer {
         for(int i=0; i< heteroDimerObjectsList.size(); i++){
 
             OligoObject o = heteroDimerObjectsList.get(i);
-            List<OligoObject> hetObjectList = new ArrayList<OligoObject>();
+            //List<OligoObject> hetObjectList = new ArrayList<OligoObject>();
 
             for(int j=i+1; j<heteroDimerObjectsList.size(); j++){
-                hetObjectList.add(heteroDimerObjectsList.get(j));
+                //hetObjectList.add(heteroDimerObjectsList.get(j));
                 hetDimerObjIdsMap.put(o.getInternalPrimerId(), heteroDimerObjectsList.get(j).getInternalPrimerId());
             }
         }

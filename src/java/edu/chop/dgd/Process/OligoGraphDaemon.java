@@ -77,7 +77,7 @@ public class OligoGraphDaemon extends Thread {
 				    throw new InterruptedException();
 				}
 
-				Thread.sleep(100);
+				Thread.sleep(500);
 			}
 
 		} catch (InterruptedException irrex) {

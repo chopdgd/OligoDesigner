@@ -315,7 +315,8 @@ public class OligosCreationController implements Controller{
             ArrayList<String> hetDimerIdListForSO = mfd.getHetDimersIdsForRegion(allHetDimerPairsObjectsMapMapdb, so, hetDimerHashMapMAPDB);
             hetDimerIdListForSO = new OligoUtils().sortOligoIdListBySubsectionAndSerialNum(hetDimerIdListForSO);
 
-            DB db = DBMaker.memoryDB().closeOnJvmShutdown().transactionEnable().fileDeleteAfterClose().make();
+            //DB db = DBMaker.memoryDB().closeOnJvmShutdown().transactionEnable().fileDeleteAfterClose().make();
+            DB db = DBMaker.tempFileDB().closeOnJvmShutdown().transactionEnable().fileDeleteAfterClose().make();
             HTreeMap<String, Object> hetDimerMapForSO_mapDB_sorted = db.hashMap("hetDimerMapOnlySO_sorted"+so.getChr()+"_"+so.getStart()+"_"+so.getStop()).keySerializer(Serializer.STRING).valueSerializer(new SerializerJava()).createOrOpen();
 
             for(String id : hetDimerIdListForSO){
@@ -374,8 +375,8 @@ public class OligosCreationController implements Controller{
                 //only return 5-10 or so children at a time.Subject to change.
                 if(so.getStop()-so.getStart()>=100000){
                     //more seed oligos but only 2 children per parent node. more of a binary tree.
-                    if(seedOligoslist.size()>=5){
-                        for(int s=0; s<5; s++){
+                    if(seedOligoslist.size()>=8){
+                        for(int s=0; s<8; s++){
                             seedOligoslist_short.add(seedOligoslist.get(s));
                         }
                         seedOligoslist.clear();

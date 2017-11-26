@@ -140,6 +140,7 @@ public class OligoHetDimerThread implements Callable<TreeMap<String, Float>> {
      */
     public TreeMap<String, Float> getDeltaGValuesForHetDimerPairs_createMapDBHash(TreeMap<String, Float> hetDimerPairsObjectsMapMapdb_fornumfile, String dataDir, String heterodimerOpDir, String fileName, int subpartnum) throws Exception{
 
+        System.out.println("getting deltaG values");
         String hetOpFilename = dataDir+heterodimerOpDir+fileName+"_"+subpartnum+"_1_"+fileName+"_"+subpartnum+"_2.out";
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(hetOpFilename)));
 
@@ -167,6 +168,7 @@ public class OligoHetDimerThread implements Callable<TreeMap<String, Float>> {
                         System.out.println("f1 is greater than f2");
                     }*/
 
+
                     if(Float.parseFloat(hetdimerValue) >= -10.00){
                         hetDimerPairsObjectsMapMapdb_fornumfile.put(hetOligoHeader1 + "&" + hetOligoHeader2, Float.parseFloat(hetdimerValue));
                     }
@@ -178,6 +180,8 @@ public class OligoHetDimerThread implements Callable<TreeMap<String, Float>> {
         }finally {
             reader.close();
         }
+
+        System.out.println("returning hetDimerPairsObjectsMapMapdb_fornumfile");
 
         return hetDimerPairsObjectsMapMapdb_fornumfile;
     }

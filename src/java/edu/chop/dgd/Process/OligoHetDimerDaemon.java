@@ -14,7 +14,7 @@ public class OligoHetDimerDaemon extends Thread {
 	private ExecutorService pool = null;
 	private ExecutorCompletionService<TreeMap<String, Float>> service;
 	private int totalJobs;
-    private String hetdimerfilename = "NA";
+
     //private DB db2 = DBMaker.tempFileDB().fileDeleteAfterClose().make();
     private HTreeMap<String, Float> allHetDimerPairsObjectsMapMapdb;
 
@@ -71,7 +71,7 @@ public class OligoHetDimerDaemon extends Thread {
 				    throw new InterruptedException();
 				}
 
-				Thread.sleep(500);
+				Thread.sleep(1000);
 			}
 
 		} catch (InterruptedException irrex) {
