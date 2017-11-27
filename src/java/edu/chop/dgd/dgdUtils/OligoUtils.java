@@ -4,10 +4,7 @@ import edu.chop.dgd.dgdObjects.OligoObject;
 import edu.chop.dgd.dgdObjects.SequenceObjectSubsections;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by jayaramanp on 10/16/17.
@@ -256,46 +253,10 @@ public class OligoUtils {
             }
         });
 
-
-
-
-        /*Collections.sort(oligoIdsList, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return (Integer.valueOf(o1.split("_", -1)[0].split(":",-1)[0].split("chr", -1)[1]).compareTo(Integer.valueOf(o2.split("_", -1)[0].split(":",-1)[0].split("chr", -1)[1])));
-            }
-        });
-
-        Collections.sort(oligoIdsList, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return (Integer.valueOf(o1.split("_", -1)[0].split(":",-1)[1]).compareTo(Integer.valueOf(o2.split("_", -1)[0].split(":",-1)[1])));
-            }
-        });
-
-        Collections.sort(oligoIdsList, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return (Integer.valueOf(o1.split("_", -1)[0].split(":",-1)[2]).compareTo(Integer.valueOf(o2.split("_", -1)[0].split(":",-1)[2])));
-            }
-        });
-
-        Collections.sort(oligoIdsList, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return (Integer.valueOf(o1.split("_", -1)[1]).compareTo(Integer.valueOf(o2.split("_", -1)[1])));
-            }
-        });
-
-        Collections.sort(oligoIdsList, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return (Integer.valueOf(o1.split("_", -1)[2].split("O",-1)[1]).compareTo(Integer.valueOf(o2.split("_", -1)[2].split("O",-1)[1])));
-            }
-        });
-*/
+        //System.out.println("returning sorted oligoids");
         return oligoIdsList;
     }
+
 
 
     /**

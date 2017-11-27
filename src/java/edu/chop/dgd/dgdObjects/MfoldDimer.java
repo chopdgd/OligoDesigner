@@ -988,6 +988,7 @@ public class MfoldDimer {
 
         ArrayList<String> hetDimersList = new ArrayList<String>();
 
+        System.out.println("getting hetdimers for region. both oligos in allHetDimerPairsObjectsMapDB need to be in same chromosome");
         for(String htreeKey : allHetDimerPairsObjectsMapMapdb.getKeys()){
             String[] hetdimerids = htreeKey.split("&", -1);
             OligoObject hetDimerOligoObj1 = (OligoObject) hetDimerHashMapMAPDB.get(hetdimerids[0]);
@@ -998,19 +999,68 @@ public class MfoldDimer {
             int soend2 = Integer.parseInt(hetdimerids[1].split("_", -1)[0].split(":", -1)[2]);
 
 
-            if(hetDimerOligoObj1.getChr().equalsIgnoreCase(so.getChr()) && hetDimerOligoObj2.getChr().equalsIgnoreCase(so.getChr())){
-                if( sostart1==so.getStart() && soend1==so.getStop() && sostart2==so.getStart() && soend2==so.getStop()){
-                    hetDimersList.add(hetDimerOligoObj1.getInternalPrimerId());
-                    hetDimersList.add(hetDimerOligoObj2.getInternalPrimerId());
+            if(hetDimerOligoObj1!=null && hetDimerOligoObj2!=null){
+                if(hetDimerOligoObj1.getChr().equalsIgnoreCase(so.getChr()) && hetDimerOligoObj2.getChr().equalsIgnoreCase(so.getChr())){
+                    if( sostart1==so.getStart() && soend1==so.getStop() && sostart2==so.getStart() && soend2==so.getStop()){
+                        if(!hetDimersList.contains(hetDimerOligoObj1.getInternalPrimerId())){
+                            hetDimersList.add(hetDimerOligoObj1.getInternalPrimerId());
+                        }
+
+                        if(!hetDimersList.contains(hetDimerOligoObj2.getInternalPrimerId())){
+                            hetDimersList.add(hetDimerOligoObj2.getInternalPrimerId());
+                        }
+                    }
                 }
             }
         }
 
-        Set<String> hetdimersIdSet = new HashSet<String>(hetDimersList);
-        hetDimersList.clear();
+        //Set<String> hetdimersIdSet = new HashSet<String>(hetDimersList);
+        System.out.println("returning unique hetdimerids");
+        //hetDimersList.clear();
+        //hetDimersList = new ArrayList<String>(hetdimersIdSet);
+        //hetdimersIdSet.clear();
 
-        hetDimersList = new ArrayList<String>(hetdimersIdSet);
         return hetDimersList;
+    }
+
+
+    public NavigableSet<String> getHetDimersIdsForRegion_set(HTreeMap<String, Float> allHetDimerPairsObjectsMapMapdb, SequenceObject so, HTreeMap<String, Object> hetDimerHashMapMAPDB, NavigableSet<String> treeSet) throws Exception{
+
+        System.out.println("getting hetdimers for region. both oligos in allHetDimerPairsObjectsMapDB need to be in same chromosome");
+        for(String htreeKey : allHetDimerPairsObjectsMapMapdb.getKeys()){
+            String[] hetdimerids = htreeKey.split("&", -1);
+            OligoObject hetDimerOligoObj1 = (OligoObject) hetDimerHashMapMAPDB.get(hetdimerids[0]);
+            int sostart1 = Integer.parseInt(hetdimerids[0].split("_", -1)[0].split(":", -1)[1]);
+            int soend1 = Integer.parseInt(hetdimerids[0].split("_", -1)[0].split(":", -1)[2]);
+            OligoObject hetDimerOligoObj2 = (OligoObject) hetDimerHashMapMAPDB.get(hetdimerids[1]);
+            int sostart2 = Integer.parseInt(hetdimerids[1].split("_", -1)[0].split(":", -1)[1]);
+            int soend2 = Integer.parseInt(hetdimerids[1].split("_", -1)[0].split(":", -1)[2]);
+
+
+            if(hetDimerOligoObj1!=null && hetDimerOligoObj2!=null){
+                if(hetDimerOligoObj1.getChr().equalsIgnoreCase(so.getChr()) && hetDimerOligoObj2.getChr().equalsIgnoreCase(so.getChr())){
+                    if( sostart1==so.getStart() && soend1==so.getStop() && sostart2==so.getStart() && soend2==so.getStop()){
+
+                        if(!treeSet.contains(hetDimerOligoObj1.getInternalPrimerId())){
+                            treeSet.add(hetDimerOligoObj1.getInternalPrimerId());
+                        }
+
+
+                        if(!treeSet.contains(hetDimerOligoObj2.getInternalPrimerId())){
+                            treeSet.add(hetDimerOligoObj2.getInternalPrimerId());
+                        }
+                    }
+                }
+            }
+        }
+
+        //Set<String> hetdimersIdSet = new HashSet<String>(hetDimersList);
+        System.out.println("returning unique hetdimerids set");
+        //hetDimersList.clear();
+        //hetDimersList = new ArrayList<String>(hetdimersIdSet);
+        //hetdimersIdSet.clear();
+
+        return treeSet;
     }
 
 
@@ -1028,6 +1078,40 @@ public class MfoldDimer {
         System.out.println("creating only hets within distance");
         for(String oligoid : hetDimerIdListForSO){
             List<String> nextBinOligosWithinSpacing = getNext8_10KBOligoObjs_mapDB(hetDimerMapForSO_mapDB.get(oligoid), hetDimerIdListForSO, hetDimerMapForSO_mapDB, spacing, hetDimerIdListForSO.indexOf(oligoid));
+            if(nextBinOligosWithinSpacing.size()>0){
+                for(String nextoligo : nextBinOligosWithinSpacing){
+                    //filteredHetDimerMapForSO_multimap.add(new Object[]{oligoid,nextoligo});
+                    filteredHetDimerMapForSO_multimap.put(oligoid, nextoligo);
+                }
+            }
+        }
+
+        for(String hetdimermapbyDistanceKey : filteredHetDimerMapForSO_multimap.keySet()){
+            System.out.println("Size of Oligos for key:"+hetdimermapbyDistanceKey+ " value size is:"+filteredHetDimerMapForSO_multimap.get(hetdimermapbyDistanceKey).size());
+        }
+
+        System.out.println("returning filtered hets sorted by distance");
+
+        return filteredHetDimerMapForSO_multimap;
+
+    }
+
+
+
+    /**
+     *
+     *
+     * @param hetDimerIdSetForSO
+     * @param spacing
+     * @param hetDimerMapForSO_mapDB
+     * @param filteredHetDimerMapForSO_multimap
+     * @return
+     */
+    public Multimap<String, String> filterMapCreateOnlyHetsWithinDistancefromSetMap_MapDB(NavigableSet<String> hetDimerIdSetForSO, int spacing, HTreeMap<String, Object> hetDimerMapForSO_mapDB, Multimap<String, String> filteredHetDimerMapForSO_multimap) throws Exception {
+
+        System.out.println("creating only hets within distance");
+        for(String oligoid : hetDimerIdSetForSO){
+            List<String> nextBinOligosWithinSpacing = getNext8_10KBOligoObjs_mapDB(hetDimerMapForSO_mapDB.get(oligoid), hetDimerIdSetForSO, hetDimerMapForSO_mapDB, spacing);
             if(nextBinOligosWithinSpacing.size()>0){
                 for(String nextoligo : nextBinOligosWithinSpacing){
                     //filteredHetDimerMapForSO_multimap.add(new Object[]{oligoid,nextoligo});
@@ -1092,6 +1176,64 @@ public class MfoldDimer {
         }
 
         oligosReturned = new OligoUtils().sortOligoIdListBySubsectionAndSerialNum(oligosReturned);
+        Collections.shuffle(oligosReturned);
+        return oligosReturned;
+
+    }
+
+
+
+    /**
+     *
+     *
+     * @param objInQuestion
+     * @param hetDimerIdListForSO
+     * @param hetDimerMapForSO_mapDB
+     * @param spacing
+     * @return
+     * */
+    public List<String> getNext8_10KBOligoObjs_mapDB(Object objInQuestion, NavigableSet<String> hetDimerIdListForSO, HTreeMap<String, Object> hetDimerMapForSO_mapDB, int spacing) throws Exception{
+
+        OligoObject oligoObjectinQuestion = (OligoObject) objInQuestion;
+        int diffLessThan0 = (spacing*1000)+500;
+        int diffGreaterThan0 = (spacing*1000)-500;
+
+        int diffLessThan1 = (spacing*1000)+2000;
+        int diffGreaterThan1 = (spacing*1000)-2000;
+
+        int diffLessThan2 = (spacing*1000)+4000;
+        int diffGreaterThan2 = (spacing*1000)-4000;
+
+        int diffLessThan3 = (spacing*1000)+6000;
+        int diffGreaterThan3 = (spacing*1000)-6000;
+
+        ArrayList<String> oligosReturned = new ArrayList<String>();
+
+        for(String oligoid : hetDimerIdListForSO){
+            OligoObject o = (OligoObject) hetDimerMapForSO_mapDB.get(oligoid);
+
+            int oligoStartDiff=0;
+
+            if(o!=null){
+                oligoStartDiff = o.getInternalStart()-oligoObjectinQuestion.getInternalStart();
+            }
+
+            if(diffLessThan0>oligoStartDiff && oligoStartDiff>diffGreaterThan0){
+                //check if obj is present in hetDimerMapForSO.
+                oligosReturned.add(oligoid);
+            }else
+            if(diffLessThan1>oligoStartDiff && oligoStartDiff>diffGreaterThan1){
+                //check if obj is present in hetDimerMapForSO.
+                oligosReturned.add(oligoid);
+            }else
+            if(diffLessThan2>oligoStartDiff && oligoStartDiff>diffGreaterThan2){
+                //check if obj is present in hetDimerMapForSO.
+                oligosReturned.add(oligoid);
+            }
+        }
+
+        //why sort when you need to shuffle?
+        //oligosReturned = new OligoUtils().sortOligoIdListBySubsectionAndSerialNum(oligosReturned);
         Collections.shuffle(oligosReturned);
         return oligosReturned;
 
