@@ -321,7 +321,7 @@ public class OligosCreationController implements Controller{
 
 
             DB listdb = DBMaker
-                    .fileDB("hetdimerlistforSO"+so.getChr()+"_"+so.getStart()+"_"+so.getStop()).transactionEnable().
+                    .fileDB(dataDir+heterodimerOpDir+projectId+"_hetdimerlistforSO_"+so.getChr()+"_"+so.getStart()+"_"+so.getStop()).
                             fileDeleteAfterClose().make();
             NavigableSet<String> treeSet = listdb.treeSet("hetdimerIdstreeSet"+so.getChr()+"_"+so.getStart()+"_"+so.getStop())
                     .serializer(Serializer.STRING)
