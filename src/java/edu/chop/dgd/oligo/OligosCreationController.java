@@ -167,7 +167,13 @@ public class OligosCreationController implements Controller{
                 "PRIMER_INTERNAL_MAX_GC="+max_gc+"\nPRIMER_INTERNAL_OPT_GC_PERCENT="+opt_gc+"\nPRIMER_INTERNAL_MIN_GC="+min_gc+"\n"+
                 "PRIMER_INTERNAL_MAX_SIZE="+max_len+"\nPRIMER_INTERNAL_OPT_SIZE="+opt_len+"\nPRIMER_INTERNAL_MIN_SIZE="+min_len+"\n"+
                 "PRIMER_INTERNAL_SALT_MONOVALENT="+na_ion+"\nPRIMER_INTERNAL_SALT_DIVALENT="+mg_ion+"\nPRIMER_INTERNAL_MAX_SELF_ANY="+self_any+"\n"+
-                "PRIMER_INTERNAL_MAX_SELF_END="+self_end+"\n=";
+                "PRIMER_INTERNAL_MAX_SELF_END="+self_end+"\nPRIMER_NUM_RETURN=20\n=";
+
+        String primer3OligoadditionalParams_largeObj = "PRIMER_INTERNAL_MAX_TM="+max_tm+"\nPRIMER_INTERNAL_OPT_TM="+opt_tm+"\nPRIMER_INTERNAL_MIN_TM="+min_tm+"\n"+
+                "PRIMER_INTERNAL_MAX_GC="+max_gc+"\nPRIMER_INTERNAL_OPT_GC_PERCENT="+opt_gc+"\nPRIMER_INTERNAL_MIN_GC="+min_gc+"\n"+
+                "PRIMER_INTERNAL_MAX_SIZE="+max_len+"\nPRIMER_INTERNAL_OPT_SIZE="+opt_len+"\nPRIMER_INTERNAL_MIN_SIZE="+min_len+"\n"+
+                "PRIMER_INTERNAL_SALT_MONOVALENT="+na_ion+"\nPRIMER_INTERNAL_SALT_DIVALENT="+mg_ion+"\nPRIMER_INTERNAL_MAX_SELF_ANY="+self_any+"\n"+
+                "PRIMER_INTERNAL_MAX_SELF_END="+self_end+"\nPRIMER_NUM_RETURN=12\n=";
 
 
         File fileToParse = new File(upFile+projectId+"/"+origFileName);
@@ -203,8 +209,13 @@ public class OligosCreationController implements Controller{
         //for (int i=0;i<fileList.size();i++) {
         for(SequenceObject so : objects){
             threadcount+=1;
+            OligoSeedThread jobThread;
             //OligoSeedThread jobThread = new OligoSeedThread(fileList.get(i), i+1, seedFinder, extendScore);
-            OligoSeedThread jobThread = new OligoSeedThread(so, threadcount, projectId, assembly, primer3OligoadditionalParams);
+            if(so.getStop()-so.getStart()<=100000){
+                jobThread = new OligoSeedThread(so, threadcount, projectId, assembly, primer3OligoadditionalParams);
+            }else{
+                jobThread = new OligoSeedThread(so, threadcount, projectId, assembly, primer3OligoadditionalParams_largeObj);
+            }
             jobThread.setDataDir(dataDir);
             jobThread.setOligoInputDir(oligoInputDir);
             jobThread.setOligoOutputDir(oligoOutputDir);
@@ -246,9 +257,6 @@ public class OligosCreationController implements Controller{
 
         //Oct9th 2017 need to change this to: https://github.com/harishreedharan/MapDB/blob/master/src/test/java/examples/MultiMap.java
         System.out.println("Mapping Oligos and creating hetdimerInp sections");
-        //LinkedHashMap<OligoObject, List<OligoObject>> oligoObjectsMap = mfd.mapOligosCreateHetDimerInpSections_new(heteroDimerObjectsList);
-        //ArrayList<String[]> inputlistforHetDimerAnalysis = mfd.createSubsetofhetDimers(oligoObjectsMap);
-        //oligoObjectsMap.clear();
 
         Multimap<String, String> oligoObjectsMap_multimap = mfd.mapOligosCreateHetDimerInpSections_newMapDB(heteroDimerObjectsList);
         ArrayList<String[]> inputlistforHetDimerAnalysis = mfd.createSubsetofhetDimers_multimap(oligoObjectsMap_multimap, hetDimerHashMapMAPDB);
@@ -264,7 +272,6 @@ public class OligosCreationController implements Controller{
         }else{
             numfiles = temp1 + 1;
         }
-
 
         System.out.println("starting parallel processing for hetdimer analysis");
         String hetdimerFilename = "oligoInp_"+projectId+"_"+ new SimpleDateFormat("yyyyMMddhhmm'.txt'").format(new Date());
