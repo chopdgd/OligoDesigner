@@ -400,8 +400,8 @@ public class OligosCreationController implements Controller{
                 //only return limited children at a time.Subject to change.
                 if(so.getStop()-so.getStart()>=100000){
                     //more seed oligos but only 2 children per parent node. more of a binary tree.
-                    if(seedOligoslist.size()>=10){
-                        for(int s=0; s<10; s++){
+                    if(seedOligoslist.size()>=8){
+                        for(int s=0; s<8; s++){
                             seedOligoslist_short.add(seedOligoslist.get(s));
                         }
                         seedOligoslist.clear();
@@ -411,8 +411,8 @@ public class OligosCreationController implements Controller{
 
                 }else if(so.getStop()-so.getStart()<100000){
                     //fewer seed oligos but 3 children per parent node. wider graph.
-                    if(seedOligoslist.size()>=8){
-                        for(int s=0; s<8; s++){
+                    if(seedOligoslist.size()>=5){
+                        for(int s=0; s<5; s++){
                             seedOligoslist_short.add(seedOligoslist.get(s));
                         }
                         seedOligoslist.clear();
