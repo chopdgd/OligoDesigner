@@ -2,6 +2,7 @@ package edu.chop.dgd.dgdUtils;
 
 import edu.chop.dgd.dgdObjects.OligoObject;
 import edu.chop.dgd.dgdObjects.SequenceObjectSubsections;
+import org.mapdb.HTreeMap;
 
 import java.io.*;
 import java.util.*;
@@ -293,5 +294,47 @@ public class OligoUtils {
             }
         });
 
+    }
+
+
+
+    /**
+     *
+     *
+     * @param seedOligoslist
+     * @param hetDimerHashMapMAPDB
+     * @return
+     */
+    public ArrayList<String> removeOverlappingSeedOligos(ArrayList<String> seedOligoslist, HTreeMap<String, Object> hetDimerHashMapMAPDB) {
+        ArrayList<String> nonoverlappingseedoligos = new ArrayList<>();
+
+        Collections.shuffle(seedOligoslist);
+
+
+        for(int i=0; i<seedOligoslist.size(); i++){
+            OligoObject obj = (OligoObject) hetDimerHashMapMAPDB.get(seedOligoslist.get(i));
+            int innewlistflag=0;
+            if(nonoverlappingseedoligos.size()<1){
+                nonoverlappingseedoligos.add(obj.getInternalPrimerId());
+                innewlistflag=1;
+            }else{
+                for(String nonoverlappingoligoid : nonoverlappingseedoligos){
+                    OligoObject nonoverlappingObj = (OligoObject) hetDimerHashMapMAPDB.get(nonoverlappingoligoid);
+                    if(obj.getInternalStart()<=nonoverlappingObj.getInternalStop() && obj.getInternalStop()>=nonoverlappingObj.getInternalStart()){
+                        innewlistflag=1;
+                        break;
+                    }
+
+                }
+
+            }
+
+            if(innewlistflag==0){
+                nonoverlappingseedoligos.add(obj.getInternalPrimerId());
+            }
+        }
+
+
+        return nonoverlappingseedoligos;
     }
 }

@@ -98,7 +98,7 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
             //sort by region and subsection. because we have het dimer interactions only for sorted Oligos.
             pathArray = new OligoUtils().sortOligoIdListBySubsectionAndSerialNum(pathArray);
             int toremoveFlag=0;
-            Float deltagForThisArray = Float.parseFloat("0.00");
+            //Float deltagForThisArray = Float.parseFloat("0.00");
 
             for(int p=0; p<(pathArray.size()-1); p++){
                 for(int q=p+1; q<pathArray.size(); q++){
@@ -116,7 +116,7 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
                 }
                 //System.out.println("set of oligosMultimapfromSeed keyset is:"+ setOfOligosMultimapFromSeed.keySet());
             }else{
-                System.out.println("removing patharray because toremove flag is 1"+ key1part);
+                //System.out.println("removing patharray because toremove flag is 1"+ key1part);
             }
         }
 
@@ -155,12 +155,12 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
             */
 
             if(so.getStop()-so.getStart()<100000){
-                if(childrenObj.size()>=3){
-                    childrenObj = childrenObj.subList(0, 2);
+                if(childrenObj.size()>=5){
+                    childrenObj = childrenObj.subList(0, 4);
                 }
             }else if(so.getStop()-so.getStart()>=100000){
-                if(childrenObj.size()>=2){
-                    childrenObj = childrenObj.subList(0, 1);
+                if(childrenObj.size()>=3){
+                    childrenObj = childrenObj.subList(0, 2);
                 }
             }
 
