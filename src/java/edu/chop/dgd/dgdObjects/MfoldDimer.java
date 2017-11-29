@@ -1026,7 +1026,7 @@ public class MfoldDimer {
 
     public NavigableSet<String> getHetDimersIdsForRegion_set(HTreeMap<String, Float> allHetDimerPairsObjectsMapMapdb, SequenceObject so, HTreeMap<String, Object> hetDimerHashMapMAPDB, NavigableSet<String> treeSet) throws Exception{
 
-        System.out.println("getting hetdimers for region. both oligos in allHetDimerPairsObjectsMapDB need to be in same chromosome");
+        System.out.println("getting hetdimers for region Navigable set. both oligos in allHetDimerPairsObjectsMapDB need to be in same chromosome");
         for(String htreeKey : allHetDimerPairsObjectsMapMapdb.getKeys()){
             String[] hetdimerids = htreeKey.split("&", -1);
             OligoObject hetDimerOligoObj1 = (OligoObject) hetDimerHashMapMAPDB.get(hetdimerids[0]);

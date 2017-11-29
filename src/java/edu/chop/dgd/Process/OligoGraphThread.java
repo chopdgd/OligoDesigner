@@ -84,7 +84,7 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
         });
 
         Set<String> keyset = dagOligo.getMapOfOligoidsPathMultimapArrays().keySet();
-        System.out.println("map of oligos path multimap arrays size is:"+ keyset);
+        System.out.println("map of oligos path multimap arrays size is:"+ keyset.size());
 
         Iterator<String> keyit = keyset.iterator();
         while (keyit.hasNext()){

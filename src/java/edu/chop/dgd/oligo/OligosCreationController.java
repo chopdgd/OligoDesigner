@@ -459,7 +459,7 @@ public class OligosCreationController implements Controller{
             so.setOligoSetsFullMapMultiMap(setsOfOligoSets_mapDB);
             filteredHetDimerMapForSO_multimap.clear();
             db.close();
-            System.out.println("done with this so. sets of oligo sets keys are:"+ setsOfOligoSets_mapDB.keySet());
+            System.out.println("done with this so. sets of oligo sets keys are:"+ setsOfOligoSets_mapDB.keySet().size());
         }
 
         postHetdimerOligosBedWriter.close();
