@@ -155,7 +155,7 @@ public class OligoHetDimerThread implements Callable<TreeMap<String, Float>> {
                     String hetdimerValue = lineArr[1].split(" = ", -1)[1];
 
                     Float hetDimerValueToCompare = Float.parseFloat(hetdimerValue);
-                    Float hetDimerValueToCompareTo = Float.parseFloat("-10.00");
+                    Float hetDimerValueToCompareTo = Float.parseFloat("-15.00");
 
                     //int comparison = hetDimerValueToCompare.compareTo(hetDimerValueToCompareTo);
                     /*if (comparison < 0) {
@@ -169,7 +169,7 @@ public class OligoHetDimerThread implements Callable<TreeMap<String, Float>> {
                     }*/
 
 
-                    if(Float.parseFloat(hetdimerValue) >= -10.00){
+                    if(Float.parseFloat(hetdimerValue) >= -15.00){
                         hetDimerPairsObjectsMapMapdb_fornumfile.put(hetOligoHeader1 + "&" + hetOligoHeader2, Float.parseFloat(hetdimerValue));
                     }
 //                    else{

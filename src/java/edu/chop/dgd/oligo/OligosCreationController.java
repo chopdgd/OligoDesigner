@@ -313,8 +313,8 @@ public class OligosCreationController implements Controller{
         allHetDimerPairsObjectsMapMapdb = daemon_hetdimerMap.getCombinedResultMap();
 
 
-        PrintWriter postHetdimerOligosBedWriter = new PrintWriter(dataDir+heterodimerOpDir+projectId+"_posthetdimer_bedfile.bed");
-        PrintWriter setsOfOligosBedWriter = new PrintWriter(dataDir+finalOligos+projectId+"_setsofoligos_bedfile.gff");
+        //PrintWriter postHetdimerOligosBedWriter = new PrintWriter(dataDir+heterodimerOpDir+projectId+"_posthetdimer_bedfile.bed");
+        //PrintWriter setsOfOligosBedWriter = new PrintWriter(dataDir+finalOligos+projectId+"_setsofoligos_bedfile.gff");
 
         for(SequenceObject so : objects){
             System.out.println("going back to each sequenceobject");
@@ -340,7 +340,7 @@ public class OligosCreationController implements Controller{
             for(String id : treeSet){
                 OligoObject hetDimerOligoObj_sorted = (OligoObject) hetDimerHashMapMAPDB.get(id);
                 hetDimerMapForSO_mapDB_sorted.put(id, hetDimerHashMapMAPDB.get(id));
-                postHetdimerOligosBedWriter.println(hetDimerOligoObj_sorted.getChr()+"\t"+hetDimerOligoObj_sorted.getInternalStart()+"\t"+hetDimerOligoObj_sorted.getInternalStop()+"\t"+hetDimerOligoObj_sorted.getInternalPrimerId());
+                //postHetdimerOligosBedWriter.println(hetDimerOligoObj_sorted.getChr()+"\t"+hetDimerOligoObj_sorted.getInternalStart()+"\t"+hetDimerOligoObj_sorted.getInternalStop()+"\t"+hetDimerOligoObj_sorted.getInternalPrimerId());
             }
             db.commit();
 
@@ -411,7 +411,7 @@ public class OligosCreationController implements Controller{
 
                 }else if(so.getStop()-so.getStart()<100000){
                     //fewer seed oligos but 3 children per parent node. wider graph.
-                    if(seedOligoslist.size()>=5){
+                    if(seedOligoslist.size()>5){
                         for(int s=0; s<5; s++){
                             seedOligoslist_short.add(seedOligoslist.get(s));
                         }
@@ -445,12 +445,12 @@ public class OligosCreationController implements Controller{
                 }
                 setsOfOligoSets_mapDB = graphDaemon.getCombinedResultMap();
                 
-                for(String key : setsOfOligoSets_mapDB.keySet()){
+                /*for(String key : setsOfOligoSets_mapDB.keySet()){
                     for(String id : setsOfOligoSets_mapDB.get(key)){
                         OligoObject hetdimerobj = (OligoObject) hetDimerHashMapMAPDB.get(id);
                         setsOfOligosBedWriter.println(so.getChr()+"\t"+projectId+"\t"+id+"\t"+hetdimerobj.getInternalStart()+"\t"+hetdimerobj.getInternalStop()+"\t.\t.\t.\t"+key);
                     }
-                }
+                }*/
 
             }else{
                 System.out.println("SO has no seed oligos within 6Kb to create graphs");
@@ -462,8 +462,8 @@ public class OligosCreationController implements Controller{
             System.out.println("done with this so. sets of oligo sets keys are:"+ setsOfOligoSets_mapDB.keySet().size());
         }
 
-        postHetdimerOligosBedWriter.close();
-        setsOfOligosBedWriter.close();
+        //postHetdimerOligosBedWriter.close();
+        //setsOfOligosBedWriter.close();
 
         System.out.println("checking Oligos interaction across SO");
         objects = new SequenceObject().checkOligosInteractAcrossSO_mapDB(objects, allHetDimerPairsObjectsMapMapdb);

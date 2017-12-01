@@ -155,7 +155,7 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
             */
 
             if(so.getStop()-so.getStart()<100000){
-                if(childrenObj.size()>=5){
+                if(childrenObj.size()>=4){
                     childrenObj = childrenObj.subList(0, 4);
                 }
             }else if(so.getStop()-so.getStart()>=100000){
