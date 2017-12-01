@@ -51,6 +51,9 @@ public class FileUploadController implements Controller{
     private static String mg_ion;
     private static String self_any;
     private static String self_end;
+    private String free_energy_hairpin;
+    private String free_energy_homodimer;
+    private String free_energy_heterodimer;
 
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse httpServletResponse) throws Exception {
 
@@ -171,6 +174,27 @@ public class FileUploadController implements Controller{
                     self_end = "NA";
                 }
 
+                String minHairpin = request.getParameter("free_energy_hairpin");
+
+                if(minHairpin.length()>0){
+                    free_energy_hairpin = minHairpin;
+                }else{
+                    free_energy_hairpin = "NA";
+                }
+
+                String minHomodimer = request.getParameter("free_energy_homodimer");
+                if(minHomodimer.length()>0){
+                    free_energy_homodimer = minHomodimer;
+                }else{
+                    free_energy_homodimer = "NA";
+                }
+
+                String minHeterodimer = request.getParameter("free_energy_heterodimer");
+                if(minHeterodimer.length()>0){
+                    free_energy_heterodimer = minHeterodimer;
+                }else{
+                    free_energy_heterodimer = "NA";
+                }
 
 
                 filePath = getDataDir()+getDownloadsDir();
@@ -240,7 +264,9 @@ public class FileUploadController implements Controller{
             mvObj.addObject("mgIon", mg_ion);
             mvObj.addObject("selfAny", self_any);
             mvObj.addObject("selfEnd", self_end);
-
+            mvObj.addObject("free_energy_hairpin", free_energy_hairpin);
+            mvObj.addObject("free_energy_homodimer", free_energy_homodimer);
+            mvObj.addObject("free_energy_heterodimer", free_energy_heterodimer);
         return mvObj;
 
         }
@@ -463,5 +489,29 @@ public class FileUploadController implements Controller{
 
     public static void setSelf_end(String self_end) {
         FileUploadController.self_end = self_end;
+    }
+
+    public String getFree_energy_hairpin() {
+        return free_energy_hairpin;
+    }
+
+    public void setFree_energy_hairpin(String free_energy_hairpin) {
+        this.free_energy_hairpin = free_energy_hairpin;
+    }
+
+    public String getFree_energy_homodimer() {
+        return free_energy_homodimer;
+    }
+
+    public void setFree_energy_homodimer(String free_energy_homodimer) {
+        this.free_energy_homodimer = free_energy_homodimer;
+    }
+
+    public String getFree_energy_heterodimer() {
+        return free_energy_heterodimer;
+    }
+
+    public void setFree_energy_heterodimer(String free_energy_heterodimer) {
+        this.free_energy_heterodimer = free_energy_heterodimer;
     }
 }

@@ -55,6 +55,10 @@
     String self_any = (String) request.getAttribute("selfAny");
     String self_end = (String) request.getAttribute("selfEnd");
 
+    String free_energy_hairpin = (String) request.getAttribute("free_energy_hairpin");
+    String free_energy_homodimer = (String) request.getAttribute("free_energy_homodimer");
+    String free_energy_heterodimer = (String) request.getAttribute("free_energy_heterodimer");
+
 %>
 
 
@@ -65,7 +69,7 @@
 <link rel="stylesheet" href="css/global.css">
 <META HTTP-EQUIV=Refresh CONTENT="3; URL=/Antholigo/oligo/processOligos.html?uploadFolderPath=<%=uploadedFilePath%>&proj_id=<%=pid%>&assembly=<%=assembly%>&origFile=<%=origFileName%>
 &separation=<%=oligo_seq_separation%>&minGC=<%=min_gc%>&optGC=<%=opt_gc%>&maxGC=<%=max_gc%>&minTm=<%=min_tm%>&optTm=<%=opt_tm%>&maxTm=<%=max_tm%>&minLen=<%=min_length%>
-&optLen=<%=opt_length%>&maxLen=<%=max_length%>&Na=<%=na%>&Mg=<%=mg%>&selfAny=<%=self_any%>&selfEnd=<%=self_end%>"/>
+&optLen=<%=opt_length%>&maxLen=<%=max_length%>&Na=<%=na%>&Mg=<%=mg%>&selfAny=<%=self_any%>&selfEnd=<%=self_end%>&free_energy_hairpin=<%=free_energy_hairpin%>&free_energy_homodimer=<%=free_energy_homodimer%>&free_energy_heterodimer=<%=free_energy_heterodimer%>"/>
 
 
 <div class="panel">

@@ -18,6 +18,8 @@ public class MfoldDimer {
 
     /**
      *
+     *
+     *
      * @param oligoObjectsFromPrimer3
      * @param fileName
      * @param homodimerOpDir
@@ -340,10 +342,12 @@ public class MfoldDimer {
 
     /**
      *
+     *
      * @param sequenceObjectSubsectionsList
-     * @return
+     * @param minHaipin
+     *@param minHomodimer @return
      */
-    public List<OligoObject> filterOligosCreateHeterodimers(List<SequenceObjectSubsections> sequenceObjectSubsectionsList) {
+    public List<OligoObject> filterOligosCreateHeterodimers(List<SequenceObjectSubsections> sequenceObjectSubsectionsList, Float minHaipin, Float minHomodimer) {
 
         List<OligoObject> hetDimerInputs = new ArrayList<OligoObject>();
         for(SequenceObjectSubsections s : sequenceObjectSubsectionsList){
@@ -352,7 +356,11 @@ public class MfoldDimer {
                 for(OligoObject o : oligoList){
                     if((o.getInternalPrimerBlatList()!=null) && (o.getInternalPrimerBlatList().size()==1) &&
                             (Double.compare(o.getInternalPrimerBlatList().get(0).getPercentageIdentity(), Double.parseDouble("99.00"))>=0)){
-                        if(o.getHairpinValue()>-2.00 && o.getHomodimerValue()>-10.00){
+                        /*if(o.getHairpinValue()>-2.00 && o.getHomodimerValue()>-10.00){
+                            hetDimerInputs.add(o);
+                        }*/
+
+                        if(o.getHairpinValue()>minHaipin && o.getHomodimerValue()>minHomodimer){
                             hetDimerInputs.add(o);
                         }
                     }

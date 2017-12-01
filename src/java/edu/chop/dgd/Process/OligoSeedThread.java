@@ -37,14 +37,18 @@ public class OligoSeedThread implements Callable<List<OligoObject>> {
     private String finalOligos;
     private String oligoProcessScriptDir;
     private String primer3OligoadditionalParams;
+    private Float minHaipin;
+    private Float minHomodimer;
 
-    public OligoSeedThread(SequenceObject so, int threadCount, String projectId, String assembly, String primer3OligoadditionalParams) {
+    public OligoSeedThread(SequenceObject so, int threadCount, String projectId, String assembly, String primer3OligoadditionalParams, String minHairpin, String minHomodimer) {
     //public OligoSeedThread(File inputFile, int threadCount, OligoSeedFinder seedFinder, int extendScore) {
         this.threadCount = threadCount;
         this.sequenceobject = so;
         this.projectId = projectId;
         this.assembly = assembly;
         this.primer3OligoadditionalParams = primer3OligoadditionalParams;
+        this.minHaipin = Float.parseFloat(minHairpin);
+        this.minHomodimer = Float.parseFloat(minHomodimer);
 	}
 
     /**
@@ -73,7 +77,7 @@ public class OligoSeedThread implements Callable<List<OligoObject>> {
                 dataDir, oligoOutputDir, blatInpDir, blatOpDir, mfoldInpDir, mfoldOpDir, homodimerOpDir,
                 heterodimerInpDir, heterodimerOpDir);
 
-        List<OligoObject> heteroDimerObjectsListFromSO = new MfoldDimer().filterOligosCreateHeterodimers(oligosSubsectionList);
+        List<OligoObject> heteroDimerObjectsListFromSO = new MfoldDimer().filterOligosCreateHeterodimers(oligosSubsectionList, minHaipin, minHomodimer);
         sequenceobject.setHetDimerOligosList(heteroDimerObjectsListFromSO);
         //commenting this out for parallelization, it will combine results at the end.
         //hetDimerOligosList.addAll(heteroDimerObjectsListFromSO);

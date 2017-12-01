@@ -55,6 +55,9 @@ public class OligosCreationController implements Controller{
     private static String mg_ion;
     private static String self_any;
     private static String self_end;
+    private static String free_energy_hairpin;
+    private static String free_energy_homodimer;
+    private static String free_energy_heterodimer;
     private static int spacing=0;
 
     @Override
@@ -162,6 +165,27 @@ public class OligosCreationController implements Controller{
             self_end = "NA";
         }
 
+        String minHairpin = request.getParameter("free_energy_hairpin");
+        if(minHairpin.length()>0){
+            free_energy_hairpin = minHairpin;
+        }else{
+            free_energy_hairpin = "NA";
+        }
+
+        String minHomodimer = request.getParameter("free_energy_homodimer");
+        if(minHomodimer.length()>0){
+            free_energy_homodimer = minHomodimer;
+        }else{
+            free_energy_homodimer = "NA";
+        }
+
+        String minHeterodimer = request.getParameter("free_energy_heterodimer");
+        if(minHeterodimer.length()>0){
+            free_energy_heterodimer = minHeterodimer;
+        }else{
+            free_energy_heterodimer = "NA";
+        }
+
 
         String primer3OligoadditionalParams = "PRIMER_INTERNAL_MAX_TM="+max_tm+"\nPRIMER_INTERNAL_OPT_TM="+opt_tm+"\nPRIMER_INTERNAL_MIN_TM="+min_tm+"\n"+
                 "PRIMER_INTERNAL_MAX_GC="+max_gc+"\nPRIMER_INTERNAL_OPT_GC_PERCENT="+opt_gc+"\nPRIMER_INTERNAL_MIN_GC="+min_gc+"\n"+
@@ -173,7 +197,7 @@ public class OligosCreationController implements Controller{
                 "PRIMER_INTERNAL_MAX_GC="+max_gc+"\nPRIMER_INTERNAL_OPT_GC_PERCENT="+opt_gc+"\nPRIMER_INTERNAL_MIN_GC="+min_gc+"\n"+
                 "PRIMER_INTERNAL_MAX_SIZE="+max_len+"\nPRIMER_INTERNAL_OPT_SIZE="+opt_len+"\nPRIMER_INTERNAL_MIN_SIZE="+min_len+"\n"+
                 "PRIMER_INTERNAL_SALT_MONOVALENT="+na_ion+"\nPRIMER_INTERNAL_SALT_DIVALENT="+mg_ion+"\nPRIMER_INTERNAL_MAX_SELF_ANY="+self_any+"\n"+
-                "PRIMER_INTERNAL_MAX_SELF_END="+self_end+"\nPRIMER_NUM_RETURN=15\n=";
+                "PRIMER_INTERNAL_MAX_SELF_END="+self_end+"\nPRIMER_NUM_RETURN=12\n=";
 
 
         File fileToParse = new File(upFile+projectId+"/"+origFileName);
@@ -212,9 +236,9 @@ public class OligosCreationController implements Controller{
             OligoSeedThread jobThread;
             //OligoSeedThread jobThread = new OligoSeedThread(fileList.get(i), i+1, seedFinder, extendScore);
             if(so.getStop()-so.getStart()<=100000){
-                jobThread = new OligoSeedThread(so, threadcount, projectId, assembly, primer3OligoadditionalParams);
+                jobThread = new OligoSeedThread(so, threadcount, projectId, assembly, primer3OligoadditionalParams, free_energy_hairpin, free_energy_homodimer);
             }else{
-                jobThread = new OligoSeedThread(so, threadcount, projectId, assembly, primer3OligoadditionalParams_largeObj);
+                jobThread = new OligoSeedThread(so, threadcount, projectId, assembly, primer3OligoadditionalParams_largeObj, free_energy_hairpin, free_energy_homodimer);
             }
             jobThread.setDataDir(dataDir);
             jobThread.setOligoInputDir(oligoInputDir);
@@ -297,7 +321,7 @@ public class OligosCreationController implements Controller{
         //running hetdimer analysis and deltaG filteration, only, in parallel.
         for(int n=1; n<=numfiles; n++){
             hetdimer_threadcount = n-1;
-            OligoHetDimerThread jobThread_hetDimer = new OligoHetDimerThread(n, numlines, hetdimer_threadcount, hetdimerFilename, dataDir, heterodimerOpDir);
+            OligoHetDimerThread jobThread_hetDimer = new OligoHetDimerThread(n, numlines, hetdimer_threadcount, hetdimerFilename, dataDir, heterodimerOpDir, free_energy_heterodimer);
             daemon_hetdimerMap.addJob(jobThread_hetDimer);
         }
 
@@ -424,7 +448,7 @@ public class OligosCreationController implements Controller{
                 seedOligoslist_short.clear();
 
                 //Start GraphDaemon so as to parallelize graphs generation.
-                OligoGraphDaemon graphDaemon = new OligoGraphDaemon(seedOligoslist.size(), numthreads);
+                OligoGraphDaemon graphDaemon = new OligoGraphDaemon(seedOligoslist.size(), seedOligoslist.size());
                 graphDaemon.start();
 
                 int jobcount=0;
