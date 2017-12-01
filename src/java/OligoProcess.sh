@@ -80,8 +80,9 @@ echo " "
 echo "<h1>Primer3 Primers</h1><hr>"
 
 
-#cat $OLIGO_OUTPUT_FILE | \
-#{
+
+cat $OLIGO_OUTPUT_FILE | \
+{
 while read regExLine
 do
 
@@ -129,8 +130,8 @@ then
 NO_PR_TAG=NO_PRIMER
 fi
 
-done < $OLIGO_OUTPUT_FILE
-#}
+done
+}
 
 #echo "-----------------------------------"
 
@@ -158,7 +159,9 @@ then
 	###	run script for hairpin..
 	echo "processing hairpin analysis script"
 #	cat $MFOLD_INPUT | hybrid-ss-min -n DNA -t 25 -T 25 -N 0.05 -E -mfold --stream > $MFOLD_OUTPUT
-	hybrid-ss-min -n DNA -t 25 -T 25 -N 0.05 -mfold -o $MFOLD_OUTPUT $MFOLD_INPUT
+	####changing melting temperature to be default at 37
+	###hybrid-ss-min -n DNA -t 25 -T 25 -N 0.05 -mfold -o $MFOLD_OUTPUT $MFOLD_INPUT
+	hybrid-ss-min -n DNA -N 0.05 -mfold -o $MFOLD_OUTPUT $MFOLD_INPUT
 
 	###	run script for homodimer analysis
 
