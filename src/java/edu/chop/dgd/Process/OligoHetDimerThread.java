@@ -169,7 +169,7 @@ public class OligoHetDimerThread implements Callable<TreeMap<String, Float>> {
                     }*/
 
 
-                    if(Float.parseFloat(hetdimerValue) >= -15.00){
+                    if(Float.parseFloat(hetdimerValue) >= -13.00){
                         hetDimerPairsObjectsMapMapdb_fornumfile.put(hetOligoHeader1 + "&" + hetOligoHeader2, Float.parseFloat(hetdimerValue));
                     }
 //                    else{
