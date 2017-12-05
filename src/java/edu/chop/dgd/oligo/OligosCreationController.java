@@ -202,7 +202,7 @@ public class OligosCreationController implements Controller{
 
         File fileToParse = new File(upFile+projectId+"/"+origFileName);
         ArrayList<SequenceObject> objects =  getObjectsFromFile(fileToParse, error, assembly);
-        SequenceObjectSubsections soss = new SequenceObjectSubsections();
+        //SequenceObjectSubsections soss = new SequenceObjectSubsections();
         String heterodimerReport="";
 
         //commenting because it will be generated as arrays combine to create the big array.
@@ -232,6 +232,8 @@ public class OligosCreationController implements Controller{
 
         //for (int i=0;i<fileList.size();i++) {
         for(SequenceObject so : objects){
+
+            System.out.println("Oligo sequence Object size is:"+ (so.getStop()-so.getStart()+1));
             threadcount+=1;
             OligoSeedThread jobThread;
             //OligoSeedThread jobThread = new OligoSeedThread(fileList.get(i), i+1, seedFinder, extendScore);
@@ -448,7 +450,11 @@ public class OligosCreationController implements Controller{
                 seedOligoslist_short.clear();
 
                 //Start GraphDaemon so as to parallelize graphs generation.
-                OligoGraphDaemon graphDaemon = new OligoGraphDaemon(seedOligoslist.size(), seedOligoslist.size());
+                if(seedOligoslist.size()<numthreads){
+                    numthreads = seedOligoslist.size();
+                }
+
+                OligoGraphDaemon graphDaemon = new OligoGraphDaemon(seedOligoslist.size(), numthreads);
                 graphDaemon.start();
 
                 int jobcount=0;

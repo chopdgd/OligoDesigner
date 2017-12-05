@@ -1060,6 +1060,7 @@ public class MfoldDimer {
                     }
                 }
             }
+
         }
 
         //Set<String> hetdimersIdSet = new HashSet<String>(hetDimersList);
