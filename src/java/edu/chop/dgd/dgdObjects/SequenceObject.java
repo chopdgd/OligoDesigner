@@ -42,7 +42,7 @@ public class SequenceObject{
         String file = dataDir+inputFilename;
         String bedfile = dataDir+inputFilename+"_subsection_log.bed";
         PrintWriter subsectionWriter = new PrintWriter(file);
-        PrintWriter subsectionLogBedFileWriter = new PrintWriter(bedfile);
+        //PrintWriter subsectionLogBedFileWriter = new PrintWriter(bedfile);
         int counter=0;
 
         for(int i=this.getStart(); i<=this.getStop(); ){
@@ -54,7 +54,8 @@ public class SequenceObject{
                 subsectStop = this.getStop();
             }
             //i+=1000+1;
-            i = subsectStop - 1000 + 1;
+            //changed from 1000 to 100
+            i = subsectStop - 100 + 1;
             counter+=1;
 
             SequenceObjectSubsections olSubsObj = new SequenceObjectSubsections();
@@ -66,7 +67,7 @@ public class SequenceObject{
 
 
             subsectionWriter.println(olSubsObj.getSubSectionChr() + ":" + olSubsObj.getSubSectionStart() + "-" + olSubsObj.getSubSectionStop());
-            subsectionLogBedFileWriter.println(olSubsObj.getSubSectionChr() + "\t" + olSubsObj.getSubSectionStart() + "\t" + olSubsObj.getSubSectionStop()+"\t"+this.getStart()+"-"+this.getStop()+"-"+counter);
+            //subsectionLogBedFileWriter.println(olSubsObj.getSubSectionChr() + "\t" + olSubsObj.getSubSectionStart() + "\t" + olSubsObj.getSubSectionStop()+"\t"+this.getStart()+"-"+this.getStop()+"-"+counter);
             System.out.println(olSubsObj.getSubSectionChr() + ":" + olSubsObj.getSubSectionStart() + "-" + olSubsObj.getSubSectionStop());
             if(subsectStop == this.getStop()){
                 break;
@@ -75,7 +76,7 @@ public class SequenceObject{
         }
 
         subsectionWriter.close();
-        subsectionLogBedFileWriter.close();
+        //subsectionLogBedFileWriter.close();
 
         String sequenceInfo = retrieveSubsectionSequencesProcessBuilder(inputFilename, dataDir);
 
@@ -166,7 +167,7 @@ public class SequenceObject{
                 errsb.append(errline).append("\n");
             }
             String erranswer = errsb.toString();
-            System.out.println(erranswer);
+            //System.out.println(erranswer);
 
             BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
             StringBuilder sb = new StringBuilder();
@@ -176,9 +177,9 @@ public class SequenceObject{
             }
             answer = sb.toString();
 
-            System.out.println(erranswer);
+            //System.out.println(erranswer);
 
-            System.out.println(answer);
+            //System.out.println(answer);
 
             System.out.println("should have got an output from twoBitToFasta command...");
 

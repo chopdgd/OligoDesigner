@@ -13,9 +13,10 @@ public class OligoHetDimerThread implements Callable<TreeMap<String, Float>> {
     //private TreeMap<String, Float> hetDimerPairsObjectsMapMapdb_fornumfile;
     private String dataDir;
     private String heterodimerOpDir;
+    private Float minHetdimerval;
 
 
-    public OligoHetDimerThread(int n, int numlines, int threadcount, String hetdimerFilename, String dataDir, String heterodimerOpDir) {
+    public OligoHetDimerThread(int n, int numlines, int threadcount, String hetdimerFilename, String dataDir, String heterodimerOpDir, String free_energy_heterodimer) {
         this.n = n;
         this.numlines = numlines;
         this.threadCount = threadcount;
@@ -23,6 +24,7 @@ public class OligoHetDimerThread implements Callable<TreeMap<String, Float>> {
         this.dataDir = dataDir;
         this.heterodimerOpDir = heterodimerOpDir;
         //this.hetDimerPairsObjectsMapMapdb_fornumfile = hetDimerPairsObjectsMapMapdb_fornumfile;
+        this.minHetdimerval = Float.parseFloat(free_energy_heterodimer);
 
     }
 
@@ -40,7 +42,7 @@ public class OligoHetDimerThread implements Callable<TreeMap<String, Float>> {
         String resultHeterodimerString = runHeterodimerAnalysisProcessBuilder(file1, file2, dataDir);
         System.out.println("getting deltaG values for HetDimer Pairs");
         if(resultHeterodimerString.length()>10){
-            hetDimerPairsObjectsMapMapdb_fornumfile = getDeltaGValuesForHetDimerPairs_createMapDBHash(hetDimerPairsObjectsMapMapdb_fornumfile, dataDir, heterodimerOpDir, hetdimerFilename, n);
+            hetDimerPairsObjectsMapMapdb_fornumfile = getDeltaGValuesForHetDimerPairs_createMapDBHash(hetDimerPairsObjectsMapMapdb_fornumfile, dataDir, heterodimerOpDir, hetdimerFilename, n, minHetdimerval);
         }else{
             throw new FileNotFoundException();
         }
@@ -130,16 +132,19 @@ public class OligoHetDimerThread implements Callable<TreeMap<String, Float>> {
 
     /**
      *
+     *
      * @param hetDimerPairsObjectsMapMapdb_fornumfile
      * @param dataDir
      * @param heterodimerOpDir
      * @param fileName
      * @param subpartnum
+     * @param minHetdimerval
      * @return
      * @throws Exception
      */
-    public TreeMap<String, Float> getDeltaGValuesForHetDimerPairs_createMapDBHash(TreeMap<String, Float> hetDimerPairsObjectsMapMapdb_fornumfile, String dataDir, String heterodimerOpDir, String fileName, int subpartnum) throws Exception{
+    public TreeMap<String, Float> getDeltaGValuesForHetDimerPairs_createMapDBHash(TreeMap<String, Float> hetDimerPairsObjectsMapMapdb_fornumfile, String dataDir, String heterodimerOpDir, String fileName, int subpartnum, Float minHetdimerval) throws Exception{
 
+        System.out.println("getting deltaG values");
         String hetOpFilename = dataDir+heterodimerOpDir+fileName+"_"+subpartnum+"_1_"+fileName+"_"+subpartnum+"_2.out";
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(hetOpFilename)));
 
@@ -153,10 +158,10 @@ public class OligoHetDimerThread implements Callable<TreeMap<String, Float>> {
                     String hetOligoHeader2 = oligoHeaderArr[1];
                     String hetdimerValue = lineArr[1].split(" = ", -1)[1];
 
-                    Float hetDimerValueToCompare = Float.parseFloat(hetdimerValue);
-                    Float hetDimerValueToCompareTo = Float.parseFloat("-10.00");
+                    //Float hetDimerValueToCompare = Float.parseFloat(hetdimerValue);
+                    //Float hetDimerValueToCompareTo = Float.parseFloat("-15.00");
 
-                    int comparison = hetDimerValueToCompare.compareTo(hetDimerValueToCompareTo);
+                    //int comparison = hetDimerValueToCompare.compareTo(hetDimerValueToCompareTo);
                     /*if (comparison < 0) {
                         System.out.println("f1 is less than f2");
                     }
@@ -167,14 +172,23 @@ public class OligoHetDimerThread implements Callable<TreeMap<String, Float>> {
                         System.out.println("f1 is greater than f2");
                     }*/
 
-                    if(Float.parseFloat(hetdimerValue) >= -10.00){
+
+                    /*if(Float.parseFloat(hetdimerValue) >= -13.00){
+                        hetDimerPairsObjectsMapMapdb_fornumfile.put(hetOligoHeader1 + "&" + hetOligoHeader2, Float.parseFloat(hetdimerValue));
+                    }*/
+                    if(Float.parseFloat(hetdimerValue)>=minHetdimerval){
                         hetDimerPairsObjectsMapMapdb_fornumfile.put(hetOligoHeader1 + "&" + hetOligoHeader2, Float.parseFloat(hetdimerValue));
                     }
+//                    else{
+//                        System.out.println("Did Not make the HetDimer cut-off: "+hetOligoHeader1 + "&" + hetOligoHeader2 + " with value: " +hetdimerValue);
+//                    }
                 }
             }
         }finally {
             reader.close();
         }
+
+        System.out.println("returning hetDimerPairsObjectsMapMapdb_fornumfile");
 
         return hetDimerPairsObjectsMapMapdb_fornumfile;
     }

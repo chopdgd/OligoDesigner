@@ -84,19 +84,21 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
         });
 
         Set<String> keyset = dagOligo.getMapOfOligoidsPathMultimapArrays().keySet();
+        System.out.println("map of oligos path multimap arrays size is:"+ keyset.size());
+
         Iterator<String> keyit = keyset.iterator();
         while (keyit.hasNext()){
             String key1part = keyit.next();
             String key2part = obj.getInternalPrimerId();
             String key = key1part+key2part;
 
-            //System.out.println(key);
+            //System.out.println("getting map of oligos path multimap arrays"+key);
             Collection<String> pathCollection = dagOligo.getMapOfOligoidsPathMultimapArrays().get(key1part);
             ArrayList<String> pathArray = new ArrayList<String>(pathCollection);
             //sort by region and subsection. because we have het dimer interactions only for sorted Oligos.
             pathArray = new OligoUtils().sortOligoIdListBySubsectionAndSerialNum(pathArray);
             int toremoveFlag=0;
-            Float deltagForThisArray = Float.parseFloat("0.00");
+            //Float deltagForThisArray = Float.parseFloat("0.00");
 
             for(int p=0; p<(pathArray.size()-1); p++){
                 for(int q=p+1; q<pathArray.size(); q++){
@@ -112,8 +114,13 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
                 for(String pathid : pathArray){
                     setOfOligosMultimapFromSeed.put(key, pathid);
                 }
+                //System.out.println("set of oligosMultimapfromSeed keyset is:"+ setOfOligosMultimapFromSeed.keySet());
+            }else{
+                //System.out.println("removing patharray because toremove flag is 1"+ key1part);
             }
         }
+
+        System.out.println("returning set of oligos from multimap from seed oligos:"+ setOfOligosMultimapFromSeed.keySet().size());
 
 
         return setOfOligosMultimapFromSeed;
@@ -148,8 +155,8 @@ public class OligoGraphThread implements Callable<Multimap<String, String>> {
             */
 
             if(so.getStop()-so.getStart()<100000){
-                if(childrenObj.size()>=3){
-                    childrenObj = childrenObj.subList(0, 2);
+                if(childrenObj.size()>=4){
+                    childrenObj = childrenObj.subList(0, 3);
                 }
             }else if(so.getStop()-so.getStart()>=100000){
                 if(childrenObj.size()>=2){

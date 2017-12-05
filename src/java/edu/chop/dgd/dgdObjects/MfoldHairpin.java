@@ -16,6 +16,7 @@ public class MfoldHairpin {
         File mfoldFile = new File(dataDir+mfoldOpDir+"/"+fileName+".ct");
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(mfoldFile)));
 
+
         try{
             String line;
             while((line=reader.readLine()) != null){

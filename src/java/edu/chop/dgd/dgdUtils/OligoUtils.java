@@ -2,12 +2,10 @@ package edu.chop.dgd.dgdUtils;
 
 import edu.chop.dgd.dgdObjects.OligoObject;
 import edu.chop.dgd.dgdObjects.SequenceObjectSubsections;
+import org.mapdb.HTreeMap;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by jayaramanp on 10/16/17.
@@ -120,7 +118,7 @@ public class OligoUtils {
         InputStream fileStream = new FileInputStream(blatInputFile);
         BufferedReader reader = new BufferedReader(new InputStreamReader(fileStream));
         File allOligosBedFile = new File(dataDir+fileName+"_allrawoligos.bed");
-        PrintWriter oligosbedfilewriter = new PrintWriter(allOligosBedFile);
+        //PrintWriter oligosbedfilewriter = new PrintWriter(allOligosBedFile);
 
         String line; String primerId="NA"; String primerSubsectionId="NA"; String counter = "0";
         int i=1;
@@ -149,7 +147,7 @@ public class OligoUtils {
 
                                 primerId="NA";
                                 if(!prObj.getInternalPrimerId().equals("NA")){
-                                    oligosbedfilewriter.println(prObj.getChr()+"\t"+prObj.getInternalStart()+"\t"+prObj.getInternalStop()+"\t"+prObj.getInternalPrimerId());
+                                    //oligosbedfilewriter.println(prObj.getChr()+"\t"+prObj.getInternalStart()+"\t"+prObj.getInternalStop()+"\t"+prObj.getInternalPrimerId());
                                     newOligoObjects.add(prObj);
                                 }
                                 i+=1;
@@ -166,7 +164,7 @@ public class OligoUtils {
             }
         }
 
-        oligosbedfilewriter.close();
+        //oligosbedfilewriter.close();
         return newOligoObjects;
     }
 
@@ -256,46 +254,10 @@ public class OligoUtils {
             }
         });
 
-
-
-
-        /*Collections.sort(oligoIdsList, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return (Integer.valueOf(o1.split("_", -1)[0].split(":",-1)[0].split("chr", -1)[1]).compareTo(Integer.valueOf(o2.split("_", -1)[0].split(":",-1)[0].split("chr", -1)[1])));
-            }
-        });
-
-        Collections.sort(oligoIdsList, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return (Integer.valueOf(o1.split("_", -1)[0].split(":",-1)[1]).compareTo(Integer.valueOf(o2.split("_", -1)[0].split(":",-1)[1])));
-            }
-        });
-
-        Collections.sort(oligoIdsList, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return (Integer.valueOf(o1.split("_", -1)[0].split(":",-1)[2]).compareTo(Integer.valueOf(o2.split("_", -1)[0].split(":",-1)[2])));
-            }
-        });
-
-        Collections.sort(oligoIdsList, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return (Integer.valueOf(o1.split("_", -1)[1]).compareTo(Integer.valueOf(o2.split("_", -1)[1])));
-            }
-        });
-
-        Collections.sort(oligoIdsList, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return (Integer.valueOf(o1.split("_", -1)[2].split("O",-1)[1]).compareTo(Integer.valueOf(o2.split("_", -1)[2].split("O",-1)[1])));
-            }
-        });
-*/
+        //System.out.println("returning sorted oligoids");
         return oligoIdsList;
     }
+
 
 
     /**
@@ -332,5 +294,47 @@ public class OligoUtils {
             }
         });
 
+    }
+
+
+
+    /**
+     *
+     *
+     * @param seedOligoslist
+     * @param hetDimerHashMapMAPDB
+     * @return
+     */
+    public ArrayList<String> removeOverlappingSeedOligos(ArrayList<String> seedOligoslist, HTreeMap<String, Object> hetDimerHashMapMAPDB) {
+        ArrayList<String> nonoverlappingseedoligos = new ArrayList<>();
+
+        Collections.shuffle(seedOligoslist);
+
+
+        for(int i=0; i<seedOligoslist.size(); i++){
+            OligoObject obj = (OligoObject) hetDimerHashMapMAPDB.get(seedOligoslist.get(i));
+            int innewlistflag=0;
+            if(nonoverlappingseedoligos.size()<1){
+                nonoverlappingseedoligos.add(obj.getInternalPrimerId());
+                innewlistflag=1;
+            }else{
+                for(String nonoverlappingoligoid : nonoverlappingseedoligos){
+                    OligoObject nonoverlappingObj = (OligoObject) hetDimerHashMapMAPDB.get(nonoverlappingoligoid);
+                    if(obj.getInternalStart()<=nonoverlappingObj.getInternalStop() && obj.getInternalStop()>=nonoverlappingObj.getInternalStart()){
+                        innewlistflag=1;
+                        break;
+                    }
+
+                }
+
+            }
+
+            if(innewlistflag==0){
+                nonoverlappingseedoligos.add(obj.getInternalPrimerId());
+            }
+        }
+
+
+        return nonoverlappingseedoligos;
     }
 }

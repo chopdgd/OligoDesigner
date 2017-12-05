@@ -55,6 +55,9 @@ public class OligosCreationController implements Controller{
     private static String mg_ion;
     private static String self_any;
     private static String self_end;
+    private static String free_energy_hairpin;
+    private static String free_energy_homodimer;
+    private static String free_energy_heterodimer;
     private static int spacing=0;
 
     @Override
@@ -162,16 +165,44 @@ public class OligosCreationController implements Controller{
             self_end = "NA";
         }
 
+        String minHairpin = request.getParameter("free_energy_hairpin");
+        if(minHairpin.length()>0){
+            free_energy_hairpin = minHairpin;
+        }else{
+            free_energy_hairpin = "NA";
+        }
+
+        String minHomodimer = request.getParameter("free_energy_homodimer");
+        if(minHomodimer.length()>0){
+            free_energy_homodimer = minHomodimer;
+        }else{
+            free_energy_homodimer = "NA";
+        }
+
+        String minHeterodimer = request.getParameter("free_energy_heterodimer");
+        if(minHeterodimer.length()>0){
+            free_energy_heterodimer = minHeterodimer;
+        }else{
+            free_energy_heterodimer = "NA";
+        }
+
+
         String primer3OligoadditionalParams = "PRIMER_INTERNAL_MAX_TM="+max_tm+"\nPRIMER_INTERNAL_OPT_TM="+opt_tm+"\nPRIMER_INTERNAL_MIN_TM="+min_tm+"\n"+
                 "PRIMER_INTERNAL_MAX_GC="+max_gc+"\nPRIMER_INTERNAL_OPT_GC_PERCENT="+opt_gc+"\nPRIMER_INTERNAL_MIN_GC="+min_gc+"\n"+
                 "PRIMER_INTERNAL_MAX_SIZE="+max_len+"\nPRIMER_INTERNAL_OPT_SIZE="+opt_len+"\nPRIMER_INTERNAL_MIN_SIZE="+min_len+"\n"+
                 "PRIMER_INTERNAL_SALT_MONOVALENT="+na_ion+"\nPRIMER_INTERNAL_SALT_DIVALENT="+mg_ion+"\nPRIMER_INTERNAL_MAX_SELF_ANY="+self_any+"\n"+
-                "PRIMER_INTERNAL_MAX_SELF_END="+self_end+"\n=";
+                "PRIMER_INTERNAL_MAX_SELF_END="+self_end+"\nPRIMER_NUM_RETURN=20\n=";
+
+        String primer3OligoadditionalParams_largeObj = "PRIMER_INTERNAL_MAX_TM="+max_tm+"\nPRIMER_INTERNAL_OPT_TM="+opt_tm+"\nPRIMER_INTERNAL_MIN_TM="+min_tm+"\n"+
+                "PRIMER_INTERNAL_MAX_GC="+max_gc+"\nPRIMER_INTERNAL_OPT_GC_PERCENT="+opt_gc+"\nPRIMER_INTERNAL_MIN_GC="+min_gc+"\n"+
+                "PRIMER_INTERNAL_MAX_SIZE="+max_len+"\nPRIMER_INTERNAL_OPT_SIZE="+opt_len+"\nPRIMER_INTERNAL_MIN_SIZE="+min_len+"\n"+
+                "PRIMER_INTERNAL_SALT_MONOVALENT="+na_ion+"\nPRIMER_INTERNAL_SALT_DIVALENT="+mg_ion+"\nPRIMER_INTERNAL_MAX_SELF_ANY="+self_any+"\n"+
+                "PRIMER_INTERNAL_MAX_SELF_END="+self_end+"\nPRIMER_NUM_RETURN=12\n=";
 
 
         File fileToParse = new File(upFile+projectId+"/"+origFileName);
         ArrayList<SequenceObject> objects =  getObjectsFromFile(fileToParse, error, assembly);
-        SequenceObjectSubsections soss = new SequenceObjectSubsections();
+        //SequenceObjectSubsections soss = new SequenceObjectSubsections();
         String heterodimerReport="";
 
         //commenting because it will be generated as arrays combine to create the big array.
@@ -201,9 +232,16 @@ public class OligosCreationController implements Controller{
 
         //for (int i=0;i<fileList.size();i++) {
         for(SequenceObject so : objects){
+
+            System.out.println("Oligo sequence Object size is:"+ (so.getStop()-so.getStart()+1));
             threadcount+=1;
+            OligoSeedThread jobThread;
             //OligoSeedThread jobThread = new OligoSeedThread(fileList.get(i), i+1, seedFinder, extendScore);
-            OligoSeedThread jobThread = new OligoSeedThread(so, threadcount, projectId, assembly, primer3OligoadditionalParams);
+            if(so.getStop()-so.getStart()<=100000){
+                jobThread = new OligoSeedThread(so, threadcount, projectId, assembly, primer3OligoadditionalParams, free_energy_hairpin, free_energy_homodimer);
+            }else{
+                jobThread = new OligoSeedThread(so, threadcount, projectId, assembly, primer3OligoadditionalParams_largeObj, free_energy_hairpin, free_energy_homodimer);
+            }
             jobThread.setDataDir(dataDir);
             jobThread.setOligoInputDir(oligoInputDir);
             jobThread.setOligoOutputDir(oligoOutputDir);
@@ -229,29 +267,29 @@ public class OligosCreationController implements Controller{
 
         List<OligoObject> heteroDimerObjectsList = daemon.getCombinedResult();
         //daemon.destroy();
+        //PrintWriter preHetdimerOligosBedWriter = new PrintWriter(dataDir+heterodimerInpDir+projectId+"_hetdimer_bedfile.bed");
 
 
         for(OligoObject hetdimerObj : heteroDimerObjectsList){
             //Using MAPDB: Creates a hashmap of all hetdimer objects instead of list.
             hetDimerHashMapMAPDB.put(hetdimerObj.getInternalPrimerId(), hetdimerObj);
+            //preHetdimerOligosBedWriter.println(hetdimerObj.getChr()+"\t"+hetdimerObj.getInternalStart()+"\t"+hetdimerObj.getInternalStop()+"\t"+hetdimerObj.getInternalPrimerId());
         }
 
-        System.out.println("Running Heterodimer analysis now");
+        //preHetdimerOligosBedWriter.close();
+
+        System.out.println("sorting hetdimerobjectslist");
         heteroDimerObjectsList = new OligoUtils().sortOligosBySubsectionAndSerialNum(heteroDimerObjectsList);
 
-
-        PrintWriter preHetdimerOligosBedWriter = new PrintWriter(dataDir+heterodimerInpDir+projectId+"_hetdimer_bedfile.bed");
-        for(OligoObject hetdimerobj : heteroDimerObjectsList){
-            preHetdimerOligosBedWriter.println(hetdimerobj.getChr()+"\t"+hetdimerobj.getInternalStart()+"\t"+hetdimerobj.getInternalStop()+"\t"+hetdimerobj.getInternalPrimerId());
-        }
-        preHetdimerOligosBedWriter.close();
-
-
         //Oct9th 2017 need to change this to: https://github.com/harishreedharan/MapDB/blob/master/src/test/java/examples/MultiMap.java
-        LinkedHashMap<OligoObject, List<OligoObject>> oligoObjectsMap = mfd.mapOligosCreateHetDimerInpSections_new(heteroDimerObjectsList);
-        ArrayList<String[]> inputlistforHetDimerAnalysis = mfd.createSubsetofhetDimers(oligoObjectsMap);
-        oligoObjectsMap.clear();
+        System.out.println("Mapping Oligos and creating hetdimerInp sections");
 
+        Multimap<String, String> oligoObjectsMap_multimap = mfd.mapOligosCreateHetDimerInpSections_newMapDB(heteroDimerObjectsList);
+        ArrayList<String[]> inputlistforHetDimerAnalysis = mfd.createSubsetofhetDimers_multimap(oligoObjectsMap_multimap, hetDimerHashMapMAPDB);
+        System.out.println("deleting oligoobjectsmap");
+        oligoObjectsMap_multimap.clear();
+
+        System.out.println("creating numfiles for hetdimer");
         int numfiles = 1; int numlines = 10000; //int numlinescopy = numlines;
         double temp = Math.ceil((inputlistforHetDimerAnalysis.size())/(double)(numlines));
         int temp1= (int) temp;
@@ -261,14 +299,11 @@ public class OligosCreationController implements Controller{
             numfiles = temp1 + 1;
         }
 
-
-        OligoHetDimerDaemon daemon_hetdimerMap = new OligoHetDimerDaemon(numfiles, numthreads);
-        daemon_hetdimerMap.start();
-        int hetdimer_threadcount=0;
-
+        System.out.println("starting parallel processing for hetdimer analysis");
         String hetdimerFilename = "oligoInp_"+projectId+"_"+ new SimpleDateFormat("yyyyMMddhhmm'.txt'").format(new Date());
         //using MapDB, it will only add the two ids as a string and a float value as the value.
-        DB db2 = DBMaker.tempFileDB().closeOnJvmShutdown().transactionEnable().fileDeleteAfterClose().make();
+
+        DB db2 = DBMaker.fileDB(dataDir+heterodimerInpDir+hetdimerFilename+"allHetDimerPairsObjectsMap.db").closeOnJvmShutdown().transactionEnable().fileDeleteAfterClose().make();
         HTreeMap<String, Float> allHetDimerPairsObjectsMapMapdb = db2.hashMap("allHetDimerPairsObjectsMapMapdb").keySerializer(Serializer.STRING).valueSerializer(Serializer.FLOAT).createOrOpen();
 
         //getting first oligoId to begin with.
@@ -280,17 +315,16 @@ public class OligosCreationController implements Controller{
             System.out.println("OligoIdstoppedat:" + oligoIdStoppedAt);
         }
 
+        System.out.println("Running Heterodimer analysis now");
+        OligoHetDimerDaemon daemon_hetdimerMap = new OligoHetDimerDaemon(numfiles, numthreads, allHetDimerPairsObjectsMapMapdb);
+        daemon_hetdimerMap.start();
+        int hetdimer_threadcount=0;
+
         //running hetdimer analysis and deltaG filteration, only, in parallel.
         for(int n=1; n<=numfiles; n++){
             hetdimer_threadcount = n-1;
-            OligoHetDimerThread jobThread_hetDimer = new OligoHetDimerThread(n, numlines, hetdimer_threadcount, hetdimerFilename, dataDir, heterodimerOpDir);
+            OligoHetDimerThread jobThread_hetDimer = new OligoHetDimerThread(n, numlines, hetdimer_threadcount, hetdimerFilename, dataDir, heterodimerOpDir, free_energy_heterodimer);
             daemon_hetdimerMap.addJob(jobThread_hetDimer);
-            /*System.out.println("starting hetdimer run in subset of file");
-            String hetDimerSubsectionIndexes = mfd.createFileRunHeterodimerAnalysis(inputlistforHetDimerAnalysis, heterodimerInpDir, dataDir, hetdimerFilename, n, oligoIdStoppedAt, numlines);
-            oligoIdStoppedAt = Integer.parseInt(hetDimerSubsectionIndexes.split("&", -1)[0]);
-            System.out.println("getting deltaG values for HetDimer Pairs");
-            allHetDimerPairsObjectsMapMapdb = mfd.getDeltaGValuesForHetDimerPairs_createMapDBHash(allHetDimerPairsObjectsMapMapdb, dataDir, heterodimerOpDir, hetdimerFilename, n);*/
-
         }
 
         try {
@@ -301,45 +335,63 @@ public class OligosCreationController implements Controller{
             System.exit(1);
         }
 
+        System.out.println("Combining all hetdimer results");
         allHetDimerPairsObjectsMapMapdb = daemon_hetdimerMap.getCombinedResultMap();
 
 
-        PrintWriter postHetdimerOligosBedWriter = new PrintWriter(dataDir+heterodimerOpDir+projectId+"_posthetdimer_bedfile.bed");
-        PrintWriter setsOfOligosBedWriter = new PrintWriter(dataDir+finalOligos+projectId+"_setsofoligos_bedfile.bed");
+        //PrintWriter postHetdimerOligosBedWriter = new PrintWriter(dataDir+heterodimerOpDir+projectId+"_posthetdimer_bedfile.bed");
+        //PrintWriter setsOfOligosBedWriter = new PrintWriter(dataDir+finalOligos+projectId+"_setsofoligos_bedfile.gff");
 
         for(SequenceObject so : objects){
+            System.out.println("going back to each sequenceobject");
 
-            ArrayList<String> hetDimerIdListForSO = mfd.getHetDimersIdsForRegion(allHetDimerPairsObjectsMapMapdb, so, hetDimerHashMapMAPDB);
-            hetDimerIdListForSO = new OligoUtils().sortOligoIdListBySubsectionAndSerialNum(hetDimerIdListForSO);
 
-            DB db = DBMaker.memoryDB().closeOnJvmShutdown().transactionEnable().fileDeleteAfterClose().make();
+            DB listdb = DBMaker
+                    .fileDB(dataDir + heterodimerOpDir + projectId + "_hetdimerlistforSO_" + so.getChr() + "_" + so.getStart() + "_" + so.getStop()).
+                            fileDeleteAfterClose().make();
+            NavigableSet<String> treeSet = listdb.treeSet("hetdimerIdstreeSet"+so.getChr()+"_"+so.getStart()+"_"+so.getStop())
+                    .serializer(Serializer.STRING)
+                    .createOrOpen();
+            //ArrayList<String> hetDimerIdListForSO = mfd.getHetDimersIdsForRegion(allHetDimerPairsObjectsMapMapdb, so, hetDimerHashMapMAPDB);
+            treeSet = mfd.getHetDimersIdsForRegion_set(allHetDimerPairsObjectsMapMapdb, so, hetDimerHashMapMAPDB, treeSet);
+            listdb.commit();
+
+            System.out.println("sorting by subsection and serial number");
+            //hetDimerIdListForSO = new OligoUtils().sortOligoIdListBySubsectionAndSerialNum(hetDimerIdListForSO);
+            System.out.println("creating HTreemap for sequenceObject");
+            //DB db = DBMaker.memoryDB().closeOnJvmShutdown().transactionEnable().fileDeleteAfterClose().make();
+            DB db = DBMaker.tempFileDB().closeOnJvmShutdown().transactionEnable().fileDeleteAfterClose().make();
             HTreeMap<String, Object> hetDimerMapForSO_mapDB_sorted = db.hashMap("hetDimerMapOnlySO_sorted"+so.getChr()+"_"+so.getStart()+"_"+so.getStop()).keySerializer(Serializer.STRING).valueSerializer(new SerializerJava()).createOrOpen();
 
-            for(String id : hetDimerIdListForSO){
+            for(String id : treeSet){
                 OligoObject hetDimerOligoObj_sorted = (OligoObject) hetDimerHashMapMAPDB.get(id);
                 hetDimerMapForSO_mapDB_sorted.put(id, hetDimerHashMapMAPDB.get(id));
-                postHetdimerOligosBedWriter.println(hetDimerOligoObj_sorted.getChr()+"\t"+hetDimerOligoObj_sorted.getInternalStart()+"\t"+hetDimerOligoObj_sorted.getInternalStop()+"\t"+hetDimerOligoObj_sorted.getInternalPrimerId());
+                //postHetdimerOligosBedWriter.println(hetDimerOligoObj_sorted.getChr()+"\t"+hetDimerOligoObj_sorted.getInternalStart()+"\t"+hetDimerOligoObj_sorted.getInternalStop()+"\t"+hetDimerOligoObj_sorted.getInternalPrimerId());
             }
-
             db.commit();
 
-            //Create NavigableSet. set tuple serializer
+            System.out.println("creating filterMapCreateOnlyHetsWithinDistanceMap_MapDB multimap for SO");
             Multimap<String, String> filteredHetDimerMapForSO_multimap = ArrayListMultimap.create();
-            filteredHetDimerMapForSO_multimap = mfd.filterMapCreateOnlyHetsWithinDistanceMap_MapDB(hetDimerIdListForSO, spacing, hetDimerMapForSO_mapDB_sorted, filteredHetDimerMapForSO_multimap);
+            //filteredHetDimerMapForSO_multimap = mfd.filterMapCreateOnlyHetsWithinDistanceMap_MapDB(hetDimerIdListForSO, spacing, hetDimerMapForSO_mapDB_sorted, filteredHetDimerMapForSO_multimap);
+            filteredHetDimerMapForSO_multimap = mfd.filterMapCreateOnlyHetsWithinDistancefromSetMap_MapDB(treeSet, spacing, hetDimerMapForSO_mapDB_sorted, filteredHetDimerMapForSO_multimap);
 
 
-            //now create tree.
+            //clear treeset and close db. dont need it anymore.
+            treeSet.clear();
+            listdb.close();
+
+
+
             Set<String> filteredHetDimerMapForSO_multimap_keys = filteredHetDimerMapForSO_multimap.keySet();
+            System.out.println("sorting oligoIDs ListbySubsectionAndSerial number for SO");
             ArrayList<String> filteredHetDimerMapForSO_multimap_keys_sorted = new OligoUtils().sortOligoIdListBySubsectionAndSerialNum(new ArrayList<String>(filteredHetDimerMapForSO_multimap_keys));
-
 
             //Creating a multi-map instead
             Multimap<String, String> setsOfOligoSets_mapDB = LinkedListMultimap.create();
-
             ArrayList<String> seedOligoslist = new ArrayList<String>();
             ArrayList<String> seedOligoslist_short = new ArrayList<String>();
 
-
+            System.out.println("getting seed oligos");
             //if seed oligos found within 3kb, dont do 6kb.
             for(String oligoobjid : filteredHetDimerMapForSO_multimap_keys_sorted){
                 OligoObject obj = (OligoObject) hetDimerMapForSO_mapDB_sorted.get(oligoobjid);
@@ -347,7 +399,6 @@ public class OligosCreationController implements Controller{
                     seedOligoslist.add(oligoobjid);
                 }
             }
-
 
             //if no seed oligos found.. do 6kb
             if(seedOligoslist.size()==0){
@@ -359,49 +410,56 @@ public class OligosCreationController implements Controller{
                 }
             }
 
+            ArrayList<String> nonoverlappedseedoligoslist = new OligoUtils().removeOverlappingSeedOligos(seedOligoslist, hetDimerHashMapMAPDB);
+            seedOligoslist.clear();
+
+            seedOligoslist.addAll(nonoverlappedseedoligoslist);
+            nonoverlappedseedoligoslist.clear();
+
+
             //sorting the keys.
-            //for(String oligoobjid : filteredHetDimerMapForSO_multimap_keys_sorted){
+            //if(seedOligoslist.size()>0){
             if(seedOligoslist.size()>0){
 
                 System.out.println("Num seed oligos:" + seedOligoslist.size());
 
-                //only return 5-10 or so children at a time.Subject to change.
+                //only return limited children at a time.Subject to change.
                 if(so.getStop()-so.getStart()>=100000){
                     //more seed oligos but only 2 children per parent node. more of a binary tree.
-                    if(seedOligoslist.size()>=5){
+                    if(seedOligoslist.size()>=8){
+                        for(int s=0; s<8; s++){
+                            seedOligoslist_short.add(seedOligoslist.get(s));
+                        }
+                        seedOligoslist.clear();
+                        seedOligoslist.addAll(seedOligoslist_short);
+
+                    }
+
+                }else if(so.getStop()-so.getStart()<100000){
+                    //fewer seed oligos but 3 children per parent node. wider graph.
+                    if(seedOligoslist.size()>5){
                         for(int s=0; s<5; s++){
                             seedOligoslist_short.add(seedOligoslist.get(s));
                         }
                         seedOligoslist.clear();
-                        seedOligoslist = seedOligoslist_short;
-                    }
-                }else if(so.getStop()-so.getStart()<100000){
-                    //feer seed oligos but 3 children per parent node. wider graph.
-                    if(seedOligoslist.size()>=3){
-                        for(int s=0; s<3; s++){
-                            seedOligoslist_short.add(seedOligoslist.get(s));
-                        }
-                        seedOligoslist.clear();
-                        seedOligoslist = seedOligoslist_short;
+                        seedOligoslist.addAll(seedOligoslist_short);
+
                     }
                 }
 
-                /*if(seedOligoslist.size()>=3){
-                    for(int s=0; s<3; s++){
-                        seedOligoslist_short.add(seedOligoslist.get(s));
-                    }
-                    seedOligoslist.clear();
-                    seedOligoslist = seedOligoslist_short;
-                }*/
+                seedOligoslist_short.clear();
 
                 //Start GraphDaemon so as to parallelize graphs generation.
+                if(seedOligoslist.size()<numthreads){
+                    numthreads = seedOligoslist.size();
+                }
+
                 OligoGraphDaemon graphDaemon = new OligoGraphDaemon(seedOligoslist.size(), numthreads);
                 graphDaemon.start();
 
                 int jobcount=0;
                 int startingcounter = 1;
                 for(String oligoobjid : seedOligoslist){
-
                     OligoGraphThread graphjobThread = new OligoGraphThread(oligoobjid, hetDimerMapForSO_mapDB_sorted, filteredHetDimerMapForSO_multimap, so, jobcount, startingcounter, allHetDimerPairsObjectsMapMapdb, spacing);
                     graphDaemon.addJob(graphjobThread);
                     jobcount+=1;
@@ -415,27 +473,27 @@ public class OligosCreationController implements Controller{
                     System.out.println("Graph Daemon interrupted, exiting");
                     System.exit(1);
                 }
-
                 setsOfOligoSets_mapDB = graphDaemon.getCombinedResultMap();
-
+                
+                /*for(String key : setsOfOligoSets_mapDB.keySet()){
+                    for(String id : setsOfOligoSets_mapDB.get(key)){
+                        OligoObject hetdimerobj = (OligoObject) hetDimerHashMapMAPDB.get(id);
+                        setsOfOligosBedWriter.println(so.getChr()+"\t"+projectId+"\t"+id+"\t"+hetdimerobj.getInternalStart()+"\t"+hetdimerobj.getInternalStop()+"\t.\t.\t.\t"+key);
+                    }
+                }*/
 
             }else{
                 System.out.println("SO has no seed oligos within 6Kb to create graphs");
             }
 
             so.setOligoSetsFullMapMultiMap(setsOfOligoSets_mapDB);
-
+            filteredHetDimerMapForSO_multimap.clear();
             db.close();
-            System.out.println("done with this so. sets of oligo sets size:"+ setsOfOligoSets_mapDB.size());
-
-            for(String setsofoligossetskey : setsOfOligoSets_mapDB.keySet()){
-                setsOfOligosBedWriter.println(setsOfOligoSets_mapDB.get(setsofoligossetskey));
-            }
-
+            System.out.println("done with this so. sets of oligo sets keys are:"+ setsOfOligoSets_mapDB.keySet().size());
         }
 
-        postHetdimerOligosBedWriter.close();
-        setsOfOligosBedWriter.close();
+        //postHetdimerOligosBedWriter.close();
+        //setsOfOligosBedWriter.close();
 
         System.out.println("checking Oligos interaction across SO");
         objects = new SequenceObject().checkOligosInteractAcrossSO_mapDB(objects, allHetDimerPairsObjectsMapMapdb);
