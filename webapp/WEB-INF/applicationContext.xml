@@ -17,6 +17,11 @@
         <property name="dataSource" ref="UcscDataSource"/>
     </bean>
 
+    <bean id="jmsConnectionFactory"
+          class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="tcp://localhost:61616"/>
+    </bean>
+
     <bean id="processBuilderDir" class="edu.chop.dgd.primer.PrimerCreateController">
         <property name="primerProcessScriptDir" value="/data/"/>
         <property name="primer3InputDir" value="/data/primer3inp/"/>
@@ -24,6 +29,10 @@
         <property name="blatInpDir" value="/data/blatInp/"/>
         <property name="blatOpDir" value="/data/blatOp/"/>
     </bean>
+
+
 </beans>
+
+
 
 
