@@ -5,6 +5,7 @@ package edu.chop.dgd.dgdUtils;
  */
 
 
+import edu.chop.dgd.Process.JMSBean;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.IOUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -19,6 +20,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class FileUploadController implements Controller{
@@ -244,7 +246,36 @@ public class FileUploadController implements Controller{
             return mvErr;
         }
         else{
-            ModelAndView mvObj = new ModelAndView("/WEB-INF/pages/oligo/fileUpload.jsp");
+
+            JMSBean jmsBean = new JMSBean();
+            //jmsBean.submit(filePath+projectId+"/"+fileName);
+            HashMap<String, String> messagemap = new HashMap<>();
+            messagemap.put("file", filePath+projectId+"/"+fileName);
+            messagemap.put("proj_id", projectId);
+            messagemap.put("assembly", assembly);
+            messagemap.put("separation", spacing);
+            messagemap.put("minGC", min_gc);
+            messagemap.put("optGC", opt_gc);
+            messagemap.put("maxGC", max_gc);
+            messagemap.put("maxTm", max_tm);
+            messagemap.put("minTm", min_tm);
+            messagemap.put("optTm", opt_tm);
+            messagemap.put("maxLen", max_len);
+            messagemap.put("minLen", min_len);
+            messagemap.put("optLen", opt_len);
+            messagemap.put("naIon", na_ion);
+            messagemap.put("mgIon", mg_ion);
+            messagemap.put("selfAny", self_any);
+            messagemap.put("selfEnd", self_end);
+            messagemap.put("free_energy_hairpin", free_energy_hairpin);
+            messagemap.put("free_energy_homodimer", free_energy_homodimer);
+            messagemap.put("free_energy_heterodimer", free_energy_heterodimer);
+            jmsBean.submit(messagemap);
+
+
+
+            //ModelAndView mvObj = new ModelAndView("/WEB-INF/pages/oligo/fileUpload.jsp");
+            ModelAndView mvObj = new ModelAndView("/WEB-INF/pages/oligo/fileUploadJobQueue.jsp");
             mvObj.addObject("proj_id", projectId);
             mvObj.addObject("assembly", assembly);
             mvObj.addObject("uploads", filePath);
@@ -514,4 +545,6 @@ public class FileUploadController implements Controller{
     public void setFree_energy_heterodimer(String free_energy_heterodimer) {
         this.free_energy_heterodimer = free_energy_heterodimer;
     }
+
+
 }

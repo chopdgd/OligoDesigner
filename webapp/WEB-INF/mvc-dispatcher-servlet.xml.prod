@@ -31,6 +31,7 @@
                         <prop key="index.html">RootController</prop>
                         <prop key="oligo/home.html">OligoHomeController</prop>
                         <prop key="oligo/fileUpload.html">FileUploadController</prop>
+                        <prop key="oligo/fileUploadJobQueue.html">FileUploadController</prop>
                         <prop key="oligo/processOligos.html">OligosCreationController</prop>
                         <prop key="oligo/FileDownload.html">FileDownloadController</prop>
                     </props>
