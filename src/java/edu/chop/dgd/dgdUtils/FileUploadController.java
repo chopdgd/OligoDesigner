@@ -56,6 +56,7 @@ public class FileUploadController implements Controller{
     private String free_energy_hairpin;
     private String free_energy_homodimer;
     private String free_energy_heterodimer;
+    private String email;
 
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse httpServletResponse) throws Exception {
 
@@ -78,6 +79,8 @@ public class FileUploadController implements Controller{
                 MultipartHttpServletRequest multipartRequest =
                         (MultipartHttpServletRequest) request;
                 projectId = multipartRequest.getParameter("proj_id");
+
+                email = multipartRequest.getParameter("email");
 
                 assembly = multipartRequest.getParameter("assembly");
 
@@ -252,6 +255,7 @@ public class FileUploadController implements Controller{
             HashMap<String, String> messagemap = new HashMap<>();
             messagemap.put("file", filePath+projectId+"/"+fileName);
             messagemap.put("proj_id", projectId);
+            messagemap.put("email", email);
             messagemap.put("assembly", assembly);
             messagemap.put("separation", spacing);
             messagemap.put("minGC", min_gc);
@@ -277,6 +281,7 @@ public class FileUploadController implements Controller{
             //ModelAndView mvObj = new ModelAndView("/WEB-INF/pages/oligo/fileUpload.jsp");
             ModelAndView mvObj = new ModelAndView("/WEB-INF/pages/oligo/fileUploadJobQueue.jsp");
             mvObj.addObject("proj_id", projectId);
+            mvObj.addObject("email", email);
             mvObj.addObject("assembly", assembly);
             mvObj.addObject("uploads", filePath);
             mvObj.addObject("origFilename", fileName);
@@ -546,5 +551,11 @@ public class FileUploadController implements Controller{
         this.free_energy_heterodimer = free_energy_heterodimer;
     }
 
+    public String getEmail() {
+        return email;
+    }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
