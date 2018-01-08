@@ -36,6 +36,7 @@
     String origFileName = (String) request.getAttribute("origFilename");
     String uploadResponse = (String) request.getAttribute("fileUploadResponse");
     String oligo_seq_separation = (String) request.getAttribute("separation");
+    String email = (String) request.getAttribute("email");
 
     String min_gc = (String) request.getAttribute("minGC");
     String max_gc = (String) request.getAttribute("maxGC");
@@ -81,7 +82,7 @@
             <p class="media-middle"><img src="/Antholigo/resources/images/loader.gif" alt="dgdLoader" style="align-content: center;"/></p>
         </div>
     </p>
-    <div class="alert alert-info">File is being Uploaded. Job is being Queued. Oligos will be generated and sent to your email ID</div>
+    <div class="alert alert-info">File is being Uploaded. Job is being Queued. Oligos will be generated and sent to your email ID: <%=email%></div>
     <div class="well">
         <ul class="list-group">The following processes are running in order to create your optimal oligos set:
         <li class="list-group-item">Primer3</li>
