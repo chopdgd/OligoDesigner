@@ -42,7 +42,8 @@ public class SendEmail {
                 message.addRecipient(Message.RecipientType.TO, toAddress[i]);
             }
             message.setSubject("Welcome to AnthOligo");
-            message.setText("running job");
+            //message.setText("running job");
+            message.setText(args[1]);
             Transport transport = session.getTransport("smtp");
             transport.connect(host, from, pass);
             transport.sendMessage(message, message.getAllRecipients());
