@@ -37,11 +37,10 @@ public class JMSBean {
         for(String key : mapMessage.keySet()){
             mapMessageToTransmit.setObject(key, mapMessage.get(key));
         }
+
         producer.send(mapMessageToTransmit);
         connection.stop();
 
     }
-
-
 
 }
