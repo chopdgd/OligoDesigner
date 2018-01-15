@@ -1,0 +1,79 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="edu.chop.dgd"/>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    </bean>
+
+    <bean id="dGDHandlerInterceptor" class="edu.chop.dgd.web.DGDHandlerInterceptor">
+    </bean>
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.InternalResourceView"/>
+    </bean>
+
+
+    <bean id="publicUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+                <property name="interceptors">
+                    <list>
+                        <ref bean="dGDHandlerInterceptor" />
+                    </list>
+                </property>
+                <property name="mappings">
+                    <props>
+
+                        <prop key="index.html">RootController</prop>
+                        <prop key="oligo/home.html">OligoHomeController</prop>
+                        <prop key="oligo/fileUpload.html">FileUploadController</prop>
+                        <prop key="oligo/fileUploadJobQueue.html">FileUploadController</prop>
+                        <prop key="oligo/processOligos.html">OligosCreationController</prop>
+                        <prop key="oligo/FileDownload.html">FileDownloadController</prop>
+                    </props>
+                </property>
+    </bean>
+
+    <bean id="wwwDir" abstract="true">
+        <property name="dataDir" value="/data/"/>
+        <property name="primer3InputDir" value="primer3Inp/" />
+        <property name="primer3OpDir" value="primer3out/" />
+        <property name="blatInpDir" value="blatInp/" />
+        <property name="blatOpDir" value="blatOp/" />
+        <property name="insilicoPcrInputDir" value="isPcrInp/" />
+        <property name="insilicoPcrOpDir" value="isPcrOp/" />
+        <property name="primerProcessScriptDir" value="/data/" />
+
+    </bean>
+
+
+    <bean id="oligoDir" abstract="true">
+        <property name="dataDir" value="/data/"/>
+        <property name="downloadsDir" value="downloads/"/>
+        <property name="blatInpDir" value="blatOligoInp/" />
+        <property name="blatOpDir" value="blatOligoOp/" />
+        <property name="oligoProcessScriptDir" value="/data/" />
+        <property name="oligoInputDir" value="/oligoInp/"/>
+        <property name="oligoOutputDir" value="oligoOut/" />
+        <property name="mfoldInpDir" value="mfoldInp/" />
+        <property name="mfoldOpDir" value="mfoldOut/" />
+        <property name="homodimerOpDir" value="homodimerOut/"/>
+        <property name="heterodimerInpDir" value="heterodimerInp/"/>
+        <property name="heterodimerOpDir" value="heterodimerOp/"/>
+        <property name="finalOligos" value="FinalOligosReport/"/>
+    </bean>
+
+    <bean id="RootController" class="edu.chop.dgd.RootController" />
+    <bean id="FileDownloadController" class="edu.chop.dgd.dgdUtils.FileDownloadController" parent="wwwDir" />
+    <bean id="OligoHomeController" class="edu.chop.dgd.oligo.OligoHomeController" />
+    <bean id="FileUploadController" class="edu.chop.dgd.dgdUtils.FileUploadController" parent="oligoDir"/>
+    <bean id="OligosCreationController" class="edu.chop.dgd.oligo.OligosCreationController" parent="oligoDir" />
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
+    
+</beans>
