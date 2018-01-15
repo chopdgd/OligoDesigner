@@ -38,6 +38,7 @@ public class JMSBean {
             mapMessageToTransmit.setObject(key, mapMessage.get(key));
         }
 
+        mapMessageToTransmit.setJMSCorrelationID(mapMessage.get("proj_id"));
         producer.send(mapMessageToTransmit);
         connection.stop();
 

@@ -276,7 +276,7 @@ public class FileUploadController implements Controller{
             messagemap.put("free_energy_heterodimer", free_energy_heterodimer);
             jmsBean.submit(messagemap);
 
-            String[] args ={"jayaramanp@email.chop.edu;"+messagemap.get("email"), "queued job"};
+            String[] args ={"jayaramanp@email.chop.edu;"+messagemap.get("email"), "queued job for ID:"+ messagemap.get("proj_id")};
             SendEmail.main(args);
 
 
