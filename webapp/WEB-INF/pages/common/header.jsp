@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="https://github.com/flatlogic/awesome-bootstrap-checkbox/blob/master/awesome-bootstrap-checkbox.css">
 <link rel="stylesheet" href="navbar_changed.css">
-<link rel="stylesheet" href="/Antholigo/resources/css/awesome-bootstrap-checkbox.css">;
+<link rel="stylesheet" href="../../../resources/css/awesome-bootstrap-checkbox.css">
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -42,18 +42,18 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 
-<link rel="shortcut icon" href="/Antholigo/resources/images/favicon.ico" type="image/x-icon"/>
-<title><%=request.getParameter("pageTitle")%></title>
+    <link rel="shortcut icon" href="/Antholigo/resources/images/favicon.ico" type="image/x-icon"/>
+    <title><%=request.getParameter("pageTitle")%></title>
 
 </head>
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -78,7 +78,7 @@
             </ul>
             <ul class="nav navbar-right">
                 <li><img src=<%=request.getParameter("logoImgPath")%> alt="dgdLogo"
-                         width="450" height="50"/></li>
+                         width="200" height=70"/></li>
             </ul>
             <!--/.nav-collapse -->
         </div>
