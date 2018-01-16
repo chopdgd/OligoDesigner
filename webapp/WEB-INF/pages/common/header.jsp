@@ -78,7 +78,7 @@
             </ul>
             <ul class="nav navbar-right">
                 <li><img src=<%=request.getParameter("logoImgPath")%> alt="dgdLogo"
-                         width="200" height=70"/></li>
+                         width="200" height=60"/></li>
             </ul>
             <!--/.nav-collapse -->
         </div>
