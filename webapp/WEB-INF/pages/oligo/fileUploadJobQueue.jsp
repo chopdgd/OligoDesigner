@@ -22,7 +22,7 @@
 <jsp:include page="../common/header.jsp" flush="false">
     <jsp:param name="projectTitle" value="ANTHOLIGO" />
     <jsp:param name="pageTitle" value="<%=pageTitle%>"/>
-    <jsp:param name="logoImgPath" value="/Antholigo/resources/images/chopImmunoHorizBlack3.png"/>
+    <jsp:param name="logoImgPath" value="/Antholigo/resources/images/chop-logo_new.png"/>
 </jsp:include>
 
 <%
@@ -68,36 +68,36 @@
 <base href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/">
 <script src="js/global.js"></script>
 <link rel="stylesheet" href="css/global.css">
-
-
-<div class="panel">
-    <div class="panel-heading"><%=uploadResponse%></div>
-    <p class="panel-body">
-    <div class="media media-middle">
-        <p class="media-middle"><img src="/Antholigo/resources/images/queue.gif" alt="dgdLoader" style="align-content: center;"/></p>
-    </div>
-    </p>
-    <div class="alert alert-info">.</div>
-    <p class="panel-heading">Your task has been queued. Here are estimated processing times depending on the size of your region of interest</p>
-    <div class="panel-body">
-        <table class="table">
-            <div class="row">
-                <div class="col-sm-4">Region Size</div>
-                <div class="col-sm-4">Processing Time</div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">30KB</div>
-                <div class="col-sm-4">~1min</div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">200KB</div>
-                <div class="col-sm-4">~10-15mins</div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">2.5MB</div>
-                <div class="col-sm-4">~2Hrs</div>
-            </div>
-        </table>
+<div class="container">
+    <div class="media">
+        <h4 class="media-heading"><%=pid%></h4>
+        <h8 class="panel-heading"><%=uploadResponse%></h8>
+        <div class="media-left">
+            <img src="/Antholigo/resources/images/queue_gray.gif" alt="dgdLoader" class="media-object" style="width:320px" height="275px">
+        </div>
+        <div class="media-body">
+            <p class="alert-success">Your task has been queued.</p>
+            <p class="panel-info">Estimated processing times depending on the size of your region of interest are as follows:
+            <table class="table">
+                <div class="row tableSubHeadingColor">
+                    <div class="col-sm-3">Region Size</div>
+                    <div class="col-sm-3">Processing Time</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">30KB</div>
+                    <div class="col-sm-3">~1min</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">200KB</div>
+                    <div class="col-sm-3">~10-15mins</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">2.5MB</div>
+                    <div class="col-sm-3">~2Hrs</div>
+                </div>
+            </table>
+            </p>
+        </div>
     </div>
     <div class="well">
         <ul class="list-group">The following processes are running in order to create your optimal oligos set:
@@ -111,16 +111,7 @@
 
 
 </div>
-<%--<form action="/Antholigo/oligo/processOligos.html?uploadFolderPath=<%=uploadedFilePath%>&proj_id=<%=pid%>"
-      method="post" style="align-content: center">
-    <p><img src="/Antholigo/resources/images/loader.gif" alt="dgdLoader" style="align-content: center;"/></p>
-    <div>
-        Please wait..wait we are processing your oligos...
-        <%=uploadResponse%>
-    </div>
-</form>--%>
-<!-- this script submits the form AFTER it has been completely loaded -->
 
 <jsp:include page="../common/footer.jsp" flush="true">
-    <jsp:param name="contact" value="jayaramanp at email dot chop dot edu"/>
+    <jsp:param name="contact" value="dgdbfx at email dot chop dot edu"/>
 </jsp:include>

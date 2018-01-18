@@ -30,6 +30,7 @@
 
                         <prop key="index.html">RootController</prop>
                         <prop key="oligo/home.html">OligoHomeController</prop>
+                        <prop key="oligo/help.html">OligoHelpController</prop>
                         <prop key="oligo/fileUpload.html">FileUploadController</prop>
                         <prop key="oligo/fileUploadJobQueue.html">FileUploadController</prop>
                         <prop key="oligo/processOligos.html">OligosCreationController</prop>
@@ -70,6 +71,7 @@
     <bean id="RootController" class="edu.chop.dgd.RootController" />
     <bean id="FileDownloadController" class="edu.chop.dgd.dgdUtils.FileDownloadController" parent="wwwDir" />
     <bean id="OligoHomeController" class="edu.chop.dgd.oligo.OligoHomeController" />
+    <bean id="OligoHelpController" class="edu.chop.dgd.oligo.OligoHelpController" />
     <bean id="FileUploadController" class="edu.chop.dgd.dgdUtils.FileUploadController" parent="oligoDir"/>
     <bean id="OligosCreationController" class="edu.chop.dgd.oligo.OligosCreationController" parent="oligoDir" />
 
