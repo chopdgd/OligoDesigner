@@ -22,7 +22,7 @@
 <jsp:include page="../common/header.jsp" flush="false">
     <jsp:param name="projectTitle" value="ANTHOLIGO" />
     <jsp:param name="pageTitle" value="<%=pageTitle%>"/>
-    <jsp:param name="logoImgPath" value="/Antholigo/resources/images/chopImmunoHorizBlack3.png"/>
+    <jsp:param name="logoImgPath" value="/Antholigo/resources/images/chop-logo_new.png"/>
 </jsp:include>
 
 <%
@@ -68,63 +68,49 @@
 <base href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/">
 <script src="js/global.js"></script>
 <link rel="stylesheet" href="css/global.css">
-<%--
-<META HTTP-EQUIV=Refresh CONTENT="3; URL=/Antholigo/oligo/processOligos.html?uploadFolderPath=<%=uploadedFilePath%>&proj_id=<%=pid%>&assembly=<%=assembly%>&origFile=<%=origFileName%>
-&separation=<%=oligo_seq_separation%>&minGC=<%=min_gc%>&optGC=<%=opt_gc%>&maxGC=<%=max_gc%>&minTm=<%=min_tm%>&optTm=<%=opt_tm%>&maxTm=<%=max_tm%>&minLen=<%=min_length%>
-&optLen=<%=opt_length%>&maxLen=<%=max_length%>&Na=<%=na%>&Mg=<%=mg%>&selfAny=<%=self_any%>&selfEnd=<%=self_end%>&free_energy_hairpin=<%=free_energy_hairpin%>&free_energy_homodimer=<%=free_energy_homodimer%>&free_energy_heterodimer=<%=free_energy_heterodimer%>"/>
---%>
+<div class="container">
+    <div class="media">
 
-
-<div class="panel">
-    <div class="panel-heading"><%=uploadResponse%></div>
-    <p class="panel-body">
-        <div class="media media-middle">
-            <p class="media-middle"><img src="/Antholigo/resources/images/loader.gif" alt="dgdLoader" style="align-content: center;"/></p>
+        <div class="media-left">
+            <img src="/Antholigo/resources/images/taskqueue.gif" alt="dgdLoader" class="media-object" style="width:320px" height="275px">
         </div>
-    </p>
-    <div class="alert alert-info">File is being Uploaded. Job is being Queued. Oligos will be generated and sent to your email ID: <%=email%></div>
-    <div class="well">
-        <ul class="list-group">The following processes are running in order to create your optimal oligos set:
-        <li class="list-group-item">Primer3</li>
-        <li class="list-group-item">BLAT</li>
-        <li class="list-group-item">Hairpin Analysis</li>
-        <li class="list-group-item">Homodimer Analysis</li>
-        <li class="list-group-item">Heterodimer Analysis</li>
-        </ul>
+        <div class="media-right">
+            <h4 class="media-heading" style="font-weight: 200"><b><%=pid%></b></h4>
+            <h8><%=uploadResponse%></h8>
+        </div>
+        <div class="alert alert-success fade in">Your task has been queued</div>
+        <div class="jumbotron" style="font-size: medium;">
+            <p class="panel-info" style="font-size: medium;">Estimated processing times depending on the size of your region of interest are as follows:
+            <table class="table table-bordered table-condensed">
+            <thead>
+            <tr>
+                <th class="col-sm-3">Region Size</th>
+                <th class="col-sm-3">Processing Time</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="col-sm-3">30KB</td>
+                <td class="col-sm-3">~1min</td>
+            </tr>
+            <tr>
+                <td class="col-sm-3">200KB</td>
+                <td class="col-sm-3">~10-15mins</td>
+            </tr>
+            <tr>
+                <td class="col-sm-3">2.5MB</td>
+                <td class="col-sm-3">~2Hrs</td>
+            </tr>
+            </tbody>
+            </table>
+            </p>
+        </div>
     </div>
-    <p class="panel-heading">We have estimated the following processing times based on the size of your region of interest</p>
-    <div class="panel-body">
-        <table class="table">
-            <div class="row">
-                <div class="col-sm-4">Region Size</div>
-                <div class="col-sm-4">Processing Time</div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">30KB</div>
-                <div class="col-sm-4">~1-2min</div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">200KB</div>
-                <div class="col-sm-4">~35-40mins</div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">1MB</div>
-                <div class="col-sm-4">~2Hrs</div>
-            </div>
-        </table>
-    </div>
+
 
 </div>
-<%--<form action="/Antholigo/oligo/processOligos.html?uploadFolderPath=<%=uploadedFilePath%>&proj_id=<%=pid%>"
-      method="post" style="align-content: center">
-    <p><img src="/Antholigo/resources/images/loader.gif" alt="dgdLoader" style="align-content: center;"/></p>
-    <div>
-        Please wait..wait we are processing your oligos...
-        <%=uploadResponse%>
-    </div>
-</form>--%>
-<!-- this script submits the form AFTER it has been completely loaded -->
 
 <jsp:include page="../common/footer.jsp" flush="true">
-    <jsp:param name="contact" value="jayaramanp at email dot chop dot edu"/>
+    <jsp:param name="contact" value="dgdbfx at email dot chop dot edu"/>
 </jsp:include>
