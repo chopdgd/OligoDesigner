@@ -70,43 +70,42 @@
 <link rel="stylesheet" href="css/global.css">
 <div class="container">
     <div class="media">
-        <h4 class="media-heading"><%=pid%></h4>
-        <h8 class="panel-heading"><%=uploadResponse%></h8>
+
         <div class="media-left">
-            <img src="/Antholigo/resources/images/queue_gray.gif" alt="dgdLoader" class="media-object" style="width:320px" height="275px">
+            <img src="/Antholigo/resources/images/taskqueue.gif" alt="dgdLoader" class="media-object" style="width:320px" height="275px">
         </div>
-        <div class="media-body">
-            <p class="alert-success">Your task has been queued.</p>
-            <p class="panel-info">Estimated processing times depending on the size of your region of interest are as follows:
-            <table class="table">
-                <div class="row tableSubHeadingColor">
-                    <div class="col-sm-3">Region Size</div>
-                    <div class="col-sm-3">Processing Time</div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-3">30KB</div>
-                    <div class="col-sm-3">~1min</div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-3">200KB</div>
-                    <div class="col-sm-3">~10-15mins</div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-3">2.5MB</div>
-                    <div class="col-sm-3">~2Hrs</div>
-                </div>
+        <div class="media-right">
+            <h4 class="media-heading" style="font-weight: 200"><b><%=pid%></b></h4>
+            <h8><%=uploadResponse%></h8>
+        </div>
+        <div class="alert alert-success fade in">Your task has been queued</div>
+        <div class="jumbotron" style="font-size: medium;">
+            <p class="panel-info" style="font-size: medium;">Estimated processing times depending on the size of your region of interest are as follows:
+            <table class="table table-bordered table-condensed">
+            <thead>
+            <tr>
+                <th class="col-sm-3">Region Size</th>
+                <th class="col-sm-3">Processing Time</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="col-sm-3">30KB</td>
+                <td class="col-sm-3">~1min</td>
+            </tr>
+            <tr>
+                <td class="col-sm-3">200KB</td>
+                <td class="col-sm-3">~10-15mins</td>
+            </tr>
+            <tr>
+                <td class="col-sm-3">2.5MB</td>
+                <td class="col-sm-3">~2Hrs</td>
+            </tr>
+            </tbody>
             </table>
             </p>
         </div>
-    </div>
-    <div class="well">
-        <ul class="list-group">The following processes are running in order to create your optimal oligos set:
-            <li class="list-group-item">Primer3</li>
-            <li class="list-group-item">BLAT</li>
-            <li class="list-group-item">Hairpin Analysis</li>
-            <li class="list-group-item">Homodimer Analysis</li>
-            <li class="list-group-item">Heterodimer Analysis</li>
-        </ul>
     </div>
 
 
