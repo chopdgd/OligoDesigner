@@ -38,6 +38,7 @@ public class FileUploadController implements Controller{
     private static String heterodimerInpDir;
     private static String heterodimerOpDir;
     private static String finalOligos;
+    private static String blat_threshold;
 
     private static String spacing;
     private static String min_gc;
@@ -201,6 +202,13 @@ public class FileUploadController implements Controller{
                     free_energy_heterodimer = "NA";
                 }
 
+                String blatPercentIdentityThreshold = request.getParameter("blat_threshold");
+                if(blatPercentIdentityThreshold.length()>0){
+                    blat_threshold = blatPercentIdentityThreshold;
+                }else{
+                    blat_threshold = "NA";
+                }
+
 
                 filePath = getDataDir()+getDownloadsDir();
                 List<MultipartFile> multipartFiles = multipartRequest.getFiles("file");
@@ -274,6 +282,7 @@ public class FileUploadController implements Controller{
             messagemap.put("free_energy_hairpin", free_energy_hairpin);
             messagemap.put("free_energy_homodimer", free_energy_homodimer);
             messagemap.put("free_energy_heterodimer", free_energy_heterodimer);
+            messagemap.put("blat_threshold", blat_threshold);
             jmsBean.submit(messagemap);
 
             String[] args ={"jayaramanp@email.chop.edu;"+messagemap.get("email"), "queued job for ID:"+ messagemap.get("proj_id")};
@@ -306,6 +315,7 @@ public class FileUploadController implements Controller{
             mvObj.addObject("free_energy_hairpin", free_energy_hairpin);
             mvObj.addObject("free_energy_homodimer", free_energy_homodimer);
             mvObj.addObject("free_energy_heterodimer", free_energy_heterodimer);
+            mvObj.addObject("blat_threshold", blat_threshold);
         return mvObj;
 
         }
@@ -560,5 +570,13 @@ public class FileUploadController implements Controller{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public static String getBlat_threshold() {
+        return blat_threshold;
+    }
+
+    public static void setBlat_threshold(String blat_threshold) {
+        FileUploadController.blat_threshold = blat_threshold;
     }
 }
