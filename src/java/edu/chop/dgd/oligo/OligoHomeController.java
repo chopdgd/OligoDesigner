@@ -26,10 +26,19 @@ public class OligoHomeController implements Controller{
         //session.setAttribute();
 
         HttpRequestFacade req = new HttpRequestFacade(request);
+        String errorStr = req.getParameter("error");
 
         //status.add("oligo Design homepage?");
         String exampleFile = "/data/antholigo_test/antholigo_test.txt";
 
-        return new ModelAndView("/WEB-INF/pages/oligo/home.jsp", "exampleFile", exampleFile);
+        if(errorStr.length()==0){
+            return new ModelAndView("/WEB-INF/pages/oligo/home.jsp", "exampleFile", exampleFile);
+        }else{
+            ModelAndView mvErr = new ModelAndView("/WEB-INF/pages/oligo/home.jsp");
+            mvErr.addObject("exampleFile", exampleFile);
+            mvErr.addObject("error", errorStr);
+
+            return mvErr;
+        }
     }
 }

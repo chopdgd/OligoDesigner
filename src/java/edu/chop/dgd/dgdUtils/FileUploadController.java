@@ -6,6 +6,7 @@ package edu.chop.dgd.dgdUtils;
 
 
 import edu.chop.dgd.Process.JMSBean;
+import edu.chop.dgd.dgdObjects.SequenceObject;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.IOUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,10 +16,7 @@ import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -70,6 +68,12 @@ public class FileUploadController implements Controller{
         String fileResponse="";
         String fileName=""; String projectId="proj_id"; String assembly = "hg19";
         String exampleFile = "/data/antholigo_test/antholigo_test.txt";
+        StringBuffer url = request.getRequestURL();
+        String uri = request.getRequestURI();
+        String host = url.substring(0, url.indexOf(uri));
+        System.out.println(url);
+        System.out.println(uri);
+        System.out.println(host);
 
         boolean isMultipart = ServletFileUpload.isMultipartContent(request);
 
@@ -238,6 +242,40 @@ public class FileUploadController implements Controller{
                         out.close();
 
                         fileResponse+="<div>"+file.getOriginalFilename()+"</div>";
+
+
+                        if(host.contains("127.0.0.1") || host.contains("dgdr7ant01")){
+                            int filelimit=1000000; int totalsize=0;
+                            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(uploadedFile)));
+                            try{
+                                String line;
+                                while((line=reader.readLine()) != null){
+                                    //line = reader.readLine();
+                                    String lineArr[] = line.split("\t", -1);
+                                    //System.out.println(line);
+                                    SequenceObject obj = new SequenceObject();
+                                    obj.setAssembly(assembly);
+                                    obj.setChr(lineArr[0]);
+                                    //padding it by 3kb each end
+
+                                    obj.setStart(Integer.parseInt(lineArr[1]));
+                                    obj.setStop(Integer.parseInt(lineArr[2]));
+
+                                    totalsize += (obj.getStop()-obj.getStart()+1);
+
+                                }
+
+                                if(totalsize>filelimit){
+                                    error.add("File contains regions larger than 1MB limit("+ totalsize +") for production environmet. " +
+                                            "Please contact us if you need to run regions larger than 1MB.");
+                                }
+
+                            }catch (Exception e){
+                                error.add("Something went wrong wile parsing file");
+                                error.add(e.getStackTrace());
+                            }
+                        }
+
                     }
                 }else{
                     fileResponse+="<div>No files found!</div>";
