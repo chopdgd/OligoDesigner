@@ -72,7 +72,7 @@
     <div class="media">
 
         <div class="media-left">
-            <img src="/resources/images/taskqueue.gif" alt="dgdLoader" class="media-object" style="width:320px" height="275px">
+            <img src="/resources/images/taskqueue.jpeg" alt="dgdLoader" class="media-object" style="width:320px" height="275px">
         </div>
         <div class="media-right">
             <h4 class="media-heading" style="font-weight: 200"><b><%=pid%></b></h4>
