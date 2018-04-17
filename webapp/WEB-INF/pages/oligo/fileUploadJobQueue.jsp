@@ -78,7 +78,7 @@
             <h4 class="media-heading" style="font-weight: 200"><b><%=pid%></b></h4>
             <h8><%=uploadResponse%></h8>
         </div>
-        <div class="alert alert-success fade in">Your task has been queued</div>
+        <div class="alert alert-success fade in">Your task has been queued. Your results will be emailed to you at the email address submitted.</div>
         <div class="jumbotron" style="font-size: medium;">
             <p class="panel-info" style="font-size: medium;">Estimated processing times depending on the size of your region of interest are as follows:
             <table class="table table-bordered table-condensed">
