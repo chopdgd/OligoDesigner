@@ -22,7 +22,7 @@
 <jsp:include page="../common/header.jsp" flush="false">
     <jsp:param name="projectTitle" value="ANTHOLIGO" />
     <jsp:param name="pageTitle" value="<%=pageTitle%>"/>
-    <jsp:param name="logoImgPath" value="/Antholigo/resources/images/chop-logo_new.png"/>
+    <jsp:param name="logoImgPath" value="/resources/images/chop-logo_new.png"/>
 </jsp:include>
 
 <%
@@ -72,7 +72,7 @@
     <div class="media">
 
         <div class="media-left">
-            <img src="/Antholigo/resources/images/taskqueue.gif" alt="dgdLoader" class="media-object" style="width:320px" height="275px">
+            <img src="/resources/images/taskqueue.gif" alt="dgdLoader" class="media-object" style="width:320px" height="275px">
         </div>
         <div class="media-right">
             <h4 class="media-heading" style="font-weight: 200"><b><%=pid%></b></h4>
