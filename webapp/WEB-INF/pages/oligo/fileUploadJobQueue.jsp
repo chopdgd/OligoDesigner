@@ -17,13 +17,36 @@
     String pageTitle = "ANTHOLIGO - Oligo Design Application";
     String headContent = "ANTHOLIGO - Oligo Design Application";
     String pageDescription = "ANTHOLIGO - Oligo Design Application";
+
+    StringBuffer url = request.getRequestURL();
+    String uri = request.getRequestURI();
+    String host = url.substring(0, url.indexOf(uri));
+
 %>
 
-<jsp:include page="../common/header.jsp" flush="false">
+<%
+    if(host.contains("dgdr7ant01")){
+        System.out.println(url);
+        System.out.println(uri);
+        System.out.println(host);
+%>
+<jsp:include page="/WEB-INF/pages/common/header.jsp" flush="false">
     <jsp:param name="projectTitle" value="ANTHOLIGO" />
     <jsp:param name="pageTitle" value="<%=pageTitle%>"/>
     <jsp:param name="logoImgPath" value="/resources/images/chop-logo_new.png"/>
 </jsp:include>
+<%
+}else{
+%>
+<jsp:include page="/WEB-INF/pages/common/header.jsp" flush="false">
+    <jsp:param name="projectTitle" value="ANTHOLIGO" />
+    <jsp:param name="pageTitle" value="<%=pageTitle%>"/>
+    <jsp:param name="logoImgPath" value="/Antholigo/resources/images/chop-logo_new.png"/>
+</jsp:include>
+<%
+
+    }
+%>
 
 <%
 
@@ -72,7 +95,22 @@
     <div class="media">
 
         <div class="media-left">
-            <img src="/resources/images/taskqueue.jpeg" alt="dgdLoader" class="media-object" style="width:320px" height="275px">
+            <%
+                if(host.contains("dgdr7ant01")){
+                    System.out.println(url);
+                    System.out.println(uri);
+                    System.out.println(host);
+            %>
+            <img src="http://antholigo.chop.edu/resources/images/taskqueue.jpeg" alt="dgdLoader" class="media-object" style="width:320px" height="275px">
+            <%
+            }else{
+            %>
+            <img src="/Antholigo/resources/images/taskqueue.jpeg" alt="dgdLoader" class="media-object" style="width:320px" height="275px">
+            <%
+
+                }
+            %>
+
         </div>
         <div class="media-right">
             <h4 class="media-heading" style="font-weight: 200"><b><%=pid%></b></h4>
@@ -111,6 +149,6 @@
 
 </div>
 
-<jsp:include page="../common/footer.jsp" flush="true">
+<jsp:include page="/WEB-INF/pages/common/footer.jsp" flush="true">
     <jsp:param name="contact" value="dgdbfx at email dot chop dot edu"/>
 </jsp:include>

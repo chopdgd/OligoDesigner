@@ -74,6 +74,11 @@ public class FileUploadController implements Controller{
         System.out.println(url);
         System.out.println(uri);
         System.out.println(host);
+        if(host.contains("127.0.0.1")){
+            System.out.println(url);
+            System.out.println(uri);
+            System.out.println(host);
+        }
 
         boolean isMultipart = ServletFileUpload.isMultipartContent(request);
 

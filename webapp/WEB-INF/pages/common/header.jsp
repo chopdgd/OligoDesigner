@@ -5,6 +5,14 @@
   Time: 4:09 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%
+    StringBuffer url = request.getRequestURL();
+    String uri = request.getRequestURI();
+    String host = url.substring(0, url.indexOf(uri));
+    System.out.println(url);
+    System.out.println(uri);
+    System.out.println(host);
+%>
 
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -26,8 +34,29 @@
     <link rel="stylesheet" href="https://github.com/flatlogic/awesome-bootstrap-checkbox/blob/master/awesome-bootstrap-checkbox.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/css/bootstrapValidator.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css">
-    <link rel="stylesheet" href="/resources/css/navbar_changed.css">
-    <link rel="stylesheet" href="/resources/css/awesome-bootstrap-checkbox.css">
+
+    <%
+        if(host.contains("dgdr7ant01")){
+            System.out.println(url);
+            System.out.println(uri);
+            System.out.println(host);
+    %>
+        <link rel="stylesheet" href="/resources/css/navbar_changed.css">
+        <link rel="stylesheet" href="/resources/css/awesome-bootstrap-checkbox.css">
+        <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon"/>
+
+    <%
+    }else{
+    %>
+        <link rel="stylesheet" href="/Antholigo/resources/css/navbar_changed.css">
+        <link rel="stylesheet" href="/Antholigo/resources/css/awesome-bootstrap-checkbox.css">
+        <link rel="shortcut icon" href="/Antholigo/resources/images/favicon.ico" type="image/x-icon"/>
+
+    <%
+
+        }
+    %>
+
 
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
@@ -39,7 +68,7 @@
 
     </style>
 
-    <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon"/>
+
     <title><%=request.getParameter("pageTitle")%></title>
 
 </head>
@@ -55,8 +84,27 @@
             <a class="navbar-brand" href="#"><%=projectTitle%></a>
         </div>
         <ul class="nav navbar-nav" style="font-size: medium; font-family: 'Ubuntu';">
-            <li style="font-size: large"><a href=/oligo/home.html>Home</a></li>
-            <li style="font-size: large"><a href="/oligo/help.html">Help</a></li>
+            <%
+                if(host.contains("dgdr7ant01")){
+                    System.out.println(url);
+                    System.out.println(uri);
+                    System.out.println(host);
+            %>
+                <li style="font-size: large"><a href=/oligo/home.html>Home</a></li>
+                <li style="font-size: large"><a href="/oligo/help.html">Help</a></li>
+
+            <%
+            }else{
+            %>
+                <li style="font-size: large"><a href=/Antholigo/oligo/home.html>Home</a></li>
+                <li style="font-size: large"><a href="/Antholigo/oligo/help.html">Help</a></li>
+
+            <%
+
+                }
+            %>
+
+
             <li style="font-size: large"><a href="https://www.chop.edu/centers-programs/pathology-and-laboratory-medicine/contact">Contact</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
